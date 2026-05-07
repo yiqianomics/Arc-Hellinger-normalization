@@ -1,0 +1,1222 @@
+---
+title: "AHC"
+author: "Yiqian Zhang"
+date: "2026-05-06"
+output: html_document
+---
+
+```{r}
+# ------------------------------------------------------------
+# Angular Hellinger Compositional Normalization
+# ------------------------------------------------------------
+# Input:
+#   X: matrix or data.frame
+#      rows = samples, columns = taxa/features/components
+#
+# Output:
+#   transformed matrix with same dimension as X
+#
+# Formula:
+#   pi_i = X_i / sum_j X_ij
+#   c(pi_i) = (1 / sqrt(k)) * sum_j sqrt(pi_ij)
+#   s(pi_i) = sqrt(1 - c(pi_i)^2)
+#   T(pi_i) = asin(s(pi_i)) / s(pi_i) *
+#             (sqrt(pi_i) - c(pi_i) * sqrt(pi_0))
+#
+# where sqrt(pi_0) = (1/sqrt(k), ..., 1/sqrt(k)).
+# ------------------------------------------------------------
+
+angular_hellinger_normalization <- function(X) {
+  
+  # Convert to matrix
+  X <- as.matrix(X)
+  
+  # Check input
+  if (!is.numeric(X)) {
+    stop("X must be numeric.")
+  }
+  
+  if (any(X < 0, na.rm = TRUE)) {
+    stop("X must contain non-negative values only.")
+  }
+  
+  if (anyNA(X)) {
+    stop("X contains NA values. Please handle missing values first.")
+  }
+  
+  # Number of components
+  k <- ncol(X)
+  
+  if (k < 2) {
+    stop("X must contain at least two components.")
+  }
+  
+  # Row sums
+  rs <- rowSums(X)
+  
+  if (any(rs <= 0)) {
+    stop("Each row must have positive total abundance.")
+  }
+  
+  # Convert count/abundance data to compositional data
+  Pi <- sweep(X, 1, rs, FUN = "/")
+  
+  # Square-root composition
+  sqrt_Pi <- sqrt(Pi)
+  
+  # Uniform direction in square-root space
+  sqrt_pi0 <- rep(1 / sqrt(k), k)
+  
+  # c(pi): cosine-type Hellinger similarity to the uniform composition
+  c_pi <- as.vector(sqrt_Pi %*% sqrt_pi0)
+  
+  # Numerical protection: theoretically c(pi) is in [0, 1]
+  c_pi <- pmin(pmax(c_pi, 0), 1)
+  
+  # s(pi) = sqrt(1 - c(pi)^2)
+  s_pi <- sqrt(1 - c_pi^2)
+  
+  # Scaling factor
+  scale_factor <- asin(s_pi) / s_pi
+  
+  # Handle the exact uniform-composition case where s(pi) = 0
+  scale_factor[s_pi == 0] <- 1
+  
+  # Centered square-root composition
+  centered <- sqrt_Pi - outer(c_pi, sqrt_pi0)
+  
+  # Final transformation
+  T <- centered * scale_factor
+  
+  # Keep row and column names
+  rownames(T) <- rownames(X)
+  colnames(T) <- colnames(X)
+  
+  return(T)
+}
+```
+
+
+
+# check simulation result
+```{r}
+result <- read.csv("replicate_results_AHC_ALR_CLR_ILR_100rep.csv")
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(tibble)
+
+alpha_level <- 0.05
+setting_vars <- c("alpha", "beta0", "beta", "q")
+
+## ============================================================
+## 1. Basic checks
+## ============================================================
+
+required_cols <- c(
+  "rep_id", "transformation", "power", "fdr",
+  "TP", "FP", "FN", "rejections",
+  setting_vars
+)
+
+missing_cols <- setdiff(required_cols, colnames(result))
+
+if (length(missing_cols) > 0) {
+  stop(
+    "The following required columns are missing from result: ",
+    paste(missing_cols, collapse = ", ")
+  )
+}
+
+result <- result %>%
+  mutate(
+    transformation = factor(
+      transformation,
+      levels = c("AHC", "ALR", "CLR", "ILR")
+    )
+  )
+
+cat("\nNumber of rows:\n")
+print(nrow(result))
+
+cat("\nNumber of replications per setting/method:\n")
+print(
+  result %>%
+    count(alpha, beta0, beta, q, transformation, name = "n_reps") %>%
+    arrange(alpha, beta0, beta, q, transformation)
+)
+
+
+## ============================================================
+## 2. Summarize power/FDR under each setting and method
+## ============================================================
+
+summary_setting_method <- result %>%
+  group_by(across(all_of(setting_vars)), transformation) %>%
+  summarize(
+    n_reps = n(),
+    mean_power = mean(power, na.rm = TRUE),
+    sd_power = sd(power, na.rm = TRUE),
+    mean_fdr = mean(fdr, na.rm = TRUE),
+    sd_fdr = sd(fdr, na.rm = TRUE),
+    fdr_na_rate = mean(is.na(fdr)),
+    mean_TP = mean(TP, na.rm = TRUE),
+    mean_FP = mean(FP, na.rm = TRUE),
+    mean_FN = mean(FN, na.rm = TRUE),
+    mean_rejections = mean(rejections, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    mean_fdr = ifelse(is.nan(mean_fdr), NA_real_, mean_fdr),
+    sd_fdr = ifelse(is.nan(sd_fdr), NA_real_, sd_fdr),
+    fdr_for_rule = ifelse(is.na(mean_fdr), 0, mean_fdr),
+    fdr_controlled = fdr_for_rule <= alpha_level
+  )
+
+cat("\nSummary by setting and method:\n")
+print(summary_setting_method, n = 50)
+
+
+## ============================================================
+## 3. Find best method under each setting
+## ============================================================
+
+## Best by power only
+best_by_power <- summary_setting_method %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(desc(mean_power), fdr_for_rule, transformation, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_power_method = as.character(transformation),
+    best_power = mean_power,
+    best_power_fdr = mean_fdr
+  )
+
+## Best by FDR only
+best_by_fdr <- summary_setting_method %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(fdr_for_rule, desc(mean_power), transformation, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_fdr_method = as.character(transformation),
+    best_fdr = mean_fdr,
+    best_fdr_power = mean_power
+  )
+
+## Recommended best method:
+## First require mean FDR <= 0.05, then choose largest power.
+## If several methods control FDR, this chooses the highest-power one.
+best_overall <- summary_setting_method %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(
+    desc(fdr_controlled),
+    desc(mean_power),
+    fdr_for_rule,
+    transformation,
+    .by_group = TRUE
+  ) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_overall_method = as.character(transformation),
+    best_overall_power = mean_power,
+    best_overall_fdr = mean_fdr,
+    best_overall_fdr_controlled = fdr_controlled
+  )
+
+best_by_setting <- best_by_power %>%
+  left_join(best_by_fdr, by = setting_vars) %>%
+  left_join(best_overall, by = setting_vars) %>%
+  arrange(alpha, beta0, beta, q)
+
+cat("\nBest method under each setting:\n")
+print(best_by_setting, n = 100)
+
+
+## If you want to print all settings, use this:
+## print(best_by_setting, n = Inf)
+
+
+## ============================================================
+## 4. Winner frequency table
+## ============================================================
+
+cat("\nWinner count by best-power criterion:\n")
+print(
+  best_by_setting %>%
+    count(best_power_method, name = "n_settings") %>%
+    mutate(prop_settings = n_settings / sum(n_settings)) %>%
+    arrange(desc(n_settings))
+)
+
+cat("\nWinner count by best-FDR criterion:\n")
+print(
+  best_by_setting %>%
+    count(best_fdr_method, name = "n_settings") %>%
+    mutate(prop_settings = n_settings / sum(n_settings)) %>%
+    arrange(desc(n_settings))
+)
+
+cat("\nWinner count by recommended criterion: FDR control first, then power:\n")
+print(
+  best_by_setting %>%
+    count(best_overall_method, name = "n_settings") %>%
+    mutate(prop_settings = n_settings / sum(n_settings)) %>%
+    arrange(desc(n_settings))
+)
+
+
+## ============================================================
+## 5. Overall method performance across all settings
+## ============================================================
+
+overall_method_summary <- summary_setting_method %>%
+  group_by(transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    sd_setting_power = sd(mean_power, na.rm = TRUE),
+    avg_fdr = mean(mean_fdr, na.rm = TRUE),
+    sd_setting_fdr = sd(mean_fdr, na.rm = TRUE),
+    prop_settings_fdr_controlled = mean(fdr_controlled, na.rm = TRUE),
+    avg_rejections = mean(mean_rejections, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(avg_power))
+
+cat("\nOverall method summary across all settings:\n")
+print(overall_method_summary)
+
+
+## ============================================================
+## 6. Compare AHC against the best competing method
+## ============================================================
+
+ahc_vs_others <- summary_setting_method %>%
+  group_by(across(all_of(setting_vars))) %>%
+  summarize(
+    AHC_power = mean_power[transformation == "AHC"],
+    AHC_fdr = mean_fdr[transformation == "AHC"],
+    best_other_power = max(mean_power[transformation != "AHC"], na.rm = TRUE),
+    best_other_method = as.character(
+      transformation[transformation != "AHC"][
+        which.max(mean_power[transformation != "AHC"])
+      ]
+    ),
+    best_other_fdr = mean_fdr[transformation == best_other_method],
+    AHC_minus_best_other_power = AHC_power - best_other_power,
+    .groups = "drop"
+  ) %>%
+  arrange(desc(AHC_minus_best_other_power))
+
+cat("\nSettings where AHC has the largest power advantage over other methods:\n")
+print(head(ahc_vs_others, 20))
+
+cat("\nSettings where AHC has the largest power disadvantage relative to other methods:\n")
+print(tail(ahc_vs_others, 20))
+
+cat("\nHow often AHC beats all other methods by power:\n")
+print(
+  ahc_vs_others %>%
+    summarize(
+      n_settings = n(),
+      n_AHC_best_power = sum(AHC_minus_best_other_power > 0, na.rm = TRUE),
+      prop_AHC_best_power = mean(AHC_minus_best_other_power > 0, na.rm = TRUE),
+      mean_AHC_power_advantage = mean(AHC_minus_best_other_power, na.rm = TRUE)
+    )
+)
+
+
+## ============================================================
+## 7. Visualization 1: Average power vs q
+## ============================================================
+
+plot_power_q <- summary_setting_method %>%
+  group_by(q, transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = q, y = avg_power, group = transformation, color = transformation)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Average Power Across Zero-Inflation Level q",
+    x = "Zero-inflation probability q",
+    y = "Average power",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(plot_power_q)
+
+
+## ============================================================
+## 8. Visualization 2: Average FDR vs q
+## ============================================================
+
+plot_fdr_q <- summary_setting_method %>%
+  group_by(q, transformation) %>%
+  summarize(
+    avg_fdr = mean(mean_fdr, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = q, y = avg_fdr, group = transformation, color = transformation)) +
+  geom_hline(yintercept = alpha_level, linetype = "dashed") +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Average FDR Across Zero-Inflation Level q",
+    x = "Zero-inflation probability q",
+    y = "Average FDR",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(plot_fdr_q)
+
+
+## ============================================================
+## 9. Visualization 3: Average power vs beta
+## ============================================================
+
+plot_power_beta <- summary_setting_method %>%
+  group_by(beta, transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = beta, y = avg_power, group = transformation, color = transformation)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Average Power Across Effect Size beta",
+    x = "Effect size beta",
+    y = "Average power",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(plot_power_beta)
+
+
+## ============================================================
+## 10. Visualization 4: Power-FDR tradeoff
+## ============================================================
+
+plot_power_fdr <- summary_setting_method %>%
+  ggplot(aes(x = mean_fdr, y = mean_power, color = transformation)) +
+  geom_vline(xintercept = alpha_level, linetype = "dashed") +
+  geom_point(alpha = 0.5, size = 2) +
+  labs(
+    title = "Power-FDR Tradeoff Across All Simulation Settings",
+    x = "Mean FDR",
+    y = "Mean power",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(plot_power_fdr)
+
+
+## ============================================================
+## 11. Visualization 5: Recommended winner by beta and q
+## ============================================================
+
+winner_beta_q <- best_by_setting %>%
+  count(beta, q, best_overall_method, name = "n_wins") %>%
+  group_by(beta, q) %>%
+  arrange(desc(n_wins), best_overall_method, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup()
+
+plot_winner_beta_q <- winner_beta_q %>%
+  ggplot(aes(x = factor(q), y = factor(beta), fill = best_overall_method)) +
+  geom_tile() +
+  geom_text(aes(label = best_overall_method), size = 3) +
+  labs(
+    title = "Most Frequent Recommended Winner by beta and q",
+    subtitle = "Recommended criterion: FDR controlled first, then largest power",
+    x = "q",
+    y = "beta",
+    fill = "Winner"
+  ) +
+  theme_bw()
+
+print(plot_winner_beta_q)
+
+
+## ============================================================
+## 12. Visualization 6: AHC power advantage over best competitor
+## ============================================================
+
+plot_ahc_advantage <- ahc_vs_others %>%
+  group_by(beta, q) %>%
+  summarize(
+    avg_AHC_minus_best_other_power =
+      mean(AHC_minus_best_other_power, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(
+    x = factor(q),
+    y = factor(beta),
+    fill = avg_AHC_minus_best_other_power
+  )) +
+  geom_tile() +
+  geom_text(
+    aes(label = round(avg_AHC_minus_best_other_power, 3)),
+    size = 3
+  ) +
+  labs(
+    title = "Average AHC Power Advantage Over Best Competing Method",
+    x = "q",
+    y = "beta",
+    fill = "AHC - best other"
+  ) +
+  theme_bw()
+
+print(plot_ahc_advantage)
+
+
+## ============================================================
+## 13. Optional: simple pattern analysis for when AHC wins
+## ============================================================
+
+ahc_win_pattern <- best_by_setting %>%
+  mutate(AHC_win = best_overall_method == "AHC") %>%
+  group_by(AHC_win) %>%
+  summarize(
+    n_settings = n(),
+    mean_alpha = mean(alpha),
+    mean_beta0 = mean(beta0),
+    mean_beta = mean(beta),
+    mean_q = mean(q),
+    .groups = "drop"
+  )
+
+cat("\nAverage settings where AHC wins vs does not win:\n")
+print(ahc_win_pattern)
+
+cat("\nAHC win rate by q:\n")
+print(
+  best_by_setting %>%
+    mutate(AHC_win = best_overall_method == "AHC") %>%
+    group_by(q) %>%
+    summarize(
+      n_settings = n(),
+      AHC_win_rate = mean(AHC_win),
+      .groups = "drop"
+    )
+)
+
+cat("\nAHC win rate by beta:\n")
+print(
+  best_by_setting %>%
+    mutate(AHC_win = best_overall_method == "AHC") %>%
+    group_by(beta) %>%
+    summarize(
+      n_settings = n(),
+      AHC_win_rate = mean(AHC_win),
+      .groups = "drop"
+    )
+)
+```
+
+# GUniFrac simulation
+```{r}
+result <- read.csv("replicate_results_AHC_ALR_CLR_ILR_MSeqU_100rep_corrected.csv")
+library(tidyverse)
+
+## ============================================================
+## 0. Helper printing function
+## ============================================================
+
+print_tbl <- function(x, n = Inf) {
+  x <- as_tibble(x)
+  print(x, n = n, width = Inf)
+}
+
+
+## ============================================================
+## 1. Prepare data
+## ============================================================
+
+data <- result
+
+required_cols <- c(
+  "rep_id", "transformation", "power", "fdr", "TP", "FP", "FN",
+  "rejections", "n_tested",
+  "diff_otu_direct", "diff_otu_mode",
+  "depth_mu", "depth_theta",
+  "covariate_eff_sd", "confounder_eff_sd", "depth_conf_factor"
+)
+
+missing_cols <- setdiff(required_cols, colnames(data))
+
+if (length(missing_cols) > 0) {
+  stop("Missing columns: ", paste(missing_cols, collapse = ", "))
+}
+
+data <- data %>%
+  mutate(
+    transformation = as.character(transformation),
+    transformation = factor(transformation, levels = c("AHC", "ALR", "CLR", "ILR")),
+    diff_otu_direct = factor(diff_otu_direct),
+    diff_otu_mode = factor(diff_otu_mode, levels = c("rare", "mix", "abundant")),
+    depth_mu = as.numeric(depth_mu),
+    depth_theta = as.numeric(depth_theta),
+    covariate_eff_sd = as.numeric(covariate_eff_sd),
+    confounder_eff_sd = as.numeric(confounder_eff_sd),
+    depth_conf_factor = as.numeric(depth_conf_factor),
+    log10_depth_mu = log10(depth_mu),
+    fdr = ifelse(is.na(fdr) & rejections == 0, 0, fdr)
+  )
+
+setting_vars <- c(
+  "diff_otu_direct",
+  "diff_otu_mode",
+  "depth_mu",
+  "depth_theta",
+  "covariate_eff_sd",
+  "confounder_eff_sd",
+  "depth_conf_factor"
+)
+
+cat("\n==============================\n")
+cat("Basic data check\n")
+cat("==============================\n")
+
+cat("\nNumber of rows:\n")
+print(nrow(data))
+
+cat("\nMethods:\n")
+print(table(data$transformation))
+
+cat("\nNumber of parameter settings:\n")
+print(
+  data %>%
+    distinct(across(all_of(setting_vars))) %>%
+    nrow()
+)
+
+cat("\nReplications per setting and method:\n")
+data %>%
+  count(across(all_of(setting_vars)), transformation, name = "n_reps") %>%
+  count(n_reps) %>%
+  print_tbl()
+
+
+## ============================================================
+## 2. Overall method performance
+## ============================================================
+
+cat("\n==============================\n")
+cat("Overall method performance\n")
+cat("==============================\n")
+
+overall_method <- data %>%
+  group_by(transformation) %>%
+  summarize(
+    n_rows = n(),
+    mean_power = mean(power, na.rm = TRUE),
+    sd_power = sd(power, na.rm = TRUE),
+    median_power = median(power, na.rm = TRUE),
+    max_power = max(power, na.rm = TRUE),
+    prop_power_positive = mean(power > 0, na.rm = TRUE),
+    mean_fdr = mean(fdr, na.rm = TRUE),
+    sd_fdr = sd(fdr, na.rm = TRUE),
+    median_fdr = median(fdr, na.rm = TRUE),
+    max_fdr = max(fdr, na.rm = TRUE),
+    mean_rejections = mean(rejections, na.rm = TRUE),
+    max_rejections = max(rejections, na.rm = TRUE),
+    mean_TP = mean(TP, na.rm = TRUE),
+    mean_FP = mean(FP, na.rm = TRUE),
+    mean_FN = mean(FN, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(mean_power))
+
+print_tbl(overall_method)
+
+
+## ============================================================
+## 3. Summarize by setting and method
+## ============================================================
+
+summary_by_setting <- data %>%
+  group_by(across(all_of(setting_vars)), transformation) %>%
+  summarize(
+    n_reps = n(),
+    mean_power = mean(power, na.rm = TRUE),
+    sd_power = sd(power, na.rm = TRUE),
+    median_power = median(power, na.rm = TRUE),
+    max_power = max(power, na.rm = TRUE),
+    mean_fdr = mean(fdr, na.rm = TRUE),
+    sd_fdr = sd(fdr, na.rm = TRUE),
+    median_fdr = median(fdr, na.rm = TRUE),
+    max_fdr = max(fdr, na.rm = TRUE),
+    mean_TP = mean(TP, na.rm = TRUE),
+    mean_FP = mean(FP, na.rm = TRUE),
+    mean_FN = mean(FN, na.rm = TRUE),
+    mean_rejections = mean(rejections, na.rm = TRUE),
+    max_rejections = max(rejections, na.rm = TRUE),
+    mean_n_tested = mean(n_tested, na.rm = TRUE),
+    mean_n_na_p = if ("n_na_p" %in% names(data)) mean(n_na_p, na.rm = TRUE) else NA_real_,
+    mean_min_raw_p_signal = if ("min_raw_p_signal" %in% names(data)) mean(min_raw_p_signal, na.rm = TRUE) else NA_real_,
+    mean_min_adj_p_signal = if ("min_adj_p_signal" %in% names(data)) mean(min_adj_p_signal, na.rm = TRUE) else NA_real_,
+    mean_raw_signal_hits = if ("n_raw_p_signal_less_005" %in% names(data)) mean(n_raw_p_signal_less_005, na.rm = TRUE) else NA_real_,
+    mean_adj_signal_hits = if ("n_adj_p_signal_less_005" %in% names(data)) mean(n_adj_p_signal_less_005, na.rm = TRUE) else NA_real_,
+    .groups = "drop"
+  )
+
+cat("\n==============================\n")
+cat("Summary by setting and method: top 50 by power\n")
+cat("==============================\n")
+
+summary_by_setting %>%
+  arrange(desc(mean_power), desc(mean_rejections)) %>%
+  head(50) %>%
+  print_tbl(n = 50)
+
+
+## ============================================================
+## 4. Best method under each setting
+## ============================================================
+
+cat("\n==============================\n")
+cat("Best method under each setting\n")
+cat("==============================\n")
+
+best_by_power <- summary_by_setting %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(desc(mean_power), mean_fdr, transformation, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_power_method = as.character(transformation),
+    best_power = mean_power,
+    best_power_fdr = mean_fdr,
+    best_power_rejections = mean_rejections
+  )
+
+best_by_fdr <- summary_by_setting %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(mean_fdr, desc(mean_power), transformation, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_fdr_method = as.character(transformation),
+    best_fdr = mean_fdr,
+    best_fdr_power = mean_power
+  )
+
+best_overall <- summary_by_setting %>%
+  mutate(fdr_controlled = mean_fdr <= 0.05) %>%
+  group_by(across(all_of(setting_vars))) %>%
+  arrange(desc(fdr_controlled), desc(mean_power), mean_fdr, transformation, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  transmute(
+    across(all_of(setting_vars)),
+    best_overall_method = as.character(transformation),
+    best_overall_power = mean_power,
+    best_overall_fdr = mean_fdr,
+    best_overall_fdr_controlled = fdr_controlled
+  )
+
+best_setting_table <- best_by_power %>%
+  left_join(best_by_fdr, by = setting_vars) %>%
+  left_join(best_overall, by = setting_vars)
+
+cat("\nBest method table: first 50 settings\n")
+best_setting_table %>%
+  head(50) %>%
+  print_tbl(n = 50)
+
+cat("\nWinner count by highest power:\n")
+best_setting_table %>%
+  count(best_power_method, name = "n_settings") %>%
+  mutate(prop_settings = n_settings / sum(n_settings)) %>%
+  arrange(desc(n_settings)) %>%
+  print_tbl()
+
+cat("\nWinner count by lowest FDR:\n")
+best_setting_table %>%
+  count(best_fdr_method, name = "n_settings") %>%
+  mutate(prop_settings = n_settings / sum(n_settings)) %>%
+  arrange(desc(n_settings)) %>%
+  print_tbl()
+
+cat("\nWinner count by FDR-control-first then power:\n")
+best_setting_table %>%
+  count(best_overall_method, name = "n_settings") %>%
+  mutate(prop_settings = n_settings / sum(n_settings)) %>%
+  arrange(desc(n_settings)) %>%
+  print_tbl()
+
+
+## ============================================================
+## 5. Direct comparison: AHC vs ALR, CLR, ILR
+## ============================================================
+
+cat("\n==============================\n")
+cat("AHC vs other methods\n")
+cat("==============================\n")
+
+wide_setting <- summary_by_setting %>%
+  select(
+    all_of(setting_vars),
+    transformation,
+    mean_power,
+    mean_fdr,
+    mean_rejections,
+    mean_TP,
+    mean_FP
+  ) %>%
+  pivot_wider(
+    names_from = transformation,
+    values_from = c(mean_power, mean_fdr, mean_rejections, mean_TP, mean_FP)
+  )
+
+ahc_compare <- wide_setting %>%
+  mutate(
+    AHC_minus_ALR_power = mean_power_AHC - mean_power_ALR,
+    AHC_minus_CLR_power = mean_power_AHC - mean_power_CLR,
+    AHC_minus_ILR_power = mean_power_AHC - mean_power_ILR,
+    AHC_minus_ALR_fdr = mean_fdr_AHC - mean_fdr_ALR,
+    AHC_minus_CLR_fdr = mean_fdr_AHC - mean_fdr_CLR,
+    AHC_minus_ILR_fdr = mean_fdr_AHC - mean_fdr_ILR,
+    AHC_best_power = mean_power_AHC >= pmax(mean_power_ALR, mean_power_CLR, mean_power_ILR, na.rm = TRUE),
+    AHC_best_fdr = mean_fdr_AHC <= pmin(mean_fdr_ALR, mean_fdr_CLR, mean_fdr_ILR, na.rm = TRUE)
+  )
+
+cat("\nAHC pairwise power advantage summary:\n")
+ahc_compare %>%
+  summarize(
+    mean_AHC_minus_ALR_power = mean(AHC_minus_ALR_power, na.rm = TRUE),
+    mean_AHC_minus_CLR_power = mean(AHC_minus_CLR_power, na.rm = TRUE),
+    mean_AHC_minus_ILR_power = mean(AHC_minus_ILR_power, na.rm = TRUE),
+    prop_AHC_beats_ALR_power = mean(AHC_minus_ALR_power > 0, na.rm = TRUE),
+    prop_AHC_beats_CLR_power = mean(AHC_minus_CLR_power > 0, na.rm = TRUE),
+    prop_AHC_beats_ILR_power = mean(AHC_minus_ILR_power > 0, na.rm = TRUE),
+    prop_AHC_best_power = mean(AHC_best_power, na.rm = TRUE)
+  ) %>%
+  print_tbl()
+
+cat("\nSettings where AHC has largest power advantage over CLR:\n")
+ahc_compare %>%
+  arrange(desc(AHC_minus_CLR_power)) %>%
+  select(
+    all_of(setting_vars),
+    mean_power_AHC,
+    mean_power_CLR,
+    AHC_minus_CLR_power,
+    mean_fdr_AHC,
+    mean_fdr_CLR
+  ) %>%
+  head(20) %>%
+  print_tbl(n = 20)
+
+cat("\nSettings where AHC is worse than CLR by power:\n")
+ahc_compare %>%
+  arrange(AHC_minus_CLR_power) %>%
+  select(
+    all_of(setting_vars),
+    mean_power_AHC,
+    mean_power_CLR,
+    AHC_minus_CLR_power,
+    mean_fdr_AHC,
+    mean_fdr_CLR
+  ) %>%
+  head(20) %>%
+  print_tbl(n = 20)
+
+
+## ============================================================
+## 6. Model-based pattern analysis: power
+## ============================================================
+
+cat("\n==============================\n")
+cat("Linear models for mean power by method\n")
+cat("==============================\n")
+
+model_data <- summary_by_setting %>%
+  mutate(
+    depth_mu_f = factor(depth_mu, levels = sort(unique(depth_mu), decreasing = TRUE)),
+    depth_theta_f = factor(depth_theta),
+    covariate_eff_sd_f = factor(covariate_eff_sd),
+    confounder_eff_sd_f = factor(confounder_eff_sd),
+    depth_conf_factor_f = factor(depth_conf_factor)
+  )
+
+power_models <- list()
+power_coef_list <- list()
+
+for (trans in levels(model_data$transformation)) {
+  
+  subset_data <- model_data %>%
+    filter(transformation == trans)
+  
+  model <- lm(
+    mean_power ~ diff_otu_direct + diff_otu_mode +
+      depth_mu_f + depth_theta_f +
+      covariate_eff_sd_f + confounder_eff_sd_f + depth_conf_factor_f,
+    data = subset_data
+  )
+  
+  power_models[[trans]] <- model
+  
+  cat("\n------------------------------\n")
+  cat("Power model for:", trans, "\n")
+  cat("------------------------------\n")
+  print(summary(model))
+  
+  coefs <- as_tibble(summary(model)$coefficients, rownames = "variable") %>%
+    mutate(transformation = trans) %>%
+    relocate(transformation, variable)
+  
+  power_coef_list[[trans]] <- coefs
+}
+
+power_coefficients <- bind_rows(power_coef_list)
+
+cat("\nPower model coefficients, long format:\n")
+print_tbl(power_coefficients)
+
+cat("\nPower model coefficients, wide format using estimates only:\n")
+power_coefficients_wide <- power_coefficients %>%
+  select(transformation, variable, Estimate) %>%
+  pivot_wider(names_from = variable, values_from = Estimate)
+
+print_tbl(power_coefficients_wide)
+
+
+## ============================================================
+## 7. Model-based pattern analysis: FDR
+## ============================================================
+
+cat("\n==============================\n")
+cat("Linear models for mean FDR by method\n")
+cat("==============================\n")
+
+fdr_models <- list()
+fdr_coef_list <- list()
+
+for (trans in levels(model_data$transformation)) {
+  
+  subset_data <- model_data %>%
+    filter(transformation == trans)
+  
+  model <- lm(
+    mean_fdr ~ diff_otu_direct + diff_otu_mode +
+      depth_mu_f + depth_theta_f +
+      covariate_eff_sd_f + confounder_eff_sd_f + depth_conf_factor_f,
+    data = subset_data
+  )
+  
+  fdr_models[[trans]] <- model
+  
+  cat("\n------------------------------\n")
+  cat("FDR model for:", trans, "\n")
+  cat("------------------------------\n")
+  print(summary(model))
+  
+  coefs <- as_tibble(summary(model)$coefficients, rownames = "variable") %>%
+    mutate(transformation = trans) %>%
+    relocate(transformation, variable)
+  
+  fdr_coef_list[[trans]] <- coefs
+}
+
+fdr_coefficients <- bind_rows(fdr_coef_list)
+
+cat("\nFDR model coefficients, long format:\n")
+print_tbl(fdr_coefficients)
+
+cat("\nFDR model coefficients, wide format using estimates only:\n")
+fdr_coefficients_wide <- fdr_coefficients %>%
+  select(transformation, variable, Estimate) %>%
+  pivot_wider(names_from = variable, values_from = Estimate)
+
+print_tbl(fdr_coefficients_wide)
+
+
+## ============================================================
+## 8. Combined interaction models
+## ============================================================
+
+cat("\n==============================\n")
+cat("Combined interaction model for mean power\n")
+cat("==============================\n")
+
+combined_power_model <- lm(
+  mean_power ~ transformation * (
+    diff_otu_direct + diff_otu_mode +
+      depth_mu_f + depth_theta_f +
+      covariate_eff_sd_f + confounder_eff_sd_f + depth_conf_factor_f
+  ),
+  data = model_data
+)
+
+print(summary(combined_power_model))
+
+cat("\nANOVA table for combined power model:\n")
+print(anova(combined_power_model))
+
+
+cat("\n==============================\n")
+cat("Combined interaction model for mean FDR\n")
+cat("==============================\n")
+
+combined_fdr_model <- lm(
+  mean_fdr ~ transformation * (
+    diff_otu_direct + diff_otu_mode +
+      depth_mu_f + depth_theta_f +
+      covariate_eff_sd_f + confounder_eff_sd_f + depth_conf_factor_f
+  ),
+  data = model_data
+)
+
+print(summary(combined_fdr_model))
+
+cat("\nANOVA table for combined FDR model:\n")
+print(anova(combined_fdr_model))
+
+
+## ============================================================
+## 9. Diagnostics for p-values and Bonferroni filtering
+## ============================================================
+
+cat("\n==============================\n")
+cat("Diagnostics for p-values and Bonferroni filtering\n")
+cat("==============================\n")
+
+diagnostic_cols <- c(
+  "mean_min_raw_p_signal",
+  "mean_min_adj_p_signal",
+  "mean_raw_signal_hits",
+  "mean_adj_signal_hits"
+)
+
+if (all(diagnostic_cols %in% names(summary_by_setting))) {
+  
+  diagnostic_table <- summary_by_setting %>%
+    group_by(transformation) %>%
+    summarize(
+      avg_min_raw_p_signal = mean(mean_min_raw_p_signal, na.rm = TRUE),
+      avg_min_adj_p_signal = mean(mean_min_adj_p_signal, na.rm = TRUE),
+      avg_raw_signal_hits = mean(mean_raw_signal_hits, na.rm = TRUE),
+      avg_adj_signal_hits = mean(mean_adj_signal_hits, na.rm = TRUE),
+      avg_rejections = mean(mean_rejections, na.rm = TRUE),
+      avg_power = mean(mean_power, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(desc(avg_power))
+  
+  print_tbl(diagnostic_table)
+  
+  cat("\nSettings with raw signal hits but no adjusted signal hits:\n")
+  
+  summary_by_setting %>%
+    filter(mean_raw_signal_hits > 0, mean_adj_signal_hits == 0) %>%
+    arrange(desc(mean_raw_signal_hits)) %>%
+    select(
+      all_of(setting_vars),
+      transformation,
+      mean_power,
+      mean_fdr,
+      mean_raw_signal_hits,
+      mean_adj_signal_hits,
+      mean_min_raw_p_signal,
+      mean_min_adj_p_signal
+    ) %>%
+    head(50) %>%
+    print_tbl(n = 50)
+}
+
+
+## ============================================================
+## 10. Plots
+## ============================================================
+
+cat("\n==============================\n")
+cat("Plots\n")
+cat("==============================\n")
+
+p1 <- summary_by_setting %>%
+  group_by(diff_otu_mode, transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    avg_fdr = mean(mean_fdr, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = diff_otu_mode, y = avg_power, fill = transformation)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average Power by Differential OTU Mode",
+    x = "Differential OTU mode",
+    y = "Average power",
+    fill = "Method"
+  ) +
+  theme_bw()
+
+print(p1)
+
+
+p2 <- summary_by_setting %>%
+  group_by(depth_mu, transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    avg_fdr = mean(mean_fdr, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = factor(depth_mu), y = avg_power, group = transformation, color = transformation)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Average Power by Sequencing Depth",
+    x = "depth_mu",
+    y = "Average power",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(p2)
+
+
+p3 <- summary_by_setting %>%
+  group_by(diff_otu_direct, transformation) %>%
+  summarize(
+    avg_power = mean(mean_power, na.rm = TRUE),
+    avg_fdr = mean(mean_fdr, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = diff_otu_direct, y = avg_power, fill = transformation)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Average Power by Signal Direction",
+    x = "Differential OTU direction",
+    y = "Average power",
+    fill = "Method"
+  ) +
+  theme_bw()
+
+print(p3)
+
+
+p4 <- summary_by_setting %>%
+  ggplot(aes(x = mean_fdr, y = mean_power, color = transformation)) +
+  geom_vline(xintercept = 0.05, linetype = "dashed") +
+  geom_point(alpha = 0.5) +
+  labs(
+    title = "Power-FDR Tradeoff Across Settings",
+    x = "Mean FDR",
+    y = "Mean power",
+    color = "Method"
+  ) +
+  theme_bw()
+
+print(p4)
+
+
+p5 <- best_setting_table %>%
+  count(diff_otu_mode, depth_mu, best_power_method, name = "n_win") %>%
+  group_by(diff_otu_mode, depth_mu) %>%
+  arrange(desc(n_win), best_power_method, .by_group = TRUE) %>%
+  slice(1) %>%
+  ungroup() %>%
+  ggplot(aes(x = factor(depth_mu), y = diff_otu_mode, fill = best_power_method)) +
+  geom_tile() +
+  geom_text(aes(label = best_power_method), size = 3) +
+  labs(
+    title = "Most Frequent Best-Power Method by Mode and Sequencing Depth",
+    x = "depth_mu",
+    y = "Differential OTU mode",
+    fill = "Winner"
+  ) +
+  theme_bw()
+
+print(p5)
+
+
+p6 <- ahc_compare %>%
+  group_by(diff_otu_mode, depth_mu) %>%
+  summarize(
+    avg_AHC_minus_CLR_power = mean(AHC_minus_CLR_power, na.rm = TRUE),
+    avg_AHC_minus_ALR_power = mean(AHC_minus_ALR_power, na.rm = TRUE),
+    avg_AHC_minus_ILR_power = mean(AHC_minus_ILR_power, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  pivot_longer(
+    cols = starts_with("avg_AHC_minus"),
+    names_to = "comparison",
+    values_to = "power_difference"
+  ) %>%
+  mutate(
+    comparison = recode(
+      comparison,
+      avg_AHC_minus_CLR_power = "AHC - CLR",
+      avg_AHC_minus_ALR_power = "AHC - ALR",
+      avg_AHC_minus_ILR_power = "AHC - ILR"
+    )
+  ) %>%
+  ggplot(aes(x = factor(depth_mu), y = diff_otu_mode, fill = power_difference)) +
+  geom_tile() +
+  geom_text(aes(label = round(power_difference, 3)), size = 3) +
+  facet_wrap(~ comparison) +
+  labs(
+    title = "AHC Power Advantage by Mode and Depth",
+    x = "depth_mu",
+    y = "Differential OTU mode",
+    fill = "Power difference"
+  ) +
+  theme_bw()
+
+print(p6)
+
+
+## ============================================================
+## 11. Compact final printed summary
+## ============================================================
+
+cat("\n==============================\n")
+cat("Compact final summary\n")
+cat("==============================\n")
+
+cat("\nOverall ranking by mean power:\n")
+overall_method %>%
+  select(transformation, mean_power, mean_fdr, mean_rejections, prop_power_positive) %>%
+  arrange(desc(mean_power)) %>%
+  print_tbl()
+
+cat("\nOverall ranking by mean FDR:\n")
+overall_method %>%
+  select(transformation, mean_power, mean_fdr, mean_rejections, prop_power_positive) %>%
+  arrange(mean_fdr) %>%
+  print_tbl()
+
+cat("\nAHC comparison summary:\n")
+ahc_compare %>%
+  summarize(
+    mean_AHC_power = mean(mean_power_AHC, na.rm = TRUE),
+    mean_ALR_power = mean(mean_power_ALR, na.rm = TRUE),
+    mean_CLR_power = mean(mean_power_CLR, na.rm = TRUE),
+    mean_ILR_power = mean(mean_power_ILR, na.rm = TRUE),
+    prop_AHC_best_power = mean(AHC_best_power, na.rm = TRUE),
+    prop_AHC_best_fdr = mean(AHC_best_fdr, na.rm = TRUE),
+    mean_AHC_minus_ALR_power = mean(AHC_minus_ALR_power, na.rm = TRUE),
+    mean_AHC_minus_CLR_power = mean(AHC_minus_CLR_power, na.rm = TRUE),
+    mean_AHC_minus_ILR_power = mean(AHC_minus_ILR_power, na.rm = TRUE)
+  ) %>%
+  print_tbl()
+```
+
+
+
+
