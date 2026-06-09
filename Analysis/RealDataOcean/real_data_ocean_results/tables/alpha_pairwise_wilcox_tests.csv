@@ -1,0 +1,19 @@
+"method","MethodLabel","group1","group2","contrast","statistic","p_value","q_value"
+"AHC_D_norm","AHC (dominance)","SRF","DCM","SRF_vs_DCM",2598,0.0469013774317941,0.0469013774317941
+"AHC_D_norm","AHC (dominance)","SRF","MES","SRF_vs_MES",2882,3.21894889531066e-13,9.65684668593197e-13
+"AHC_D_norm","AHC (dominance)","DCM","MES","DCM_vs_MES",1707,4.37035745272331e-09,6.55553617908497e-09
+"AHC_E","AHC (evenness)","SRF","DCM","SRF_vs_DCM",1718,0.0469013774317941,0.0469013774317941
+"AHC_E","AHC (evenness)","SRF","MES","SRF_vs_MES",272,3.21894889531066e-13,9.65684668593197e-13
+"AHC_E","AHC (evenness)","DCM","MES","DCM_vs_MES",269,4.37035745272331e-09,6.55553617908497e-09
+"Shannon_drop0_evenness","Shannon (drop 0s)","SRF","DCM","SRF_vs_DCM",1759,0.0715754451387862,0.0715754451387862
+"Shannon_drop0_evenness","Shannon (drop 0s)","SRF","MES","SRF_vs_MES",387,3.07998855040948e-11,9.23996565122845e-11
+"Shannon_drop0_evenness","Shannon (drop 0s)","DCM","MES","DCM_vs_MES",316,4.1211733196093e-08,6.18175997941395e-08
+"Shannon_pc0.01_evenness","Shannon (ps = 0.01)","SRF","DCM","SRF_vs_DCM",1787,0.0938934853558166,0.0938934853558166
+"Shannon_pc0.01_evenness","Shannon (ps = 0.01)","SRF","MES","SRF_vs_MES",402,5.41958459627455e-11,1.62587537888236e-10
+"Shannon_pc0.01_evenness","Shannon (ps = 0.01)","DCM","MES","DCM_vs_MES",322,5.43177902756564e-08,8.14766854134846e-08
+"Shannon_pc0.5_evenness","Shannon (ps = 0.5)","SRF","DCM","SRF_vs_DCM",2170,0.958531083479841,0.958531083479841
+"Shannon_pc0.5_evenness","Shannon (ps = 0.5)","SRF","MES","SRF_vs_MES",1124,0.0115054454751613,0.0172581682127419
+"Shannon_pc0.5_evenness","Shannon (ps = 0.5)","DCM","MES","DCM_vs_MES",630,0.00349505704757451,0.0104851711427235
+"Shannon_pc1_evenness","Shannon (ps = 1)","SRF","DCM","SRF_vs_DCM",2248,0.68571840017063,0.68571840017063
+"Shannon_pc1_evenness","Shannon (ps = 1)","SRF","MES","SRF_vs_MES",1266,0.0829234853413993,0.124385228012099
+"Shannon_pc1_evenness","Shannon (ps = 1)","DCM","MES","DCM_vs_MES",733,0.0376130588806172,0.112839176641852

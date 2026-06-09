@@ -1,0 +1,30 @@
+RealDataOcean AHC analysis completed.
+Run time: 2026-06-06 15:55:48.844838
+Analysis directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean
+Output directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results
+Layers used: SRF, DCM, MES
+Layer counts: SRF=83, DCM=52, MES=38
+All selected taxa: 23692
+DA filtered taxa: 4664
+Pseudo-counts: 0.01, 0.5, 1
+AHC/CLR and DESeq2 DA adjustment: fdr adjusted p-values; threshold = 0.05
+LEfSe: lefser package, one-vs-rest layer runs unioned into one LEfSe set; p adjustment = fdr ; LDA threshold = 2
+
+Key tables:
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/alpha_layer_summary.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/alpha_layer_anova_tests.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/beta_permanova_layer.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/beta_pcoa_procrustes.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_omnibus_anova_AHC_CLR.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_deseq2_omnibus_lrt.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_lefse_one_vs_rest.csv
+
+Key figures:
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig1_alpha_diversity_by_layer.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig1b_alpha_method_procrustes.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig2_beta_pcoa_by_method.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig2b_beta_pcoa_procrustes.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig3_da_venn_AHC_CLR_LEfSe.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig3b_da_upset_AHC_CLR_LEfSe.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig4_da_venn_AHC_CLR_DESeq2.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig4b_da_upset_AHC_CLR_DESeq2.png

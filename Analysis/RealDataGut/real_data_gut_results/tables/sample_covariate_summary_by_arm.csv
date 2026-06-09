@@ -1,0 +1,3 @@
+"arm","ArmLabel","n","age_mean","age_sd","age_median","day_mean","day_sd","day_median","before_surgery_n","surgery_day_n","after_surgery_n"
+"control","Control",212,58.4966981132075,11.39287373687,62,23.2594339622642,28.4918489326729,13,37,6,169
+"treatment","Treatment",277,50.9350180505415,12.0328882537791,50.5,20.2418772563177,25.2272852503162,13,54,5,218

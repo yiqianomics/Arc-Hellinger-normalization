@@ -1,0 +1,37 @@
+RealDataGut AHC analysis completed.
+Run time: 2026-06-08 20:08:46.130059
+Analysis directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut
+Output directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results
+Outcome: arm
+Confounders: age, day
+Day coding: negative = before surgery; zero = surgery day; positive = after surgery
+Arm counts: control=212, treatment=277
+Complete-case samples: 489
+Excluded samples missing arm/age/day: 9
+All selected taxa: 6548
+DA filtered taxa: 219
+Pseudo-counts: 0.01, 0.5, 1
+AHC/CLR DA model: feature ~ arm + age + day compared to feature ~ age + day
+DESeq2 DA model: design = ~ age + day + arm; LRT reduced = ~ age + day
+AHC/CLR and DESeq2 DA adjustment: fdr adjusted p-values; threshold = 0.05
+LEfSe: lefser package, one-vs-rest arm runs; no age/day adjustment available in this LEfSe step; p adjustment = fdr ; LDA threshold = 2
+
+Key tables:
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/data_summary.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/alpha_arm_summary.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/alpha_arm_lm_adjusted_tests.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/beta_permanova_adjusted.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/beta_pcoa_procrustes.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/da_omnibus_lm_adjusted_AHC_CLR.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/da_deseq2_omnibus_lrt_adjusted.csv
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/tables/da_lefse_one_vs_rest_unadjusted.csv
+
+Key figures:
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig1_alpha_diversity_by_arm.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig1b_alpha_method_procrustes.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig2_beta_pcoa_by_method.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig2b_beta_pcoa_procrustes.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig3_da_venn_AHC_CLR_LEfSe.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig3b_da_upset_AHC_CLR_LEfSe.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig4_da_venn_AHC_CLR_DESeq2.png
+/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataGut/real_data_gut_results/figures/fig4b_da_upset_AHC_CLR_DESeq2.png
