@@ -1,0 +1,25 @@
+Package: ArcHellinger
+Type: Package
+Title: Arc-Hellinger Normalization for Sparse Compositional Data
+Version: 0.1.0
+Authors@R: 
+    person(
+        given = "Yiqian",
+        family = "Zhang",
+        role = c("aut", "cre"),
+        email = "92595307+yiqianomics@users.noreply.github.com"
+    )
+Description: Provides Hellinger-Riemann intrinsic coordinates and
+    Simplex Hellinger alpha and beta diversity summaries for sparse
+    compositional data on the closed simplex. The methods use square-root
+    compositions and angular calibration, allowing exact zeros without
+    pseudo-count replacement.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 4.1.0)
+Imports:
+    stats
+Config/roxygen2/version: 8.0.0
+RoxygenNote: 7.3.2
