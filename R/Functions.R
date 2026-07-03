@@ -180,11 +180,11 @@ RHRIC <- function(X, reference = NULL) {
 #' Computes Simplex Hellinger alpha diversity from Hellinger-Riemann intrinsic
 #' coordinates.
 #'
-#' The dominance score is the normalized distance from the uniform composition:
-#' `||HRIC(pi)|| / acos(1 / sqrt(p))`.
+#' The dominance score is the geodesic distance from the uniform composition:
+#' `D(pi) = ||HRIC(pi)|| = asin(s(pi))`.
 #'
-#' The evenness score is its complement:
-#' `1 - dominance`.
+#' The evenness score is:
+#' `1 - D(pi) / acos(1 / sqrt(p))`.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
@@ -204,13 +204,12 @@ Simplex_Hellinger_alpha <- function(
   
   prep <- .prepare_simplex_hellinger(X)
   
-  D <- asin(prep$s_pi)
+  dominance <- asin(prep$s_pi)
+  
   D_max <- acos(1 / sqrt(prep$p))
   
-  dominance <- D / D_max
-  dominance <- pmin(pmax(dominance, 0), 1)
-  
-  evenness <- 1 - dominance
+  evenness <- 1 - dominance / D_max
+  evenness <- pmin(pmax(evenness, 0), 1)
   
   if (measure == "both") {
     out <- data.frame(

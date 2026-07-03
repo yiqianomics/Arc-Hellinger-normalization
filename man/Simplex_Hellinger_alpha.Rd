@@ -22,9 +22,9 @@ Computes Simplex Hellinger alpha diversity from Hellinger-Riemann intrinsic
 coordinates.
 }
 \details{
-The dominance score is the normalized distance from the uniform composition:
-\verb{||HRIC(pi)|| / acos(1 / sqrt(p))}.
+The dominance score is the geodesic distance from the uniform composition:
+\verb{D(pi) = ||HRIC(pi)|| = asin(s(pi))}.
 
-The evenness score is its complement:
-\code{1 - dominance}.
+The evenness score is:
+\code{1 - D(pi) / acos(1 / sqrt(p))}.
 }
