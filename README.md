@@ -62,9 +62,9 @@ HRIC(X)
 RHRIC(X)
 
 # Diversity summaries
-SHalpha(X)                 # per-sample evenness
-SHgamma(X)                 # cohort-center evenness
-SHbeta(X)                  # gamma - mean(alpha)
+SHalpha(X)                 # alpha diversity (per-sample evenness)
+SHgamma(X)                 # gamma diversity (evenness of the cohort center)
+SHbeta(X)                  # beta diversity (diversity among samples)
 
 group <- c("A", "A", "B", "B")
 SHdelta(X, group)          # between-group turnover
