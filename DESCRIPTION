@@ -1,6 +1,6 @@
-Package: ArcHellinger
+Package: HRIC
 Type: Package
-Title: Arc-Hellinger Normalization for Sparse Compositional Data
+Title: Hellinger-Riemann Intrinsic Coordinates and Diversity
 Version: 0.1.0
 Authors@R: 
     person(
@@ -10,16 +10,15 @@ Authors@R:
         email = "zhang.16383@osu.edu"
     )
 Description: Provides Hellinger-Riemann intrinsic coordinates and
-    Simplex Hellinger alpha and beta diversity summaries for sparse
-    compositional data on the closed simplex. The methods use square-root
-    compositions and angular calibration, allowing exact zeros without
-    pseudo-count replacement.
+    reference-based coordinates for compositional data on the closed
+    simplex, together with Simplex Hellinger alpha, beta, and gamma
+    diversity summaries and a between-group turnover statistic. The
+    methods use square-root compositions and angular calibration,
+    allowing exact zeros without pseudo-count replacement.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.1.0)
-Imports:
-    stats
 Config/roxygen2/version: 8.0.0
 RoxygenNote: 8.0.0
