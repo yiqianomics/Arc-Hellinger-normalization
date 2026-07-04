@@ -2,5 +2,7 @@
 
 export(HRIC)
 export(RHRIC)
-export(Simplex_Hellinger_alpha)
-export(Simplex_Hellinger_beta)
+export(SHalpha)
+export(SHbeta)
+export(SHdelta)
+export(SHgamma)

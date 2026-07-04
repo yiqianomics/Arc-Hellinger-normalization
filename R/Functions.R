@@ -1,3 +1,25 @@
+# =====================================================================
+# Simplex Hellinger tools: coordinates and diversity
+# =====================================================================
+# Coordinates on the closed simplex:
+#   HRIC()    centered Hellinger-Riemann intrinsic coordinates
+#   RHRIC()   reference-based coordinates
+#
+# Diversity built from HRIC coordinates:
+#   SHalpha() per-sample evenness (alpha)
+#   SHgamma() evenness of the cohort center (gamma)
+#   SHbeta()  additive partition, gamma - mean(alpha) (beta)
+#   SHdelta() between-group dispersion after removing the group-size
+#             weighted within-group dispersion (delta)
+#
+# The file uses base R only (no package dependencies).
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------
+
 #' Prepare Simplex Hellinger Quantities
 #'
 #' Internal helper for Simplex Hellinger transformations.
@@ -61,31 +83,6 @@
 }
 
 
-#' Hellinger-Riemann Intrinsic Coordinates
-#'
-#' Computes centered Hellinger-Riemann intrinsic coordinates for compositional
-#' data on the closed simplex.
-#'
-#' @param X Numeric matrix or data frame. Rows are samples and columns are
-#'   components, taxa, or features.
-#'
-#' @return A numeric matrix with the same dimensions as `X`.
-#'
-#' @export
-HRIC <- function(X) {
-  
-  prep <- .prepare_simplex_hellinger(X)
-  
-  centered <- prep$sqrt_Pi - outer(prep$c_pi, prep$sqrt_pi0)
-  out <- sweep(centered, 1, prep$scale_factor, FUN = "*")
-  
-  rownames(out) <- rownames(prep$X)
-  colnames(out) <- colnames(prep$X)
-  
-  out
-}
-
-
 #' Match Reference Component
 #'
 #' Internal helper for reference-based coordinates.
@@ -122,6 +119,35 @@ HRIC <- function(X) {
   }
   
   reference
+}
+
+
+# ---------------------------------------------------------------------
+# Coordinates
+# ---------------------------------------------------------------------
+
+#' Hellinger-Riemann Intrinsic Coordinates
+#'
+#' Computes centered Hellinger-Riemann intrinsic coordinates for compositional
+#' data on the closed simplex.
+#'
+#' @param X Numeric matrix or data frame. Rows are samples and columns are
+#'   components, taxa, or features.
+#'
+#' @return A numeric matrix with the same dimensions as `X`.
+#'
+#' @export
+HRIC <- function(X) {
+  
+  prep <- .prepare_simplex_hellinger(X)
+  
+  centered <- prep$sqrt_Pi - outer(prep$c_pi, prep$sqrt_pi0)
+  out <- sweep(centered, 1, prep$scale_factor, FUN = "*")
+  
+  rownames(out) <- rownames(prep$X)
+  colnames(out) <- colnames(prep$X)
+  
+  out
 }
 
 
@@ -175,102 +201,204 @@ RHRIC <- function(X, reference = NULL) {
 }
 
 
+# ---------------------------------------------------------------------
+# Diversity
+# ---------------------------------------------------------------------
+
 #' Simplex Hellinger Alpha Diversity
 #'
-#' Computes Simplex Hellinger alpha diversity from Hellinger-Riemann intrinsic
-#' coordinates.
+#' Computes the per-sample Simplex Hellinger alpha diversity from the
+#' Hellinger-Riemann intrinsic coordinates. The measure is an evenness score.
 #'
-#' The dominance score is the geodesic distance from the uniform composition:
-#' `D(pi) = ||HRIC(pi)|| = asin(s(pi))`.
+#' For sample \eqn{i} with coordinate vector \eqn{Z_i = \mathrm{HRIC}(\pi_i)},
+#' \deqn{\alpha_{\mathrm{SH}}(\pi_i) = 1 -
+#'       \frac{\lVert Z_i \rVert_2^2}{A_p^2}, \qquad
+#'       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right),}
+#' where \eqn{A_p} is the maximum Simplex Hellinger distance from the uniform
+#' composition and \eqn{p} is the number of components.
 #'
-#' The evenness score is:
-#' `1 - D(pi) / acos(1 / sqrt(p))`.
+#' Values near 1 indicate a composition close to uniform abundance across
+#' components. Lower values indicate concentration toward fewer components.
+#' Exact zeros are allowed because HRIC is defined on the closed simplex.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
-#' @param measure Alpha diversity measure to return. Options are
-#'   `"dominance"`, `"evenness"`, or `"both"`.
 #'
-#' @return A numeric vector if `measure` is `"dominance"` or `"evenness"`;
-#'   otherwise a data frame with both measures.
+#' @return A named numeric vector of length `nrow(X)`, one alpha value per
+#'   sample, each in \eqn{[0, 1]}.
+#'
+#' @examples
+#' X <- matrix(c(1, 1, 1, 1,
+#'               10, 1, 1, 1,
+#'               1, 0, 0, 0),
+#'             nrow = 3, byrow = TRUE)
+#' SHalpha(X)
 #'
 #' @export
-Simplex_Hellinger_alpha <- function(
-    X,
-    measure = c("dominance", "evenness", "both")
-) {
+SHalpha <- function(X) {
   
-  measure <- match.arg(measure)
+  Z <- HRIC(X)
+  p <- ncol(Z)
+  A_p <- asin(sqrt(1 - 1 / p))
   
-  prep <- .prepare_simplex_hellinger(X)
+  norm_sq <- rowSums(Z^2)
+  alpha <- 1 - norm_sq / A_p^2
+  alpha <- pmin(pmax(alpha, 0), 1)
   
-  dominance <- asin(prep$s_pi)
+  names(alpha) <- rownames(Z)
+  alpha
+}
+
+
+#' Simplex Hellinger Gamma Diversity
+#'
+#' Computes the Simplex Hellinger gamma diversity, defined as the evenness of
+#' the cohort center in Hellinger-Riemann intrinsic coordinates.
+#'
+#' Let \eqn{\bar{Z} = n^{-1} \sum_{i=1}^n Z_i} be the mean coordinate vector
+#' over the \eqn{n} samples. Then
+#' \deqn{\gamma_{\mathrm{SH}} = 1 -
+#'       \frac{\lVert \bar{Z} \rVert_2^2}{A_p^2}, \qquad
+#'       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right).}
+#'
+#' @param X Numeric matrix or data frame. Rows are samples and columns are
+#'   components, taxa, or features.
+#'
+#' @return A single numeric value in \eqn{[0, 1]}.
+#'
+#' @examples
+#' X <- matrix(c(1, 1, 1, 1,
+#'               10, 1, 1, 1,
+#'               1, 0, 0, 0),
+#'             nrow = 3, byrow = TRUE)
+#' SHgamma(X)
+#'
+#' @export
+SHgamma <- function(X) {
   
-  D_max <- acos(1 / sqrt(prep$p))
+  Z <- HRIC(X)
+  p <- ncol(Z)
+  A_p <- asin(sqrt(1 - 1 / p))
   
-  evenness <- 1 - dominance / D_max
-  evenness <- pmin(pmax(evenness, 0), 1)
+  Z_bar <- colMeans(Z)
+  gamma <- 1 - sum(Z_bar^2) / A_p^2
   
-  if (measure == "both") {
-    out <- data.frame(
-      dominance = dominance,
-      evenness = evenness
-    )
-    
-    rownames(out) <- rownames(prep$X)
-    
-    return(out)
-  }
-  
-  out <- switch(
-    measure,
-    dominance = dominance,
-    evenness = evenness
-  )
-  
-  names(out) <- rownames(prep$X)
-  
-  out
+  min(max(gamma, 0), 1)
 }
 
 
 #' Simplex Hellinger Beta Diversity
 #'
-#' Computes Simplex Hellinger beta diversity as the Euclidean distance between
-#' Hellinger-Riemann intrinsic coordinate vectors.
+#' Computes the Simplex Hellinger beta diversity as the additive partition
+#' between gamma diversity and the mean sample-level alpha diversity:
+#' \deqn{\beta_{\mathrm{SH}} = \gamma_{\mathrm{SH}} -
+#'       \frac{1}{n} \sum_{i=1}^n \alpha_{\mathrm{SH}}(\pi_i).}
+#'
+#' By the variance decomposition of the coordinate vectors this quantity is
+#' always non-negative. It equals the mean squared deviation of the sample
+#' coordinates from the cohort center divided by \eqn{A_p^2}.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
-#' @param output Output type. Either `"dist"` or `"matrix"`.
-#' @param diag Logical. Include the diagonal if returning a `dist` object.
-#' @param upper Logical. Include the upper triangle if returning a `dist` object.
 #'
-#' @return A `dist` object or a square distance matrix.
+#' @return A single non-negative numeric value.
+#'
+#' @seealso [SHalpha()], [SHgamma()]
+#'
+#' @examples
+#' X <- matrix(c(1, 1, 1, 1,
+#'               10, 1, 1, 1,
+#'               1, 0, 0, 0),
+#'             nrow = 3, byrow = TRUE)
+#' SHbeta(X)
 #'
 #' @export
-Simplex_Hellinger_beta <- function(
-    X,
-    output = c("dist", "matrix"),
-    diag = FALSE,
-    upper = FALSE
-) {
+SHbeta <- function(X) {
   
-  output <- match.arg(output)
+  gamma <- SHgamma(X)
+  mean_alpha <- mean(SHalpha(X))
   
-  coordinates <- HRIC(X)
+  gamma - mean_alpha
+}
+
+
+#' Simplex Hellinger Between-Group Turnover
+#'
+#' Partitions the total dispersion of the Hellinger-Riemann intrinsic
+#' coordinates into within-group and between-group components and returns the
+#' between-group component \eqn{\delta}. This is the residual turnover that
+#' remains after subtracting the group-size weighted within-group dispersion.
+#'
+#' Let \eqn{\bar{Z}} be the grand center and \eqn{\bar{Z}_k} the center of
+#' group \eqn{k} with \eqn{n_k} samples. Define
+#' \deqn{\beta_{\mathrm{cohort}} = \frac{1}{n} \sum_{i=1}^n
+#'       \lVert Z_i - \bar{Z} \rVert_2^2, \qquad
+#'       \beta_{g_k} = \frac{1}{n_k} \sum_{g_i = k}
+#'       \lVert Z_i - \bar{Z}_k \rVert_2^2 .}
+#' Then
+#' \deqn{\delta = \beta_{\mathrm{cohort}} -
+#'       \sum_{k} \frac{n_k}{n} \, \beta_{g_k} .}
+#' A positive \eqn{\delta} means some turnover remains after removing the
+#' within-group dispersion. The value is non-negative and generalizes to any
+#' number of groups (two or more).
+#'
+#' @param X Numeric matrix or data frame. Rows are samples and columns are
+#'   components, taxa, or features.
+#' @param group A vector of group labels with one entry per row of `X`, in the
+#'   same order as the rows. Coerced to a factor; unused levels are dropped.
+#'   At least two distinct groups are required.
+#'
+#' @return A single non-negative numeric value.
+#'
+#' @examples
+#' X <- matrix(c(1, 1, 1, 1,
+#'               8, 1, 1, 1,
+#'               1, 1, 1, 8,
+#'               1, 1, 8, 1,
+#'               2, 2, 1, 1,
+#'               1, 1, 2, 2),
+#'             nrow = 6, byrow = TRUE)
+#' grp <- c("A", "A", "A", "B", "B", "B")
+#' SHdelta(X, grp)
+#'
+#' @export
+SHdelta <- function(X, group) {
   
-  out <- stats::dist(
-    coordinates,
-    method = "euclidean",
-    diag = diag,
-    upper = upper
-  )
-  
-  attr(out, "method") <- "Simplex Hellinger"
-  
-  if (output == "matrix") {
-    return(as.matrix(out))
+  if (missing(group)) {
+    stop("group is required for SHdelta.", call. = FALSE)
   }
   
-  out
+  Z <- HRIC(X)
+  n <- nrow(Z)
+  
+  if (length(group) != n) {
+    stop("group must have one entry per row of X (length nrow(X)).", call. = FALSE)
+  }
+  
+  if (anyNA(group)) {
+    stop("group contains NA values. Please handle missing values first.", call. = FALSE)
+  }
+  
+  g <- droplevels(as.factor(group))
+  
+  if (nlevels(g) < 2) {
+    stop("group must contain at least two distinct groups.", call. = FALSE)
+  }
+  
+  Z_bar <- colMeans(Z)
+  cohort_dev <- sweep(Z, 2, Z_bar, FUN = "-")
+  beta_cohort <- mean(rowSums(cohort_dev^2))
+  
+  within <- 0
+  for (k in levels(g)) {
+    idx <- which(g == k)
+    n_k <- length(idx)
+    Z_k <- Z[idx, , drop = FALSE]
+    Z_bar_k <- colMeans(Z_k)
+    group_dev <- sweep(Z_k, 2, Z_bar_k, FUN = "-")
+    beta_gk <- mean(rowSums(group_dev^2))
+    within <- within + (n_k / n) * beta_gk
+  }
+  
+  beta_cohort - within
 }

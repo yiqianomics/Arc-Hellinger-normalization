@@ -7,7 +7,7 @@ Authors@R:
         given = "Yiqian",
         family = "Zhang",
         role = c("aut", "cre"),
-        email = "92595307+yiqianomics@users.noreply.github.com"
+        email = "zhang.16383@osu.edu"
     )
 Description: Provides Hellinger-Riemann intrinsic coordinates and
     Simplex Hellinger alpha and beta diversity summaries for sparse
