@@ -11,18 +11,38 @@ SHbeta(X)
 components, taxa, or features.}
 }
 \value{
-A single non-negative numeric value.
+A single numeric value in \eqn{[0, 1]}.
 }
 \description{
-Computes the Simplex Hellinger beta diversity as the additive partition
-between gamma diversity and the mean sample-level alpha diversity:
-\deqn{\beta_{\mathrm{SH}} = \gamma_{\mathrm{SH}} -
-      \frac{1}{n} \sum_{i=1}^n \alpha_{\mathrm{SH}}(\pi_i).}
+Computes the non-negative additive beta component as the difference between
+the gamma diversity of the equal-weight mean sample composition and the
+mean sample-level alpha diversity:
+\deqn{\beta_{\mathrm{SH}} =
+      \gamma_{\mathrm{SH}} -
+      \frac{1}{n}\sum_{i=1}^n
+      \alpha_{\mathrm{SH}}(\pi_i).}
 }
 \details{
-By the variance decomposition of the coordinate vectors this quantity is
-always non-negative. It equals the mean squared deviation of the sample
-coordinates from the cohort center divided by \eqn{A_p^2}.
+Equivalently, let
+\deqn{f(\pi) =
+      \lVert \mathrm{HRIC}(\pi)\rVert_2^2.}
+Then
+\deqn{\beta_{\mathrm{SH}} =
+      \frac{
+      n^{-1}\sum_{i=1}^n f(\pi_i) -
+      f(\bar{\pi})
+      }{A_p^2}.}
+
+The function \eqn{f} is convex on the closed simplex, so Jensen's
+inequality implies that this quantity is non-negative. Consequently,
+\deqn{\gamma_{\mathrm{SH}} =
+      \frac{1}{n}\sum_{i=1}^n
+      \alpha_{\mathrm{SH}}(\pi_i)
+      + \beta_{\mathrm{SH}}.}
+
+This beta component is a Jensen-gap partition based on the mean sample
+composition. In general, it is not identical to the Euclidean variance of
+the HRIC coordinate vectors around their coordinate-wise mean.
 }
 \examples{
 X <- matrix(c(1, 1, 1, 1,

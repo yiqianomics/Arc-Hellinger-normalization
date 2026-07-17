@@ -7,8 +7,8 @@
 #
 # Diversity built from HRIC coordinates:
 #   SHalpha() per-sample evenness (alpha)
-#   SHgamma() evenness of the cohort center (gamma)
-#   SHbeta()  additive partition, gamma - mean(alpha) (beta)
+#   SHgamma() evenness of the equal-weight mean sample composition (gamma)
+#   SHbeta()  non-negative partition, gamma - mean(alpha) (beta)
 #   SHdelta() between-group dispersion after removing the group-size
 #             weighted within-group dispersion (delta)
 #
@@ -36,24 +36,40 @@
     stop("X must be numeric.", call. = FALSE)
   }
   
-  if (anyNA(X)) {
-    stop("X contains NA values. Please handle missing values first.", call. = FALSE)
+  if (nrow(X) < 1L) {
+    stop("X must contain at least one sample.", call. = FALSE)
+  }
+  
+  if (any(!is.finite(X))) {
+    stop(
+      "X must contain finite, non-missing values only.",
+      call. = FALSE
+    )
   }
   
   if (any(X < 0)) {
-    stop("X must contain non-negative values only.", call. = FALSE)
+    stop(
+      "X must contain non-negative values only.",
+      call. = FALSE
+    )
   }
   
   p <- ncol(X)
   
-  if (p < 2) {
-    stop("X must contain at least two components.", call. = FALSE)
+  if (p < 2L) {
+    stop(
+      "X must contain at least two components.",
+      call. = FALSE
+    )
   }
   
   row_totals <- rowSums(X)
   
   if (any(row_totals <= 0)) {
-    stop("Each row must have positive total abundance.", call. = FALSE)
+    stop(
+      "Each row must have positive total abundance.",
+      call. = FALSE
+    )
   }
   
   Pi <- sweep(X, 1, row_totals, FUN = "/")
@@ -68,7 +84,8 @@
   
   scale_factor <- rep(1, length(s_pi))
   non_uniform <- s_pi > 0
-  scale_factor[non_uniform] <- asin(s_pi[non_uniform]) / s_pi[non_uniform]
+  scale_factor[non_uniform] <-
+    asin(s_pi[non_uniform]) / s_pi[non_uniform]
   
   list(
     X = X,
@@ -81,7 +98,6 @@
     scale_factor = scale_factor
   )
 }
-
 
 #' Match Reference Component
 #'
@@ -253,12 +269,24 @@ SHalpha <- function(X) {
 #' Simplex Hellinger Gamma Diversity
 #'
 #' Computes the Simplex Hellinger gamma diversity, defined as the evenness of
-#' the cohort center in Hellinger-Riemann intrinsic coordinates.
+#' the equal-weight mean sample composition.
 #'
-#' Let \eqn{\bar{Z} = n^{-1} \sum_{i=1}^n Z_i} be the mean coordinate vector
-#' over the \eqn{n} samples. Then
-#' \deqn{\gamma_{\mathrm{SH}} = 1 -
-#'       \frac{\lVert \bar{Z} \rVert_2^2}{A_p^2}, \qquad
+#' For sample \eqn{i}, let
+#' \deqn{\pi_i =
+#'       \frac{X_i}{\sum_{j=1}^p X_{ij}}}
+#' denote its total-sum-scaled composition. The cohort-level mean composition
+#' is
+#' \deqn{\bar{\pi} =
+#'       \frac{1}{n}\sum_{i=1}^n \pi_i.}
+#' Thus, every sample contributes equally regardless of its total abundance
+#' or sequencing depth.
+#'
+#' Let
+#' \deqn{Z_\gamma = \mathrm{HRIC}(\bar{\pi}).}
+#' The gamma diversity is
+#' \deqn{\gamma_{\mathrm{SH}} =
+#'       1 - \frac{\lVert Z_\gamma\rVert_2^2}{A_p^2},
+#'       \qquad
 #'       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right).}
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
@@ -276,12 +304,29 @@ SHalpha <- function(X) {
 #' @export
 SHgamma <- function(X) {
   
-  Z <- HRIC(X)
-  p <- ncol(Z)
+  prep <- .prepare_simplex_hellinger(X)
+  
+  ## Step 1: TSS normalization is already stored in prep$Pi.
+  ## Step 2: compute the equal-weight mean sample composition.
+  mean_composition <- colMeans(prep$Pi)
+  
+  ## Protect against small floating-point deviation from a unit sum.
+  mean_composition <- mean_composition / sum(mean_composition)
+  
+  ## Step 3: calculate HRIC for the mean sample composition.
+  mean_composition <- matrix(
+    mean_composition,
+    nrow = 1,
+    dimnames = list(NULL, colnames(prep$X))
+  )
+  
+  Z_gamma <- HRIC(mean_composition)
+  
+  ## Step 4: convert squared HRIC distance into an evenness score.
+  p <- ncol(Z_gamma)
   A_p <- asin(sqrt(1 - 1 / p))
   
-  Z_bar <- colMeans(Z)
-  gamma <- 1 - sum(Z_bar^2) / A_p^2
+  gamma <- 1 - sum(Z_gamma^2) / A_p^2
   
   min(max(gamma, 0), 1)
 }
@@ -289,19 +334,39 @@ SHgamma <- function(X) {
 
 #' Simplex Hellinger Beta Diversity
 #'
-#' Computes the Simplex Hellinger beta diversity as the additive partition
-#' between gamma diversity and the mean sample-level alpha diversity:
-#' \deqn{\beta_{\mathrm{SH}} = \gamma_{\mathrm{SH}} -
-#'       \frac{1}{n} \sum_{i=1}^n \alpha_{\mathrm{SH}}(\pi_i).}
+#' Computes the non-negative additive beta component as the difference between
+#' the gamma diversity of the equal-weight mean sample composition and the
+#' mean sample-level alpha diversity:
+#' \deqn{\beta_{\mathrm{SH}} =
+#'       \gamma_{\mathrm{SH}} -
+#'       \frac{1}{n}\sum_{i=1}^n
+#'       \alpha_{\mathrm{SH}}(\pi_i).}
 #'
-#' By the variance decomposition of the coordinate vectors this quantity is
-#' always non-negative. It equals the mean squared deviation of the sample
-#' coordinates from the cohort center divided by \eqn{A_p^2}.
+#' Equivalently, let
+#' \deqn{f(\pi) =
+#'       \lVert \mathrm{HRIC}(\pi)\rVert_2^2.}
+#' Then
+#' \deqn{\beta_{\mathrm{SH}} =
+#'       \frac{
+#'       n^{-1}\sum_{i=1}^n f(\pi_i) -
+#'       f(\bar{\pi})
+#'       }{A_p^2}.}
+#'
+#' The function \eqn{f} is convex on the closed simplex, so Jensen's
+#' inequality implies that this quantity is non-negative. Consequently,
+#' \deqn{\gamma_{\mathrm{SH}} =
+#'       \frac{1}{n}\sum_{i=1}^n
+#'       \alpha_{\mathrm{SH}}(\pi_i)
+#'       + \beta_{\mathrm{SH}}.}
+#'
+#' This beta component is a Jensen-gap partition based on the mean sample
+#' composition. In general, it is not identical to the Euclidean variance of
+#' the HRIC coordinate vectors around their coordinate-wise mean.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
 #'
-#' @return A single non-negative numeric value.
+#' @return A single numeric value in \eqn{[0, 1]}.
 #'
 #' @seealso [SHalpha()], [SHgamma()]
 #'
@@ -318,7 +383,10 @@ SHbeta <- function(X) {
   gamma <- SHgamma(X)
   mean_alpha <- mean(SHalpha(X))
   
-  gamma - mean_alpha
+  beta <- gamma - mean_alpha
+  
+  ## Theoretical beta is in [0, 1]; clipping removes only numerical error.
+  min(max(beta, 0), 1)
 }
 
 
@@ -372,33 +440,44 @@ SHdelta <- function(X, group) {
   n <- nrow(Z)
   
   if (length(group) != n) {
-    stop("group must have one entry per row of X (length nrow(X)).", call. = FALSE)
+    stop(
+      "group must have one entry per row of X (length nrow(X)).",
+      call. = FALSE
+    )
   }
   
   if (anyNA(group)) {
-    stop("group contains NA values. Please handle missing values first.", call. = FALSE)
+    stop(
+      "group contains NA values. Please handle missing values first.",
+      call. = FALSE
+    )
   }
   
   g <- droplevels(as.factor(group))
   
-  if (nlevels(g) < 2) {
-    stop("group must contain at least two distinct groups.", call. = FALSE)
+  if (nlevels(g) < 2L) {
+    stop(
+      "group must contain at least two distinct groups.",
+      call. = FALSE
+    )
   }
   
   Z_bar <- colMeans(Z)
-  cohort_dev <- sweep(Z, 2, Z_bar, FUN = "-")
-  beta_cohort <- mean(rowSums(cohort_dev^2))
   
-  within <- 0
+  between <- 0
+  
   for (k in levels(g)) {
     idx <- which(g == k)
     n_k <- length(idx)
+    
     Z_k <- Z[idx, , drop = FALSE]
     Z_bar_k <- colMeans(Z_k)
-    group_dev <- sweep(Z_k, 2, Z_bar_k, FUN = "-")
-    beta_gk <- mean(rowSums(group_dev^2))
-    within <- within + (n_k / n) * beta_gk
+    
+    center_difference <- Z_bar_k - Z_bar
+    
+    between <- between +
+      (n_k / n) * sum(center_difference^2)
   }
   
-  beta_cohort - within
+  max(between, 0)
 }

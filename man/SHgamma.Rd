@@ -15,13 +15,25 @@ A single numeric value in \eqn{[0, 1]}.
 }
 \description{
 Computes the Simplex Hellinger gamma diversity, defined as the evenness of
-the cohort center in Hellinger-Riemann intrinsic coordinates.
+the equal-weight mean sample composition.
 }
 \details{
-Let \eqn{\bar{Z} = n^{-1} \sum_{i=1}^n Z_i} be the mean coordinate vector
-over the \eqn{n} samples. Then
-\deqn{\gamma_{\mathrm{SH}} = 1 -
-      \frac{\lVert \bar{Z} \rVert_2^2}{A_p^2}, \qquad
+For sample \eqn{i}, let
+\deqn{\pi_i =
+      \frac{X_i}{\sum_{j=1}^p X_{ij}}}
+denote its total-sum-scaled composition. The cohort-level mean composition
+is
+\deqn{\bar{\pi} =
+      \frac{1}{n}\sum_{i=1}^n \pi_i.}
+Thus, every sample contributes equally regardless of its total abundance
+or sequencing depth.
+
+Let
+\deqn{Z_\gamma = \mathrm{HRIC}(\bar{\pi}).}
+The gamma diversity is
+\deqn{\gamma_{\mathrm{SH}} =
+      1 - \frac{\lVert Z_\gamma\rVert_2^2}{A_p^2},
+      \qquad
       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right).}
 }
 \examples{
