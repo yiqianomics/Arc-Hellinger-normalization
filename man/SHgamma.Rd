@@ -14,27 +14,38 @@ components, taxa, or features.}
 A single numeric value in \eqn{[0, 1]}.
 }
 \description{
-Computes the Simplex Hellinger gamma diversity, defined as the evenness of
-the equal-weight mean sample composition.
+Computes the Simplex Hellinger gamma diversity from the normalized mean
+Hellinger direction of the sample compositions.
 }
 \details{
 For sample \eqn{i}, let
 \deqn{\pi_i =
       \frac{X_i}{\sum_{j=1}^p X_{ij}}}
-denote its total-sum-scaled composition. The cohort-level mean composition
-is
-\deqn{\bar{\pi} =
-      \frac{1}{n}\sum_{i=1}^n \pi_i.}
-Thus, every sample contributes equally regardless of its total abundance
-or sequencing depth.
+denote its total-sum-scaled composition, and let
+\deqn{q_i = \sqrt{\pi_i}}
+denote its element-wise square-root representation. Each \eqn{q_i} lies on
+the positive orthant of the unit sphere because
+\eqn{\lVert q_i\rVert_2 = 1}.
 
-Let
-\deqn{Z_\gamma = \mathrm{HRIC}(\bar{\pi}).}
-The gamma diversity is
+The cohort Hellinger direction is obtained by averaging the square-root
+compositions and projecting the result back onto the unit sphere:
+\deqn{\bar{q} = \frac{1}{n}\sum_{i=1}^n q_i, \qquad
+      q_\gamma =
+      \frac{\bar{q}}{\lVert\bar{q}\rVert_2}.}
+
+The corresponding cohort composition is
+\deqn{\pi_\gamma = q_\gamma^{\circ 2},}
+where the square is applied element-wise. The gamma diversity is then
 \deqn{\gamma_{\mathrm{SH}} =
-      1 - \frac{\lVert Z_\gamma\rVert_2^2}{A_p^2},
+      1 -
+      \frac{
+      \lVert\mathrm{HRIC}(\pi_\gamma)\rVert_2^2
+      }{A_p^2},
       \qquad
       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right).}
+
+Each sample contributes equally, regardless of its total abundance or
+sequencing depth.
 }
 \examples{
 X <- matrix(c(1, 1, 1, 1,

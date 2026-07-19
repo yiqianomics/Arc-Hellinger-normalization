@@ -26,13 +26,13 @@ remains after subtracting the group-size weighted within-group dispersion.
 \details{
 Let \eqn{\bar{Z}} be the grand center and \eqn{\bar{Z}_k} the center of
 group \eqn{k} with \eqn{n_k} samples. Define
-\deqn{\beta_{\mathrm{cohort}} = \frac{1}{n} \sum_{i=1}^n
+\deqn{D_{\mathrm{cohort}} = \frac{1}{n} \sum_{i=1}^n
       \lVert Z_i - \bar{Z} \rVert_2^2, \qquad
-      \beta_{g_k} = \frac{1}{n_k} \sum_{g_i = k}
+      D_{g_k} = \frac{1}{n_k} \sum_{g_i = k}
       \lVert Z_i - \bar{Z}_k \rVert_2^2 .}
 Then
-\deqn{\delta = \beta_{\mathrm{cohort}} -
-      \sum_{k} \frac{n_k}{n} \, \beta_{g_k} .}
+\deqn{\delta = D_{\mathrm{cohort}} -
+      \sum_{k} \frac{n_k}{n} \, D_{g_k} .}
 A positive \eqn{\delta} means some turnover remains after removing the
 within-group dispersion. The value is non-negative and generalizes to any
 number of groups (two or more).

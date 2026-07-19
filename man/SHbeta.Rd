@@ -15,34 +15,44 @@ A single numeric value in \eqn{[0, 1]}.
 }
 \description{
 Computes the non-negative additive beta component as the difference between
-the gamma diversity of the equal-weight mean sample composition and the
-mean sample-level alpha diversity:
+the gamma diversity of the normalized mean Hellinger direction and the mean
+sample-level alpha diversity:
 \deqn{\beta_{\mathrm{SH}} =
       \gamma_{\mathrm{SH}} -
       \frac{1}{n}\sum_{i=1}^n
       \alpha_{\mathrm{SH}}(\pi_i).}
 }
 \details{
-Equivalently, let
-\deqn{f(\pi) =
-      \lVert \mathrm{HRIC}(\pi)\rVert_2^2.}
+Let
+\deqn{q_i = \sqrt{\pi_i}, \qquad
+      q_\gamma =
+      \frac{\sum_{i=1}^n q_i}
+      {\left\lVert\sum_{i=1}^n q_i\right\rVert_2},}
+and let
+\deqn{\pi_\gamma = q_\gamma^{\circ 2}.}
 Then
 \deqn{\beta_{\mathrm{SH}} =
       \frac{
-      n^{-1}\sum_{i=1}^n f(\pi_i) -
-      f(\bar{\pi})
+      n^{-1}\sum_{i=1}^n
+      \lVert\mathrm{HRIC}(\pi_i)\rVert_2^2
+      -
+      \lVert\mathrm{HRIC}(\pi_\gamma)\rVert_2^2
       }{A_p^2}.}
 
-The function \eqn{f} is convex on the closed simplex, so Jensen's
-inequality implies that this quantity is non-negative. Consequently,
+This quantity is non-negative because the normalized mean Hellinger
+direction cannot be farther from the uniform direction, in squared
+spherical distance, than the average squared distance of the individual
+sample directions.
+
+Consequently,
 \deqn{\gamma_{\mathrm{SH}} =
       \frac{1}{n}\sum_{i=1}^n
       \alpha_{\mathrm{SH}}(\pi_i)
       + \beta_{\mathrm{SH}}.}
 
-This beta component is a Jensen-gap partition based on the mean sample
-composition. In general, it is not identical to the Euclidean variance of
-the HRIC coordinate vectors around their coordinate-wise mean.
+This beta component is based on the normalized Hellinger-spherical cohort
+center. It is not, in general, identical to the Euclidean variance of the
+HRIC coordinate vectors around their coordinate-wise mean.
 }
 \examples{
 X <- matrix(c(1, 1, 1, 1,

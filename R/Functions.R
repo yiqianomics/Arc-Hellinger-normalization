@@ -7,8 +7,8 @@
 #
 # Diversity built from HRIC coordinates:
 #   SHalpha() per-sample evenness (alpha)
-#   SHgamma() evenness of the equal-weight mean sample composition (gamma)
-#   SHbeta()  non-negative partition, gamma - mean(alpha) (beta)
+#   SHgamma() evenness of the normalized mean Hellinger direction (gamma)
+#   SHbeta()  non-negative spherical partition, gamma - mean(alpha) (beta)
 #   SHdelta() between-group dispersion after removing the group-size
 #             weighted within-group dispersion (delta)
 #
@@ -268,26 +268,37 @@ SHalpha <- function(X) {
 
 #' Simplex Hellinger Gamma Diversity
 #'
-#' Computes the Simplex Hellinger gamma diversity, defined as the evenness of
-#' the equal-weight mean sample composition.
+#' Computes the Simplex Hellinger gamma diversity from the normalized mean
+#' Hellinger direction of the sample compositions.
 #'
 #' For sample \eqn{i}, let
 #' \deqn{\pi_i =
 #'       \frac{X_i}{\sum_{j=1}^p X_{ij}}}
-#' denote its total-sum-scaled composition. The cohort-level mean composition
-#' is
-#' \deqn{\bar{\pi} =
-#'       \frac{1}{n}\sum_{i=1}^n \pi_i.}
-#' Thus, every sample contributes equally regardless of its total abundance
-#' or sequencing depth.
+#' denote its total-sum-scaled composition, and let
+#' \deqn{q_i = \sqrt{\pi_i}}
+#' denote its element-wise square-root representation. Each \eqn{q_i} lies on
+#' the positive orthant of the unit sphere because
+#' \eqn{\lVert q_i\rVert_2 = 1}.
 #'
-#' Let
-#' \deqn{Z_\gamma = \mathrm{HRIC}(\bar{\pi}).}
-#' The gamma diversity is
+#' The cohort Hellinger direction is obtained by averaging the square-root
+#' compositions and projecting the result back onto the unit sphere:
+#' \deqn{\bar{q} = \frac{1}{n}\sum_{i=1}^n q_i, \qquad
+#'       q_\gamma =
+#'       \frac{\bar{q}}{\lVert\bar{q}\rVert_2}.}
+#'
+#' The corresponding cohort composition is
+#' \deqn{\pi_\gamma = q_\gamma^{\circ 2},}
+#' where the square is applied element-wise. The gamma diversity is then
 #' \deqn{\gamma_{\mathrm{SH}} =
-#'       1 - \frac{\lVert Z_\gamma\rVert_2^2}{A_p^2},
+#'       1 -
+#'       \frac{
+#'       \lVert\mathrm{HRIC}(\pi_\gamma)\rVert_2^2
+#'       }{A_p^2},
 #'       \qquad
 #'       A_p = \arcsin\!\left(\sqrt{1 - 1/p}\right).}
+#'
+#' Each sample contributes equally, regardless of its total abundance or
+#' sequencing depth.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
@@ -306,23 +317,37 @@ SHgamma <- function(X) {
   
   prep <- .prepare_simplex_hellinger(X)
   
-  ## Step 1: TSS normalization is already stored in prep$Pi.
-  ## Step 2: compute the equal-weight mean sample composition.
-  mean_composition <- colMeans(prep$Pi)
+  ## Each row of prep$sqrt_Pi is sqrt(pi_i) and has Euclidean norm one.
+  mean_sqrt_composition <- colMeans(prep$sqrt_Pi)
   
-  ## Protect against small floating-point deviation from a unit sum.
-  mean_composition <- mean_composition / sum(mean_composition)
+  ## Project the mean Hellinger direction back onto the unit sphere.
+  mean_sqrt_norm <- sqrt(sum(mean_sqrt_composition^2))
   
-  ## Step 3: calculate HRIC for the mean sample composition.
-  mean_composition <- matrix(
-    mean_composition,
+  if (!is.finite(mean_sqrt_norm) || mean_sqrt_norm <= 0) {
+    stop(
+      "The mean square-root composition has invalid Euclidean norm.",
+      call. = FALSE
+    )
+  }
+  
+  gamma_sqrt_composition <-
+    mean_sqrt_composition / mean_sqrt_norm
+  
+  ## Convert the normalized Hellinger direction back to a composition.
+  gamma_composition <- gamma_sqrt_composition^2
+  
+  ## Protect against floating-point deviation from a unit sum.
+  gamma_composition <-
+    gamma_composition / sum(gamma_composition)
+  
+  gamma_composition <- matrix(
+    gamma_composition,
     nrow = 1,
     dimnames = list(NULL, colnames(prep$X))
   )
   
-  Z_gamma <- HRIC(mean_composition)
+  Z_gamma <- HRIC(gamma_composition)
   
-  ## Step 4: convert squared HRIC distance into an evenness score.
   p <- ncol(Z_gamma)
   A_p <- asin(sqrt(1 - 1 / p))
   
@@ -335,33 +360,43 @@ SHgamma <- function(X) {
 #' Simplex Hellinger Beta Diversity
 #'
 #' Computes the non-negative additive beta component as the difference between
-#' the gamma diversity of the equal-weight mean sample composition and the
-#' mean sample-level alpha diversity:
+#' the gamma diversity of the normalized mean Hellinger direction and the mean
+#' sample-level alpha diversity:
 #' \deqn{\beta_{\mathrm{SH}} =
 #'       \gamma_{\mathrm{SH}} -
 #'       \frac{1}{n}\sum_{i=1}^n
 #'       \alpha_{\mathrm{SH}}(\pi_i).}
 #'
-#' Equivalently, let
-#' \deqn{f(\pi) =
-#'       \lVert \mathrm{HRIC}(\pi)\rVert_2^2.}
+#' Let
+#' \deqn{q_i = \sqrt{\pi_i}, \qquad
+#'       q_\gamma =
+#'       \frac{\sum_{i=1}^n q_i}
+#'       {\left\lVert\sum_{i=1}^n q_i\right\rVert_2},}
+#' and let
+#' \deqn{\pi_\gamma = q_\gamma^{\circ 2}.}
 #' Then
 #' \deqn{\beta_{\mathrm{SH}} =
 #'       \frac{
-#'       n^{-1}\sum_{i=1}^n f(\pi_i) -
-#'       f(\bar{\pi})
+#'       n^{-1}\sum_{i=1}^n
+#'       \lVert\mathrm{HRIC}(\pi_i)\rVert_2^2
+#'       -
+#'       \lVert\mathrm{HRIC}(\pi_\gamma)\rVert_2^2
 #'       }{A_p^2}.}
 #'
-#' The function \eqn{f} is convex on the closed simplex, so Jensen's
-#' inequality implies that this quantity is non-negative. Consequently,
+#' This quantity is non-negative because the normalized mean Hellinger
+#' direction cannot be farther from the uniform direction, in squared
+#' spherical distance, than the average squared distance of the individual
+#' sample directions.
+#'
+#' Consequently,
 #' \deqn{\gamma_{\mathrm{SH}} =
 #'       \frac{1}{n}\sum_{i=1}^n
 #'       \alpha_{\mathrm{SH}}(\pi_i)
 #'       + \beta_{\mathrm{SH}}.}
 #'
-#' This beta component is a Jensen-gap partition based on the mean sample
-#' composition. In general, it is not identical to the Euclidean variance of
-#' the HRIC coordinate vectors around their coordinate-wise mean.
+#' This beta component is based on the normalized Hellinger-spherical cohort
+#' center. It is not, in general, identical to the Euclidean variance of the
+#' HRIC coordinate vectors around their coordinate-wise mean.
 #'
 #' @param X Numeric matrix or data frame. Rows are samples and columns are
 #'   components, taxa, or features.
@@ -389,7 +424,6 @@ SHbeta <- function(X) {
   min(max(beta, 0), 1)
 }
 
-
 #' Simplex Hellinger Between-Group Turnover
 #'
 #' Partitions the total dispersion of the Hellinger-Riemann intrinsic
@@ -399,13 +433,13 @@ SHbeta <- function(X) {
 #'
 #' Let \eqn{\bar{Z}} be the grand center and \eqn{\bar{Z}_k} the center of
 #' group \eqn{k} with \eqn{n_k} samples. Define
-#' \deqn{\beta_{\mathrm{cohort}} = \frac{1}{n} \sum_{i=1}^n
+#' \deqn{D_{\mathrm{cohort}} = \frac{1}{n} \sum_{i=1}^n
 #'       \lVert Z_i - \bar{Z} \rVert_2^2, \qquad
-#'       \beta_{g_k} = \frac{1}{n_k} \sum_{g_i = k}
+#'       D_{g_k} = \frac{1}{n_k} \sum_{g_i = k}
 #'       \lVert Z_i - \bar{Z}_k \rVert_2^2 .}
 #' Then
-#' \deqn{\delta = \beta_{\mathrm{cohort}} -
-#'       \sum_{k} \frac{n_k}{n} \, \beta_{g_k} .}
+#' \deqn{\delta = D_{\mathrm{cohort}} -
+#'       \sum_{k} \frac{n_k}{n} \, D_{g_k} .}
 #' A positive \eqn{\delta} means some turnover remains after removing the
 #' within-group dispersion. The value is non-negative and generalizes to any
 #' number of groups (two or more).
