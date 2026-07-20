@@ -1,0 +1,7 @@
+"Covariate","CovariateLabel","n_significant_tests","n_significant_taxa","min_q","median_q","selected_for_integrated_figure"
+"NO3","Nitrate",27,22,4.91736871557691e-07,0.00798799895764762,TRUE
+"Depth.nominal","Depth (m)",25,21,2.66581963968608e-07,0.00396760697646764,FALSE
+"Oxygen","Oxygen",21,18,4.64450881372989e-06,0.0189141697260828,FALSE
+"ChlorophyllA","Chlorophyll a",20,16,0.000392998126927134,0.0457125798776542,FALSE
+"Temperature","Temperature (deg C)",11,11,5.58618696980103e-05,0.28062126138992,FALSE
+"PO4","Phosphate",9,9,0.00236989777044161,0.429515336104912,FALSE

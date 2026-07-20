@@ -35,7 +35,7 @@ dir.create(tab_dir, recursive = TRUE, showWarnings = FALSE)
 
 required_packages <- c(
   "phyloseq", "HRIC", "ggplot2", "dplyr", "tidyr", "tibble",
-  "purrr", "ggrepel", "maps", "scales"
+  "purrr", "ggrepel", "maps", "scales", "patchwork"
 )
 missing_packages <- required_packages[
   !vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)
@@ -55,25 +55,26 @@ suppressPackageStartupMessages({
   library(ggrepel)
   library(maps)
   library(scales)
+  library(patchwork)
 })
 
-theme_nature <- function(base_size = 7.8) {
-  theme_classic(base_size = base_size, base_family = "sans") +
+theme_nature <- function(base_size = 7.4) {
+  theme_classic(base_size = base_size, base_family = "Helvetica") +
     theme(
-      axis.line = element_line(linewidth = 0.24, color = "grey12"),
-      axis.ticks = element_line(linewidth = 0.22, color = "grey12"),
-      axis.title = element_text(color = "black"),
-      axis.text = element_text(color = "black"),
+      axis.line = element_line(linewidth = 0.20, color = "grey10"),
+      axis.ticks = element_line(linewidth = 0.18, color = "grey10"),
+      axis.title = element_text(color = "grey8", size = rel(0.92)),
+      axis.text = element_text(color = "grey10", size = rel(0.86)),
       legend.key = element_blank(),
       legend.background = element_blank(),
       legend.box.background = element_blank(),
-      legend.title = element_text(size = rel(0.95)),
-      legend.text = element_text(size = rel(0.88)),
-      strip.background = element_rect(fill = "grey96", color = "grey72", linewidth = 0.22),
-      strip.text = element_text(face = "bold", color = "black"),
-      plot.tag = element_text(face = "bold", size = rel(1.35), color = "black", margin = margin(r = 3, b = 2)),
+      legend.title = element_text(size = rel(0.90), face = "bold"),
+      legend.text = element_text(size = rel(0.82)),
+      strip.background = element_rect(fill = "#F7F7F7", color = "#D6D6D6", linewidth = 0.16),
+      strip.text = element_text(face = "bold", color = "grey8", size = rel(0.82), margin = margin(1.5, 2, 1.5, 2)),
+      plot.tag = element_text(face = "bold", size = rel(1.25), color = "grey8", margin = margin(r = 3, b = 2)),
       plot.tag.position = "topleft",
-      plot.margin = margin(7, 5.5, 5.5, 7)
+      plot.margin = margin(4.5, 4.5, 4.5, 5.5)
     )
 }
 
@@ -94,6 +95,13 @@ format_p <- function(p) {
   ifelse(
     is.na(p), "p = NA",
     ifelse(p < 1e-4, "p < 1e-4", paste0("p = ", formatC(p, format = "fg", digits = 2)))
+  )
+}
+
+format_p_plotmath <- function(p) {
+  ifelse(
+    is.na(p), 'italic(p) == "NA"',
+    ifelse(p < 1e-4, "italic(p) < 1e-4", paste0("italic(p) == ", formatC(p, format = "fg", digits = 2)))
   )
 }
 
@@ -203,16 +211,8 @@ if (length(brunt_col) != 1) {
 }
 
 covariate_cols <- c(
-  "Latitude", "Longitude",
-  "Depth.nominal", "Temperature", "Gradient.Surface.temp.SST.",
-  "Salinity", "Density", "Oxygen",
-  "ChlorophyllA", "Fluorescence",
-  "PAR.PC",
-  "NO3", "NO2", "NO2NO3", "PO4", "Si",
-  "Ammonium.5m", "Iron.5m", "Nitracline",
-  "Carbon.total", "CO3", "HCO3", "Alkalinity.total",
-  "Depth.Mixed.Layer", "Depth.Min.O2", "Depth.Max.O2",
-  brunt_col, "Lyapunov", "Okubo.Weiss", "Residence.time"
+  "Depth.nominal", "Temperature", "Oxygen",
+  "ChlorophyllA", "PO4", "NO3"
 )
 covariate_labels <- c(
   Latitude = "Latitude (deg)",
@@ -263,7 +263,15 @@ if (length(missing_focus_regions) > 0) {
 selected_region_values <- unname(region_lookup[focus_region_labels])
 selected_region_labels <- focus_region_labels
 selected_region_palette <- setNames(
-  c("#2B6EA6", "#16877A")[seq_along(selected_region_values)],
+  c("#2D78A6", "#17997F")[seq_along(selected_region_values)],
+  selected_region_labels
+)
+selected_region_ocean_fill <- setNames(
+  c("#DCECF7", "#DFF2EC")[seq_along(selected_region_values)],
+  selected_region_labels
+)
+selected_region_mark <- setNames(
+  c("#1A5D91", "#047C70")[seq_along(selected_region_values)],
   selected_region_labels
 )
 
@@ -272,6 +280,29 @@ panel_defs <- tibble::tibble(
   panel_label = selected_region_labels,
   region_value = selected_region_values,
   file_id = safe_id(selected_region_labels)
+)
+
+region_map_settings <- list(
+  "Arctic Ocean" = list(
+    xlim = c(-180, 180), ylim = c(58, 85),
+    shade_xlim = c(-180, 180), shade_ylim = c(58, 85),
+    background_xlim = c(-180, 180), background_ylim = c(-55, 85),
+    show_circulation = FALSE
+  ),
+  "North Atlantic Ocean" = list(
+    xlim = c(-92, 18), ylim = c(8, 66),
+    shade_xlim = c(-92, 18), shade_ylim = c(8, 66),
+    background_xlim = c(-126, 52), background_ylim = c(8, 66),
+    show_circulation = TRUE
+  )
+)
+
+figure_sizes <- list(
+  figure1 = c(width = 7.05, height = 4.65),
+  figure2 = c(width = 8.80, height = 4.05),
+  figure3 = c(width = 12.20, height = 11.25),
+  figure4 = c(width = 8.80, height = 5.45),
+  integrated = c(width = 20.75, height = 19.28)
 )
 
 write.csv(
@@ -350,7 +381,7 @@ compute_diversity <- function(panel_meta, panel, panel_label) {
     Alpha = as.numeric(alpha[sample_ids]),
     Gamma = gamma,
     Beta = beta,
-    Turnover0 = gamma - as.numeric(alpha[sample_ids])
+    Turnover = gamma - as.numeric(alpha[sample_ids])
   ) %>%
     left_join(
       panel_meta %>%
@@ -359,9 +390,9 @@ compute_diversity <- function(panel_meta, panel, panel_label) {
     )
 
   diversity_df %>%
-    arrange(Turnover0, Alpha, SampleID) %>%
+    arrange(Turnover, Alpha, SampleID) %>%
     mutate(
-      SamplePlotID = paste0("sample", row_number()),
+      SamplePlotID = paste0("S", row_number()),
       SampleIndex = row_number()
     ) %>%
     select(Panel, PanelLabel, SampleID, SamplePlotID, SampleIndex, everything())
@@ -382,74 +413,312 @@ diversity_summary <- all_diversity %>%
     mean_alpha = mean(Alpha),
     gamma = first(Gamma),
     beta = first(Beta),
-    mean_turnover0 = mean(Turnover0),
+    mean_turnover = mean(Turnover),
     .groups = "drop"
   )
 
-write.csv(all_diversity, file.path(tab_dir, "figure2_alpha_gamma_turnover0_values.csv"), row.names = FALSE)
+write.csv(all_diversity, file.path(tab_dir, "figure2_alpha_gamma_turnover_values.csv"), row.names = FALSE)
 write.csv(diversity_summary, file.path(tab_dir, "diversity_summary_HRIC.csv"), row.names = FALSE)
 
 sample_order_check <- all_diversity %>%
   group_by(Panel, PanelLabel) %>%
   summarise(
-    sorted_by_turnover0 = all(diff(Turnover0) >= -1e-12),
-    first_turnover0 = first(Turnover0),
-    last_turnover0 = last(Turnover0),
+    sorted_by_turnover = all(diff(Turnover) >= -1e-12),
+    first_turnover = first(Turnover),
+    last_turnover = last(Turnover),
     .groups = "drop"
   )
 
 map_data <- ggplot2::map_data("world")
-map_points <- meta %>%
-  mutate(
-    RegionGroup = ifelse(Ocean.region %in% selected_region_values, RegionShort, "Other regions"),
-    RegionGroup = factor(RegionGroup, levels = c(selected_region_labels, "Other regions"))
+
+make_shade_rect <- function(region_label) {
+  settings <- region_map_settings[[region_label]]
+  shade_xlim <- if (!is.null(settings$shade_xlim)) settings$shade_xlim else settings$xlim
+  shade_ylim <- if (!is.null(settings$shade_ylim)) settings$shade_ylim else settings$ylim
+  tibble::tibble(
+    xmin = shade_xlim[1],
+    xmax = shade_xlim[2],
+    ymin = shade_ylim[1],
+    ymax = shade_ylim[2]
+  )
+}
+
+make_hatch_segments <- function(region_label) {
+  rect <- make_shade_rect(region_label)
+  shade_width <- rect$xmax - rect$xmin
+  shade_height <- rect$ymax - rect$ymin
+  if (!is.finite(shade_width) || !is.finite(shade_height) || shade_width <= 0 || shade_height <= 0) {
+    return(tibble::tibble(x = numeric(), y = numeric(), xend = numeric(), yend = numeric()))
+  }
+  hatch_dx <- shade_width * ifelse(region_label == "Arctic Ocean", 0.11, 0.22)
+  spacing <- shade_width / ifelse(region_label == "Arctic Ocean", 34, 30)
+  starts <- seq(rect$xmin - hatch_dx, rect$xmax, by = spacing)
+  purrr::map_dfr(starts, function(x_bottom) {
+    y_low <- max(rect$ymin, rect$ymin + shade_height * (rect$xmin - x_bottom) / hatch_dx)
+    y_high <- min(rect$ymax, rect$ymin + shade_height * (rect$xmax - x_bottom) / hatch_dx)
+    if (!is.finite(y_low) || !is.finite(y_high) || y_low >= y_high) {
+      return(tibble::tibble(x = numeric(), y = numeric(), xend = numeric(), yend = numeric()))
+    }
+    tibble::tibble(
+      x = x_bottom + hatch_dx * (y_low - rect$ymin) / shade_height,
+      y = y_low,
+      xend = x_bottom + hatch_dx * (y_high - rect$ymin) / shade_height,
+      yend = y_high
+    )
+  })
+}
+
+north_atlantic_currents <- tibble::tribble(
+  ~Current, ~CurrentType, ~Longitude, ~Latitude, ~PointOrder,
+  "Gulf Stream", "Warm current", -81, 25, 1,
+  "Gulf Stream", "Warm current", -78, 31, 2,
+  "Gulf Stream", "Warm current", -73, 35, 3,
+  "Gulf Stream", "Warm current", -66, 39, 4,
+  "Gulf Stream", "Warm current", -59, 42, 5,
+  "North Atlantic Current", "Warm current", -59, 42, 1,
+  "North Atlantic Current", "Warm current", -47, 46, 2,
+  "North Atlantic Current", "Warm current", -34, 51, 3,
+  "North Atlantic Current", "Warm current", -20, 55, 4,
+  "North Atlantic Current", "Warm current", -12, 58, 5,
+  "North Equatorial Current", "Warm current", -18, 16, 1,
+  "North Equatorial Current", "Warm current", -40, 16.5, 2,
+  "North Equatorial Current", "Warm current", -62, 17.5, 3,
+  "Labrador Current", "Cold current", -56, 62, 1,
+  "Labrador Current", "Cold current", -54, 56, 2,
+  "Labrador Current", "Cold current", -52, 50, 3,
+  "Labrador Current", "Cold current", -49, 44, 4,
+  "Canary Current", "Cold current", -12, 40, 1,
+  "Canary Current", "Cold current", -15, 32, 2,
+  "Canary Current", "Cold current", -17, 24, 3,
+  "Canary Current", "Cold current", -16, 15, 4
+)
+
+north_atlantic_current_labels <- tibble::tribble(
+  ~Current, ~LabelLongitude, ~LabelLatitude, ~LineLongitude, ~LineLatitude,
+  "Gulf Stream", -76.5, 35.2, -73, 35,
+  "North Atlantic Current", -38.5, 54.4, -34, 51,
+  "North Equatorial Current", -45.5, 12.8, -40, 16.5,
+  "Labrador Current", -63.2, 57.2, -54, 56,
+  "Canary Current", -23.5, 31.4, -15, 32
+)
+write.csv(north_atlantic_currents, file.path(tab_dir, "figure1b_north_atlantic_circulation_overlay.csv"), row.names = FALSE)
+write.csv(north_atlantic_current_labels, file.path(tab_dir, "figure1b_north_atlantic_circulation_labels.csv"), row.names = FALSE)
+
+make_region_map <- function(region_label, region_value, file_id, panel_letter, xlim, ylim, show_circulation = FALSE) {
+  region_points <- meta %>%
+    filter(Ocean.region == region_value)
+  shade_fill <- unname(selected_region_ocean_fill[region_label])
+  hatch_color <- unname(selected_region_mark[region_label])
+  shade_rect <- make_shade_rect(region_label)
+  hatch_segments <- make_hatch_segments(region_label)
+  region_label_df <- tibble::tibble(
+    Longitude = xlim[1] + 0.08 * diff(xlim),
+    Latitude = ylim[2] - 0.12 * diff(ylim),
+    label = paste0(region_label, "\n", "n = ", nrow(region_points))
   )
 
-region_centroids <- map_points %>%
-  filter(Ocean.region %in% selected_region_values) %>%
-  group_by(RegionShort) %>%
-  summarise(
-    Longitude = mean(Longitude, na.rm = TRUE),
-    Latitude = mean(Latitude, na.rm = TRUE),
-    n = n(),
-    .groups = "drop"
-  ) %>%
-  mutate(label = paste0(RegionShort, "\n", "n = ", n))
+  p <- ggplot() +
+    geom_rect(
+      data = shade_rect,
+      aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+      inherit.aes = FALSE, fill = scales::alpha(shade_fill, 0.18), color = NA
+    ) +
+    geom_segment(
+      data = hatch_segments,
+      aes(x = x, y = y, xend = xend, yend = yend),
+      inherit.aes = FALSE, color = scales::alpha(hatch_color, 0.36), linewidth = 0.22
+    ) +
+    geom_polygon(
+      data = map_data,
+      aes(x = long, y = lat, group = group),
+      fill = "#EFEFEB", color = "#D0D0CC", linewidth = 0.11
+    )
 
-map_palette <- c(selected_region_palette, "Other regions" = "#B6B6B6")
+  if (show_circulation) {
+    p <- p +
+      geom_path(
+        data = north_atlantic_currents,
+        aes(x = Longitude, y = Latitude, group = Current, color = CurrentType),
+        linewidth = 0.95, lineend = "round",
+        arrow = grid::arrow(type = "closed", length = grid::unit(0.105, "in"))
+      ) +
+      geom_segment(
+        data = north_atlantic_current_labels,
+        aes(x = LabelLongitude, y = LabelLatitude, xend = LineLongitude, yend = LineLatitude),
+        inherit.aes = FALSE, linewidth = 0.16, color = "grey38", alpha = 0.85
+      ) +
+      geom_label(
+        data = north_atlantic_current_labels,
+        aes(x = LabelLongitude, y = LabelLatitude, label = Current),
+        inherit.aes = FALSE, size = 1.82, linewidth = 0.12,
+        label.padding = grid::unit(0.08, "lines"),
+        fill = scales::alpha("white", 0.9), color = "grey10"
+      ) +
+      scale_color_manual(
+        values = c("Warm current" = "#B6423A", "Cold current" = "#1F5A99"),
+        name = NULL
+      )
+  }
 
-figure1 <- ggplot() +
-  geom_polygon(
-    data = map_data,
-    aes(x = long, y = lat, group = group),
-    fill = "#EFEFEB", color = "#D0D0CC", linewidth = 0.11
-  ) +
-  geom_point(
-    data = map_points,
-    aes(x = Longitude, y = Latitude, fill = RegionGroup),
-    shape = 21, color = "grey15", stroke = 0.16, size = 1.85, alpha = 0.92
-  ) +
-  ggrepel::geom_label_repel(
-    data = region_centroids,
-    aes(x = Longitude, y = Latitude, label = label),
-    size = 2.25, label.size = 0.16, label.padding = unit(0.13, "lines"),
-    fill = "#FFFFFF", color = "grey8", min.segment.length = 0,
-    segment.color = "grey35", segment.size = 0.18, seed = 20260717
-  ) +
-  scale_fill_manual(values = map_palette, name = "Sample region") +
-  guides(fill = "none") +
-  coord_quickmap(xlim = c(-180, 180), ylim = c(-78, 85), expand = FALSE) +
-  labs(x = "Longitude", y = "Latitude", tag = "a") +
-  theme_nature(base_size = 7.9) +
-  theme(
-    axis.line = element_blank(),
-    legend.position = "none",
-    panel.background = element_rect(fill = "#FBFDFF", color = NA),
-    plot.background = element_rect(fill = "white", color = NA),
-    plot.tag = element_blank()
+  p +
+    geom_point(
+      data = region_points,
+      aes(x = Longitude, y = Latitude),
+      shape = 4, color = "#111111", stroke = 1.02, size = 2.45, alpha = 0.98
+    ) +
+    geom_label(
+      data = region_label_df,
+      aes(x = Longitude, y = Latitude, label = label),
+      size = 2.4, linewidth = 0.16, label.padding = grid::unit(0.12, "lines"),
+      fill = scales::alpha("white", 0.88), color = "grey8", hjust = 0
+    ) +
+    coord_quickmap(xlim = xlim, ylim = ylim, expand = FALSE) +
+    labs(x = "Longitude", y = "Latitude") +
+    theme_nature(base_size = 7.9) +
+    theme(
+      axis.line = element_blank(),
+      legend.position = if (show_circulation) "bottom" else "none",
+      legend.direction = "horizontal",
+      legend.text = element_text(size = 6.7),
+      panel.background = element_rect(fill = "#F4F8F8", color = NA),
+      plot.background = element_rect(fill = "white", color = NA)
+    )
+}
+
+rescale_to_range <- function(x, from, to) {
+  to[1] + (x - from[1]) / diff(from) * diff(to)
+}
+
+make_figure2_background_data <- function(region_label, region_value, n_samples, y_upper) {
+  settings <- region_map_settings[[region_label]]
+  region_points <- meta %>%
+    filter(Ocean.region == region_value)
+  background_xlim <- if (!is.null(settings$background_xlim)) settings$background_xlim else settings$xlim
+  background_ylim <- if (!is.null(settings$background_ylim)) settings$background_ylim else settings$ylim
+  target_xlim <- c(0.5, 0.5 + n_samples * 0.82)
+  target_ylim <- c(0, y_upper)
+  shade_fill <- unname(selected_region_ocean_fill[region_label])
+  mark_color <- scales::alpha("#111111", 0.56)
+  shade_rect <- make_shade_rect(region_label)
+  hatch_segments <- make_hatch_segments(region_label)
+
+  transform_lon <- function(x) rescale_to_range(x, background_xlim, target_xlim)
+  transform_lat <- function(y) rescale_to_range(y, background_ylim, target_ylim)
+
+  map_background <- map_data %>%
+    mutate(FigureX = transform_lon(long), FigureY = transform_lat(lat))
+
+  shade_rect <- shade_rect %>%
+    transmute(
+      xmin = transform_lon(pmax(xmin, background_xlim[1])),
+      xmax = transform_lon(pmin(xmax, background_xlim[2])),
+      ymin = transform_lat(pmax(ymin, background_ylim[1])),
+      ymax = transform_lat(pmin(ymax, background_ylim[2]))
+    ) %>%
+    filter(xmin < xmax, ymin < ymax)
+
+  hatch_segments <- hatch_segments %>%
+    mutate(
+      FigureX = transform_lon(x),
+      FigureY = transform_lat(y),
+      FigureXEnd = transform_lon(xend),
+      FigureYEnd = transform_lat(yend)
+    )
+
+  figure_points <- region_points %>%
+    filter(
+      Longitude >= background_xlim[1], Longitude <= background_xlim[2],
+      Latitude >= background_ylim[1], Latitude <= background_ylim[2]
+    ) %>%
+    mutate(FigureX = transform_lon(Longitude), FigureY = transform_lat(Latitude))
+
+  currents <- tibble::tibble(
+    Current = character(), CurrentType = character(),
+    FigureX = numeric(), FigureY = numeric(), PointOrder = integer()
   )
+  if (isTRUE(settings$show_circulation)) {
+    currents <- north_atlantic_currents %>%
+      mutate(
+        FigureX = transform_lon(Longitude),
+        FigureY = transform_lat(Latitude)
+      ) %>%
+      arrange(Current, PointOrder)
+  }
 
-save_plot(figure1, "figure1_ocean_sample_map", width = 7.05, height = 3.8)
+  list(
+    ocean = tibble::tibble(
+      xmin = target_xlim[1], xmax = target_xlim[2],
+      ymin = target_ylim[1], ymax = target_ylim[2]
+    ),
+    shade = shade_rect,
+    hatch = hatch_segments,
+    map = map_background,
+    points = figure_points,
+    currents = currents,
+    shade_fill = shade_fill,
+    hatch_color = unname(selected_region_mark[region_label]),
+    point_color = mark_color
+  )
+}
+
+add_figure2_background_layers <- function(plot, bg) {
+  plot +
+    geom_rect(
+      data = bg$ocean,
+      aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+      inherit.aes = FALSE, fill = scales::alpha("#F4F8F8", 0.14), color = NA
+    ) +
+    geom_rect(
+      data = bg$shade,
+      aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+      inherit.aes = FALSE, fill = scales::alpha(bg$shade_fill, 0.13), color = NA
+    ) +
+    geom_polygon(
+      data = bg$map,
+      aes(x = FigureX, y = FigureY, group = group),
+      inherit.aes = FALSE,
+      fill = scales::alpha("#ECEBE6", 0.34),
+      color = scales::alpha("#B9B9B3", 0.20),
+      linewidth = 0.06
+    ) +
+    geom_segment(
+      data = bg$hatch,
+      aes(x = FigureX, y = FigureY, xend = FigureXEnd, yend = FigureYEnd),
+      inherit.aes = FALSE, color = scales::alpha(bg$hatch_color, 0.25), linewidth = 0.16
+    ) +
+    geom_path(
+      data = bg$currents,
+      aes(x = FigureX, y = FigureY, group = Current, color = CurrentType),
+      inherit.aes = FALSE, linewidth = 0.56, lineend = "round", alpha = 0.44,
+      arrow = grid::arrow(type = "closed", length = grid::unit(0.068, "in"))
+    ) +
+    geom_point(
+      data = bg$points,
+      aes(x = FigureX, y = FigureY),
+      inherit.aes = FALSE, shape = 4, color = bg$point_color, stroke = 0.72, size = 1.70, alpha = 0.88
+    ) +
+    scale_color_manual(
+      values = c("Warm current" = "#B6423A", "Cold current" = "#1F5A99"),
+      guide = "none"
+    )
+}
+
+figure1a_settings <- region_map_settings[["Arctic Ocean"]]
+figure1b_settings <- region_map_settings[["North Atlantic Ocean"]]
+
+figure1a <- make_region_map(
+  "Arctic Ocean", selected_region_values[match("Arctic Ocean", selected_region_labels)],
+  "arctic_ocean", "a", xlim = figure1a_settings$background_xlim, ylim = figure1a_settings$background_ylim,
+  show_circulation = figure1a_settings$show_circulation
+)
+figure1b <- make_region_map(
+  "North Atlantic Ocean", selected_region_values[match("North Atlantic Ocean", selected_region_labels)],
+  "north_atlantic_ocean", "b", xlim = figure1b_settings$background_xlim, ylim = figure1b_settings$background_ylim,
+  show_circulation = figure1b_settings$show_circulation
+)
+save_plot(figure1a, "figure1a_arctic_ocean_sample_map", width = figure_sizes$figure1["width"], height = figure_sizes$figure1["height"])
+save_plot(figure1b, "figure1b_north_atlantic_ocean_sample_map", width = figure_sizes$figure1["width"], height = figure_sizes$figure1["height"])
+figure1_plots <- list(a = figure1a, b = figure1b)
 
 make_figure2 <- function(div_df, panel_letter, panel_label) {
   n_samples <- nrow(div_df)
@@ -460,58 +729,49 @@ make_figure2 <- function(div_df, panel_letter, panel_label) {
     )
   gamma <- unique(div_df$Gamma)
   x_breaks <- sample_breaks(n_samples)
-  x_labels <- paste0("sample", x_breaks)
+  x_labels <- paste0("S", x_breaks)
   axis_size <- ifelse(n_samples > 120, 5.8, ifelse(n_samples > 55, 6.4, 6.9))
-  turnover_label_size <- ifelse(n_samples > 120, 1.35, ifelse(n_samples > 55, 1.75, 2.15))
   point_size <- ifelse(n_samples > 120, 1.35, 1.75)
+  y_upper <- min(1, max(0.78, gamma + 0.25, max(div_df$Alpha, na.rm = TRUE) + 0.34))
+  y_breaks <- pretty(c(0, y_upper), n = 5)
+  y_breaks <- y_breaks[y_breaks >= 0 & y_breaks <= y_upper]
+  gamma_label_x <- n_samples - 0.25
+  gamma_label_y <- min(y_upper - 0.055, gamma + 0.035)
+  mark_color <- unname(selected_region_mark[panel_label])
+  region_value <- unique(div_df$Ocean.region)[1]
+  figure2_bg <- make_figure2_background_data(panel_label, region_value, n_samples, y_upper)
 
-  ggplot(div_df, aes(x = SampleIndex)) +
+  add_figure2_background_layers(ggplot(div_df, aes(x = SampleIndex)), figure2_bg) +
     geom_segment(
       aes(xend = SampleIndex, y = Alpha, yend = Gamma),
       linewidth = 0.18, color = "#B7B7B7", alpha = 0.78
     ) +
-    geom_tile(
-      aes(y = -0.065, fill = Turnover0),
-      width = 0.92, height = 0.045, alpha = 0.92
-    ) +
-    geom_text(
-      aes(y = -0.065, label = sprintf("%.2f", Turnover0)),
-      angle = 90, size = turnover_label_size, color = "grey8",
-      vjust = 0.5, hjust = 0.5
-    ) +
     geom_hline(yintercept = gamma, linetype = "22", linewidth = 0.42, color = "#9D1F2E") +
     geom_point(
       aes(y = Alpha),
-      color = "#2B6EA6", size = point_size, alpha = 0.95
+      color = mark_color, size = point_size, alpha = 0.95
     ) +
     annotate(
-      "label", x = max(1, round(n_samples * 0.055)), y = gamma + 0.048,
-      label = paste0("gamma = ", sprintf("%.3f", gamma)),
-      size = 2.25, fill = "white", color = "#9D1F2E"
-    ) +
-    scale_fill_gradientn(
-      colors = c("#F4F7FB", "#BBD1E8", "#4779B5", "#183A67"),
-      limits = range(all_diversity$Turnover0, na.rm = TRUE),
-      name = "turnover0"
+      "label", x = gamma_label_x, y = gamma_label_y,
+      label = paste0("gamma == ", sprintf("%.3f", gamma)),
+      parse = TRUE, size = 2.25, fill = scales::alpha("white", 0.92), color = "#9D1F2E",
+      hjust = 1
     ) +
     scale_y_continuous(
-      breaks = seq(0, 1, 0.2),
-      labels = function(x) ifelse(x < 0, "", sprintf("%.1f", x)),
+      breaks = y_breaks,
+      labels = function(x) sprintf("%.1f", x),
       expand = expansion(mult = c(0, 0.02))
     ) +
     scale_x_continuous(breaks = x_breaks, labels = x_labels, expand = expansion(mult = c(0.003, 0.01))) +
-    coord_cartesian(ylim = c(-0.13, 1), clip = "off") +
+    coord_cartesian(xlim = c(0.5, n_samples + 0.5), ylim = c(0, y_upper), clip = "on") +
     labs(
       x = "Sample",
-      y = "Alpha diversity (HRIC evenness)",
-      tag = panel_letter
+      y = "Alpha diversity (HRIC evenness)"
     ) +
-    guides(fill = guide_colorbar(order = 1, barwidth = 3.3, barheight = 0.28, title.position = "top")) +
     theme_nature(base_size = 7.9) +
     theme(
       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = axis_size),
-      legend.position = "bottom",
-      legend.box = "horizontal",
+      legend.position = "none",
       panel.grid.major.y = element_line(linewidth = 0.12, color = "grey90"),
       plot.title = element_blank()
     )
@@ -525,8 +785,12 @@ for (i in seq_len(nrow(panel_defs))) {
   div_df <- all_diversity %>% filter(Panel == panel)
   p <- make_figure2(div_df, panel, panel_label)
   figure2_plots[[panel]] <- p
-  width <- ifelse(nrow(div_df) > 120, 14.5, max(6.9, 0.18 * nrow(div_df)))
-  save_plot(p, paste0("figure2", panel, "_", file_id, "_alpha_gamma_turnover0"), width = width, height = 4.55)
+  save_plot(
+    p,
+    paste0("figure2", panel, "_", file_id, "_alpha_gamma_turnover"),
+    width = figure_sizes$figure2["width"],
+    height = figure_sizes$figure2["height"]
+  )
 }
 
 cor_test_safe <- function(x, y) {
@@ -539,41 +803,42 @@ cor_test_safe <- function(x, y) {
 }
 
 figure3_stats <- all_diversity %>%
-  select(Panel, PanelLabel, SampleID, SamplePlotID, Turnover0, all_of(covariate_cols)) %>%
+  select(Panel, PanelLabel, SampleID, SamplePlotID, Turnover, all_of(covariate_cols)) %>%
   tidyr::pivot_longer(all_of(covariate_cols), names_to = "Covariate", values_to = "CovariateValue") %>%
   group_by(Panel, PanelLabel, Covariate) %>%
-  group_modify(~ cor_test_safe(.x$CovariateValue, .x$Turnover0)) %>%
+  group_modify(~ cor_test_safe(.x$CovariateValue, .x$Turnover)) %>%
   ungroup() %>%
   mutate(
     CovariateLabel = covariate_labels[Covariate],
-    label = paste0("rho = ", sprintf("%.2f", rho), "\n", format_p(p), "\n", "n = ", n)
+    label = paste0("atop(rho == ", sprintf("%.2f", rho), ", atop(", format_p_plotmath(p), ", n == ", n, "))")
   )
 
-write.csv(figure3_stats, file.path(tab_dir, "figure3_spearman_turnover0_covariates.csv"), row.names = FALSE)
+write.csv(figure3_stats, file.path(tab_dir, "figure3_spearman_turnover_covariates.csv"), row.names = FALSE)
 
-make_figure3 <- function(div_df, stats_df, panel_letter) {
-  facet_columns <- 5
+make_figure3 <- function(div_df, stats_df, panel_letter, panel_label) {
+  facet_columns <- ifelse(length(covariate_cols) <= 6, 3, 5)
   point_size <- ifelse(length(covariate_cols) > 20, 1.15, 1.55)
   label_size <- ifelse(length(covariate_cols) > 20, 1.68, 2.25)
-  turnover_limits <- range(div_df$Turnover0, na.rm = TRUE)
+  mark_color <- unname(selected_region_mark[panel_label])
+  turnover_limits <- range(div_df$Turnover, na.rm = TRUE)
   turnover_pad <- diff(turnover_limits) * 0.18
   if (!is.finite(turnover_pad) || turnover_pad == 0) turnover_pad <- 0.05
   long_df <- div_df %>%
-    select(SampleID, SamplePlotID, Turnover0, all_of(covariate_cols)) %>%
+    select(SampleID, SamplePlotID, Turnover, all_of(covariate_cols)) %>%
     tidyr::pivot_longer(all_of(covariate_cols), names_to = "Covariate", values_to = "CovariateValue") %>%
     mutate(CovariateLabel = factor(covariate_labels[Covariate], levels = covariate_labels))
   smooth_df <- long_df %>%
     group_by(Covariate, CovariateLabel) %>%
     filter(
-      sum(is.finite(CovariateValue) & is.finite(Turnover0)) >= 4,
-      length(unique(CovariateValue[is.finite(CovariateValue) & is.finite(Turnover0)])) >= 2
+      sum(is.finite(CovariateValue) & is.finite(Turnover)) >= 4,
+      length(unique(CovariateValue[is.finite(CovariateValue) & is.finite(Turnover)])) >= 2
     ) %>%
     ungroup()
   stats_df <- stats_df %>%
     mutate(CovariateLabel = factor(covariate_labels[Covariate], levels = covariate_labels))
 
-  ggplot(long_df, aes(x = CovariateValue, y = Turnover0)) +
-    geom_point(shape = 21, size = point_size, stroke = 0.12, color = "grey12", fill = "#2B6EA6", alpha = 0.78, na.rm = TRUE) +
+  ggplot(long_df, aes(x = CovariateValue, y = Turnover)) +
+    geom_point(shape = 21, size = point_size, stroke = 0.12, color = "grey12", fill = mark_color, alpha = 0.78, na.rm = TRUE) +
     geom_smooth(
       data = smooth_df,
       method = "lm", formula = y ~ x, se = TRUE, linewidth = 0.34,
@@ -582,11 +847,12 @@ make_figure3 <- function(div_df, stats_df, panel_letter) {
     geom_text(
       data = stats_df,
       aes(x = -Inf, y = Inf, label = label),
-      inherit.aes = FALSE, hjust = -0.08, vjust = 1.18, size = label_size, lineheight = 0.93, color = "grey12"
+      inherit.aes = FALSE, hjust = -0.08, vjust = 1.18, size = label_size, lineheight = 0.93, color = "grey12",
+      parse = TRUE
     ) +
     facet_wrap(~ CovariateLabel, scales = "free_x", ncol = facet_columns) +
     coord_cartesian(ylim = c(turnover_limits[1] - turnover_pad, turnover_limits[2] + turnover_pad)) +
-    labs(x = NULL, y = "turnover0 (gamma - alpha)", tag = panel_letter) +
+    labs(x = NULL, y = expression(turnover~(gamma - alpha))) +
     theme_nature(base_size = 7.9) +
     theme(
       legend.position = "none",
@@ -597,70 +863,93 @@ make_figure3 <- function(div_df, stats_df, panel_letter) {
 figure3_plots <- list()
 for (i in seq_len(nrow(panel_defs))) {
   panel <- panel_defs$panel[i]
+  panel_label <- panel_defs$panel_label[i]
   file_id <- panel_defs$file_id[i]
   div_df <- all_diversity %>% filter(Panel == panel)
   stats_df <- figure3_stats %>% filter(Panel == panel)
-  p <- make_figure3(div_df, stats_df, panel)
+  p <- make_figure3(div_df, stats_df, panel, panel_label)
   figure3_plots[[panel]] <- p
   save_plot(
     p,
-    paste0("figure3", panel, "_", file_id, "_turnover0_covariates"),
-    width = 12.2,
-    height = 1.75 * ceiling(length(covariate_cols) / 5) + 0.75
+    paste0("figure3", panel, "_", file_id, "_turnover_covariates"),
+    width = figure_sizes$figure3["width"],
+    height = figure_sizes$figure3["height"]
   )
 }
 
 taxa_palette <- function(taxa) {
-  values <- grDevices::hcl.colors(length(taxa), palette = "Dynamic")
-  names(values) <- taxa
-  if ("Others" %in% taxa) values["Others"] <- "#D4D4D4"
-  values
+  high_contrast <- c(
+    "#1B4F9C", "#B72E2B", "#008A5B", "#7B3294", "#E69F00",
+    "#0099B4", "#C44E8B", "#8C6D31", "#4B8B3B", "#4B4B4B",
+    "#00A087", "#F39B30", "#3C5488", "#A73030", "#6E4D9B",
+    "#D55E00", "#4DBBD5", "#55752F", "#9E9E2D"
+  )
+  named_taxa <- setdiff(taxa, "Others")
+  if (length(named_taxa) > length(high_contrast)) {
+    high_contrast <- grDevices::colorRampPalette(high_contrast)(length(named_taxa))
+  }
+  values <- setNames(high_contrast[seq_along(named_taxa)], named_taxa)
+  if ("Others" %in% taxa) {
+    values <- c(values, Others = "#CFCFCF")
+  }
+  values[taxa]
 }
 
-ttest_taxa <- function(counts_taxon_panel, panel_meta, top_taxa, covariates) {
+lm_taxa <- function(counts_taxon_panel, panel_meta, top_taxa, covariate) {
   x <- counts_taxon_panel[, colSums(counts_taxon_panel) > 0, drop = FALSE]
   hric_x <- HRIC::HRIC(x)
   top_taxa <- intersect(top_taxa, colnames(hric_x))
   out <- purrr::map_dfr(top_taxa, function(taxon) {
-    purrr::map_dfr(covariates, function(covar) {
-      values <- as_numeric_safe(panel_meta[[covar]])
-      y <- hric_x[panel_meta$SampleID, taxon]
-      keep <- is.finite(values) & is.finite(y)
-      if (sum(keep) < 6 || length(unique(values[keep])) < 2) {
-        return(tibble::tibble(
-          Taxon = taxon, Covariate = covar, n = sum(keep), median_cut = NA_real_,
-          mean_low = NA_real_, mean_high = NA_real_, p = NA_real_
-        ))
-      }
-      cut <- median(values[keep], na.rm = TRUE)
-      group <- ifelse(values[keep] <= cut, "low", "high")
-      if (length(unique(group)) < 2 || min(table(group)) < 3 || length(unique(y[keep])) < 2) {
-        return(tibble::tibble(
-          Taxon = taxon, Covariate = covar, n = sum(keep), median_cut = cut,
-          mean_low = mean(y[keep][group == "low"]), mean_high = mean(y[keep][group == "high"]), p = NA_real_
-        ))
-      }
-      test <- tryCatch(t.test(y[keep] ~ group), error = function(e) NULL)
-      tibble::tibble(
+    values <- as_numeric_safe(panel_meta[[covariate]])
+    y <- hric_x[panel_meta$SampleID, taxon]
+    keep <- is.finite(values) & is.finite(y)
+    if (sum(keep) < 4 || length(unique(values[keep])) < 2 || length(unique(y[keep])) < 2) {
+      return(tibble::tibble(
         Taxon = taxon,
-        Covariate = covar,
+        Covariate = covariate,
         n = sum(keep),
-        median_cut = cut,
-        mean_low = mean(y[keep][group == "low"]),
-        mean_high = mean(y[keep][group == "high"]),
-        p = if (is.null(test)) NA_real_ else test$p.value
-      )
-    })
+        slope = NA_real_,
+        std_error = NA_real_,
+        statistic = NA_real_,
+        p = NA_real_,
+        r_squared = NA_real_
+      ))
+    }
+    fit <- tryCatch(lm(y[keep] ~ values[keep]), error = function(e) NULL)
+    if (is.null(fit)) {
+      return(tibble::tibble(
+        Taxon = taxon,
+        Covariate = covariate,
+        n = sum(keep),
+        slope = NA_real_,
+        std_error = NA_real_,
+        statistic = NA_real_,
+        p = NA_real_,
+        r_squared = NA_real_
+      ))
+    }
+    fit_summary <- summary(fit)
+    coef_table <- fit_summary$coefficients
+    tibble::tibble(
+      Taxon = taxon,
+      Covariate = covariate,
+      n = sum(keep),
+      slope = unname(coef_table[2, "Estimate"]),
+      std_error = unname(coef_table[2, "Std. Error"]),
+      statistic = unname(coef_table[2, "t value"]),
+      p = unname(coef_table[2, "Pr(>|t|)"]),
+      r_squared = unname(fit_summary$r.squared)
+    )
   })
   out %>%
     mutate(
       q = p.adjust(p, method = "BH"),
-      CovariateLabel = covariate_labels[Covariate],
+      CovariateLabel = unname(covariate_labels[Covariate]),
       Significant = !is.na(q) & q < 0.05
     )
 }
 
-make_figure4 <- function(panel_meta, panel_letter, panel_label) {
+make_figure4 <- function(panel_meta, panel_letter, panel_label, daa_covariate) {
   sample_ids <- panel_meta$SampleID
   counts_panel <- counts_taxon[sample_ids, , drop = FALSE]
   counts_panel <- counts_panel[, colSums(counts_panel) > 0, drop = FALSE]
@@ -668,7 +957,7 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label) {
   mean_rel <- sort(colMeans(rel_panel, na.rm = TRUE), decreasing = TRUE)
   top_taxa <- names(mean_rel)[seq_len(min(19, length(mean_rel)))]
 
-  tests <- ttest_taxa(counts_panel, panel_meta, top_taxa, covariate_cols)
+  tests <- lm_taxa(counts_panel, panel_meta, top_taxa, daa_covariate)
   significant_taxa <- tests %>%
     filter(Significant) %>%
     pull(Taxon) %>%
@@ -684,8 +973,8 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label) {
     tidyr::pivot_longer(-SampleID, names_to = "Taxon", values_to = "RelativeAbundance") %>%
     left_join(panel_meta %>% select(SampleID), by = "SampleID") %>%
     mutate(
-      SamplePlotID = paste0("sample", match(SampleID, sample_ids)),
-      SamplePlotID = factor(SamplePlotID, levels = paste0("sample", seq_along(sample_ids))),
+      SamplePlotID = paste0("S", match(SampleID, sample_ids)),
+      SamplePlotID = factor(SamplePlotID, levels = paste0("S", seq_along(sample_ids))),
       Taxon = factor(Taxon, levels = c(top_taxa, "Others"))
     )
 
@@ -693,12 +982,12 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label) {
   legend_labels[significant_taxa] <- paste0(legend_labels[significant_taxa], "*")
   pal <- taxa_palette(levels(stack_df$Taxon))
   n_samples <- length(sample_ids)
-  x_breaks <- paste0("sample", sample_breaks(n_samples))
+  x_breaks <- paste0("S", sample_breaks(n_samples))
   axis_size <- ifelse(n_samples > 120, 5.8, ifelse(n_samples > 55, 6.4, 6.9))
 
   plot <- ggplot(stack_df, aes(x = SamplePlotID, y = RelativeAbundance, fill = Taxon)) +
-    geom_col(width = 0.98, linewidth = 0, color = NA) +
-    scale_fill_manual(values = pal, labels = legend_labels, drop = FALSE, name = "Taxon (* q < 0.05)") +
+    geom_col(width = 0.98, linewidth = 0.055, color = "white") +
+    scale_fill_manual(values = pal, labels = legend_labels, drop = FALSE, name = NULL) +
     scale_x_discrete(breaks = x_breaks, labels = x_breaks, drop = FALSE) +
     scale_y_continuous(
       breaks = seq(0, 100, 25),
@@ -706,15 +995,19 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label) {
       expand = expansion(mult = c(0, 0))
     ) +
     coord_cartesian(ylim = c(0, 100), expand = FALSE) +
-    labs(x = "Sample", y = "Relative abundance", tag = panel_letter) +
-    guides(fill = guide_legend(ncol = 4, byrow = TRUE, override.aes = list(linewidth = 0))) +
+    labs(x = "Sample", y = "Relative abundance") +
+    guides(fill = guide_legend(
+      ncol = 5, byrow = TRUE, title.position = "top", title.hjust = 0,
+      override.aes = list(linewidth = 0)
+    )) +
     theme_nature(base_size = 7.9) +
     theme(
       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = axis_size),
       legend.position = "bottom",
       legend.title = element_text(face = "bold", size = 6.5),
-      legend.text = element_text(size = 6.1),
-      legend.key.size = unit(3.3, "mm"),
+      legend.text = element_text(size = 6.15),
+      legend.key.size = grid::unit(3.7, "mm"),
+      legend.spacing.x = grid::unit(1.3, "mm"),
       panel.grid.major.y = element_line(linewidth = 0.11, color = "grey91")
     )
 
@@ -723,19 +1016,28 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label) {
     top_taxa = tibble::tibble(
       Panel = panel_letter,
       PanelLabel = panel_label,
+      Covariate = daa_covariate,
+      CovariateLabel = unname(covariate_labels[daa_covariate]),
       Taxon = top_taxa,
       mean_relative_abundance = as.numeric(mean_rel[top_taxa]),
-      significant_by_HRIC_ttest = top_taxa %in% significant_taxa
+      significant_by_HRIC_lm = top_taxa %in% significant_taxa
     ),
     tests = tests %>% mutate(Panel = panel_letter, PanelLabel = panel_label, .before = 1),
-    stack = stack_df %>% mutate(Panel = panel_letter, PanelLabel = panel_label, .before = 1)
+    stack = stack_df %>% mutate(
+      Panel = panel_letter,
+      PanelLabel = panel_label,
+      Covariate = daa_covariate,
+      CovariateLabel = unname(covariate_labels[daa_covariate]),
+      .before = 1
+    )
   )
 }
 
-figure4_plots <- list()
+figure4_plots_by_panel_covariate <- setNames(vector("list", nrow(panel_defs)), panel_defs$panel)
 figure4_top_taxa <- list()
-figure4_tests <- list()
+figure4_lm_results <- list()
 figure4_stack_data <- list()
+figure4_regional_files <- character()
 for (i in seq_len(nrow(panel_defs))) {
   panel <- panel_defs$panel[i]
   panel_label <- panel_defs$panel_label[i]
@@ -750,21 +1052,77 @@ for (i in seq_len(nrow(panel_defs))) {
   if (!identical(panel_meta$SampleID, panel_order)) {
     stop("Figure 4 sample order does not match Figure 2 for panel ", panel)
   }
-  result <- make_figure4(panel_meta, panel, panel_label)
-  figure4_plots[[panel]] <- result$plot
-  figure4_top_taxa[[panel]] <- result$top_taxa
-  figure4_tests[[panel]] <- result$tests
-  figure4_stack_data[[panel]] <- result$stack
-  width <- ifelse(nrow(panel_meta) > 120, 14.5, max(6.9, 0.18 * nrow(panel_meta)))
-  save_plot(result$plot, paste0("figure4", panel, "_", file_id, "_stacked_taxa"), width = width, height = 5.15)
+  figure4_plots_by_panel_covariate[[panel]] <- list()
+  for (covar in covariate_cols) {
+    result <- make_figure4(panel_meta, panel, panel_label, covar)
+    figure4_plots_by_panel_covariate[[panel]][[covar]] <- result$plot
+    result_key <- paste(panel, covar, sep = "__")
+    figure4_top_taxa[[result_key]] <- result$top_taxa
+    figure4_lm_results[[result_key]] <- result$tests
+    figure4_stack_data[[result_key]] <- result$stack
+    covar_file_id <- safe_id(unname(covariate_labels[covar]))
+    figure4_regional_files <- c(
+      figure4_regional_files,
+      save_plot(
+        result$plot,
+        paste0("figure4", panel, "_", file_id, "_stacked_taxa_", covar_file_id),
+        width = figure_sizes$figure4["width"],
+        height = figure_sizes$figure4["height"]
+      )
+    )
+  }
 }
 
-write.csv(bind_rows(figure4_top_taxa), file.path(tab_dir, "figure4_top19_taxa_by_panel.csv"), row.names = FALSE)
-write.csv(bind_rows(figure4_tests), file.path(tab_dir, "figure4_HRIC_coordinate_ttests_by_panel.csv"), row.names = FALSE)
-write.csv(bind_rows(figure4_stack_data), file.path(tab_dir, "figure4_stacked_bar_plot_data.csv"), row.names = FALSE)
+write.csv(bind_rows(figure4_top_taxa), file.path(tab_dir, "figure4_top19_taxa_by_panel_covariate.csv"), row.names = FALSE)
+figure4_lm_table <- bind_rows(figure4_lm_results)
+write.csv(figure4_lm_table, file.path(tab_dir, "figure4_HRIC_lm_by_panel_covariate.csv"), row.names = FALSE)
+write.csv(bind_rows(figure4_stack_data), file.path(tab_dir, "figure4_stacked_bar_plot_data_by_covariate.csv"), row.names = FALSE)
+
+figure4_selection_stats <- figure4_lm_table %>%
+  group_by(Covariate, CovariateLabel) %>%
+  summarise(
+    n_significant_tests = sum(Significant, na.rm = TRUE),
+    n_significant_taxa = n_distinct(Taxon[Significant]),
+    min_q = ifelse(all(is.na(q)), NA_real_, min(q, na.rm = TRUE)),
+    median_q = ifelse(all(is.na(q)), NA_real_, median(q, na.rm = TRUE)),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(n_significant_tests), desc(n_significant_taxa), is.na(min_q), min_q, CovariateLabel)
+main_figure4_covariate <- figure4_selection_stats$Covariate[1]
+main_figure4_covariate_label <- unname(covariate_labels[main_figure4_covariate])
+figure4_selection_stats <- figure4_selection_stats %>%
+  mutate(selected_for_integrated_figure = Covariate == main_figure4_covariate)
+write.csv(figure4_selection_stats, file.path(tab_dir, "figure4_lm_covariate_selection.csv"), row.names = FALSE)
+
+figure4_plots <- setNames(
+  lapply(panel_defs$panel, function(panel) {
+    figure4_plots_by_panel_covariate[[panel]][[main_figure4_covariate]]
+  }),
+  panel_defs$panel
+)
+
+figure4_covariate_files <- character()
+for (covar in covariate_cols) {
+  covar_file_id <- safe_id(unname(covariate_labels[covar]))
+  covar_plot <- wrap_plots(
+    lapply(panel_defs$panel, function(panel) figure4_plots_by_panel_covariate[[panel]][[covar]]),
+    ncol = 1
+  ) +
+    plot_layout(heights = rep(1, nrow(panel_defs))) &
+    theme(plot.background = element_rect(fill = "white", color = NA))
+  figure4_covariate_files <- c(
+    figure4_covariate_files,
+    save_plot(
+      covar_plot,
+      paste0("figure4_", covar_file_id, "_stacked_taxa_ocean_regions"),
+      width = figure_sizes$figure4["width"],
+      height = figure_sizes$figure4["height"] * 2.05
+    )
+  )
+}
 
 figure4_order_check <- bind_rows(figure4_stack_data) %>%
-  distinct(Panel, SamplePlotID, SampleID) %>%
+  distinct(Panel, Covariate, SamplePlotID, SampleID) %>%
   left_join(
     all_diversity %>% select(Panel, SamplePlotID, Figure2SampleID = SampleID),
     by = c("Panel", "SamplePlotID")
@@ -772,22 +1130,78 @@ figure4_order_check <- bind_rows(figure4_stack_data) %>%
   summarise(matches_figure2_order = all(SampleID == Figure2SampleID), .groups = "drop") %>%
   pull(matches_figure2_order)
 
+make_integrated_region <- function(panel) {
+  panel_label <- panel_defs$panel_label[match(panel, panel_defs$panel)]
+  panel_n <- all_diversity %>%
+    filter(Panel == panel) %>%
+    summarise(n = n(), .groups = "drop") %>%
+    pull(n)
+  title_plot <- ggplot() +
+    annotate(
+      "label", x = 0, y = 0.50,
+      label = paste0(panel_label, " (n = ", panel_n, ")"),
+      hjust = 0, vjust = 0.5, size = 5.15, fontface = "bold", color = "grey8",
+      fill = scales::alpha("#F7F7F7", 0.96), linewidth = 0.20,
+      label.padding = grid::unit(0.16, "lines")
+    ) +
+    coord_cartesian(xlim = c(0, 1), ylim = c(0, 1), clip = "off") +
+    theme_void() +
+    theme(plot.margin = margin(0, 5, 0, 6))
+  alpha_plot <- figure2_plots[[panel]] + theme(plot.margin = margin(5, 5, 5, 6))
+  taxa_plot <- figure4_plots[[panel]] + theme(plot.margin = margin(5, 6, 5, 5))
+  covariate_plot <- figure3_plots[[panel]] + theme(plot.margin = margin(5, 5, 7, 6))
+
+  title_plot + alpha_plot + taxa_plot + covariate_plot +
+    plot_layout(
+      design = "AA\nBC\nDD",
+      widths = c(1, 1),
+      heights = c(0.14, 0.75, 1.28)
+    )
+}
+
+integrated_figure <- (
+  make_integrated_region("a") /
+    make_integrated_region("b")
+) +
+  plot_layout(heights = c(1, 1)) &
+  theme(plot.background = element_rect(fill = "white", color = NA))
+
+save_plot(
+  integrated_figure,
+  "figure_integrated_ocean_regions",
+  width = figure_sizes$integrated["width"],
+  height = figure_sizes$integrated["height"],
+  dpi = 320
+)
+
 combined_figure_files <- file.path(
   fig_dir,
   paste0(
     c(
-      "figure2_alpha_gamma_turnover0_all_panels",
-      "figure3_turnover0_covariates_all_panels",
+      "figure2_alpha_gamma_turnover_all_panels",
+      "figure3_turnover_covariates_all_panels",
       "figure4_stacked_taxa_all_panels"
     ),
     rep(c(".pdf", ".png", ".tiff"), each = 3)
   )
 )
+figure1_regional_files <- file.path(
+  fig_dir,
+  paste0(
+    rep(c("figure1a_arctic_ocean_sample_map", "figure1b_north_atlantic_ocean_sample_map"), each = 3),
+    rep(c(".pdf", ".png", ".tiff"), times = 2)
+  )
+)
+old_figure1_files <- file.path(fig_dir, paste0("figure1_ocean_sample_map", c(".pdf", ".png", ".tiff")))
+integrated_figure_files <- file.path(
+  fig_dir,
+  paste0("figure_integrated_ocean_regions", c(".pdf", ".png", ".tiff"))
+)
 
 sample_panel_key <- all_diversity %>%
   select(
     Panel, PanelLabel, SamplePlotID, SampleIndex, SampleID, RegionShort, Ocean.region,
-    Layer, Turnover0, Alpha, Gamma, all_of(covariate_cols)
+    Layer, Turnover, Alpha, Gamma, all_of(covariate_cols)
   )
 write.csv(sample_panel_key, file.path(tab_dir, "sample_panel_key.csv"), row.names = FALSE)
 
@@ -795,29 +1209,46 @@ qc_checks <- tibble::tibble(
   check = c(
     "HRIC package functions available",
     "Additive diversity partition",
-    "turnover0 definition",
+    "turnover definition",
+    "Figure 1 regional map organization",
     "Figure 2 and Figure 4 sample order",
-    "Regional-only figure organization",
+    "No legacy all-panel exports",
     "Figure 3 panel count",
-    "Figure 4 taxon grouping"
+    "Figure 4 taxon grouping",
+    "Figure 4 LM differential models",
+    "Figure 4 covariate-specific exports",
+    "Integrated figure export"
   ),
   status = c(
     all(c("HRIC", "SHalpha", "SHgamma", "SHbeta") %in% getNamespaceExports("HRIC")),
     all(abs(diversity_summary$gamma - diversity_summary$mean_alpha - diversity_summary$beta) < 1e-10),
-    max(abs(all_diversity$Turnover0 - (all_diversity$Gamma - all_diversity$Alpha))) < 1e-12,
-    all(sample_order_check$sorted_by_turnover0) && isTRUE(figure4_order_check),
+    max(abs(all_diversity$Turnover - (all_diversity$Gamma - all_diversity$Alpha))) < 1e-12,
+    all(file.exists(figure1_regional_files)) && !any(file.exists(old_figure1_files)) &&
+      nrow(north_atlantic_currents) > 0 && nrow(north_atlantic_current_labels) == 5,
+    all(sample_order_check$sorted_by_turnover) && isTRUE(figure4_order_check),
     nrow(panel_defs) == length(selected_region_labels) && !any(file.exists(combined_figure_files)),
     nrow(figure3_stats) == nrow(panel_defs) * length(covariate_cols),
-    all(bind_rows(figure4_top_taxa) %>% count(Panel) %>% pull(n) <= 19)
+    all(bind_rows(figure4_top_taxa) %>% count(Panel, Covariate) %>% pull(n) <= 19),
+    nrow(figure4_lm_table) == nrow(panel_defs) * length(covariate_cols) * 19 &&
+      !any(c("median_cut", "mean_low", "mean_high") %in% names(figure4_lm_table)),
+    length(figure4_covariate_files) == length(covariate_cols) * 3 &&
+      all(file.exists(figure4_covariate_files)) &&
+      length(figure4_regional_files) == nrow(panel_defs) * length(covariate_cols) * 3 &&
+      all(file.exists(figure4_regional_files)),
+    all(file.exists(integrated_figure_files)) && all(file.info(integrated_figure_files)$size > 0)
   ),
   detail = c(
     "Required exports available: HRIC, SHalpha, SHgamma, SHbeta",
     paste0("max abs(gamma - mean_alpha - beta) = ", formatC(max(abs(diversity_summary$gamma - diversity_summary$mean_alpha - diversity_summary$beta)), format = "e", digits = 2)),
-    paste0("max abs(turnover0 - (gamma - alpha)) = ", formatC(max(abs(all_diversity$Turnover0 - (all_diversity$Gamma - all_diversity$Alpha))), format = "e", digits = 2)),
-    "Figure 2 samples are sorted from smallest to largest turnover0, and Figure 4 uses the same sample1...sampleN order.",
-    "Figures 2, 3, and 4 are generated only as separate Arctic Ocean and North Atlantic Ocean files; no combined versions are written.",
+    paste0("max abs(turnover - (gamma - alpha)) = ", formatC(max(abs(all_diversity$Turnover - (all_diversity$Gamma - all_diversity$Alpha))), format = "e", digits = 2)),
+    "Figure 1 is generated as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map includes a manually anchored schematic circulation overlay.",
+    "Figure 2 samples are sorted from smallest to largest turnover, relabeled S1...SN, and Figure 4 uses the same order.",
+    "Legacy all-panel Figure 2, Figure 3, and old Figure 4 files are not written; six covariate-specific Figure 4 ocean-region plates are written separately.",
     paste0(nrow(figure3_stats), " Spearman tests for ", nrow(panel_defs), " panels x ", length(covariate_cols), " covariates"),
-    "Each Figure 4 panel uses the top 19 aggregated taxa plus Others in the stacked plot."
+    "Each Figure 4 panel-covariate version uses the top 19 aggregated taxa plus Others in the stacked plot.",
+    "Figure 4 differential marking uses univariable lm(HRIC taxon coordinate ~ covariate), one covariate at a time, with BH-adjusted q values; no low/high median split is used.",
+    paste0("Saved ", length(covariate_cols), " covariate-specific Figure 4 ocean-region plates plus separate regional Figure 4 files. Integrated figure uses ", main_figure4_covariate_label, "."),
+    "A single integrated ocean-region figure is exported in PDF, PNG, and TIFF formats."
   )
 )
 write.csv(qc_checks, file.path(tab_dir, "analysis_qc_checks.csv"), row.names = FALSE)
@@ -842,25 +1273,30 @@ run_summary <- c(
   paste0("HRIC GitHub SHA: ", hric_github_sha),
   paste0("Selected regional panels: ", paste(selected_region_labels, collapse = "; ")),
   paste0("QC checks passed: ", sum(qc_checks$status), "/", nrow(qc_checks)),
-  "Figures 2, 3, and 4 are saved only as separate regional files, with no combined all-panel versions.",
-  "Figure 2 turnover0 is gamma - alpha, with alpha/gamma/beta from HRIC::SHalpha, HRIC::SHgamma, and HRIC::SHbeta.",
+  "Figure 1 is saved as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map includes manually anchored schematic labels for the Gulf Stream, North Atlantic Current, Labrador Current, Canary Current, and North Equatorial Current.",
+  "Figures 2 and 3 are saved as separate regional files. Figure 4 is saved as separate regional files for each covariate and as six covariate-specific ocean-region plates.",
+  "Figure 2 turnover is gamma - alpha, with alpha/gamma/beta from HRIC::SHalpha, HRIC::SHgamma, and HRIC::SHbeta; each Figure 2 panel uses a directly transformed pale regional map that starts at the y-axis and sits behind the data.",
   "Figures do not separate or encode samples by layer.",
-  "Figure 2 samples are ordered from smallest to largest turnover0; Figure 4 uses the same sample order for each corresponding panel.",
-  paste0("Figure 3 uses Spearman cor.test between turnover0 and these covariates: ", covariate_list_text, "."),
-  "Figure 4 asterisks in the legend mark top taxa with at least one BH-adjusted Welch t-test q < 0.05 after median-splitting the Figure 3 covariates and testing HRIC::HRIC coordinates."
+  "Figure 2 samples are ordered from smallest to largest turnover and relabeled S1...SN; Figure 4 uses the same sample order for each corresponding panel.",
+  paste0("Figure 3 uses Spearman cor.test between turnover and these covariates: ", covariate_list_text, "."),
+  "Figure 4 uses a high-contrast categorical palette with fine white separators between stacked taxa. For each covariate-specific Figure 4, asterisks in the legend mark top taxa with BH-adjusted q < 0.05 from univariable lm(HRIC::HRIC taxon coordinate ~ covariate).",
+  paste0("The integrated figure uses the Figure 4 version for ", main_figure4_covariate_label, ", selected by the largest number of significant LM results across the two regional panels."),
+  "A single integrated ocean-region figure is also saved with Arctic Ocean on top and North Atlantic Ocean on bottom. In each area, Figure 2 uses a lightly overlapping shaded map background and is paired with the corresponding Figure 3 and selected Figure 4 panel."
 )
 writeLines(run_summary, file.path(out_dir, "run_summary.txt"))
 
 caption_text <- c(
   "# RealDataOcean figure captions",
   "",
-  "**Figure 1. Ocean sample locations.** Points show samples with available latitude and longitude. Highlighted colors denote the Arctic Ocean and North Atlantic Ocean focus regions selected for regional panels; other samples are grey.",
+  "**Figure 1. Ocean sample locations and North Atlantic circulation context.** Figure 1a shows Arctic Ocean sample locations and Figure 1b shows North Atlantic Ocean sample locations, both using basin-colored ocean backgrounds and cross-shaped sample marks. Each map labels the ocean basin and sample size. Figure 1b also includes manually anchored schematic circulation labels in English: Gulf Stream, North Atlantic Current, North Equatorial Current, Labrador Current, and Canary Current. Warm currents are red and cold currents are blue; arrows are schematic circulation guides rather than measured trajectories.",
   "",
-  "**Figure 2. HRIC alpha diversity, gamma diversity, and sample-level turnover0.** Figure 2a shows Arctic Ocean and Figure 2b shows North Atlantic Ocean. Each panel orders samples from the smallest to the largest turnover0, relabeled as sample1, sample2, and so on. Points are HRIC alpha diversity values from `HRIC::SHalpha`; dashed red lines are panel-specific gamma diversity from `HRIC::SHgamma`; the aligned lower strip labels turnover0, computed as gamma minus alpha for each sample.",
+  "**Figure 2. HRIC alpha diversity and gamma diversity.** Figure 2a shows Arctic Ocean and Figure 2b shows North Atlantic Ocean. Each panel orders samples from the smallest to the largest turnover, relabeled as S1, S2, and so on. Points are HRIC alpha diversity values from `HRIC::SHalpha`; dashed red lines are panel-specific gamma diversity from `HRIC::SHgamma`. The pale map in the background is directly transformed into Figure 2 coordinates so the visible background starts at the y-axis, gives regional context, and remains behind the diversity marks.",
   "",
-  "**Figure 3. Correlations between turnover0 and environmental covariates.** Figure 3a shows Arctic Ocean and Figure 3b shows North Atlantic Ocean. Facets show Spearman correlations between turnover0 and the selected location, hydrographic, oxygen, productivity, nutrient, mixed-layer, stability, circulation, and iron covariates. Text in each facet reports Spearman rho, p value from `cor.test(method = \"spearman\")`, and complete-case sample size. Covariate availability is listed in `tables/figure3_covariate_availability.csv`.",
+  "**Figure 3. Correlations between turnover and environmental covariates.** Figure 3a shows Arctic Ocean and Figure 3b shows North Atlantic Ocean. Facets show Spearman correlations between turnover and Depth, Temperature, Oxygen, Chlorophyll a, Phosphate, and Nitrate. Text in each facet reports Spearman rho, p value from `cor.test(method = \"spearman\")`, and complete-case sample size. Covariate availability is listed in `tables/figure3_covariate_availability.csv`.",
   "",
-  "**Figure 4. Relative abundance of the top taxa.** Figure 4a shows Arctic Ocean and Figure 4b shows North Atlantic Ocean. Stacked bars show the top 19 aggregated taxa by mean relative abundance within each panel plus all remaining taxa as Others, using the same sample order as the corresponding Figure 2 panel. Taxa marked with an asterisk in the legend have at least one BH-adjusted Welch t-test q < 0.05 when `HRIC::HRIC` coordinates are compared across median-split Figure 3 covariates."
+  paste0("**Figure 4. Relative abundance of the top taxa.** Six covariate-specific Figure 4 versions are saved, one each for ", covariate_list_text, ". Within each version, Figure 4a shows Arctic Ocean and Figure 4b shows North Atlantic Ocean. Stacked bars show the top 19 aggregated taxa by mean relative abundance within each panel plus all remaining taxa as Others, using the same S1...SN sample order as the corresponding Figure 2 panel. The stacked bars use a high-contrast categorical palette with fine white separators to improve taxon discrimination. Taxa marked with an asterisk in the legend have BH-adjusted q < 0.05 from univariable `lm(HRIC::HRIC taxon coordinate ~ covariate)` for that Figure 4 covariate. The integrated figure uses the ", main_figure4_covariate_label, " version."),
+  "",
+  paste0("**Integrated ocean-region figure.** The integrated figure combines both regional figure sets into a single plate with Arctic Ocean on top and North Atlantic Ocean on bottom. Within each area, Figure 2 has a lightly overlapping shaded regional-map background and is paired with the corresponding Figure 3 covariate panel and the selected Figure 4 stacked-taxa panel based on ", main_figure4_covariate_label, ".")
 )
 writeLines(caption_text, file.path(out_dir, "figure_captions.md"))
 

@@ -1,0 +1,229 @@
+"Panel","PanelLabel","Covariate","CovariateLabel","Taxon","mean_relative_abundance","significant_by_HRIC_lm"
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Chloroplast (class)",0.101550603676424,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","NS9 (family)",0.0629859049809612,FALSE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","SAR11 (order)",0.0605130146185435,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Cryomorphaceae (family)",0.0547568765274671,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","NS5 (genus)",0.0530376675655989,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","OM182 (family)",0.0253843219059687,FALSE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Polaribacter (genus)",0.0253101372820059,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Marinimicrobia (phylum)",0.0229607285497794,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","SAR92 (genus)",0.0211177249279337,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Piscirickettsiaceae (family)",0.019864855537316,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Marine (family)",0.0187303428354652,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Marinoscillum (genus)",0.0185112873854738,FALSE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","NS7 (family)",0.0171099401778051,FALSE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","SAR86 (family)",0.0156909396341284,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Formosa (genus)",0.0138571370173102,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","NS11-12 (family)",0.0136564459743163,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Flavobacteriaceae (family)",0.0120384866649608,TRUE
+"a","Arctic Ocean","Depth.nominal","Depth (m)","Phaeocystis (family)",0.0115318049411385,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Chloroplast (class)",0.101550603676424,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","NS9 (family)",0.0629859049809612,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","SAR11 (order)",0.0605130146185435,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Cryomorphaceae (family)",0.0547568765274671,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","NS5 (genus)",0.0530376675655989,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","OM182 (family)",0.0253843219059687,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Polaribacter (genus)",0.0253101372820059,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Marinimicrobia (phylum)",0.0229607285497794,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","SAR92 (genus)",0.0211177249279337,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Piscirickettsiaceae (family)",0.019864855537316,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Marine (family)",0.0187303428354652,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Marinoscillum (genus)",0.0185112873854738,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","NS7 (family)",0.0171099401778051,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","SAR86 (family)",0.0156909396341284,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Formosa (genus)",0.0138571370173102,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","NS11-12 (family)",0.0136564459743163,TRUE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Flavobacteriaceae (family)",0.0120384866649608,FALSE
+"a","Arctic Ocean","Temperature","Temperature (deg C)","Phaeocystis (family)",0.0115318049411385,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","Chloroplast (class)",0.101550603676424,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","NS9 (family)",0.0629859049809612,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","SAR11 (order)",0.0605130146185435,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Cryomorphaceae (family)",0.0547568765274671,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","NS5 (genus)",0.0530376675655989,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","OM182 (family)",0.0253843219059687,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Polaribacter (genus)",0.0253101372820059,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Marinimicrobia (phylum)",0.0229607285497794,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","SAR92 (genus)",0.0211177249279337,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","Piscirickettsiaceae (family)",0.019864855537316,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Marine (family)",0.0187303428354652,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Marinoscillum (genus)",0.0185112873854738,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","NS7 (family)",0.0171099401778051,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","SAR86 (family)",0.0156909396341284,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Formosa (genus)",0.0138571370173102,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","NS11-12 (family)",0.0136564459743163,TRUE
+"a","Arctic Ocean","Oxygen","Oxygen","Flavobacteriaceae (family)",0.0120384866649608,FALSE
+"a","Arctic Ocean","Oxygen","Oxygen","Phaeocystis (family)",0.0115318049411385,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Chloroplast (class)",0.101550603676424,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","NS9 (family)",0.0629859049809612,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","SAR11 (order)",0.0605130146185435,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Cryomorphaceae (family)",0.0547568765274671,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","NS5 (genus)",0.0530376675655989,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","OM182 (family)",0.0253843219059687,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Polaribacter (genus)",0.0253101372820059,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Marinimicrobia (phylum)",0.0229607285497794,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","SAR92 (genus)",0.0211177249279337,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Piscirickettsiaceae (family)",0.019864855537316,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Marine (family)",0.0187303428354652,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Marinoscillum (genus)",0.0185112873854738,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","NS7 (family)",0.0171099401778051,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","SAR86 (family)",0.0156909396341284,TRUE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Formosa (genus)",0.0138571370173102,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","NS11-12 (family)",0.0136564459743163,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Flavobacteriaceae (family)",0.0120384866649608,FALSE
+"a","Arctic Ocean","ChlorophyllA","Chlorophyll a","Phaeocystis (family)",0.0115318049411385,TRUE
+"a","Arctic Ocean","PO4","Phosphate","Chloroplast (class)",0.101550603676424,FALSE
+"a","Arctic Ocean","PO4","Phosphate","NS9 (family)",0.0629859049809612,FALSE
+"a","Arctic Ocean","PO4","Phosphate","SAR11 (order)",0.0605130146185435,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Cryomorphaceae (family)",0.0547568765274671,FALSE
+"a","Arctic Ocean","PO4","Phosphate","NS5 (genus)",0.0530376675655989,FALSE
+"a","Arctic Ocean","PO4","Phosphate","OM182 (family)",0.0253843219059687,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Polaribacter (genus)",0.0253101372820059,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Marinimicrobia (phylum)",0.0229607285497794,FALSE
+"a","Arctic Ocean","PO4","Phosphate","SAR92 (genus)",0.0211177249279337,FALSE
+"a","Arctic Ocean","PO4","Phosphate","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Piscirickettsiaceae (family)",0.019864855537316,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Marine (family)",0.0187303428354652,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Marinoscillum (genus)",0.0185112873854738,FALSE
+"a","Arctic Ocean","PO4","Phosphate","NS7 (family)",0.0171099401778051,FALSE
+"a","Arctic Ocean","PO4","Phosphate","SAR86 (family)",0.0156909396341284,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Formosa (genus)",0.0138571370173102,FALSE
+"a","Arctic Ocean","PO4","Phosphate","NS11-12 (family)",0.0136564459743163,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Flavobacteriaceae (family)",0.0120384866649608,FALSE
+"a","Arctic Ocean","PO4","Phosphate","Phaeocystis (family)",0.0115318049411385,FALSE
+"a","Arctic Ocean","NO3","Nitrate","Chloroplast (class)",0.101550603676424,TRUE
+"a","Arctic Ocean","NO3","Nitrate","NS9 (family)",0.0629859049809612,FALSE
+"a","Arctic Ocean","NO3","Nitrate","SAR11 (order)",0.0605130146185435,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Cryomorphaceae (family)",0.0547568765274671,TRUE
+"a","Arctic Ocean","NO3","Nitrate","NS5 (genus)",0.0530376675655989,TRUE
+"a","Arctic Ocean","NO3","Nitrate","OM182 (family)",0.0253843219059687,FALSE
+"a","Arctic Ocean","NO3","Nitrate","Polaribacter (genus)",0.0253101372820059,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Marinimicrobia (phylum)",0.0229607285497794,TRUE
+"a","Arctic Ocean","NO3","Nitrate","SAR92 (genus)",0.0211177249279337,TRUE
+"a","Arctic Ocean","NO3","Nitrate","AEGEAN-169 (genus)",0.0201053842692381,FALSE
+"a","Arctic Ocean","NO3","Nitrate","Piscirickettsiaceae (family)",0.019864855537316,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Marine (family)",0.0187303428354652,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Marinoscillum (genus)",0.0185112873854738,TRUE
+"a","Arctic Ocean","NO3","Nitrate","NS7 (family)",0.0171099401778051,FALSE
+"a","Arctic Ocean","NO3","Nitrate","SAR86 (family)",0.0156909396341284,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Formosa (genus)",0.0138571370173102,TRUE
+"a","Arctic Ocean","NO3","Nitrate","NS11-12 (family)",0.0136564459743163,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Flavobacteriaceae (family)",0.0120384866649608,TRUE
+"a","Arctic Ocean","NO3","Nitrate","Phaeocystis (family)",0.0115318049411385,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","SAR11 (order)",0.140643066446677,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Marinimicrobia (phylum)",0.0761414439355194,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","SAR86 (family)",0.056977255283785,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Chloroplast (class)",0.0386663732295685,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Prochlorococcus (genus)",0.0264689437477363,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","SAR202 (class)",0.0236951392918942,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","SAR324 (order)",0.0227850985341311,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","NS5 (genus)",0.0217330839582303,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","NS9 (family)",0.0162844311797806,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","OM1 (family)",0.0134879119671268,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Gammaproteobacteria (order)",0.0129861038424968,TRUE
+"b","North Atlantic Ocean","Depth.nominal","Depth (m)","Marinoscillum (genus)",0.012687417581285,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","SAR11 (order)",0.140643066446677,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Marinimicrobia (phylum)",0.0761414439355194,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","SAR86 (family)",0.056977255283785,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Chloroplast (class)",0.0386663732295685,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Prochlorococcus (genus)",0.0264689437477363,TRUE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","SAR202 (class)",0.0236951392918942,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","SAR324 (order)",0.0227850985341311,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","NS5 (genus)",0.0217330839582303,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","NS9 (family)",0.0162844311797806,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","OM1 (family)",0.0134879119671268,FALSE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Gammaproteobacteria (order)",0.0129861038424968,TRUE
+"b","North Atlantic Ocean","Temperature","Temperature (deg C)","Marinoscillum (genus)",0.012687417581285,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","SAR11 (order)",0.140643066446677,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Marinimicrobia (phylum)",0.0761414439355194,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","SAR86 (family)",0.056977255283785,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Chloroplast (class)",0.0386663732295685,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Prochlorococcus (genus)",0.0264689437477363,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","SAR202 (class)",0.0236951392918942,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","SAR324 (order)",0.0227850985341311,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","NS5 (genus)",0.0217330839582303,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","NS9 (family)",0.0162844311797806,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","OM1 (family)",0.0134879119671268,TRUE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Gammaproteobacteria (order)",0.0129861038424968,FALSE
+"b","North Atlantic Ocean","Oxygen","Oxygen","Marinoscillum (genus)",0.012687417581285,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","SAR11 (order)",0.140643066446677,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Marinimicrobia (phylum)",0.0761414439355194,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","SAR86 (family)",0.056977255283785,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Chloroplast (class)",0.0386663732295685,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Prochlorococcus (genus)",0.0264689437477363,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","SAR202 (class)",0.0236951392918942,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","SAR324 (order)",0.0227850985341311,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","NS5 (genus)",0.0217330839582303,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","NS9 (family)",0.0162844311797806,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","OM1 (family)",0.0134879119671268,TRUE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Gammaproteobacteria (order)",0.0129861038424968,FALSE
+"b","North Atlantic Ocean","ChlorophyllA","Chlorophyll a","Marinoscillum (genus)",0.012687417581285,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","SAR11 (order)",0.140643066446677,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","Marinimicrobia (phylum)",0.0761414439355194,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","SAR86 (family)",0.056977255283785,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","Chloroplast (class)",0.0386663732295685,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","Prochlorococcus (genus)",0.0264689437477363,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","SAR202 (class)",0.0236951392918942,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","SAR324 (order)",0.0227850985341311,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","NS5 (genus)",0.0217330839582303,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","NS9 (family)",0.0162844311797806,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","PO4","Phosphate","OM1 (family)",0.0134879119671268,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","Gammaproteobacteria (order)",0.0129861038424968,TRUE
+"b","North Atlantic Ocean","PO4","Phosphate","Marinoscillum (genus)",0.012687417581285,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","SAR11 (order)",0.140643066446677,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","Marinimicrobia (phylum)",0.0761414439355194,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Marine (family)",0.0645676073755827,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","SAR86 (family)",0.056977255283785,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Marine (class)",0.0464906471548449,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Chloroplast (class)",0.0386663732295685,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","AEGEAN-169 (genus)",0.0382144531070767,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","Prochlorococcus (genus)",0.0264689437477363,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","SAR202 (class)",0.0236951392918942,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","SAR324 (order)",0.0227850985341311,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","NS5 (genus)",0.0217330839582303,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Syndiniales (genus)",0.018088937595167,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","NS9 (family)",0.0162844311797806,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","NS4 (genus)",0.0160733462176079,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","ZD0417 (genus)",0.0157361658437392,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","Rhodospirillaceae (family)",0.0149829347964952,FALSE
+"b","North Atlantic Ocean","NO3","Nitrate","OM1 (family)",0.0134879119671268,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Gammaproteobacteria (order)",0.0129861038424968,TRUE
+"b","North Atlantic Ocean","NO3","Nitrate","Marinoscillum (genus)",0.012687417581285,TRUE
