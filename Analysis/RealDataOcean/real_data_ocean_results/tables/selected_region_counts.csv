@@ -1,0 +1,10 @@
+"region","region_short","n_samples","selected_for_regional_figures"
+"[AO] Arctic Ocean (MRGID:1906)","Arctic Ocean",38,TRUE
+"[SPO] South Pacific Ocean (MRGID:1910)","South Pacific Ocean",34,FALSE
+"[IO] Indian Ocean (MRGID:1904)","Indian Ocean",27,FALSE
+"[NAO] North Atlantic Ocean (MRGID:1912)","North Atlantic Ocean",24,TRUE
+"[SAO] South Atlantic Ocean (MRGID:1914)","South Atlantic Ocean",19,FALSE
+"[NPO] North Pacific Ocean (MRGID:1908)","North Pacific Ocean",16,FALSE
+"[MS] Mediterranean Sea (MRGID:1905)","Mediterranean Sea",12,FALSE
+"[RS] Red Sea (MRGID:4264)","Red Sea",6,FALSE
+"[SO] Southern Ocean (MRGID:1907)","Southern Ocean",4,FALSE

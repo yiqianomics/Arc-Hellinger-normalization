@@ -1,0 +1,13 @@
+^\.git$
+^\.gitignore$
+^\.DS_Store$
+^\.Rhistory$
+(^|/)\.DS_Store$
+(^|/)\.Rhistory$
+^Analysis$
+^Analysis/
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^ArcHellinger_.*\.tar\.gz$
+^ArcHellinger\.Rcheck$

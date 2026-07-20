@@ -1,30 +1,18 @@
-RealDataOcean AHC analysis completed.
-Run time: 2026-06-06 15:55:48.844838
-Analysis directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean
-Output directory: /Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results
-Layers used: SRF, DCM, MES
-Layer counts: SRF=83, DCM=52, MES=38
-All selected taxa: 23692
-DA filtered taxa: 4664
-Pseudo-counts: 0.01, 0.5, 1
-AHC/CLR and DESeq2 DA adjustment: fdr adjusted p-values; threshold = 0.05
-LEfSe: lefser package, one-vs-rest layer runs unioned into one LEfSe set; p adjustment = fdr ; LDA threshold = 2
-
-Key tables:
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/alpha_layer_summary.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/alpha_layer_anova_tests.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/beta_permanova_layer.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/beta_pcoa_procrustes.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_omnibus_anova_AHC_CLR.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_deseq2_omnibus_lrt.csv
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/tables/da_lefse_one_vs_rest.csv
-
-Key figures:
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig1_alpha_diversity_by_layer.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig1b_alpha_method_procrustes.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig2_beta_pcoa_by_method.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig2b_beta_pcoa_procrustes.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig3_da_venn_AHC_CLR_LEfSe.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig3b_da_upset_AHC_CLR_LEfSe.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig4_da_venn_AHC_CLR_DESeq2.png
-/Users/yiqianzhang/Desktop/Arc-Hellinger-normalization/Analysis/RealDataOcean/real_data_ocean_results/figures/fig4b_da_upset_AHC_CLR_DESeq2.png
+RealDataOcean HRIC analysis
+Date: 2026-07-20 19:46:48 EDT
+Samples used: 180
+Original feature count used for HRIC diversity: 23969
+Aggregated taxon labels used for stacked bars: 2195
+HRIC package version: 0.1.0
+HRIC GitHub SHA: be08d1922f06adc7051697fed951bb09461dc5a5
+Selected regional panels: Arctic Ocean; North Atlantic Ocean
+QC checks passed: 11/11
+Figure 1 is saved as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map includes manually anchored schematic labels for the Gulf Stream, North Atlantic Current, Labrador Current, Canary Current, and North Equatorial Current.
+Figures 2 and 3 are saved as separate regional files. Figure 4 is saved as separate regional files for each covariate and as six covariate-specific ocean-region plates.
+Figure 2 turnover is gamma - alpha, with alpha/gamma/beta from HRIC::SHalpha, HRIC::SHgamma, and HRIC::SHbeta; each Figure 2 panel uses a directly transformed pale regional map that starts at the y-axis and sits behind the data.
+Figures do not separate or encode samples by layer.
+Figure 2 samples are ordered from smallest to largest turnover and relabeled S1...SN; Figure 4 uses the same sample order for each corresponding panel.
+Figure 3 uses Spearman cor.test between turnover and these covariates: Depth (m), Temperature (deg C), Oxygen, Chlorophyll a, Phosphate, Nitrate.
+Figure 4 uses a high-contrast categorical palette with fine white separators between stacked taxa. For each covariate-specific Figure 4, asterisks in the legend mark top taxa with BH-adjusted q < 0.05 from univariable lm(HRIC::HRIC taxon coordinate ~ covariate).
+The integrated figure uses the Figure 4 version for Nitrate, selected by the largest number of significant LM results across the two regional panels.
+A single integrated ocean-region figure is also saved with Arctic Ocean on top and North Atlantic Ocean on bottom. In each area, Figure 2 uses a lightly overlapping shaded map background and is paired with the corresponding Figure 3 and selected Figure 4 panel.

@@ -1,8 +1,0 @@
-"metric","value"
-"samples",173
-"taxa_before_filter",23692
-"taxa_after_filter",4664
-"min_prevalence_fraction",0.1
-"min_prevalence_n",18
-"min_total_count",50
-"zero_fraction_after_filter",0.695231709614412
