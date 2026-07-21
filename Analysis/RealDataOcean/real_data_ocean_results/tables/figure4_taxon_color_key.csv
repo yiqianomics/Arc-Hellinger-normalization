@@ -1,0 +1,39 @@
+"Panel","PanelLabel","Taxon","Color","SharedAcrossPanels"
+"a","Arctic Ocean","Chloroplast (class)","#1B4F9C",TRUE
+"a","Arctic Ocean","NS9 (family)","#B72E2B",TRUE
+"a","Arctic Ocean","SAR11 (order)","#008A5B",TRUE
+"a","Arctic Ocean","NS5 (genus)","#7B3294",TRUE
+"a","Arctic Ocean","Marinimicrobia (phylum)","#E69F00",TRUE
+"a","Arctic Ocean","AEGEAN-169 (genus)","#0099B4",TRUE
+"a","Arctic Ocean","Marine (family)","#C44E8B",TRUE
+"a","Arctic Ocean","Marinoscillum (genus)","#8C6D31",TRUE
+"a","Arctic Ocean","SAR86 (family)","#4B8B3B",TRUE
+"a","Arctic Ocean","Cryomorphaceae (family)","#4B4B4B",FALSE
+"a","Arctic Ocean","OM182 (family)","#00A087",FALSE
+"a","Arctic Ocean","Polaribacter (genus)","#F39B30",FALSE
+"a","Arctic Ocean","SAR92 (genus)","#3C5488",FALSE
+"a","Arctic Ocean","Piscirickettsiaceae (family)","#A73030",FALSE
+"a","Arctic Ocean","NS7 (family)","#6E4D9B",FALSE
+"a","Arctic Ocean","Formosa (genus)","#D55E00",FALSE
+"a","Arctic Ocean","NS11-12 (family)","#4DBBD5",FALSE
+"a","Arctic Ocean","Flavobacteriaceae (family)","#55752F",FALSE
+"a","Arctic Ocean","Phaeocystis (family)","#9E9E2D",FALSE
+"b","North Atlantic Ocean","Chloroplast (class)","#1B4F9C",TRUE
+"b","North Atlantic Ocean","NS9 (family)","#B72E2B",TRUE
+"b","North Atlantic Ocean","SAR11 (order)","#008A5B",TRUE
+"b","North Atlantic Ocean","NS5 (genus)","#7B3294",TRUE
+"b","North Atlantic Ocean","Marinimicrobia (phylum)","#E69F00",TRUE
+"b","North Atlantic Ocean","AEGEAN-169 (genus)","#0099B4",TRUE
+"b","North Atlantic Ocean","Marine (family)","#C44E8B",TRUE
+"b","North Atlantic Ocean","Marinoscillum (genus)","#8C6D31",TRUE
+"b","North Atlantic Ocean","SAR86 (family)","#4B8B3B",TRUE
+"b","North Atlantic Ocean","Marine (class)","#4B4B4B",FALSE
+"b","North Atlantic Ocean","Prochlorococcus (genus)","#00A087",FALSE
+"b","North Atlantic Ocean","SAR202 (class)","#F39B30",FALSE
+"b","North Atlantic Ocean","SAR324 (order)","#3C5488",FALSE
+"b","North Atlantic Ocean","Syndiniales (genus)","#A73030",FALSE
+"b","North Atlantic Ocean","NS4 (genus)","#6E4D9B",FALSE
+"b","North Atlantic Ocean","ZD0417 (genus)","#D55E00",FALSE
+"b","North Atlantic Ocean","Rhodospirillaceae (family)","#4DBBD5",FALSE
+"b","North Atlantic Ocean","OM1 (family)","#55752F",FALSE
+"b","North Atlantic Ocean","Gammaproteobacteria (order)","#9E9E2D",FALSE

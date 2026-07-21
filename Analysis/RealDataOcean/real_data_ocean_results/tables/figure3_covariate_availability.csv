@@ -1,10 +1,10 @@
 "region","covariate","covariate_label","selected_for_figure3","n_total","n_complete","n_unique","complete_fraction"
 "Arctic Ocean","Depth.nominal","Depth (m)",TRUE,38,36,17,0.947368421052632
 "Arctic Ocean","Temperature","Temperature (deg C)",TRUE,38,38,38,1
-"Arctic Ocean","Oxygen","Oxygen",TRUE,38,38,38,1
-"Arctic Ocean","ChlorophyllA","Chlorophyll a",TRUE,38,38,31,1
-"Arctic Ocean","PO4","Phosphate",TRUE,38,28,27,0.736842105263158
-"Arctic Ocean","NO3","Nitrate",TRUE,38,28,23,0.736842105263158
+"Arctic Ocean","Oxygen","Oxygen (umol kg-1)",TRUE,38,38,38,1
+"Arctic Ocean","ChlorophyllA","Chlorophyll a (mg m-3)",TRUE,38,38,31,1
+"Arctic Ocean","PO4","Phosphate (umol l-1)",TRUE,38,28,27,0.736842105263158
+"Arctic Ocean","NO3","Nitrate (umol l-1)",TRUE,38,28,23,0.736842105263158
 "Arctic Ocean","Carbon.total","Total carbon",FALSE,38,28,28,0.736842105263158
 "Arctic Ocean","CO3","Carbonate",FALSE,38,28,19,0.736842105263158
 "Arctic Ocean","HCO3","Bicarbonate",FALSE,38,28,24,0.736842105263158
@@ -12,10 +12,10 @@
 "Arctic Ocean","PAR.PC","PAR",FALSE,38,38,33,1
 "North Atlantic Ocean","Depth.nominal","Depth (m)",TRUE,24,24,12,1
 "North Atlantic Ocean","Temperature","Temperature (deg C)",TRUE,24,24,24,1
-"North Atlantic Ocean","Oxygen","Oxygen",TRUE,24,22,22,0.916666666666667
-"North Atlantic Ocean","ChlorophyllA","Chlorophyll a",TRUE,24,24,20,1
-"North Atlantic Ocean","PO4","Phosphate",TRUE,24,16,16,0.666666666666667
-"North Atlantic Ocean","NO3","Nitrate",TRUE,24,22,20,0.916666666666667
+"North Atlantic Ocean","Oxygen","Oxygen (umol kg-1)",TRUE,24,22,22,0.916666666666667
+"North Atlantic Ocean","ChlorophyllA","Chlorophyll a (mg m-3)",TRUE,24,24,20,1
+"North Atlantic Ocean","PO4","Phosphate (umol l-1)",TRUE,24,16,16,0.666666666666667
+"North Atlantic Ocean","NO3","Nitrate (umol l-1)",TRUE,24,22,20,0.916666666666667
 "North Atlantic Ocean","Carbon.total","Total carbon",FALSE,24,6,6,0.25
 "North Atlantic Ocean","CO3","Carbonate",FALSE,24,6,6,0.25
 "North Atlantic Ocean","HCO3","Bicarbonate",FALSE,24,6,3,0.25
