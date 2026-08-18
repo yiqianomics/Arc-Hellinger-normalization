@@ -1,0 +1,6 @@
+check,value
+Maximum |SS_between error|,6.06181771445336e-14
+Maximum |SS_within error|,1.98951966012828e-13
+Maximum |SS_total error|,1.98951966012828e-13
+Maximum |MANOVA F error|,7.19424519957101e-14
+Correlation: SHbeta_between vs SS_between,1

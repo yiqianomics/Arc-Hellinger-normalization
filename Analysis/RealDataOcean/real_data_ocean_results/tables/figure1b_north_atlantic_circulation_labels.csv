@@ -1,6 +1,6 @@
-"Current","LabelLongitude","LabelLatitude","LineLongitude","LineLatitude"
-"Gulf Stream",-76.5,35.2,-73,35
-"North Atlantic Current",-38.5,54.4,-34,51
-"North Equatorial Current",-45.5,12.8,-40,16.5
-"Labrador Current",-63.2,57.2,-54,56
-"Canary Current",-23.5,31.4,-15,32
+"Current","CurrentType","LabelLongitude","LabelLatitude"
+"Gulf Stream","Warm current",-82,36.5
+"North Atlantic Current","Warm current",-35.5,55.5
+"North Equatorial Current","Warm current",-43,13.4
+"Labrador Current","Cold current",-65,53.5
+"Canary Current","Cold current",-24,29.5

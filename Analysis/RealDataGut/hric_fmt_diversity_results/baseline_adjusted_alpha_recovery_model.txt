@@ -1,0 +1,39 @@
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Alpha ~ BaselineAlphaC + PreIndexAlphaC + IndexDayC + Arm * (EarlyTime +      LateTime) + (1 | Patient)
+   Data: post_recovery
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   -482.6    -454.1     252.3    -504.6        87 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5933 -0.6188 -0.1387  0.5677  2.6383 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ Patient  (Intercept) 8.095e-05 0.008997
+ Residual             2.871e-04 0.016945
+Number of obs: 98, groups:  Patient, 24
+
+Fixed effects:
+                        Estimate Std. Error t value
+(Intercept)            4.556e-02  7.357e-03   6.192
+BaselineAlphaC         1.242e-01  1.377e-01   0.901
+PreIndexAlphaC         3.285e-02  1.031e-01   0.319
+IndexDayC              5.563e-04  3.424e-04   1.625
+ArmAuto-FMT            3.930e-02  9.256e-03   4.246
+EarlyTime              8.121e-04  7.810e-04   1.040
+LateTime              -1.054e-05  2.437e-04  -0.043
+ArmAuto-FMT:EarlyTime -1.340e-03  1.063e-03  -1.260
+ArmAuto-FMT:LateTime  -5.152e-04  3.553e-04  -1.450
+
+Correlation of Fixed Effects:
+            (Intr) BslnAC PrInAC IndxDC ArA-FMT ErlyTm LateTm AA-FMT:E
+BaselnAlphC -0.171                                                    
+PrIndxAlphC -0.229 -0.007                                             
+IndexDayC    0.007 -0.014  0.297                                      
+ArmAuto-FMT -0.804  0.126  0.234  0.023                               
+EarlyTime   -0.761  0.197  0.087 -0.029  0.607                        
+LateTime     0.246 -0.241  0.002  0.096 -0.191  -0.638                
+ArmA-FMT:ET  0.557 -0.118 -0.077  0.013 -0.695  -0.730  0.462         
+ArmA-FMT:LT -0.166  0.097  0.055  0.000  0.209   0.427 -0.665 -0.689  

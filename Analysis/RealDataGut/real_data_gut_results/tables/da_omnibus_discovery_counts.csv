@@ -1,7 +1,0 @@
-"method","MethodLabel","n_tested","n_significant"
-"AHC","AHC",219,49
-"CLR_pc0.01","CLR (pc = 0.01)",219,51
-"CLR_pc0.5","CLR (pc = 0.5)",219,59
-"CLR_pc1","CLR (pc = 1)",219,60
-"DESeq2_LRT","DESeq2",219,65
-"LEfSe","LEfSe",37,37

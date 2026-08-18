@@ -1,0 +1,30 @@
+
+Call:
+lm(formula = HRICBaselineDistance ~ BaselineAlphaC + IndexDayC + 
+    Arm * (PreTime + Post + EarlyTime + LateTime), data = event_recovery)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.03389 -0.05709  0.04381  0.12252  0.51621 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            2.0934780  0.0612964  34.153  < 2e-16 ***
+BaselineAlphaC         1.1767889  0.7024814   1.675   0.0949 .  
+IndexDayC              0.0069449  0.0016431   4.227 3.15e-05 ***
+ArmAuto-FMT            0.1545412  0.0900885   1.715   0.0873 .  
+PreTime                0.0074170  0.0034679   2.139   0.0333 *  
+Post                  -0.1394755  0.1077135  -1.295   0.1964    
+EarlyTime             -0.0004487  0.0099121  -0.045   0.9639    
+LateTime              -0.0006103  0.0030228  -0.202   0.8401    
+ArmAuto-FMT:PreTime    0.0078062  0.0049085   1.590   0.1128    
+ArmAuto-FMT:Post      -0.8835298  0.1421907  -6.214 1.71e-09 ***
+ArmAuto-FMT:EarlyTime  0.0244766  0.0140240   1.745   0.0819 .  
+ArmAuto-FMT:LateTime   0.0076176  0.0045325   1.681   0.0939 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2385 on 302 degrees of freedom
+Multiple R-squared:  0.4197,	Adjusted R-squared:  0.3985 
+F-statistic: 19.85 on 11 and 302 DF,  p-value: < 2.2e-16
+

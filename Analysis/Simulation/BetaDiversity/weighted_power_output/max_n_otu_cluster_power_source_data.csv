@@ -1,0 +1,2881 @@
+"panel","k","beta","method","empirical_power","n_replicates"
+"Abundance",2,0.05,"HRIC distance",0.03,100
+"Abundance",2,0.05,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",2,0.05,"ILR-Euclidean (0.1)",0.05,100
+"Abundance",2,0.05,"ILR-Euclidean (0.5)",0.05,100
+"Abundance",2,0.05,"ILR-Euclidean (1)",0.05,100
+"Abundance",2,0.05,"Aitchison (0.5)",0.05,100
+"Abundance",2,0.05,"Aitchison (0.01)",0.04,100
+"Abundance",2,0.05,"Aitchison (0.1)",0.04,100
+"Abundance",2,0.05,"Aitchison (1)",0.05,100
+"Abundance",2,0.05,"Bray-Curtis",0.02,100
+"Abundance",2,0.05,"Euclidean",0,100
+"Abundance",2,0.05,"Jaccard",0.04,100
+"Abundance",2,0.1,"HRIC distance",0.06,100
+"Abundance",2,0.1,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",2,0.1,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",2,0.1,"ILR-Euclidean (0.5)",0.08,100
+"Abundance",2,0.1,"ILR-Euclidean (1)",0.09,100
+"Abundance",2,0.1,"Aitchison (0.5)",0.07,100
+"Abundance",2,0.1,"Aitchison (0.01)",0.08,100
+"Abundance",2,0.1,"Aitchison (0.1)",0.08,100
+"Abundance",2,0.1,"Aitchison (1)",0.08,100
+"Abundance",2,0.1,"Bray-Curtis",0.06,100
+"Abundance",2,0.1,"Euclidean",0.1,100
+"Abundance",2,0.1,"Jaccard",0.08,100
+"Abundance",2,0.15,"HRIC distance",0.04,100
+"Abundance",2,0.15,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",2,0.15,"ILR-Euclidean (0.1)",0.05,100
+"Abundance",2,0.15,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",2,0.15,"ILR-Euclidean (1)",0.04,100
+"Abundance",2,0.15,"Aitchison (0.5)",0.04,100
+"Abundance",2,0.15,"Aitchison (0.01)",0.05,100
+"Abundance",2,0.15,"Aitchison (0.1)",0.04,100
+"Abundance",2,0.15,"Aitchison (1)",0.04,100
+"Abundance",2,0.15,"Bray-Curtis",0.06,100
+"Abundance",2,0.15,"Euclidean",0.04,100
+"Abundance",2,0.15,"Jaccard",0.05,100
+"Abundance",2,0.2,"HRIC distance",0.12,100
+"Abundance",2,0.2,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",2,0.2,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",2,0.2,"ILR-Euclidean (0.5)",0.08,100
+"Abundance",2,0.2,"ILR-Euclidean (1)",0.07,100
+"Abundance",2,0.2,"Aitchison (0.5)",0.08,100
+"Abundance",2,0.2,"Aitchison (0.01)",0.06,100
+"Abundance",2,0.2,"Aitchison (0.1)",0.06,100
+"Abundance",2,0.2,"Aitchison (1)",0.08,100
+"Abundance",2,0.2,"Bray-Curtis",0.13,100
+"Abundance",2,0.2,"Euclidean",0.09,100
+"Abundance",2,0.2,"Jaccard",0.05,100
+"Abundance",2,0.25,"HRIC distance",0.12,100
+"Abundance",2,0.25,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",2,0.25,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",2,0.25,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",2,0.25,"ILR-Euclidean (1)",0.07,100
+"Abundance",2,0.25,"Aitchison (0.5)",0.06,100
+"Abundance",2,0.25,"Aitchison (0.01)",0.06,100
+"Abundance",2,0.25,"Aitchison (0.1)",0.06,100
+"Abundance",2,0.25,"Aitchison (1)",0.07,100
+"Abundance",2,0.25,"Bray-Curtis",0.08,100
+"Abundance",2,0.25,"Euclidean",0.07,100
+"Abundance",2,0.25,"Jaccard",0.07,100
+"Abundance",2,0.3,"HRIC distance",0.19,100
+"Abundance",2,0.3,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",2,0.3,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",2,0.3,"ILR-Euclidean (0.5)",0.1,100
+"Abundance",2,0.3,"ILR-Euclidean (1)",0.08,100
+"Abundance",2,0.3,"Aitchison (0.5)",0.08,100
+"Abundance",2,0.3,"Aitchison (0.01)",0.06,100
+"Abundance",2,0.3,"Aitchison (0.1)",0.07,100
+"Abundance",2,0.3,"Aitchison (1)",0.09,100
+"Abundance",2,0.3,"Bray-Curtis",0.2,100
+"Abundance",2,0.3,"Euclidean",0.1,100
+"Abundance",2,0.3,"Jaccard",0.05,100
+"Abundance",2,0.35,"HRIC distance",0.18,100
+"Abundance",2,0.35,"ILR-Euclidean (0.01)",0.03,100
+"Abundance",2,0.35,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",2,0.35,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",2,0.35,"ILR-Euclidean (1)",0.03,100
+"Abundance",2,0.35,"Aitchison (0.5)",0.03,100
+"Abundance",2,0.35,"Aitchison (0.01)",0.02,100
+"Abundance",2,0.35,"Aitchison (0.1)",0.03,100
+"Abundance",2,0.35,"Aitchison (1)",0.03,100
+"Abundance",2,0.35,"Bray-Curtis",0.21,100
+"Abundance",2,0.35,"Euclidean",0.12,100
+"Abundance",2,0.35,"Jaccard",0.02,100
+"Abundance",2,0.4,"HRIC distance",0.24,100
+"Abundance",2,0.4,"ILR-Euclidean (0.01)",0.09,100
+"Abundance",2,0.4,"ILR-Euclidean (0.1)",0.12,100
+"Abundance",2,0.4,"ILR-Euclidean (0.5)",0.12,100
+"Abundance",2,0.4,"ILR-Euclidean (1)",0.13,100
+"Abundance",2,0.4,"Aitchison (0.5)",0.11,100
+"Abundance",2,0.4,"Aitchison (0.01)",0.1,100
+"Abundance",2,0.4,"Aitchison (0.1)",0.11,100
+"Abundance",2,0.4,"Aitchison (1)",0.14,100
+"Abundance",2,0.4,"Bray-Curtis",0.32,100
+"Abundance",2,0.4,"Euclidean",0.16,100
+"Abundance",2,0.4,"Jaccard",0.05,100
+"Abundance",2,0.45,"HRIC distance",0.37,100
+"Abundance",2,0.45,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",2,0.45,"ILR-Euclidean (0.1)",0.11,100
+"Abundance",2,0.45,"ILR-Euclidean (0.5)",0.12,100
+"Abundance",2,0.45,"ILR-Euclidean (1)",0.14,100
+"Abundance",2,0.45,"Aitchison (0.5)",0.12,100
+"Abundance",2,0.45,"Aitchison (0.01)",0.1,100
+"Abundance",2,0.45,"Aitchison (0.1)",0.11,100
+"Abundance",2,0.45,"Aitchison (1)",0.15,100
+"Abundance",2,0.45,"Bray-Curtis",0.38,100
+"Abundance",2,0.45,"Euclidean",0.21,100
+"Abundance",2,0.45,"Jaccard",0.07,100
+"Abundance",2,0.5,"HRIC distance",0.43,100
+"Abundance",2,0.5,"ILR-Euclidean (0.01)",0.13,100
+"Abundance",2,0.5,"ILR-Euclidean (0.1)",0.16,100
+"Abundance",2,0.5,"ILR-Euclidean (0.5)",0.21,100
+"Abundance",2,0.5,"ILR-Euclidean (1)",0.21,100
+"Abundance",2,0.5,"Aitchison (0.5)",0.21,100
+"Abundance",2,0.5,"Aitchison (0.01)",0.14,100
+"Abundance",2,0.5,"Aitchison (0.1)",0.15,100
+"Abundance",2,0.5,"Aitchison (1)",0.21,100
+"Abundance",2,0.5,"Bray-Curtis",0.53,100
+"Abundance",2,0.5,"Euclidean",0.26,100
+"Abundance",2,0.5,"Jaccard",0.09,100
+"Abundance",2,0.55,"HRIC distance",0.54,100
+"Abundance",2,0.55,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",2,0.55,"ILR-Euclidean (0.1)",0.1,100
+"Abundance",2,0.55,"ILR-Euclidean (0.5)",0.13,100
+"Abundance",2,0.55,"ILR-Euclidean (1)",0.16,100
+"Abundance",2,0.55,"Aitchison (0.5)",0.12,100
+"Abundance",2,0.55,"Aitchison (0.01)",0.05,100
+"Abundance",2,0.55,"Aitchison (0.1)",0.09,100
+"Abundance",2,0.55,"Aitchison (1)",0.15,100
+"Abundance",2,0.55,"Bray-Curtis",0.58,100
+"Abundance",2,0.55,"Euclidean",0.23,100
+"Abundance",2,0.55,"Jaccard",0.06,100
+"Abundance",2,0.6,"HRIC distance",0.62,100
+"Abundance",2,0.6,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",2,0.6,"ILR-Euclidean (0.1)",0.13,100
+"Abundance",2,0.6,"ILR-Euclidean (0.5)",0.19,100
+"Abundance",2,0.6,"ILR-Euclidean (1)",0.2,100
+"Abundance",2,0.6,"Aitchison (0.5)",0.18,100
+"Abundance",2,0.6,"Aitchison (0.01)",0.08,100
+"Abundance",2,0.6,"Aitchison (0.1)",0.1,100
+"Abundance",2,0.6,"Aitchison (1)",0.2,100
+"Abundance",2,0.6,"Bray-Curtis",0.71,100
+"Abundance",2,0.6,"Euclidean",0.35,100
+"Abundance",2,0.6,"Jaccard",0.04,100
+"Abundance",2,0.65,"HRIC distance",0.6,100
+"Abundance",2,0.65,"ILR-Euclidean (0.01)",0.1,100
+"Abundance",2,0.65,"ILR-Euclidean (0.1)",0.12,100
+"Abundance",2,0.65,"ILR-Euclidean (0.5)",0.2,100
+"Abundance",2,0.65,"ILR-Euclidean (1)",0.22,100
+"Abundance",2,0.65,"Aitchison (0.5)",0.19,100
+"Abundance",2,0.65,"Aitchison (0.01)",0.07,100
+"Abundance",2,0.65,"Aitchison (0.1)",0.14,100
+"Abundance",2,0.65,"Aitchison (1)",0.23,100
+"Abundance",2,0.65,"Bray-Curtis",0.67,100
+"Abundance",2,0.65,"Euclidean",0.37,100
+"Abundance",2,0.65,"Jaccard",0.04,100
+"Abundance",2,0.7,"HRIC distance",0.75,100
+"Abundance",2,0.7,"ILR-Euclidean (0.01)",0.11,100
+"Abundance",2,0.7,"ILR-Euclidean (0.1)",0.15,100
+"Abundance",2,0.7,"ILR-Euclidean (0.5)",0.2,100
+"Abundance",2,0.7,"ILR-Euclidean (1)",0.25,100
+"Abundance",2,0.7,"Aitchison (0.5)",0.21,100
+"Abundance",2,0.7,"Aitchison (0.01)",0.11,100
+"Abundance",2,0.7,"Aitchison (0.1)",0.15,100
+"Abundance",2,0.7,"Aitchison (1)",0.25,100
+"Abundance",2,0.7,"Bray-Curtis",0.83,100
+"Abundance",2,0.7,"Euclidean",0.33,100
+"Abundance",2,0.7,"Jaccard",0.06,100
+"Abundance",2,0.75,"HRIC distance",0.85,100
+"Abundance",2,0.75,"ILR-Euclidean (0.01)",0.14,100
+"Abundance",2,0.75,"ILR-Euclidean (0.1)",0.17,100
+"Abundance",2,0.75,"ILR-Euclidean (0.5)",0.27,100
+"Abundance",2,0.75,"ILR-Euclidean (1)",0.34,100
+"Abundance",2,0.75,"Aitchison (0.5)",0.26,100
+"Abundance",2,0.75,"Aitchison (0.01)",0.12,100
+"Abundance",2,0.75,"Aitchison (0.1)",0.16,100
+"Abundance",2,0.75,"Aitchison (1)",0.32,100
+"Abundance",2,0.75,"Bray-Curtis",0.89,100
+"Abundance",2,0.75,"Euclidean",0.47,100
+"Abundance",2,0.75,"Jaccard",0.11,100
+"Abundance",2,0.8,"HRIC distance",0.9,100
+"Abundance",2,0.8,"ILR-Euclidean (0.01)",0.1,100
+"Abundance",2,0.8,"ILR-Euclidean (0.1)",0.2,100
+"Abundance",2,0.8,"ILR-Euclidean (0.5)",0.27,100
+"Abundance",2,0.8,"ILR-Euclidean (1)",0.3,100
+"Abundance",2,0.8,"Aitchison (0.5)",0.27,100
+"Abundance",2,0.8,"Aitchison (0.01)",0.08,100
+"Abundance",2,0.8,"Aitchison (0.1)",0.21,100
+"Abundance",2,0.8,"Aitchison (1)",0.3,100
+"Abundance",2,0.8,"Bray-Curtis",0.93,100
+"Abundance",2,0.8,"Euclidean",0.51,100
+"Abundance",2,0.8,"Jaccard",0.04,100
+"Abundance",2,0.85,"HRIC distance",0.96,100
+"Abundance",2,0.85,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",2,0.85,"ILR-Euclidean (0.1)",0.13,100
+"Abundance",2,0.85,"ILR-Euclidean (0.5)",0.24,100
+"Abundance",2,0.85,"ILR-Euclidean (1)",0.32,100
+"Abundance",2,0.85,"Aitchison (0.5)",0.23,100
+"Abundance",2,0.85,"Aitchison (0.01)",0.07,100
+"Abundance",2,0.85,"Aitchison (0.1)",0.15,100
+"Abundance",2,0.85,"Aitchison (1)",0.31,100
+"Abundance",2,0.85,"Bray-Curtis",0.96,100
+"Abundance",2,0.85,"Euclidean",0.58,100
+"Abundance",2,0.85,"Jaccard",0.04,100
+"Abundance",2,0.9,"HRIC distance",1,100
+"Abundance",2,0.9,"ILR-Euclidean (0.01)",0.13,100
+"Abundance",2,0.9,"ILR-Euclidean (0.1)",0.25,100
+"Abundance",2,0.9,"ILR-Euclidean (0.5)",0.31,100
+"Abundance",2,0.9,"ILR-Euclidean (1)",0.4,100
+"Abundance",2,0.9,"Aitchison (0.5)",0.32,100
+"Abundance",2,0.9,"Aitchison (0.01)",0.14,100
+"Abundance",2,0.9,"Aitchison (0.1)",0.24,100
+"Abundance",2,0.9,"Aitchison (1)",0.41,100
+"Abundance",2,0.9,"Bray-Curtis",1,100
+"Abundance",2,0.9,"Euclidean",0.71,100
+"Abundance",2,0.9,"Jaccard",0.03,100
+"Abundance",2,0.95,"HRIC distance",0.98,100
+"Abundance",2,0.95,"ILR-Euclidean (0.01)",0.12,100
+"Abundance",2,0.95,"ILR-Euclidean (0.1)",0.27,100
+"Abundance",2,0.95,"ILR-Euclidean (0.5)",0.39,100
+"Abundance",2,0.95,"ILR-Euclidean (1)",0.48,100
+"Abundance",2,0.95,"Aitchison (0.5)",0.4,100
+"Abundance",2,0.95,"Aitchison (0.01)",0.11,100
+"Abundance",2,0.95,"Aitchison (0.1)",0.27,100
+"Abundance",2,0.95,"Aitchison (1)",0.5,100
+"Abundance",2,0.95,"Bray-Curtis",1,100
+"Abundance",2,0.95,"Euclidean",0.75,100
+"Abundance",2,0.95,"Jaccard",0.04,100
+"Abundance",2,1,"HRIC distance",1,100
+"Abundance",2,1,"ILR-Euclidean (0.01)",0.16,100
+"Abundance",2,1,"ILR-Euclidean (0.1)",0.25,100
+"Abundance",2,1,"ILR-Euclidean (0.5)",0.4,100
+"Abundance",2,1,"ILR-Euclidean (1)",0.51,100
+"Abundance",2,1,"Aitchison (0.5)",0.39,100
+"Abundance",2,1,"Aitchison (0.01)",0.14,100
+"Abundance",2,1,"Aitchison (0.1)",0.26,100
+"Abundance",2,1,"Aitchison (1)",0.52,100
+"Abundance",2,1,"Bray-Curtis",1,100
+"Abundance",2,1,"Euclidean",0.79,100
+"Abundance",2,1,"Jaccard",0.04,100
+"Joint",2,0.05,"HRIC distance",0.04,100
+"Joint",2,0.05,"ILR-Euclidean (0.01)",0.08,100
+"Joint",2,0.05,"ILR-Euclidean (0.1)",0.08,100
+"Joint",2,0.05,"ILR-Euclidean (0.5)",0.07,100
+"Joint",2,0.05,"ILR-Euclidean (1)",0.08,100
+"Joint",2,0.05,"Aitchison (0.5)",0.07,100
+"Joint",2,0.05,"Aitchison (0.01)",0.08,100
+"Joint",2,0.05,"Aitchison (0.1)",0.07,100
+"Joint",2,0.05,"Aitchison (1)",0.08,100
+"Joint",2,0.05,"Bray-Curtis",0.07,100
+"Joint",2,0.05,"Euclidean",0.06,100
+"Joint",2,0.05,"Jaccard",0.07,100
+"Joint",2,0.1,"HRIC distance",0.07,100
+"Joint",2,0.1,"ILR-Euclidean (0.01)",0.14,100
+"Joint",2,0.1,"ILR-Euclidean (0.1)",0.13,100
+"Joint",2,0.1,"ILR-Euclidean (0.5)",0.13,100
+"Joint",2,0.1,"ILR-Euclidean (1)",0.11,100
+"Joint",2,0.1,"Aitchison (0.5)",0.12,100
+"Joint",2,0.1,"Aitchison (0.01)",0.14,100
+"Joint",2,0.1,"Aitchison (0.1)",0.12,100
+"Joint",2,0.1,"Aitchison (1)",0.11,100
+"Joint",2,0.1,"Bray-Curtis",0.09,100
+"Joint",2,0.1,"Euclidean",0.09,100
+"Joint",2,0.1,"Jaccard",0.1,100
+"Joint",2,0.15,"HRIC distance",0.09,100
+"Joint",2,0.15,"ILR-Euclidean (0.01)",0.12,100
+"Joint",2,0.15,"ILR-Euclidean (0.1)",0.11,100
+"Joint",2,0.15,"ILR-Euclidean (0.5)",0.09,100
+"Joint",2,0.15,"ILR-Euclidean (1)",0.11,100
+"Joint",2,0.15,"Aitchison (0.5)",0.09,100
+"Joint",2,0.15,"Aitchison (0.01)",0.12,100
+"Joint",2,0.15,"Aitchison (0.1)",0.12,100
+"Joint",2,0.15,"Aitchison (1)",0.12,100
+"Joint",2,0.15,"Bray-Curtis",0.11,100
+"Joint",2,0.15,"Euclidean",0.04,100
+"Joint",2,0.15,"Jaccard",0.16,100
+"Joint",2,0.2,"HRIC distance",0.12,100
+"Joint",2,0.2,"ILR-Euclidean (0.01)",0.23,100
+"Joint",2,0.2,"ILR-Euclidean (0.1)",0.28,100
+"Joint",2,0.2,"ILR-Euclidean (0.5)",0.28,100
+"Joint",2,0.2,"ILR-Euclidean (1)",0.31,100
+"Joint",2,0.2,"Aitchison (0.5)",0.29,100
+"Joint",2,0.2,"Aitchison (0.01)",0.24,100
+"Joint",2,0.2,"Aitchison (0.1)",0.28,100
+"Joint",2,0.2,"Aitchison (1)",0.32,100
+"Joint",2,0.2,"Bray-Curtis",0.15,100
+"Joint",2,0.2,"Euclidean",0.09,100
+"Joint",2,0.2,"Jaccard",0.28,100
+"Joint",2,0.25,"HRIC distance",0.23,100
+"Joint",2,0.25,"ILR-Euclidean (0.01)",0.25,100
+"Joint",2,0.25,"ILR-Euclidean (0.1)",0.26,100
+"Joint",2,0.25,"ILR-Euclidean (0.5)",0.28,100
+"Joint",2,0.25,"ILR-Euclidean (1)",0.27,100
+"Joint",2,0.25,"Aitchison (0.5)",0.27,100
+"Joint",2,0.25,"Aitchison (0.01)",0.25,100
+"Joint",2,0.25,"Aitchison (0.1)",0.3,100
+"Joint",2,0.25,"Aitchison (1)",0.27,100
+"Joint",2,0.25,"Bray-Curtis",0.18,100
+"Joint",2,0.25,"Euclidean",0.13,100
+"Joint",2,0.25,"Jaccard",0.3,100
+"Joint",2,0.3,"HRIC distance",0.28,100
+"Joint",2,0.3,"ILR-Euclidean (0.01)",0.48,100
+"Joint",2,0.3,"ILR-Euclidean (0.1)",0.48,100
+"Joint",2,0.3,"ILR-Euclidean (0.5)",0.48,100
+"Joint",2,0.3,"ILR-Euclidean (1)",0.49,100
+"Joint",2,0.3,"Aitchison (0.5)",0.48,100
+"Joint",2,0.3,"Aitchison (0.01)",0.48,100
+"Joint",2,0.3,"Aitchison (0.1)",0.48,100
+"Joint",2,0.3,"Aitchison (1)",0.48,100
+"Joint",2,0.3,"Bray-Curtis",0.32,100
+"Joint",2,0.3,"Euclidean",0.14,100
+"Joint",2,0.3,"Jaccard",0.47,100
+"Joint",2,0.35,"HRIC distance",0.35,100
+"Joint",2,0.35,"ILR-Euclidean (0.01)",0.7,100
+"Joint",2,0.35,"ILR-Euclidean (0.1)",0.7,100
+"Joint",2,0.35,"ILR-Euclidean (0.5)",0.72,100
+"Joint",2,0.35,"ILR-Euclidean (1)",0.73,100
+"Joint",2,0.35,"Aitchison (0.5)",0.71,100
+"Joint",2,0.35,"Aitchison (0.01)",0.68,100
+"Joint",2,0.35,"Aitchison (0.1)",0.7,100
+"Joint",2,0.35,"Aitchison (1)",0.72,100
+"Joint",2,0.35,"Bray-Curtis",0.32,100
+"Joint",2,0.35,"Euclidean",0.08,100
+"Joint",2,0.35,"Jaccard",0.76,100
+"Joint",2,0.4,"HRIC distance",0.49,100
+"Joint",2,0.4,"ILR-Euclidean (0.01)",0.8,100
+"Joint",2,0.4,"ILR-Euclidean (0.1)",0.81,100
+"Joint",2,0.4,"ILR-Euclidean (0.5)",0.81,100
+"Joint",2,0.4,"ILR-Euclidean (1)",0.82,100
+"Joint",2,0.4,"Aitchison (0.5)",0.82,100
+"Joint",2,0.4,"Aitchison (0.01)",0.78,100
+"Joint",2,0.4,"Aitchison (0.1)",0.81,100
+"Joint",2,0.4,"Aitchison (1)",0.8,100
+"Joint",2,0.4,"Bray-Curtis",0.47,100
+"Joint",2,0.4,"Euclidean",0.2,100
+"Joint",2,0.4,"Jaccard",0.95,100
+"Joint",2,0.45,"HRIC distance",0.68,100
+"Joint",2,0.45,"ILR-Euclidean (0.01)",0.98,100
+"Joint",2,0.45,"ILR-Euclidean (0.1)",0.99,100
+"Joint",2,0.45,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.45,"ILR-Euclidean (1)",1,100
+"Joint",2,0.45,"Aitchison (0.5)",0.99,100
+"Joint",2,0.45,"Aitchison (0.01)",0.98,100
+"Joint",2,0.45,"Aitchison (0.1)",0.99,100
+"Joint",2,0.45,"Aitchison (1)",0.99,100
+"Joint",2,0.45,"Bray-Curtis",0.6,100
+"Joint",2,0.45,"Euclidean",0.19,100
+"Joint",2,0.45,"Jaccard",0.99,100
+"Joint",2,0.5,"HRIC distance",0.8,100
+"Joint",2,0.5,"ILR-Euclidean (0.01)",0.98,100
+"Joint",2,0.5,"ILR-Euclidean (0.1)",0.99,100
+"Joint",2,0.5,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.5,"ILR-Euclidean (1)",1,100
+"Joint",2,0.5,"Aitchison (0.5)",1,100
+"Joint",2,0.5,"Aitchison (0.01)",0.98,100
+"Joint",2,0.5,"Aitchison (0.1)",1,100
+"Joint",2,0.5,"Aitchison (1)",1,100
+"Joint",2,0.5,"Bray-Curtis",0.76,100
+"Joint",2,0.5,"Euclidean",0.3,100
+"Joint",2,0.5,"Jaccard",1,100
+"Joint",2,0.55,"HRIC distance",0.91,100
+"Joint",2,0.55,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.55,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.55,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.55,"ILR-Euclidean (1)",1,100
+"Joint",2,0.55,"Aitchison (0.5)",1,100
+"Joint",2,0.55,"Aitchison (0.01)",1,100
+"Joint",2,0.55,"Aitchison (0.1)",1,100
+"Joint",2,0.55,"Aitchison (1)",1,100
+"Joint",2,0.55,"Bray-Curtis",0.85,100
+"Joint",2,0.55,"Euclidean",0.33,100
+"Joint",2,0.55,"Jaccard",1,100
+"Joint",2,0.6,"HRIC distance",0.96,100
+"Joint",2,0.6,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.6,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.6,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.6,"ILR-Euclidean (1)",1,100
+"Joint",2,0.6,"Aitchison (0.5)",1,100
+"Joint",2,0.6,"Aitchison (0.01)",1,100
+"Joint",2,0.6,"Aitchison (0.1)",1,100
+"Joint",2,0.6,"Aitchison (1)",1,100
+"Joint",2,0.6,"Bray-Curtis",0.93,100
+"Joint",2,0.6,"Euclidean",0.38,100
+"Joint",2,0.6,"Jaccard",1,100
+"Joint",2,0.65,"HRIC distance",0.98,100
+"Joint",2,0.65,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.65,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.65,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.65,"ILR-Euclidean (1)",1,100
+"Joint",2,0.65,"Aitchison (0.5)",1,100
+"Joint",2,0.65,"Aitchison (0.01)",1,100
+"Joint",2,0.65,"Aitchison (0.1)",1,100
+"Joint",2,0.65,"Aitchison (1)",1,100
+"Joint",2,0.65,"Bray-Curtis",0.99,100
+"Joint",2,0.65,"Euclidean",0.48,100
+"Joint",2,0.65,"Jaccard",1,100
+"Joint",2,0.7,"HRIC distance",0.98,100
+"Joint",2,0.7,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.7,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.7,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.7,"ILR-Euclidean (1)",1,100
+"Joint",2,0.7,"Aitchison (0.5)",1,100
+"Joint",2,0.7,"Aitchison (0.01)",1,100
+"Joint",2,0.7,"Aitchison (0.1)",1,100
+"Joint",2,0.7,"Aitchison (1)",1,100
+"Joint",2,0.7,"Bray-Curtis",0.98,100
+"Joint",2,0.7,"Euclidean",0.5,100
+"Joint",2,0.7,"Jaccard",1,100
+"Joint",2,0.75,"HRIC distance",0.99,100
+"Joint",2,0.75,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.75,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.75,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.75,"ILR-Euclidean (1)",1,100
+"Joint",2,0.75,"Aitchison (0.5)",1,100
+"Joint",2,0.75,"Aitchison (0.01)",1,100
+"Joint",2,0.75,"Aitchison (0.1)",1,100
+"Joint",2,0.75,"Aitchison (1)",1,100
+"Joint",2,0.75,"Bray-Curtis",0.99,100
+"Joint",2,0.75,"Euclidean",0.71,100
+"Joint",2,0.75,"Jaccard",1,100
+"Joint",2,0.8,"HRIC distance",1,100
+"Joint",2,0.8,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.8,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.8,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.8,"ILR-Euclidean (1)",1,100
+"Joint",2,0.8,"Aitchison (0.5)",1,100
+"Joint",2,0.8,"Aitchison (0.01)",1,100
+"Joint",2,0.8,"Aitchison (0.1)",1,100
+"Joint",2,0.8,"Aitchison (1)",1,100
+"Joint",2,0.8,"Bray-Curtis",1,100
+"Joint",2,0.8,"Euclidean",0.55,100
+"Joint",2,0.8,"Jaccard",1,100
+"Joint",2,0.85,"HRIC distance",1,100
+"Joint",2,0.85,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.85,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.85,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.85,"ILR-Euclidean (1)",1,100
+"Joint",2,0.85,"Aitchison (0.5)",1,100
+"Joint",2,0.85,"Aitchison (0.01)",1,100
+"Joint",2,0.85,"Aitchison (0.1)",1,100
+"Joint",2,0.85,"Aitchison (1)",1,100
+"Joint",2,0.85,"Bray-Curtis",1,100
+"Joint",2,0.85,"Euclidean",0.75,100
+"Joint",2,0.85,"Jaccard",1,100
+"Joint",2,0.9,"HRIC distance",1,100
+"Joint",2,0.9,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.9,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.9,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.9,"ILR-Euclidean (1)",1,100
+"Joint",2,0.9,"Aitchison (0.5)",1,100
+"Joint",2,0.9,"Aitchison (0.01)",1,100
+"Joint",2,0.9,"Aitchison (0.1)",1,100
+"Joint",2,0.9,"Aitchison (1)",1,100
+"Joint",2,0.9,"Bray-Curtis",1,100
+"Joint",2,0.9,"Euclidean",0.81,100
+"Joint",2,0.9,"Jaccard",1,100
+"Joint",2,0.95,"HRIC distance",1,100
+"Joint",2,0.95,"ILR-Euclidean (0.01)",1,100
+"Joint",2,0.95,"ILR-Euclidean (0.1)",1,100
+"Joint",2,0.95,"ILR-Euclidean (0.5)",1,100
+"Joint",2,0.95,"ILR-Euclidean (1)",1,100
+"Joint",2,0.95,"Aitchison (0.5)",1,100
+"Joint",2,0.95,"Aitchison (0.01)",1,100
+"Joint",2,0.95,"Aitchison (0.1)",1,100
+"Joint",2,0.95,"Aitchison (1)",1,100
+"Joint",2,0.95,"Bray-Curtis",1,100
+"Joint",2,0.95,"Euclidean",0.86,100
+"Joint",2,0.95,"Jaccard",1,100
+"Joint",2,1,"HRIC distance",1,100
+"Joint",2,1,"ILR-Euclidean (0.01)",1,100
+"Joint",2,1,"ILR-Euclidean (0.1)",1,100
+"Joint",2,1,"ILR-Euclidean (0.5)",1,100
+"Joint",2,1,"ILR-Euclidean (1)",1,100
+"Joint",2,1,"Aitchison (0.5)",1,100
+"Joint",2,1,"Aitchison (0.01)",1,100
+"Joint",2,1,"Aitchison (0.1)",1,100
+"Joint",2,1,"Aitchison (1)",1,100
+"Joint",2,1,"Bray-Curtis",1,100
+"Joint",2,1,"Euclidean",0.9,100
+"Joint",2,1,"Jaccard",1,100
+"Prevalence",2,0.05,"HRIC distance",0.05,100
+"Prevalence",2,0.05,"ILR-Euclidean (0.01)",0.05,100
+"Prevalence",2,0.05,"ILR-Euclidean (0.1)",0.05,100
+"Prevalence",2,0.05,"ILR-Euclidean (0.5)",0.06,100
+"Prevalence",2,0.05,"ILR-Euclidean (1)",0.06,100
+"Prevalence",2,0.05,"Aitchison (0.5)",0.06,100
+"Prevalence",2,0.05,"Aitchison (0.01)",0.05,100
+"Prevalence",2,0.05,"Aitchison (0.1)",0.05,100
+"Prevalence",2,0.05,"Aitchison (1)",0.05,100
+"Prevalence",2,0.05,"Bray-Curtis",0.06,100
+"Prevalence",2,0.05,"Euclidean",0.03,100
+"Prevalence",2,0.05,"Jaccard",0.05,100
+"Prevalence",2,0.1,"HRIC distance",0.06,100
+"Prevalence",2,0.1,"ILR-Euclidean (0.01)",0.07,100
+"Prevalence",2,0.1,"ILR-Euclidean (0.1)",0.07,100
+"Prevalence",2,0.1,"ILR-Euclidean (0.5)",0.07,100
+"Prevalence",2,0.1,"ILR-Euclidean (1)",0.08,100
+"Prevalence",2,0.1,"Aitchison (0.5)",0.08,100
+"Prevalence",2,0.1,"Aitchison (0.01)",0.07,100
+"Prevalence",2,0.1,"Aitchison (0.1)",0.07,100
+"Prevalence",2,0.1,"Aitchison (1)",0.09,100
+"Prevalence",2,0.1,"Bray-Curtis",0.07,100
+"Prevalence",2,0.1,"Euclidean",0.06,100
+"Prevalence",2,0.1,"Jaccard",0.06,100
+"Prevalence",2,0.15,"HRIC distance",0.03,100
+"Prevalence",2,0.15,"ILR-Euclidean (0.01)",0.06,100
+"Prevalence",2,0.15,"ILR-Euclidean (0.1)",0.07,100
+"Prevalence",2,0.15,"ILR-Euclidean (0.5)",0.07,100
+"Prevalence",2,0.15,"ILR-Euclidean (1)",0.05,100
+"Prevalence",2,0.15,"Aitchison (0.5)",0.06,100
+"Prevalence",2,0.15,"Aitchison (0.01)",0.06,100
+"Prevalence",2,0.15,"Aitchison (0.1)",0.07,100
+"Prevalence",2,0.15,"Aitchison (1)",0.06,100
+"Prevalence",2,0.15,"Bray-Curtis",0.02,100
+"Prevalence",2,0.15,"Euclidean",0.04,100
+"Prevalence",2,0.15,"Jaccard",0.15,100
+"Prevalence",2,0.2,"HRIC distance",0.04,100
+"Prevalence",2,0.2,"ILR-Euclidean (0.01)",0.17,100
+"Prevalence",2,0.2,"ILR-Euclidean (0.1)",0.17,100
+"Prevalence",2,0.2,"ILR-Euclidean (0.5)",0.17,100
+"Prevalence",2,0.2,"ILR-Euclidean (1)",0.15,100
+"Prevalence",2,0.2,"Aitchison (0.5)",0.16,100
+"Prevalence",2,0.2,"Aitchison (0.01)",0.17,100
+"Prevalence",2,0.2,"Aitchison (0.1)",0.17,100
+"Prevalence",2,0.2,"Aitchison (1)",0.15,100
+"Prevalence",2,0.2,"Bray-Curtis",0.1,100
+"Prevalence",2,0.2,"Euclidean",0.04,100
+"Prevalence",2,0.2,"Jaccard",0.25,100
+"Prevalence",2,0.25,"HRIC distance",0.06,100
+"Prevalence",2,0.25,"ILR-Euclidean (0.01)",0.24,100
+"Prevalence",2,0.25,"ILR-Euclidean (0.1)",0.23,100
+"Prevalence",2,0.25,"ILR-Euclidean (0.5)",0.19,100
+"Prevalence",2,0.25,"ILR-Euclidean (1)",0.18,100
+"Prevalence",2,0.25,"Aitchison (0.5)",0.19,100
+"Prevalence",2,0.25,"Aitchison (0.01)",0.23,100
+"Prevalence",2,0.25,"Aitchison (0.1)",0.24,100
+"Prevalence",2,0.25,"Aitchison (1)",0.18,100
+"Prevalence",2,0.25,"Bray-Curtis",0.03,100
+"Prevalence",2,0.25,"Euclidean",0.06,100
+"Prevalence",2,0.25,"Jaccard",0.41,100
+"Prevalence",2,0.3,"HRIC distance",0.03,100
+"Prevalence",2,0.3,"ILR-Euclidean (0.01)",0.27,100
+"Prevalence",2,0.3,"ILR-Euclidean (0.1)",0.27,100
+"Prevalence",2,0.3,"ILR-Euclidean (0.5)",0.23,100
+"Prevalence",2,0.3,"ILR-Euclidean (1)",0.22,100
+"Prevalence",2,0.3,"Aitchison (0.5)",0.22,100
+"Prevalence",2,0.3,"Aitchison (0.01)",0.28,100
+"Prevalence",2,0.3,"Aitchison (0.1)",0.26,100
+"Prevalence",2,0.3,"Aitchison (1)",0.22,100
+"Prevalence",2,0.3,"Bray-Curtis",0.09,100
+"Prevalence",2,0.3,"Euclidean",0.02,100
+"Prevalence",2,0.3,"Jaccard",0.55,100
+"Prevalence",2,0.35,"HRIC distance",0.04,100
+"Prevalence",2,0.35,"ILR-Euclidean (0.01)",0.44,100
+"Prevalence",2,0.35,"ILR-Euclidean (0.1)",0.36,100
+"Prevalence",2,0.35,"ILR-Euclidean (0.5)",0.35,100
+"Prevalence",2,0.35,"ILR-Euclidean (1)",0.32,100
+"Prevalence",2,0.35,"Aitchison (0.5)",0.34,100
+"Prevalence",2,0.35,"Aitchison (0.01)",0.44,100
+"Prevalence",2,0.35,"Aitchison (0.1)",0.4,100
+"Prevalence",2,0.35,"Aitchison (1)",0.33,100
+"Prevalence",2,0.35,"Bray-Curtis",0.03,100
+"Prevalence",2,0.35,"Euclidean",0.07,100
+"Prevalence",2,0.35,"Jaccard",0.77,100
+"Prevalence",2,0.4,"HRIC distance",0.07,100
+"Prevalence",2,0.4,"ILR-Euclidean (0.01)",0.58,100
+"Prevalence",2,0.4,"ILR-Euclidean (0.1)",0.53,100
+"Prevalence",2,0.4,"ILR-Euclidean (0.5)",0.47,100
+"Prevalence",2,0.4,"ILR-Euclidean (1)",0.45,100
+"Prevalence",2,0.4,"Aitchison (0.5)",0.47,100
+"Prevalence",2,0.4,"Aitchison (0.01)",0.61,100
+"Prevalence",2,0.4,"Aitchison (0.1)",0.53,100
+"Prevalence",2,0.4,"Aitchison (1)",0.44,100
+"Prevalence",2,0.4,"Bray-Curtis",0.07,100
+"Prevalence",2,0.4,"Euclidean",0.07,100
+"Prevalence",2,0.4,"Jaccard",0.91,100
+"Prevalence",2,0.45,"HRIC distance",0.11,100
+"Prevalence",2,0.45,"ILR-Euclidean (0.01)",0.78,100
+"Prevalence",2,0.45,"ILR-Euclidean (0.1)",0.76,100
+"Prevalence",2,0.45,"ILR-Euclidean (0.5)",0.65,100
+"Prevalence",2,0.45,"ILR-Euclidean (1)",0.61,100
+"Prevalence",2,0.45,"Aitchison (0.5)",0.65,100
+"Prevalence",2,0.45,"Aitchison (0.01)",0.79,100
+"Prevalence",2,0.45,"Aitchison (0.1)",0.72,100
+"Prevalence",2,0.45,"Aitchison (1)",0.6,100
+"Prevalence",2,0.45,"Bray-Curtis",0.11,100
+"Prevalence",2,0.45,"Euclidean",0.05,100
+"Prevalence",2,0.45,"Jaccard",1,100
+"Prevalence",2,0.5,"HRIC distance",0.1,100
+"Prevalence",2,0.5,"ILR-Euclidean (0.01)",0.88,100
+"Prevalence",2,0.5,"ILR-Euclidean (0.1)",0.82,100
+"Prevalence",2,0.5,"ILR-Euclidean (0.5)",0.78,100
+"Prevalence",2,0.5,"ILR-Euclidean (1)",0.76,100
+"Prevalence",2,0.5,"Aitchison (0.5)",0.79,100
+"Prevalence",2,0.5,"Aitchison (0.01)",0.87,100
+"Prevalence",2,0.5,"Aitchison (0.1)",0.82,100
+"Prevalence",2,0.5,"Aitchison (1)",0.75,100
+"Prevalence",2,0.5,"Bray-Curtis",0.13,100
+"Prevalence",2,0.5,"Euclidean",0.07,100
+"Prevalence",2,0.5,"Jaccard",1,100
+"Prevalence",2,0.55,"HRIC distance",0.07,100
+"Prevalence",2,0.55,"ILR-Euclidean (0.01)",0.98,100
+"Prevalence",2,0.55,"ILR-Euclidean (0.1)",0.97,100
+"Prevalence",2,0.55,"ILR-Euclidean (0.5)",0.94,100
+"Prevalence",2,0.55,"ILR-Euclidean (1)",0.93,100
+"Prevalence",2,0.55,"Aitchison (0.5)",0.94,100
+"Prevalence",2,0.55,"Aitchison (0.01)",0.98,100
+"Prevalence",2,0.55,"Aitchison (0.1)",0.97,100
+"Prevalence",2,0.55,"Aitchison (1)",0.94,100
+"Prevalence",2,0.55,"Bray-Curtis",0.08,100
+"Prevalence",2,0.55,"Euclidean",0.05,100
+"Prevalence",2,0.55,"Jaccard",1,100
+"Prevalence",2,0.6,"HRIC distance",0.13,100
+"Prevalence",2,0.6,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.6,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.6,"ILR-Euclidean (0.5)",0.95,100
+"Prevalence",2,0.6,"ILR-Euclidean (1)",0.95,100
+"Prevalence",2,0.6,"Aitchison (0.5)",0.96,100
+"Prevalence",2,0.6,"Aitchison (0.01)",1,100
+"Prevalence",2,0.6,"Aitchison (0.1)",0.99,100
+"Prevalence",2,0.6,"Aitchison (1)",0.95,100
+"Prevalence",2,0.6,"Bray-Curtis",0.04,100
+"Prevalence",2,0.6,"Euclidean",0.08,100
+"Prevalence",2,0.6,"Jaccard",1,100
+"Prevalence",2,0.65,"HRIC distance",0.13,100
+"Prevalence",2,0.65,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.65,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.65,"ILR-Euclidean (0.5)",0.99,100
+"Prevalence",2,0.65,"ILR-Euclidean (1)",0.99,100
+"Prevalence",2,0.65,"Aitchison (0.5)",0.99,100
+"Prevalence",2,0.65,"Aitchison (0.01)",1,100
+"Prevalence",2,0.65,"Aitchison (0.1)",1,100
+"Prevalence",2,0.65,"Aitchison (1)",0.99,100
+"Prevalence",2,0.65,"Bray-Curtis",0.06,100
+"Prevalence",2,0.65,"Euclidean",0.04,100
+"Prevalence",2,0.65,"Jaccard",1,100
+"Prevalence",2,0.7,"HRIC distance",0.18,100
+"Prevalence",2,0.7,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.7,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.7,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.7,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.7,"Aitchison (0.5)",1,100
+"Prevalence",2,0.7,"Aitchison (0.01)",1,100
+"Prevalence",2,0.7,"Aitchison (0.1)",1,100
+"Prevalence",2,0.7,"Aitchison (1)",1,100
+"Prevalence",2,0.7,"Bray-Curtis",0.14,100
+"Prevalence",2,0.7,"Euclidean",0.03,100
+"Prevalence",2,0.7,"Jaccard",1,100
+"Prevalence",2,0.75,"HRIC distance",0.37,100
+"Prevalence",2,0.75,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.75,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.75,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.75,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.75,"Aitchison (0.5)",1,100
+"Prevalence",2,0.75,"Aitchison (0.01)",1,100
+"Prevalence",2,0.75,"Aitchison (0.1)",1,100
+"Prevalence",2,0.75,"Aitchison (1)",1,100
+"Prevalence",2,0.75,"Bray-Curtis",0.26,100
+"Prevalence",2,0.75,"Euclidean",0.11,100
+"Prevalence",2,0.75,"Jaccard",1,100
+"Prevalence",2,0.8,"HRIC distance",0.27,100
+"Prevalence",2,0.8,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.8,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.8,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.8,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.8,"Aitchison (0.5)",1,100
+"Prevalence",2,0.8,"Aitchison (0.01)",1,100
+"Prevalence",2,0.8,"Aitchison (0.1)",1,100
+"Prevalence",2,0.8,"Aitchison (1)",1,100
+"Prevalence",2,0.8,"Bray-Curtis",0.24,100
+"Prevalence",2,0.8,"Euclidean",0.07,100
+"Prevalence",2,0.8,"Jaccard",1,100
+"Prevalence",2,0.85,"HRIC distance",0.38,100
+"Prevalence",2,0.85,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.85,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.85,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.85,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.85,"Aitchison (0.5)",1,100
+"Prevalence",2,0.85,"Aitchison (0.01)",1,100
+"Prevalence",2,0.85,"Aitchison (0.1)",1,100
+"Prevalence",2,0.85,"Aitchison (1)",1,100
+"Prevalence",2,0.85,"Bray-Curtis",0.29,100
+"Prevalence",2,0.85,"Euclidean",0.05,100
+"Prevalence",2,0.85,"Jaccard",1,100
+"Prevalence",2,0.9,"HRIC distance",0.34,100
+"Prevalence",2,0.9,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.9,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.9,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.9,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.9,"Aitchison (0.5)",1,100
+"Prevalence",2,0.9,"Aitchison (0.01)",1,100
+"Prevalence",2,0.9,"Aitchison (0.1)",1,100
+"Prevalence",2,0.9,"Aitchison (1)",1,100
+"Prevalence",2,0.9,"Bray-Curtis",0.3,100
+"Prevalence",2,0.9,"Euclidean",0.09,100
+"Prevalence",2,0.9,"Jaccard",1,100
+"Prevalence",2,0.95,"HRIC distance",0.47,100
+"Prevalence",2,0.95,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,0.95,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,0.95,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,0.95,"ILR-Euclidean (1)",1,100
+"Prevalence",2,0.95,"Aitchison (0.5)",1,100
+"Prevalence",2,0.95,"Aitchison (0.01)",1,100
+"Prevalence",2,0.95,"Aitchison (0.1)",1,100
+"Prevalence",2,0.95,"Aitchison (1)",1,100
+"Prevalence",2,0.95,"Bray-Curtis",0.37,100
+"Prevalence",2,0.95,"Euclidean",0.06,100
+"Prevalence",2,0.95,"Jaccard",1,100
+"Prevalence",2,1,"HRIC distance",0.59,100
+"Prevalence",2,1,"ILR-Euclidean (0.01)",1,100
+"Prevalence",2,1,"ILR-Euclidean (0.1)",1,100
+"Prevalence",2,1,"ILR-Euclidean (0.5)",1,100
+"Prevalence",2,1,"ILR-Euclidean (1)",1,100
+"Prevalence",2,1,"Aitchison (0.5)",1,100
+"Prevalence",2,1,"Aitchison (0.01)",1,100
+"Prevalence",2,1,"Aitchison (0.1)",1,100
+"Prevalence",2,1,"Aitchison (1)",1,100
+"Prevalence",2,1,"Bray-Curtis",0.45,100
+"Prevalence",2,1,"Euclidean",0.09,100
+"Prevalence",2,1,"Jaccard",1,100
+"Abundance",4,0.05,"HRIC distance",0.02,100
+"Abundance",4,0.05,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",4,0.05,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",4,0.05,"ILR-Euclidean (0.5)",0.01,100
+"Abundance",4,0.05,"ILR-Euclidean (1)",0.03,100
+"Abundance",4,0.05,"Aitchison (0.5)",0.01,100
+"Abundance",4,0.05,"Aitchison (0.01)",0.03,100
+"Abundance",4,0.05,"Aitchison (0.1)",0.04,100
+"Abundance",4,0.05,"Aitchison (1)",0.02,100
+"Abundance",4,0.05,"Bray-Curtis",0.01,100
+"Abundance",4,0.05,"Euclidean",0.03,100
+"Abundance",4,0.05,"Jaccard",0.04,100
+"Abundance",4,0.1,"HRIC distance",0.04,100
+"Abundance",4,0.1,"ILR-Euclidean (0.01)",0.03,100
+"Abundance",4,0.1,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",4,0.1,"ILR-Euclidean (0.5)",0.02,100
+"Abundance",4,0.1,"ILR-Euclidean (1)",0.04,100
+"Abundance",4,0.1,"Aitchison (0.5)",0.02,100
+"Abundance",4,0.1,"Aitchison (0.01)",0.04,100
+"Abundance",4,0.1,"Aitchison (0.1)",0.03,100
+"Abundance",4,0.1,"Aitchison (1)",0.02,100
+"Abundance",4,0.1,"Bray-Curtis",0.06,100
+"Abundance",4,0.1,"Euclidean",0.07,100
+"Abundance",4,0.1,"Jaccard",0.04,100
+"Abundance",4,0.15,"HRIC distance",0.08,100
+"Abundance",4,0.15,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",4,0.15,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",4,0.15,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",4,0.15,"ILR-Euclidean (1)",0.05,100
+"Abundance",4,0.15,"Aitchison (0.5)",0.06,100
+"Abundance",4,0.15,"Aitchison (0.01)",0.05,100
+"Abundance",4,0.15,"Aitchison (0.1)",0.05,100
+"Abundance",4,0.15,"Aitchison (1)",0.06,100
+"Abundance",4,0.15,"Bray-Curtis",0.08,100
+"Abundance",4,0.15,"Euclidean",0.08,100
+"Abundance",4,0.15,"Jaccard",0.03,100
+"Abundance",4,0.2,"HRIC distance",0.1,100
+"Abundance",4,0.2,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",4,0.2,"ILR-Euclidean (0.1)",0.04,100
+"Abundance",4,0.2,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",4,0.2,"ILR-Euclidean (1)",0.03,100
+"Abundance",4,0.2,"Aitchison (0.5)",0.03,100
+"Abundance",4,0.2,"Aitchison (0.01)",0.03,100
+"Abundance",4,0.2,"Aitchison (0.1)",0.03,100
+"Abundance",4,0.2,"Aitchison (1)",0.04,100
+"Abundance",4,0.2,"Bray-Curtis",0.09,100
+"Abundance",4,0.2,"Euclidean",0.1,100
+"Abundance",4,0.2,"Jaccard",0.02,100
+"Abundance",4,0.25,"HRIC distance",0.08,100
+"Abundance",4,0.25,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",4,0.25,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",4,0.25,"ILR-Euclidean (0.5)",0.09,100
+"Abundance",4,0.25,"ILR-Euclidean (1)",0.09,100
+"Abundance",4,0.25,"Aitchison (0.5)",0.09,100
+"Abundance",4,0.25,"Aitchison (0.01)",0.09,100
+"Abundance",4,0.25,"Aitchison (0.1)",0.09,100
+"Abundance",4,0.25,"Aitchison (1)",0.09,100
+"Abundance",4,0.25,"Bray-Curtis",0.06,100
+"Abundance",4,0.25,"Euclidean",0.06,100
+"Abundance",4,0.25,"Jaccard",0.05,100
+"Abundance",4,0.3,"HRIC distance",0.11,100
+"Abundance",4,0.3,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",4,0.3,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",4,0.3,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",4,0.3,"ILR-Euclidean (1)",0.06,100
+"Abundance",4,0.3,"Aitchison (0.5)",0.07,100
+"Abundance",4,0.3,"Aitchison (0.01)",0.07,100
+"Abundance",4,0.3,"Aitchison (0.1)",0.08,100
+"Abundance",4,0.3,"Aitchison (1)",0.06,100
+"Abundance",4,0.3,"Bray-Curtis",0.09,100
+"Abundance",4,0.3,"Euclidean",0.11,100
+"Abundance",4,0.3,"Jaccard",0.08,100
+"Abundance",4,0.35,"HRIC distance",0.17,100
+"Abundance",4,0.35,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",4,0.35,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",4,0.35,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",4,0.35,"ILR-Euclidean (1)",0.08,100
+"Abundance",4,0.35,"Aitchison (0.5)",0.07,100
+"Abundance",4,0.35,"Aitchison (0.01)",0.08,100
+"Abundance",4,0.35,"Aitchison (0.1)",0.08,100
+"Abundance",4,0.35,"Aitchison (1)",0.07,100
+"Abundance",4,0.35,"Bray-Curtis",0.22,100
+"Abundance",4,0.35,"Euclidean",0.2,100
+"Abundance",4,0.35,"Jaccard",0.04,100
+"Abundance",4,0.4,"HRIC distance",0.24,100
+"Abundance",4,0.4,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",4,0.4,"ILR-Euclidean (0.1)",0.05,100
+"Abundance",4,0.4,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",4,0.4,"ILR-Euclidean (1)",0.08,100
+"Abundance",4,0.4,"Aitchison (0.5)",0.07,100
+"Abundance",4,0.4,"Aitchison (0.01)",0.03,100
+"Abundance",4,0.4,"Aitchison (0.1)",0.06,100
+"Abundance",4,0.4,"Aitchison (1)",0.07,100
+"Abundance",4,0.4,"Bray-Curtis",0.28,100
+"Abundance",4,0.4,"Euclidean",0.19,100
+"Abundance",4,0.4,"Jaccard",0.06,100
+"Abundance",4,0.45,"HRIC distance",0.26,100
+"Abundance",4,0.45,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",4,0.45,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",4,0.45,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",4,0.45,"ILR-Euclidean (1)",0.1,100
+"Abundance",4,0.45,"Aitchison (0.5)",0.09,100
+"Abundance",4,0.45,"Aitchison (0.01)",0.06,100
+"Abundance",4,0.45,"Aitchison (0.1)",0.08,100
+"Abundance",4,0.45,"Aitchison (1)",0.09,100
+"Abundance",4,0.45,"Bray-Curtis",0.32,100
+"Abundance",4,0.45,"Euclidean",0.2,100
+"Abundance",4,0.45,"Jaccard",0.05,100
+"Abundance",4,0.5,"HRIC distance",0.33,100
+"Abundance",4,0.5,"ILR-Euclidean (0.01)",0.1,100
+"Abundance",4,0.5,"ILR-Euclidean (0.1)",0.1,100
+"Abundance",4,0.5,"ILR-Euclidean (0.5)",0.11,100
+"Abundance",4,0.5,"ILR-Euclidean (1)",0.11,100
+"Abundance",4,0.5,"Aitchison (0.5)",0.1,100
+"Abundance",4,0.5,"Aitchison (0.01)",0.09,100
+"Abundance",4,0.5,"Aitchison (0.1)",0.1,100
+"Abundance",4,0.5,"Aitchison (1)",0.1,100
+"Abundance",4,0.5,"Bray-Curtis",0.36,100
+"Abundance",4,0.5,"Euclidean",0.21,100
+"Abundance",4,0.5,"Jaccard",0.1,100
+"Abundance",4,0.55,"HRIC distance",0.42,100
+"Abundance",4,0.55,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",4,0.55,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",4,0.55,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",4,0.55,"ILR-Euclidean (1)",0.1,100
+"Abundance",4,0.55,"Aitchison (0.5)",0.09,100
+"Abundance",4,0.55,"Aitchison (0.01)",0.07,100
+"Abundance",4,0.55,"Aitchison (0.1)",0.07,100
+"Abundance",4,0.55,"Aitchison (1)",0.07,100
+"Abundance",4,0.55,"Bray-Curtis",0.45,100
+"Abundance",4,0.55,"Euclidean",0.29,100
+"Abundance",4,0.55,"Jaccard",0.05,100
+"Abundance",4,0.6,"HRIC distance",0.57,100
+"Abundance",4,0.6,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",4,0.6,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",4,0.6,"ILR-Euclidean (0.5)",0.1,100
+"Abundance",4,0.6,"ILR-Euclidean (1)",0.14,100
+"Abundance",4,0.6,"Aitchison (0.5)",0.08,100
+"Abundance",4,0.6,"Aitchison (0.01)",0.04,100
+"Abundance",4,0.6,"Aitchison (0.1)",0.07,100
+"Abundance",4,0.6,"Aitchison (1)",0.13,100
+"Abundance",4,0.6,"Bray-Curtis",0.66,100
+"Abundance",4,0.6,"Euclidean",0.4,100
+"Abundance",4,0.6,"Jaccard",0.04,100
+"Abundance",4,0.65,"HRIC distance",0.7,100
+"Abundance",4,0.65,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",4,0.65,"ILR-Euclidean (0.1)",0.11,100
+"Abundance",4,0.65,"ILR-Euclidean (0.5)",0.16,100
+"Abundance",4,0.65,"ILR-Euclidean (1)",0.17,100
+"Abundance",4,0.65,"Aitchison (0.5)",0.15,100
+"Abundance",4,0.65,"Aitchison (0.01)",0.08,100
+"Abundance",4,0.65,"Aitchison (0.1)",0.11,100
+"Abundance",4,0.65,"Aitchison (1)",0.18,100
+"Abundance",4,0.65,"Bray-Curtis",0.78,100
+"Abundance",4,0.65,"Euclidean",0.47,100
+"Abundance",4,0.65,"Jaccard",0.04,100
+"Abundance",4,0.7,"HRIC distance",0.72,100
+"Abundance",4,0.7,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",4,0.7,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",4,0.7,"ILR-Euclidean (0.5)",0.14,100
+"Abundance",4,0.7,"ILR-Euclidean (1)",0.14,100
+"Abundance",4,0.7,"Aitchison (0.5)",0.14,100
+"Abundance",4,0.7,"Aitchison (0.01)",0.07,100
+"Abundance",4,0.7,"Aitchison (0.1)",0.07,100
+"Abundance",4,0.7,"Aitchison (1)",0.13,100
+"Abundance",4,0.7,"Bray-Curtis",0.78,100
+"Abundance",4,0.7,"Euclidean",0.48,100
+"Abundance",4,0.7,"Jaccard",0.06,100
+"Abundance",4,0.75,"HRIC distance",0.88,100
+"Abundance",4,0.75,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",4,0.75,"ILR-Euclidean (0.1)",0.13,100
+"Abundance",4,0.75,"ILR-Euclidean (0.5)",0.22,100
+"Abundance",4,0.75,"ILR-Euclidean (1)",0.25,100
+"Abundance",4,0.75,"Aitchison (0.5)",0.21,100
+"Abundance",4,0.75,"Aitchison (0.01)",0.08,100
+"Abundance",4,0.75,"Aitchison (0.1)",0.15,100
+"Abundance",4,0.75,"Aitchison (1)",0.26,100
+"Abundance",4,0.75,"Bray-Curtis",0.9,100
+"Abundance",4,0.75,"Euclidean",0.6,100
+"Abundance",4,0.75,"Jaccard",0.04,100
+"Abundance",4,0.8,"HRIC distance",0.91,100
+"Abundance",4,0.8,"ILR-Euclidean (0.01)",0.09,100
+"Abundance",4,0.8,"ILR-Euclidean (0.1)",0.14,100
+"Abundance",4,0.8,"ILR-Euclidean (0.5)",0.21,100
+"Abundance",4,0.8,"ILR-Euclidean (1)",0.25,100
+"Abundance",4,0.8,"Aitchison (0.5)",0.2,100
+"Abundance",4,0.8,"Aitchison (0.01)",0.1,100
+"Abundance",4,0.8,"Aitchison (0.1)",0.12,100
+"Abundance",4,0.8,"Aitchison (1)",0.23,100
+"Abundance",4,0.8,"Bray-Curtis",0.93,100
+"Abundance",4,0.8,"Euclidean",0.64,100
+"Abundance",4,0.8,"Jaccard",0.05,100
+"Abundance",4,0.85,"HRIC distance",0.95,100
+"Abundance",4,0.85,"ILR-Euclidean (0.01)",0.1,100
+"Abundance",4,0.85,"ILR-Euclidean (0.1)",0.14,100
+"Abundance",4,0.85,"ILR-Euclidean (0.5)",0.18,100
+"Abundance",4,0.85,"ILR-Euclidean (1)",0.3,100
+"Abundance",4,0.85,"Aitchison (0.5)",0.18,100
+"Abundance",4,0.85,"Aitchison (0.01)",0.09,100
+"Abundance",4,0.85,"Aitchison (0.1)",0.13,100
+"Abundance",4,0.85,"Aitchison (1)",0.3,100
+"Abundance",4,0.85,"Bray-Curtis",1,100
+"Abundance",4,0.85,"Euclidean",0.72,100
+"Abundance",4,0.85,"Jaccard",0.04,100
+"Abundance",4,0.9,"HRIC distance",0.99,100
+"Abundance",4,0.9,"ILR-Euclidean (0.01)",0.11,100
+"Abundance",4,0.9,"ILR-Euclidean (0.1)",0.2,100
+"Abundance",4,0.9,"ILR-Euclidean (0.5)",0.3,100
+"Abundance",4,0.9,"ILR-Euclidean (1)",0.41,100
+"Abundance",4,0.9,"Aitchison (0.5)",0.33,100
+"Abundance",4,0.9,"Aitchison (0.01)",0.08,100
+"Abundance",4,0.9,"Aitchison (0.1)",0.18,100
+"Abundance",4,0.9,"Aitchison (1)",0.41,100
+"Abundance",4,0.9,"Bray-Curtis",0.98,100
+"Abundance",4,0.9,"Euclidean",0.82,100
+"Abundance",4,0.9,"Jaccard",0.07,100
+"Abundance",4,0.95,"HRIC distance",0.94,100
+"Abundance",4,0.95,"ILR-Euclidean (0.01)",0.09,100
+"Abundance",4,0.95,"ILR-Euclidean (0.1)",0.13,100
+"Abundance",4,0.95,"ILR-Euclidean (0.5)",0.23,100
+"Abundance",4,0.95,"ILR-Euclidean (1)",0.37,100
+"Abundance",4,0.95,"Aitchison (0.5)",0.25,100
+"Abundance",4,0.95,"Aitchison (0.01)",0.09,100
+"Abundance",4,0.95,"Aitchison (0.1)",0.13,100
+"Abundance",4,0.95,"Aitchison (1)",0.36,100
+"Abundance",4,0.95,"Bray-Curtis",0.97,100
+"Abundance",4,0.95,"Euclidean",0.82,100
+"Abundance",4,0.95,"Jaccard",0.08,100
+"Abundance",4,1,"HRIC distance",0.98,100
+"Abundance",4,1,"ILR-Euclidean (0.01)",0.14,100
+"Abundance",4,1,"ILR-Euclidean (0.1)",0.21,100
+"Abundance",4,1,"ILR-Euclidean (0.5)",0.46,100
+"Abundance",4,1,"ILR-Euclidean (1)",0.57,100
+"Abundance",4,1,"Aitchison (0.5)",0.44,100
+"Abundance",4,1,"Aitchison (0.01)",0.13,100
+"Abundance",4,1,"Aitchison (0.1)",0.21,100
+"Abundance",4,1,"Aitchison (1)",0.6,100
+"Abundance",4,1,"Bray-Curtis",1,100
+"Abundance",4,1,"Euclidean",0.85,100
+"Abundance",4,1,"Jaccard",0.04,100
+"Joint",4,0.05,"HRIC distance",0.06,100
+"Joint",4,0.05,"ILR-Euclidean (0.01)",0.05,100
+"Joint",4,0.05,"ILR-Euclidean (0.1)",0.04,100
+"Joint",4,0.05,"ILR-Euclidean (0.5)",0.04,100
+"Joint",4,0.05,"ILR-Euclidean (1)",0.05,100
+"Joint",4,0.05,"Aitchison (0.5)",0.04,100
+"Joint",4,0.05,"Aitchison (0.01)",0.05,100
+"Joint",4,0.05,"Aitchison (0.1)",0.05,100
+"Joint",4,0.05,"Aitchison (1)",0.04,100
+"Joint",4,0.05,"Bray-Curtis",0.02,100
+"Joint",4,0.05,"Euclidean",0.03,100
+"Joint",4,0.05,"Jaccard",0.04,100
+"Joint",4,0.1,"HRIC distance",0.06,100
+"Joint",4,0.1,"ILR-Euclidean (0.01)",0.02,100
+"Joint",4,0.1,"ILR-Euclidean (0.1)",0.03,100
+"Joint",4,0.1,"ILR-Euclidean (0.5)",0.05,100
+"Joint",4,0.1,"ILR-Euclidean (1)",0.05,100
+"Joint",4,0.1,"Aitchison (0.5)",0.04,100
+"Joint",4,0.1,"Aitchison (0.01)",0.01,100
+"Joint",4,0.1,"Aitchison (0.1)",0.03,100
+"Joint",4,0.1,"Aitchison (1)",0.05,100
+"Joint",4,0.1,"Bray-Curtis",0.06,100
+"Joint",4,0.1,"Euclidean",0.1,100
+"Joint",4,0.1,"Jaccard",0.01,100
+"Joint",4,0.15,"HRIC distance",0.06,100
+"Joint",4,0.15,"ILR-Euclidean (0.01)",0.09,100
+"Joint",4,0.15,"ILR-Euclidean (0.1)",0.11,100
+"Joint",4,0.15,"ILR-Euclidean (0.5)",0.09,100
+"Joint",4,0.15,"ILR-Euclidean (1)",0.1,100
+"Joint",4,0.15,"Aitchison (0.5)",0.11,100
+"Joint",4,0.15,"Aitchison (0.01)",0.1,100
+"Joint",4,0.15,"Aitchison (0.1)",0.11,100
+"Joint",4,0.15,"Aitchison (1)",0.1,100
+"Joint",4,0.15,"Bray-Curtis",0.07,100
+"Joint",4,0.15,"Euclidean",0.05,100
+"Joint",4,0.15,"Jaccard",0.07,100
+"Joint",4,0.2,"HRIC distance",0.07,100
+"Joint",4,0.2,"ILR-Euclidean (0.01)",0.14,100
+"Joint",4,0.2,"ILR-Euclidean (0.1)",0.16,100
+"Joint",4,0.2,"ILR-Euclidean (0.5)",0.15,100
+"Joint",4,0.2,"ILR-Euclidean (1)",0.16,100
+"Joint",4,0.2,"Aitchison (0.5)",0.16,100
+"Joint",4,0.2,"Aitchison (0.01)",0.13,100
+"Joint",4,0.2,"Aitchison (0.1)",0.16,100
+"Joint",4,0.2,"Aitchison (1)",0.15,100
+"Joint",4,0.2,"Bray-Curtis",0.09,100
+"Joint",4,0.2,"Euclidean",0.08,100
+"Joint",4,0.2,"Jaccard",0.12,100
+"Joint",4,0.25,"HRIC distance",0.17,100
+"Joint",4,0.25,"ILR-Euclidean (0.01)",0.12,100
+"Joint",4,0.25,"ILR-Euclidean (0.1)",0.17,100
+"Joint",4,0.25,"ILR-Euclidean (0.5)",0.18,100
+"Joint",4,0.25,"ILR-Euclidean (1)",0.18,100
+"Joint",4,0.25,"Aitchison (0.5)",0.18,100
+"Joint",4,0.25,"Aitchison (0.01)",0.14,100
+"Joint",4,0.25,"Aitchison (0.1)",0.15,100
+"Joint",4,0.25,"Aitchison (1)",0.19,100
+"Joint",4,0.25,"Bray-Curtis",0.17,100
+"Joint",4,0.25,"Euclidean",0.17,100
+"Joint",4,0.25,"Jaccard",0.08,100
+"Joint",4,0.3,"HRIC distance",0.29,100
+"Joint",4,0.3,"ILR-Euclidean (0.01)",0.25,100
+"Joint",4,0.3,"ILR-Euclidean (0.1)",0.27,100
+"Joint",4,0.3,"ILR-Euclidean (0.5)",0.32,100
+"Joint",4,0.3,"ILR-Euclidean (1)",0.34,100
+"Joint",4,0.3,"Aitchison (0.5)",0.31,100
+"Joint",4,0.3,"Aitchison (0.01)",0.24,100
+"Joint",4,0.3,"Aitchison (0.1)",0.28,100
+"Joint",4,0.3,"Aitchison (1)",0.36,100
+"Joint",4,0.3,"Bray-Curtis",0.23,100
+"Joint",4,0.3,"Euclidean",0.11,100
+"Joint",4,0.3,"Jaccard",0.19,100
+"Joint",4,0.35,"HRIC distance",0.39,100
+"Joint",4,0.35,"ILR-Euclidean (0.01)",0.43,100
+"Joint",4,0.35,"ILR-Euclidean (0.1)",0.47,100
+"Joint",4,0.35,"ILR-Euclidean (0.5)",0.48,100
+"Joint",4,0.35,"ILR-Euclidean (1)",0.53,100
+"Joint",4,0.35,"Aitchison (0.5)",0.49,100
+"Joint",4,0.35,"Aitchison (0.01)",0.42,100
+"Joint",4,0.35,"Aitchison (0.1)",0.46,100
+"Joint",4,0.35,"Aitchison (1)",0.51,100
+"Joint",4,0.35,"Bray-Curtis",0.29,100
+"Joint",4,0.35,"Euclidean",0.13,100
+"Joint",4,0.35,"Jaccard",0.4,100
+"Joint",4,0.4,"HRIC distance",0.57,100
+"Joint",4,0.4,"ILR-Euclidean (0.01)",0.65,100
+"Joint",4,0.4,"ILR-Euclidean (0.1)",0.71,100
+"Joint",4,0.4,"ILR-Euclidean (0.5)",0.73,100
+"Joint",4,0.4,"ILR-Euclidean (1)",0.78,100
+"Joint",4,0.4,"Aitchison (0.5)",0.74,100
+"Joint",4,0.4,"Aitchison (0.01)",0.65,100
+"Joint",4,0.4,"Aitchison (0.1)",0.69,100
+"Joint",4,0.4,"Aitchison (1)",0.76,100
+"Joint",4,0.4,"Bray-Curtis",0.5,100
+"Joint",4,0.4,"Euclidean",0.23,100
+"Joint",4,0.4,"Jaccard",0.51,100
+"Joint",4,0.45,"HRIC distance",0.77,100
+"Joint",4,0.45,"ILR-Euclidean (0.01)",0.77,100
+"Joint",4,0.45,"ILR-Euclidean (0.1)",0.82,100
+"Joint",4,0.45,"ILR-Euclidean (0.5)",0.88,100
+"Joint",4,0.45,"ILR-Euclidean (1)",0.87,100
+"Joint",4,0.45,"Aitchison (0.5)",0.87,100
+"Joint",4,0.45,"Aitchison (0.01)",0.77,100
+"Joint",4,0.45,"Aitchison (0.1)",0.84,100
+"Joint",4,0.45,"Aitchison (1)",0.89,100
+"Joint",4,0.45,"Bray-Curtis",0.72,100
+"Joint",4,0.45,"Euclidean",0.25,100
+"Joint",4,0.45,"Jaccard",0.62,100
+"Joint",4,0.5,"HRIC distance",0.88,100
+"Joint",4,0.5,"ILR-Euclidean (0.01)",0.95,100
+"Joint",4,0.5,"ILR-Euclidean (0.1)",0.96,100
+"Joint",4,0.5,"ILR-Euclidean (0.5)",0.98,100
+"Joint",4,0.5,"ILR-Euclidean (1)",0.99,100
+"Joint",4,0.5,"Aitchison (0.5)",0.97,100
+"Joint",4,0.5,"Aitchison (0.01)",0.94,100
+"Joint",4,0.5,"Aitchison (0.1)",0.95,100
+"Joint",4,0.5,"Aitchison (1)",0.99,100
+"Joint",4,0.5,"Bray-Curtis",0.78,100
+"Joint",4,0.5,"Euclidean",0.3,100
+"Joint",4,0.5,"Jaccard",0.85,100
+"Joint",4,0.55,"HRIC distance",0.93,100
+"Joint",4,0.55,"ILR-Euclidean (0.01)",0.97,100
+"Joint",4,0.55,"ILR-Euclidean (0.1)",0.98,100
+"Joint",4,0.55,"ILR-Euclidean (0.5)",0.99,100
+"Joint",4,0.55,"ILR-Euclidean (1)",0.99,100
+"Joint",4,0.55,"Aitchison (0.5)",0.99,100
+"Joint",4,0.55,"Aitchison (0.01)",0.97,100
+"Joint",4,0.55,"Aitchison (0.1)",0.99,100
+"Joint",4,0.55,"Aitchison (1)",1,100
+"Joint",4,0.55,"Bray-Curtis",0.87,100
+"Joint",4,0.55,"Euclidean",0.36,100
+"Joint",4,0.55,"Jaccard",0.88,100
+"Joint",4,0.6,"HRIC distance",0.98,100
+"Joint",4,0.6,"ILR-Euclidean (0.01)",0.98,100
+"Joint",4,0.6,"ILR-Euclidean (0.1)",0.99,100
+"Joint",4,0.6,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.6,"ILR-Euclidean (1)",1,100
+"Joint",4,0.6,"Aitchison (0.5)",1,100
+"Joint",4,0.6,"Aitchison (0.01)",0.97,100
+"Joint",4,0.6,"Aitchison (0.1)",0.99,100
+"Joint",4,0.6,"Aitchison (1)",1,100
+"Joint",4,0.6,"Bray-Curtis",0.93,100
+"Joint",4,0.6,"Euclidean",0.51,100
+"Joint",4,0.6,"Jaccard",0.96,100
+"Joint",4,0.65,"HRIC distance",1,100
+"Joint",4,0.65,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.65,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.65,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.65,"ILR-Euclidean (1)",1,100
+"Joint",4,0.65,"Aitchison (0.5)",1,100
+"Joint",4,0.65,"Aitchison (0.01)",1,100
+"Joint",4,0.65,"Aitchison (0.1)",1,100
+"Joint",4,0.65,"Aitchison (1)",1,100
+"Joint",4,0.65,"Bray-Curtis",0.99,100
+"Joint",4,0.65,"Euclidean",0.46,100
+"Joint",4,0.65,"Jaccard",0.99,100
+"Joint",4,0.7,"HRIC distance",1,100
+"Joint",4,0.7,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.7,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.7,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.7,"ILR-Euclidean (1)",1,100
+"Joint",4,0.7,"Aitchison (0.5)",1,100
+"Joint",4,0.7,"Aitchison (0.01)",1,100
+"Joint",4,0.7,"Aitchison (0.1)",1,100
+"Joint",4,0.7,"Aitchison (1)",1,100
+"Joint",4,0.7,"Bray-Curtis",0.99,100
+"Joint",4,0.7,"Euclidean",0.6,100
+"Joint",4,0.7,"Jaccard",1,100
+"Joint",4,0.75,"HRIC distance",1,100
+"Joint",4,0.75,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.75,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.75,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.75,"ILR-Euclidean (1)",1,100
+"Joint",4,0.75,"Aitchison (0.5)",1,100
+"Joint",4,0.75,"Aitchison (0.01)",1,100
+"Joint",4,0.75,"Aitchison (0.1)",1,100
+"Joint",4,0.75,"Aitchison (1)",1,100
+"Joint",4,0.75,"Bray-Curtis",0.99,100
+"Joint",4,0.75,"Euclidean",0.58,100
+"Joint",4,0.75,"Jaccard",1,100
+"Joint",4,0.8,"HRIC distance",1,100
+"Joint",4,0.8,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.8,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.8,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.8,"ILR-Euclidean (1)",1,100
+"Joint",4,0.8,"Aitchison (0.5)",1,100
+"Joint",4,0.8,"Aitchison (0.01)",1,100
+"Joint",4,0.8,"Aitchison (0.1)",1,100
+"Joint",4,0.8,"Aitchison (1)",1,100
+"Joint",4,0.8,"Bray-Curtis",1,100
+"Joint",4,0.8,"Euclidean",0.74,100
+"Joint",4,0.8,"Jaccard",1,100
+"Joint",4,0.85,"HRIC distance",1,100
+"Joint",4,0.85,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.85,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.85,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.85,"ILR-Euclidean (1)",1,100
+"Joint",4,0.85,"Aitchison (0.5)",1,100
+"Joint",4,0.85,"Aitchison (0.01)",1,100
+"Joint",4,0.85,"Aitchison (0.1)",1,100
+"Joint",4,0.85,"Aitchison (1)",1,100
+"Joint",4,0.85,"Bray-Curtis",1,100
+"Joint",4,0.85,"Euclidean",0.77,100
+"Joint",4,0.85,"Jaccard",1,100
+"Joint",4,0.9,"HRIC distance",1,100
+"Joint",4,0.9,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.9,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.9,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.9,"ILR-Euclidean (1)",1,100
+"Joint",4,0.9,"Aitchison (0.5)",1,100
+"Joint",4,0.9,"Aitchison (0.01)",1,100
+"Joint",4,0.9,"Aitchison (0.1)",1,100
+"Joint",4,0.9,"Aitchison (1)",1,100
+"Joint",4,0.9,"Bray-Curtis",1,100
+"Joint",4,0.9,"Euclidean",0.86,100
+"Joint",4,0.9,"Jaccard",1,100
+"Joint",4,0.95,"HRIC distance",1,100
+"Joint",4,0.95,"ILR-Euclidean (0.01)",1,100
+"Joint",4,0.95,"ILR-Euclidean (0.1)",1,100
+"Joint",4,0.95,"ILR-Euclidean (0.5)",1,100
+"Joint",4,0.95,"ILR-Euclidean (1)",1,100
+"Joint",4,0.95,"Aitchison (0.5)",1,100
+"Joint",4,0.95,"Aitchison (0.01)",1,100
+"Joint",4,0.95,"Aitchison (0.1)",1,100
+"Joint",4,0.95,"Aitchison (1)",1,100
+"Joint",4,0.95,"Bray-Curtis",1,100
+"Joint",4,0.95,"Euclidean",0.89,100
+"Joint",4,0.95,"Jaccard",1,100
+"Joint",4,1,"HRIC distance",1,100
+"Joint",4,1,"ILR-Euclidean (0.01)",1,100
+"Joint",4,1,"ILR-Euclidean (0.1)",1,100
+"Joint",4,1,"ILR-Euclidean (0.5)",1,100
+"Joint",4,1,"ILR-Euclidean (1)",1,100
+"Joint",4,1,"Aitchison (0.5)",1,100
+"Joint",4,1,"Aitchison (0.01)",1,100
+"Joint",4,1,"Aitchison (0.1)",1,100
+"Joint",4,1,"Aitchison (1)",1,100
+"Joint",4,1,"Bray-Curtis",1,100
+"Joint",4,1,"Euclidean",0.92,100
+"Joint",4,1,"Jaccard",1,100
+"Prevalence",4,0.05,"HRIC distance",0.02,100
+"Prevalence",4,0.05,"ILR-Euclidean (0.01)",0.04,100
+"Prevalence",4,0.05,"ILR-Euclidean (0.1)",0.03,100
+"Prevalence",4,0.05,"ILR-Euclidean (0.5)",0.03,100
+"Prevalence",4,0.05,"ILR-Euclidean (1)",0.03,100
+"Prevalence",4,0.05,"Aitchison (0.5)",0.03,100
+"Prevalence",4,0.05,"Aitchison (0.01)",0.04,100
+"Prevalence",4,0.05,"Aitchison (0.1)",0.03,100
+"Prevalence",4,0.05,"Aitchison (1)",0.04,100
+"Prevalence",4,0.05,"Bray-Curtis",0.02,100
+"Prevalence",4,0.05,"Euclidean",0,100
+"Prevalence",4,0.05,"Jaccard",0.06,100
+"Prevalence",4,0.1,"HRIC distance",0.02,100
+"Prevalence",4,0.1,"ILR-Euclidean (0.01)",0.07,100
+"Prevalence",4,0.1,"ILR-Euclidean (0.1)",0.07,100
+"Prevalence",4,0.1,"ILR-Euclidean (0.5)",0.07,100
+"Prevalence",4,0.1,"ILR-Euclidean (1)",0.08,100
+"Prevalence",4,0.1,"Aitchison (0.5)",0.07,100
+"Prevalence",4,0.1,"Aitchison (0.01)",0.07,100
+"Prevalence",4,0.1,"Aitchison (0.1)",0.06,100
+"Prevalence",4,0.1,"Aitchison (1)",0.08,100
+"Prevalence",4,0.1,"Bray-Curtis",0.03,100
+"Prevalence",4,0.1,"Euclidean",0.02,100
+"Prevalence",4,0.1,"Jaccard",0.05,100
+"Prevalence",4,0.15,"HRIC distance",0.06,100
+"Prevalence",4,0.15,"ILR-Euclidean (0.01)",0.06,100
+"Prevalence",4,0.15,"ILR-Euclidean (0.1)",0.06,100
+"Prevalence",4,0.15,"ILR-Euclidean (0.5)",0.06,100
+"Prevalence",4,0.15,"ILR-Euclidean (1)",0.07,100
+"Prevalence",4,0.15,"Aitchison (0.5)",0.06,100
+"Prevalence",4,0.15,"Aitchison (0.01)",0.06,100
+"Prevalence",4,0.15,"Aitchison (0.1)",0.07,100
+"Prevalence",4,0.15,"Aitchison (1)",0.07,100
+"Prevalence",4,0.15,"Bray-Curtis",0.06,100
+"Prevalence",4,0.15,"Euclidean",0.04,100
+"Prevalence",4,0.15,"Jaccard",0.06,100
+"Prevalence",4,0.2,"HRIC distance",0.07,100
+"Prevalence",4,0.2,"ILR-Euclidean (0.01)",0.11,100
+"Prevalence",4,0.2,"ILR-Euclidean (0.1)",0.12,100
+"Prevalence",4,0.2,"ILR-Euclidean (0.5)",0.13,100
+"Prevalence",4,0.2,"ILR-Euclidean (1)",0.11,100
+"Prevalence",4,0.2,"Aitchison (0.5)",0.12,100
+"Prevalence",4,0.2,"Aitchison (0.01)",0.1,100
+"Prevalence",4,0.2,"Aitchison (0.1)",0.13,100
+"Prevalence",4,0.2,"Aitchison (1)",0.13,100
+"Prevalence",4,0.2,"Bray-Curtis",0.08,100
+"Prevalence",4,0.2,"Euclidean",0.06,100
+"Prevalence",4,0.2,"Jaccard",0.14,100
+"Prevalence",4,0.25,"HRIC distance",0.07,100
+"Prevalence",4,0.25,"ILR-Euclidean (0.01)",0.06,100
+"Prevalence",4,0.25,"ILR-Euclidean (0.1)",0.09,100
+"Prevalence",4,0.25,"ILR-Euclidean (0.5)",0.08,100
+"Prevalence",4,0.25,"ILR-Euclidean (1)",0.08,100
+"Prevalence",4,0.25,"Aitchison (0.5)",0.07,100
+"Prevalence",4,0.25,"Aitchison (0.01)",0.07,100
+"Prevalence",4,0.25,"Aitchison (0.1)",0.09,100
+"Prevalence",4,0.25,"Aitchison (1)",0.07,100
+"Prevalence",4,0.25,"Bray-Curtis",0.05,100
+"Prevalence",4,0.25,"Euclidean",0.05,100
+"Prevalence",4,0.25,"Jaccard",0.11,100
+"Prevalence",4,0.3,"HRIC distance",0.07,100
+"Prevalence",4,0.3,"ILR-Euclidean (0.01)",0.18,100
+"Prevalence",4,0.3,"ILR-Euclidean (0.1)",0.19,100
+"Prevalence",4,0.3,"ILR-Euclidean (0.5)",0.2,100
+"Prevalence",4,0.3,"ILR-Euclidean (1)",0.19,100
+"Prevalence",4,0.3,"Aitchison (0.5)",0.18,100
+"Prevalence",4,0.3,"Aitchison (0.01)",0.22,100
+"Prevalence",4,0.3,"Aitchison (0.1)",0.18,100
+"Prevalence",4,0.3,"Aitchison (1)",0.18,100
+"Prevalence",4,0.3,"Bray-Curtis",0.08,100
+"Prevalence",4,0.3,"Euclidean",0.03,100
+"Prevalence",4,0.3,"Jaccard",0.28,100
+"Prevalence",4,0.35,"HRIC distance",0.07,100
+"Prevalence",4,0.35,"ILR-Euclidean (0.01)",0.35,100
+"Prevalence",4,0.35,"ILR-Euclidean (0.1)",0.35,100
+"Prevalence",4,0.35,"ILR-Euclidean (0.5)",0.32,100
+"Prevalence",4,0.35,"ILR-Euclidean (1)",0.26,100
+"Prevalence",4,0.35,"Aitchison (0.5)",0.29,100
+"Prevalence",4,0.35,"Aitchison (0.01)",0.34,100
+"Prevalence",4,0.35,"Aitchison (0.1)",0.34,100
+"Prevalence",4,0.35,"Aitchison (1)",0.31,100
+"Prevalence",4,0.35,"Bray-Curtis",0.05,100
+"Prevalence",4,0.35,"Euclidean",0.06,100
+"Prevalence",4,0.35,"Jaccard",0.42,100
+"Prevalence",4,0.4,"HRIC distance",0.09,100
+"Prevalence",4,0.4,"ILR-Euclidean (0.01)",0.49,100
+"Prevalence",4,0.4,"ILR-Euclidean (0.1)",0.46,100
+"Prevalence",4,0.4,"ILR-Euclidean (0.5)",0.39,100
+"Prevalence",4,0.4,"ILR-Euclidean (1)",0.38,100
+"Prevalence",4,0.4,"Aitchison (0.5)",0.39,100
+"Prevalence",4,0.4,"Aitchison (0.01)",0.49,100
+"Prevalence",4,0.4,"Aitchison (0.1)",0.46,100
+"Prevalence",4,0.4,"Aitchison (1)",0.36,100
+"Prevalence",4,0.4,"Bray-Curtis",0.06,100
+"Prevalence",4,0.4,"Euclidean",0.04,100
+"Prevalence",4,0.4,"Jaccard",0.6,100
+"Prevalence",4,0.45,"HRIC distance",0.12,100
+"Prevalence",4,0.45,"ILR-Euclidean (0.01)",0.59,100
+"Prevalence",4,0.45,"ILR-Euclidean (0.1)",0.58,100
+"Prevalence",4,0.45,"ILR-Euclidean (0.5)",0.57,100
+"Prevalence",4,0.45,"ILR-Euclidean (1)",0.51,100
+"Prevalence",4,0.45,"Aitchison (0.5)",0.56,100
+"Prevalence",4,0.45,"Aitchison (0.01)",0.61,100
+"Prevalence",4,0.45,"Aitchison (0.1)",0.58,100
+"Prevalence",4,0.45,"Aitchison (1)",0.51,100
+"Prevalence",4,0.45,"Bray-Curtis",0.08,100
+"Prevalence",4,0.45,"Euclidean",0.05,100
+"Prevalence",4,0.45,"Jaccard",0.65,100
+"Prevalence",4,0.5,"HRIC distance",0.09,100
+"Prevalence",4,0.5,"ILR-Euclidean (0.01)",0.69,100
+"Prevalence",4,0.5,"ILR-Euclidean (0.1)",0.65,100
+"Prevalence",4,0.5,"ILR-Euclidean (0.5)",0.6,100
+"Prevalence",4,0.5,"ILR-Euclidean (1)",0.56,100
+"Prevalence",4,0.5,"Aitchison (0.5)",0.58,100
+"Prevalence",4,0.5,"Aitchison (0.01)",0.7,100
+"Prevalence",4,0.5,"Aitchison (0.1)",0.65,100
+"Prevalence",4,0.5,"Aitchison (1)",0.57,100
+"Prevalence",4,0.5,"Bray-Curtis",0.07,100
+"Prevalence",4,0.5,"Euclidean",0.04,100
+"Prevalence",4,0.5,"Jaccard",0.82,100
+"Prevalence",4,0.55,"HRIC distance",0.18,100
+"Prevalence",4,0.55,"ILR-Euclidean (0.01)",0.92,100
+"Prevalence",4,0.55,"ILR-Euclidean (0.1)",0.9,100
+"Prevalence",4,0.55,"ILR-Euclidean (0.5)",0.85,100
+"Prevalence",4,0.55,"ILR-Euclidean (1)",0.8,100
+"Prevalence",4,0.55,"Aitchison (0.5)",0.83,100
+"Prevalence",4,0.55,"Aitchison (0.01)",0.91,100
+"Prevalence",4,0.55,"Aitchison (0.1)",0.86,100
+"Prevalence",4,0.55,"Aitchison (1)",0.82,100
+"Prevalence",4,0.55,"Bray-Curtis",0.12,100
+"Prevalence",4,0.55,"Euclidean",0.04,100
+"Prevalence",4,0.55,"Jaccard",0.96,100
+"Prevalence",4,0.6,"HRIC distance",0.19,100
+"Prevalence",4,0.6,"ILR-Euclidean (0.01)",0.95,100
+"Prevalence",4,0.6,"ILR-Euclidean (0.1)",0.93,100
+"Prevalence",4,0.6,"ILR-Euclidean (0.5)",0.92,100
+"Prevalence",4,0.6,"ILR-Euclidean (1)",0.91,100
+"Prevalence",4,0.6,"Aitchison (0.5)",0.92,100
+"Prevalence",4,0.6,"Aitchison (0.01)",0.96,100
+"Prevalence",4,0.6,"Aitchison (0.1)",0.92,100
+"Prevalence",4,0.6,"Aitchison (1)",0.91,100
+"Prevalence",4,0.6,"Bray-Curtis",0.12,100
+"Prevalence",4,0.6,"Euclidean",0.07,100
+"Prevalence",4,0.6,"Jaccard",0.98,100
+"Prevalence",4,0.65,"HRIC distance",0.24,100
+"Prevalence",4,0.65,"ILR-Euclidean (0.01)",0.97,100
+"Prevalence",4,0.65,"ILR-Euclidean (0.1)",0.97,100
+"Prevalence",4,0.65,"ILR-Euclidean (0.5)",0.95,100
+"Prevalence",4,0.65,"ILR-Euclidean (1)",0.94,100
+"Prevalence",4,0.65,"Aitchison (0.5)",0.94,100
+"Prevalence",4,0.65,"Aitchison (0.01)",0.97,100
+"Prevalence",4,0.65,"Aitchison (0.1)",0.97,100
+"Prevalence",4,0.65,"Aitchison (1)",0.94,100
+"Prevalence",4,0.65,"Bray-Curtis",0.17,100
+"Prevalence",4,0.65,"Euclidean",0.08,100
+"Prevalence",4,0.65,"Jaccard",1,100
+"Prevalence",4,0.7,"HRIC distance",0.2,100
+"Prevalence",4,0.7,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,0.7,"ILR-Euclidean (0.1)",0.99,100
+"Prevalence",4,0.7,"ILR-Euclidean (0.5)",0.98,100
+"Prevalence",4,0.7,"ILR-Euclidean (1)",0.98,100
+"Prevalence",4,0.7,"Aitchison (0.5)",0.99,100
+"Prevalence",4,0.7,"Aitchison (0.01)",1,100
+"Prevalence",4,0.7,"Aitchison (0.1)",0.99,100
+"Prevalence",4,0.7,"Aitchison (1)",0.98,100
+"Prevalence",4,0.7,"Bray-Curtis",0.16,100
+"Prevalence",4,0.7,"Euclidean",0.05,100
+"Prevalence",4,0.7,"Jaccard",1,100
+"Prevalence",4,0.75,"HRIC distance",0.26,100
+"Prevalence",4,0.75,"ILR-Euclidean (0.01)",0.99,100
+"Prevalence",4,0.75,"ILR-Euclidean (0.1)",0.98,100
+"Prevalence",4,0.75,"ILR-Euclidean (0.5)",0.98,100
+"Prevalence",4,0.75,"ILR-Euclidean (1)",0.98,100
+"Prevalence",4,0.75,"Aitchison (0.5)",0.98,100
+"Prevalence",4,0.75,"Aitchison (0.01)",0.99,100
+"Prevalence",4,0.75,"Aitchison (0.1)",0.98,100
+"Prevalence",4,0.75,"Aitchison (1)",0.98,100
+"Prevalence",4,0.75,"Bray-Curtis",0.15,100
+"Prevalence",4,0.75,"Euclidean",0.02,100
+"Prevalence",4,0.75,"Jaccard",1,100
+"Prevalence",4,0.8,"HRIC distance",0.38,100
+"Prevalence",4,0.8,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,0.8,"ILR-Euclidean (0.1)",1,100
+"Prevalence",4,0.8,"ILR-Euclidean (0.5)",1,100
+"Prevalence",4,0.8,"ILR-Euclidean (1)",1,100
+"Prevalence",4,0.8,"Aitchison (0.5)",1,100
+"Prevalence",4,0.8,"Aitchison (0.01)",1,100
+"Prevalence",4,0.8,"Aitchison (0.1)",1,100
+"Prevalence",4,0.8,"Aitchison (1)",1,100
+"Prevalence",4,0.8,"Bray-Curtis",0.28,100
+"Prevalence",4,0.8,"Euclidean",0.09,100
+"Prevalence",4,0.8,"Jaccard",1,100
+"Prevalence",4,0.85,"HRIC distance",0.44,100
+"Prevalence",4,0.85,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,0.85,"ILR-Euclidean (0.1)",1,100
+"Prevalence",4,0.85,"ILR-Euclidean (0.5)",1,100
+"Prevalence",4,0.85,"ILR-Euclidean (1)",1,100
+"Prevalence",4,0.85,"Aitchison (0.5)",1,100
+"Prevalence",4,0.85,"Aitchison (0.01)",1,100
+"Prevalence",4,0.85,"Aitchison (0.1)",1,100
+"Prevalence",4,0.85,"Aitchison (1)",1,100
+"Prevalence",4,0.85,"Bray-Curtis",0.34,100
+"Prevalence",4,0.85,"Euclidean",0.11,100
+"Prevalence",4,0.85,"Jaccard",1,100
+"Prevalence",4,0.9,"HRIC distance",0.39,100
+"Prevalence",4,0.9,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,0.9,"ILR-Euclidean (0.1)",1,100
+"Prevalence",4,0.9,"ILR-Euclidean (0.5)",1,100
+"Prevalence",4,0.9,"ILR-Euclidean (1)",1,100
+"Prevalence",4,0.9,"Aitchison (0.5)",1,100
+"Prevalence",4,0.9,"Aitchison (0.01)",1,100
+"Prevalence",4,0.9,"Aitchison (0.1)",1,100
+"Prevalence",4,0.9,"Aitchison (1)",1,100
+"Prevalence",4,0.9,"Bray-Curtis",0.3,100
+"Prevalence",4,0.9,"Euclidean",0.07,100
+"Prevalence",4,0.9,"Jaccard",1,100
+"Prevalence",4,0.95,"HRIC distance",0.46,100
+"Prevalence",4,0.95,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,0.95,"ILR-Euclidean (0.1)",1,100
+"Prevalence",4,0.95,"ILR-Euclidean (0.5)",1,100
+"Prevalence",4,0.95,"ILR-Euclidean (1)",1,100
+"Prevalence",4,0.95,"Aitchison (0.5)",1,100
+"Prevalence",4,0.95,"Aitchison (0.01)",1,100
+"Prevalence",4,0.95,"Aitchison (0.1)",1,100
+"Prevalence",4,0.95,"Aitchison (1)",1,100
+"Prevalence",4,0.95,"Bray-Curtis",0.3,100
+"Prevalence",4,0.95,"Euclidean",0.07,100
+"Prevalence",4,0.95,"Jaccard",1,100
+"Prevalence",4,1,"HRIC distance",0.57,100
+"Prevalence",4,1,"ILR-Euclidean (0.01)",1,100
+"Prevalence",4,1,"ILR-Euclidean (0.1)",1,100
+"Prevalence",4,1,"ILR-Euclidean (0.5)",1,100
+"Prevalence",4,1,"ILR-Euclidean (1)",1,100
+"Prevalence",4,1,"Aitchison (0.5)",1,100
+"Prevalence",4,1,"Aitchison (0.01)",1,100
+"Prevalence",4,1,"Aitchison (0.1)",1,100
+"Prevalence",4,1,"Aitchison (1)",1,100
+"Prevalence",4,1,"Bray-Curtis",0.35,100
+"Prevalence",4,1,"Euclidean",0.04,100
+"Prevalence",4,1,"Jaccard",1,100
+"Abundance",6,0.05,"HRIC distance",0.02,100
+"Abundance",6,0.05,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",6,0.05,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",6,0.05,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",6,0.05,"ILR-Euclidean (1)",0.07,100
+"Abundance",6,0.05,"Aitchison (0.5)",0.07,100
+"Abundance",6,0.05,"Aitchison (0.01)",0.06,100
+"Abundance",6,0.05,"Aitchison (0.1)",0.06,100
+"Abundance",6,0.05,"Aitchison (1)",0.06,100
+"Abundance",6,0.05,"Bray-Curtis",0.03,100
+"Abundance",6,0.05,"Euclidean",0.07,100
+"Abundance",6,0.05,"Jaccard",0.06,100
+"Abundance",6,0.1,"HRIC distance",0.02,100
+"Abundance",6,0.1,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",6,0.1,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",6,0.1,"ILR-Euclidean (0.5)",0.08,100
+"Abundance",6,0.1,"ILR-Euclidean (1)",0.07,100
+"Abundance",6,0.1,"Aitchison (0.5)",0.07,100
+"Abundance",6,0.1,"Aitchison (0.01)",0.09,100
+"Abundance",6,0.1,"Aitchison (0.1)",0.09,100
+"Abundance",6,0.1,"Aitchison (1)",0.06,100
+"Abundance",6,0.1,"Bray-Curtis",0.03,100
+"Abundance",6,0.1,"Euclidean",0.05,100
+"Abundance",6,0.1,"Jaccard",0.06,100
+"Abundance",6,0.15,"HRIC distance",0.07,100
+"Abundance",6,0.15,"ILR-Euclidean (0.01)",0.02,100
+"Abundance",6,0.15,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",6,0.15,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",6,0.15,"ILR-Euclidean (1)",0.03,100
+"Abundance",6,0.15,"Aitchison (0.5)",0.02,100
+"Abundance",6,0.15,"Aitchison (0.01)",0.02,100
+"Abundance",6,0.15,"Aitchison (0.1)",0.02,100
+"Abundance",6,0.15,"Aitchison (1)",0.03,100
+"Abundance",6,0.15,"Bray-Curtis",0.06,100
+"Abundance",6,0.15,"Euclidean",0.08,100
+"Abundance",6,0.15,"Jaccard",0.04,100
+"Abundance",6,0.2,"HRIC distance",0.07,100
+"Abundance",6,0.2,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",6,0.2,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",6,0.2,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",6,0.2,"ILR-Euclidean (1)",0.07,100
+"Abundance",6,0.2,"Aitchison (0.5)",0.08,100
+"Abundance",6,0.2,"Aitchison (0.01)",0.06,100
+"Abundance",6,0.2,"Aitchison (0.1)",0.06,100
+"Abundance",6,0.2,"Aitchison (1)",0.08,100
+"Abundance",6,0.2,"Bray-Curtis",0.08,100
+"Abundance",6,0.2,"Euclidean",0.05,100
+"Abundance",6,0.2,"Jaccard",0.06,100
+"Abundance",6,0.25,"HRIC distance",0.15,100
+"Abundance",6,0.25,"ILR-Euclidean (0.01)",0.03,100
+"Abundance",6,0.25,"ILR-Euclidean (0.1)",0.04,100
+"Abundance",6,0.25,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",6,0.25,"ILR-Euclidean (1)",0.03,100
+"Abundance",6,0.25,"Aitchison (0.5)",0.03,100
+"Abundance",6,0.25,"Aitchison (0.01)",0.03,100
+"Abundance",6,0.25,"Aitchison (0.1)",0.04,100
+"Abundance",6,0.25,"Aitchison (1)",0.03,100
+"Abundance",6,0.25,"Bray-Curtis",0.13,100
+"Abundance",6,0.25,"Euclidean",0.12,100
+"Abundance",6,0.25,"Jaccard",0.03,100
+"Abundance",6,0.3,"HRIC distance",0.13,100
+"Abundance",6,0.3,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",6,0.3,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",6,0.3,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",6,0.3,"ILR-Euclidean (1)",0.06,100
+"Abundance",6,0.3,"Aitchison (0.5)",0.06,100
+"Abundance",6,0.3,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.3,"Aitchison (0.1)",0.06,100
+"Abundance",6,0.3,"Aitchison (1)",0.07,100
+"Abundance",6,0.3,"Bray-Curtis",0.17,100
+"Abundance",6,0.3,"Euclidean",0.19,100
+"Abundance",6,0.3,"Jaccard",0.05,100
+"Abundance",6,0.35,"HRIC distance",0.17,100
+"Abundance",6,0.35,"ILR-Euclidean (0.01)",0.02,100
+"Abundance",6,0.35,"ILR-Euclidean (0.1)",0.01,100
+"Abundance",6,0.35,"ILR-Euclidean (0.5)",0.02,100
+"Abundance",6,0.35,"ILR-Euclidean (1)",0.03,100
+"Abundance",6,0.35,"Aitchison (0.5)",0.01,100
+"Abundance",6,0.35,"Aitchison (0.01)",0.01,100
+"Abundance",6,0.35,"Aitchison (0.1)",0.02,100
+"Abundance",6,0.35,"Aitchison (1)",0.03,100
+"Abundance",6,0.35,"Bray-Curtis",0.17,100
+"Abundance",6,0.35,"Euclidean",0.15,100
+"Abundance",6,0.35,"Jaccard",0.03,100
+"Abundance",6,0.4,"HRIC distance",0.28,100
+"Abundance",6,0.4,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",6,0.4,"ILR-Euclidean (0.1)",0.05,100
+"Abundance",6,0.4,"ILR-Euclidean (0.5)",0.06,100
+"Abundance",6,0.4,"ILR-Euclidean (1)",0.07,100
+"Abundance",6,0.4,"Aitchison (0.5)",0.06,100
+"Abundance",6,0.4,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.4,"Aitchison (0.1)",0.06,100
+"Abundance",6,0.4,"Aitchison (1)",0.07,100
+"Abundance",6,0.4,"Bray-Curtis",0.28,100
+"Abundance",6,0.4,"Euclidean",0.24,100
+"Abundance",6,0.4,"Jaccard",0.05,100
+"Abundance",6,0.45,"HRIC distance",0.31,100
+"Abundance",6,0.45,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",6,0.45,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",6,0.45,"ILR-Euclidean (0.5)",0.08,100
+"Abundance",6,0.45,"ILR-Euclidean (1)",0.08,100
+"Abundance",6,0.45,"Aitchison (0.5)",0.09,100
+"Abundance",6,0.45,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.45,"Aitchison (0.1)",0.07,100
+"Abundance",6,0.45,"Aitchison (1)",0.1,100
+"Abundance",6,0.45,"Bray-Curtis",0.37,100
+"Abundance",6,0.45,"Euclidean",0.21,100
+"Abundance",6,0.45,"Jaccard",0.02,100
+"Abundance",6,0.5,"HRIC distance",0.34,100
+"Abundance",6,0.5,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",6,0.5,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",6,0.5,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",6,0.5,"ILR-Euclidean (1)",0.06,100
+"Abundance",6,0.5,"Aitchison (0.5)",0.07,100
+"Abundance",6,0.5,"Aitchison (0.01)",0.06,100
+"Abundance",6,0.5,"Aitchison (0.1)",0.07,100
+"Abundance",6,0.5,"Aitchison (1)",0.09,100
+"Abundance",6,0.5,"Bray-Curtis",0.37,100
+"Abundance",6,0.5,"Euclidean",0.27,100
+"Abundance",6,0.5,"Jaccard",0.03,100
+"Abundance",6,0.55,"HRIC distance",0.42,100
+"Abundance",6,0.55,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",6,0.55,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",6,0.55,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",6,0.55,"ILR-Euclidean (1)",0.03,100
+"Abundance",6,0.55,"Aitchison (0.5)",0.04,100
+"Abundance",6,0.55,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.55,"Aitchison (0.1)",0.03,100
+"Abundance",6,0.55,"Aitchison (1)",0.04,100
+"Abundance",6,0.55,"Bray-Curtis",0.48,100
+"Abundance",6,0.55,"Euclidean",0.29,100
+"Abundance",6,0.55,"Jaccard",0.05,100
+"Abundance",6,0.6,"HRIC distance",0.67,100
+"Abundance",6,0.6,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",6,0.6,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",6,0.6,"ILR-Euclidean (0.5)",0.11,100
+"Abundance",6,0.6,"ILR-Euclidean (1)",0.14,100
+"Abundance",6,0.6,"Aitchison (0.5)",0.11,100
+"Abundance",6,0.6,"Aitchison (0.01)",0.06,100
+"Abundance",6,0.6,"Aitchison (0.1)",0.08,100
+"Abundance",6,0.6,"Aitchison (1)",0.09,100
+"Abundance",6,0.6,"Bray-Curtis",0.74,100
+"Abundance",6,0.6,"Euclidean",0.44,100
+"Abundance",6,0.6,"Jaccard",0.05,100
+"Abundance",6,0.65,"HRIC distance",0.67,100
+"Abundance",6,0.65,"ILR-Euclidean (0.01)",0.06,100
+"Abundance",6,0.65,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",6,0.65,"ILR-Euclidean (0.5)",0.1,100
+"Abundance",6,0.65,"ILR-Euclidean (1)",0.13,100
+"Abundance",6,0.65,"Aitchison (0.5)",0.12,100
+"Abundance",6,0.65,"Aitchison (0.01)",0.06,100
+"Abundance",6,0.65,"Aitchison (0.1)",0.07,100
+"Abundance",6,0.65,"Aitchison (1)",0.12,100
+"Abundance",6,0.65,"Bray-Curtis",0.76,100
+"Abundance",6,0.65,"Euclidean",0.5,100
+"Abundance",6,0.65,"Jaccard",0.03,100
+"Abundance",6,0.7,"HRIC distance",0.71,100
+"Abundance",6,0.7,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",6,0.7,"ILR-Euclidean (0.1)",0.11,100
+"Abundance",6,0.7,"ILR-Euclidean (0.5)",0.16,100
+"Abundance",6,0.7,"ILR-Euclidean (1)",0.18,100
+"Abundance",6,0.7,"Aitchison (0.5)",0.14,100
+"Abundance",6,0.7,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.7,"Aitchison (0.1)",0.11,100
+"Abundance",6,0.7,"Aitchison (1)",0.16,100
+"Abundance",6,0.7,"Bray-Curtis",0.77,100
+"Abundance",6,0.7,"Euclidean",0.5,100
+"Abundance",6,0.7,"Jaccard",0.07,100
+"Abundance",6,0.75,"HRIC distance",0.84,100
+"Abundance",6,0.75,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",6,0.75,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",6,0.75,"ILR-Euclidean (0.5)",0.11,100
+"Abundance",6,0.75,"ILR-Euclidean (1)",0.18,100
+"Abundance",6,0.75,"Aitchison (0.5)",0.12,100
+"Abundance",6,0.75,"Aitchison (0.01)",0.05,100
+"Abundance",6,0.75,"Aitchison (0.1)",0.07,100
+"Abundance",6,0.75,"Aitchison (1)",0.17,100
+"Abundance",6,0.75,"Bray-Curtis",0.92,100
+"Abundance",6,0.75,"Euclidean",0.62,100
+"Abundance",6,0.75,"Jaccard",0.02,100
+"Abundance",6,0.8,"HRIC distance",0.84,100
+"Abundance",6,0.8,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",6,0.8,"ILR-Euclidean (0.1)",0.11,100
+"Abundance",6,0.8,"ILR-Euclidean (0.5)",0.14,100
+"Abundance",6,0.8,"ILR-Euclidean (1)",0.16,100
+"Abundance",6,0.8,"Aitchison (0.5)",0.14,100
+"Abundance",6,0.8,"Aitchison (0.01)",0.08,100
+"Abundance",6,0.8,"Aitchison (0.1)",0.1,100
+"Abundance",6,0.8,"Aitchison (1)",0.16,100
+"Abundance",6,0.8,"Bray-Curtis",0.89,100
+"Abundance",6,0.8,"Euclidean",0.63,100
+"Abundance",6,0.8,"Jaccard",0.05,100
+"Abundance",6,0.85,"HRIC distance",0.92,100
+"Abundance",6,0.85,"ILR-Euclidean (0.01)",0.1,100
+"Abundance",6,0.85,"ILR-Euclidean (0.1)",0.12,100
+"Abundance",6,0.85,"ILR-Euclidean (0.5)",0.19,100
+"Abundance",6,0.85,"ILR-Euclidean (1)",0.22,100
+"Abundance",6,0.85,"Aitchison (0.5)",0.19,100
+"Abundance",6,0.85,"Aitchison (0.01)",0.09,100
+"Abundance",6,0.85,"Aitchison (0.1)",0.15,100
+"Abundance",6,0.85,"Aitchison (1)",0.21,100
+"Abundance",6,0.85,"Bray-Curtis",0.97,100
+"Abundance",6,0.85,"Euclidean",0.65,100
+"Abundance",6,0.85,"Jaccard",0.03,100
+"Abundance",6,0.9,"HRIC distance",0.97,100
+"Abundance",6,0.9,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",6,0.9,"ILR-Euclidean (0.1)",0.13,100
+"Abundance",6,0.9,"ILR-Euclidean (0.5)",0.22,100
+"Abundance",6,0.9,"ILR-Euclidean (1)",0.31,100
+"Abundance",6,0.9,"Aitchison (0.5)",0.23,100
+"Abundance",6,0.9,"Aitchison (0.01)",0.08,100
+"Abundance",6,0.9,"Aitchison (0.1)",0.12,100
+"Abundance",6,0.9,"Aitchison (1)",0.33,100
+"Abundance",6,0.9,"Bray-Curtis",0.96,100
+"Abundance",6,0.9,"Euclidean",0.71,100
+"Abundance",6,0.9,"Jaccard",0.03,100
+"Abundance",6,0.95,"HRIC distance",0.97,100
+"Abundance",6,0.95,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",6,0.95,"ILR-Euclidean (0.1)",0.12,100
+"Abundance",6,0.95,"ILR-Euclidean (0.5)",0.23,100
+"Abundance",6,0.95,"ILR-Euclidean (1)",0.26,100
+"Abundance",6,0.95,"Aitchison (0.5)",0.21,100
+"Abundance",6,0.95,"Aitchison (0.01)",0.07,100
+"Abundance",6,0.95,"Aitchison (0.1)",0.11,100
+"Abundance",6,0.95,"Aitchison (1)",0.26,100
+"Abundance",6,0.95,"Bray-Curtis",0.97,100
+"Abundance",6,0.95,"Euclidean",0.8,100
+"Abundance",6,0.95,"Jaccard",0.02,100
+"Abundance",6,1,"HRIC distance",1,100
+"Abundance",6,1,"ILR-Euclidean (0.01)",0.15,100
+"Abundance",6,1,"ILR-Euclidean (0.1)",0.22,100
+"Abundance",6,1,"ILR-Euclidean (0.5)",0.31,100
+"Abundance",6,1,"ILR-Euclidean (1)",0.44,100
+"Abundance",6,1,"Aitchison (0.5)",0.32,100
+"Abundance",6,1,"Aitchison (0.01)",0.16,100
+"Abundance",6,1,"Aitchison (0.1)",0.21,100
+"Abundance",6,1,"Aitchison (1)",0.41,100
+"Abundance",6,1,"Bray-Curtis",1,100
+"Abundance",6,1,"Euclidean",0.9,100
+"Abundance",6,1,"Jaccard",0.1,100
+"Joint",6,0.05,"HRIC distance",0.03,100
+"Joint",6,0.05,"ILR-Euclidean (0.01)",0.01,100
+"Joint",6,0.05,"ILR-Euclidean (0.1)",0.01,100
+"Joint",6,0.05,"ILR-Euclidean (0.5)",0.01,100
+"Joint",6,0.05,"ILR-Euclidean (1)",0.01,100
+"Joint",6,0.05,"Aitchison (0.5)",0.01,100
+"Joint",6,0.05,"Aitchison (0.01)",0.01,100
+"Joint",6,0.05,"Aitchison (0.1)",0.02,100
+"Joint",6,0.05,"Aitchison (1)",0.01,100
+"Joint",6,0.05,"Bray-Curtis",0.05,100
+"Joint",6,0.05,"Euclidean",0.05,100
+"Joint",6,0.05,"Jaccard",0.02,100
+"Joint",6,0.1,"HRIC distance",0.05,100
+"Joint",6,0.1,"ILR-Euclidean (0.01)",0.05,100
+"Joint",6,0.1,"ILR-Euclidean (0.1)",0.03,100
+"Joint",6,0.1,"ILR-Euclidean (0.5)",0.03,100
+"Joint",6,0.1,"ILR-Euclidean (1)",0.03,100
+"Joint",6,0.1,"Aitchison (0.5)",0.03,100
+"Joint",6,0.1,"Aitchison (0.01)",0.02,100
+"Joint",6,0.1,"Aitchison (0.1)",0.03,100
+"Joint",6,0.1,"Aitchison (1)",0.03,100
+"Joint",6,0.1,"Bray-Curtis",0.04,100
+"Joint",6,0.1,"Euclidean",0.04,100
+"Joint",6,0.1,"Jaccard",0.02,100
+"Joint",6,0.15,"HRIC distance",0.09,100
+"Joint",6,0.15,"ILR-Euclidean (0.01)",0.09,100
+"Joint",6,0.15,"ILR-Euclidean (0.1)",0.09,100
+"Joint",6,0.15,"ILR-Euclidean (0.5)",0.08,100
+"Joint",6,0.15,"ILR-Euclidean (1)",0.06,100
+"Joint",6,0.15,"Aitchison (0.5)",0.07,100
+"Joint",6,0.15,"Aitchison (0.01)",0.1,100
+"Joint",6,0.15,"Aitchison (0.1)",0.08,100
+"Joint",6,0.15,"Aitchison (1)",0.09,100
+"Joint",6,0.15,"Bray-Curtis",0.07,100
+"Joint",6,0.15,"Euclidean",0.03,100
+"Joint",6,0.15,"Jaccard",0.09,100
+"Joint",6,0.2,"HRIC distance",0.09,100
+"Joint",6,0.2,"ILR-Euclidean (0.01)",0.13,100
+"Joint",6,0.2,"ILR-Euclidean (0.1)",0.14,100
+"Joint",6,0.2,"ILR-Euclidean (0.5)",0.14,100
+"Joint",6,0.2,"ILR-Euclidean (1)",0.14,100
+"Joint",6,0.2,"Aitchison (0.5)",0.14,100
+"Joint",6,0.2,"Aitchison (0.01)",0.13,100
+"Joint",6,0.2,"Aitchison (0.1)",0.12,100
+"Joint",6,0.2,"Aitchison (1)",0.14,100
+"Joint",6,0.2,"Bray-Curtis",0.12,100
+"Joint",6,0.2,"Euclidean",0.06,100
+"Joint",6,0.2,"Jaccard",0.11,100
+"Joint",6,0.25,"HRIC distance",0.14,100
+"Joint",6,0.25,"ILR-Euclidean (0.01)",0.12,100
+"Joint",6,0.25,"ILR-Euclidean (0.1)",0.11,100
+"Joint",6,0.25,"ILR-Euclidean (0.5)",0.11,100
+"Joint",6,0.25,"ILR-Euclidean (1)",0.11,100
+"Joint",6,0.25,"Aitchison (0.5)",0.11,100
+"Joint",6,0.25,"Aitchison (0.01)",0.1,100
+"Joint",6,0.25,"Aitchison (0.1)",0.11,100
+"Joint",6,0.25,"Aitchison (1)",0.1,100
+"Joint",6,0.25,"Bray-Curtis",0.16,100
+"Joint",6,0.25,"Euclidean",0.09,100
+"Joint",6,0.25,"Jaccard",0.1,100
+"Joint",6,0.3,"HRIC distance",0.2,100
+"Joint",6,0.3,"ILR-Euclidean (0.01)",0.17,100
+"Joint",6,0.3,"ILR-Euclidean (0.1)",0.17,100
+"Joint",6,0.3,"ILR-Euclidean (0.5)",0.19,100
+"Joint",6,0.3,"ILR-Euclidean (1)",0.2,100
+"Joint",6,0.3,"Aitchison (0.5)",0.22,100
+"Joint",6,0.3,"Aitchison (0.01)",0.2,100
+"Joint",6,0.3,"Aitchison (0.1)",0.19,100
+"Joint",6,0.3,"Aitchison (1)",0.21,100
+"Joint",6,0.3,"Bray-Curtis",0.15,100
+"Joint",6,0.3,"Euclidean",0.15,100
+"Joint",6,0.3,"Jaccard",0.14,100
+"Joint",6,0.35,"HRIC distance",0.35,100
+"Joint",6,0.35,"ILR-Euclidean (0.01)",0.24,100
+"Joint",6,0.35,"ILR-Euclidean (0.1)",0.29,100
+"Joint",6,0.35,"ILR-Euclidean (0.5)",0.29,100
+"Joint",6,0.35,"ILR-Euclidean (1)",0.33,100
+"Joint",6,0.35,"Aitchison (0.5)",0.3,100
+"Joint",6,0.35,"Aitchison (0.01)",0.25,100
+"Joint",6,0.35,"Aitchison (0.1)",0.28,100
+"Joint",6,0.35,"Aitchison (1)",0.32,100
+"Joint",6,0.35,"Bray-Curtis",0.33,100
+"Joint",6,0.35,"Euclidean",0.16,100
+"Joint",6,0.35,"Jaccard",0.11,100
+"Joint",6,0.4,"HRIC distance",0.54,100
+"Joint",6,0.4,"ILR-Euclidean (0.01)",0.36,100
+"Joint",6,0.4,"ILR-Euclidean (0.1)",0.39,100
+"Joint",6,0.4,"ILR-Euclidean (0.5)",0.49,100
+"Joint",6,0.4,"ILR-Euclidean (1)",0.53,100
+"Joint",6,0.4,"Aitchison (0.5)",0.47,100
+"Joint",6,0.4,"Aitchison (0.01)",0.36,100
+"Joint",6,0.4,"Aitchison (0.1)",0.38,100
+"Joint",6,0.4,"Aitchison (1)",0.52,100
+"Joint",6,0.4,"Bray-Curtis",0.47,100
+"Joint",6,0.4,"Euclidean",0.14,100
+"Joint",6,0.4,"Jaccard",0.23,100
+"Joint",6,0.45,"HRIC distance",0.71,100
+"Joint",6,0.45,"ILR-Euclidean (0.01)",0.58,100
+"Joint",6,0.45,"ILR-Euclidean (0.1)",0.64,100
+"Joint",6,0.45,"ILR-Euclidean (0.5)",0.71,100
+"Joint",6,0.45,"ILR-Euclidean (1)",0.73,100
+"Joint",6,0.45,"Aitchison (0.5)",0.69,100
+"Joint",6,0.45,"Aitchison (0.01)",0.58,100
+"Joint",6,0.45,"Aitchison (0.1)",0.66,100
+"Joint",6,0.45,"Aitchison (1)",0.73,100
+"Joint",6,0.45,"Bray-Curtis",0.63,100
+"Joint",6,0.45,"Euclidean",0.3,100
+"Joint",6,0.45,"Jaccard",0.4,100
+"Joint",6,0.5,"HRIC distance",0.7,100
+"Joint",6,0.5,"ILR-Euclidean (0.01)",0.69,100
+"Joint",6,0.5,"ILR-Euclidean (0.1)",0.72,100
+"Joint",6,0.5,"ILR-Euclidean (0.5)",0.75,100
+"Joint",6,0.5,"ILR-Euclidean (1)",0.76,100
+"Joint",6,0.5,"Aitchison (0.5)",0.74,100
+"Joint",6,0.5,"Aitchison (0.01)",0.69,100
+"Joint",6,0.5,"Aitchison (0.1)",0.73,100
+"Joint",6,0.5,"Aitchison (1)",0.75,100
+"Joint",6,0.5,"Bray-Curtis",0.61,100
+"Joint",6,0.5,"Euclidean",0.31,100
+"Joint",6,0.5,"Jaccard",0.52,100
+"Joint",6,0.55,"HRIC distance",0.86,100
+"Joint",6,0.55,"ILR-Euclidean (0.01)",0.75,100
+"Joint",6,0.55,"ILR-Euclidean (0.1)",0.81,100
+"Joint",6,0.55,"ILR-Euclidean (0.5)",0.89,100
+"Joint",6,0.55,"ILR-Euclidean (1)",0.89,100
+"Joint",6,0.55,"Aitchison (0.5)",0.89,100
+"Joint",6,0.55,"Aitchison (0.01)",0.76,100
+"Joint",6,0.55,"Aitchison (0.1)",0.81,100
+"Joint",6,0.55,"Aitchison (1)",0.9,100
+"Joint",6,0.55,"Bray-Curtis",0.8,100
+"Joint",6,0.55,"Euclidean",0.41,100
+"Joint",6,0.55,"Jaccard",0.56,100
+"Joint",6,0.6,"HRIC distance",0.96,100
+"Joint",6,0.6,"ILR-Euclidean (0.01)",0.89,100
+"Joint",6,0.6,"ILR-Euclidean (0.1)",0.93,100
+"Joint",6,0.6,"ILR-Euclidean (0.5)",0.94,100
+"Joint",6,0.6,"ILR-Euclidean (1)",0.95,100
+"Joint",6,0.6,"Aitchison (0.5)",0.94,100
+"Joint",6,0.6,"Aitchison (0.01)",0.89,100
+"Joint",6,0.6,"Aitchison (0.1)",0.92,100
+"Joint",6,0.6,"Aitchison (1)",0.95,100
+"Joint",6,0.6,"Bray-Curtis",0.89,100
+"Joint",6,0.6,"Euclidean",0.57,100
+"Joint",6,0.6,"Jaccard",0.71,100
+"Joint",6,0.65,"HRIC distance",0.97,100
+"Joint",6,0.65,"ILR-Euclidean (0.01)",0.96,100
+"Joint",6,0.65,"ILR-Euclidean (0.1)",0.97,100
+"Joint",6,0.65,"ILR-Euclidean (0.5)",0.99,100
+"Joint",6,0.65,"ILR-Euclidean (1)",0.99,100
+"Joint",6,0.65,"Aitchison (0.5)",0.98,100
+"Joint",6,0.65,"Aitchison (0.01)",0.96,100
+"Joint",6,0.65,"Aitchison (0.1)",0.98,100
+"Joint",6,0.65,"Aitchison (1)",0.99,100
+"Joint",6,0.65,"Bray-Curtis",0.94,100
+"Joint",6,0.65,"Euclidean",0.5,100
+"Joint",6,0.65,"Jaccard",0.83,100
+"Joint",6,0.7,"HRIC distance",1,100
+"Joint",6,0.7,"ILR-Euclidean (0.01)",0.99,100
+"Joint",6,0.7,"ILR-Euclidean (0.1)",0.99,100
+"Joint",6,0.7,"ILR-Euclidean (0.5)",0.99,100
+"Joint",6,0.7,"ILR-Euclidean (1)",1,100
+"Joint",6,0.7,"Aitchison (0.5)",1,100
+"Joint",6,0.7,"Aitchison (0.01)",0.99,100
+"Joint",6,0.7,"Aitchison (0.1)",0.99,100
+"Joint",6,0.7,"Aitchison (1)",1,100
+"Joint",6,0.7,"Bray-Curtis",1,100
+"Joint",6,0.7,"Euclidean",0.69,100
+"Joint",6,0.7,"Jaccard",0.95,100
+"Joint",6,0.75,"HRIC distance",1,100
+"Joint",6,0.75,"ILR-Euclidean (0.01)",1,100
+"Joint",6,0.75,"ILR-Euclidean (0.1)",1,100
+"Joint",6,0.75,"ILR-Euclidean (0.5)",1,100
+"Joint",6,0.75,"ILR-Euclidean (1)",1,100
+"Joint",6,0.75,"Aitchison (0.5)",1,100
+"Joint",6,0.75,"Aitchison (0.01)",1,100
+"Joint",6,0.75,"Aitchison (0.1)",1,100
+"Joint",6,0.75,"Aitchison (1)",1,100
+"Joint",6,0.75,"Bray-Curtis",1,100
+"Joint",6,0.75,"Euclidean",0.71,100
+"Joint",6,0.75,"Jaccard",0.98,100
+"Joint",6,0.8,"HRIC distance",1,100
+"Joint",6,0.8,"ILR-Euclidean (0.01)",1,100
+"Joint",6,0.8,"ILR-Euclidean (0.1)",1,100
+"Joint",6,0.8,"ILR-Euclidean (0.5)",1,100
+"Joint",6,0.8,"ILR-Euclidean (1)",1,100
+"Joint",6,0.8,"Aitchison (0.5)",1,100
+"Joint",6,0.8,"Aitchison (0.01)",1,100
+"Joint",6,0.8,"Aitchison (0.1)",1,100
+"Joint",6,0.8,"Aitchison (1)",1,100
+"Joint",6,0.8,"Bray-Curtis",1,100
+"Joint",6,0.8,"Euclidean",0.81,100
+"Joint",6,0.8,"Jaccard",1,100
+"Joint",6,0.85,"HRIC distance",1,100
+"Joint",6,0.85,"ILR-Euclidean (0.01)",1,100
+"Joint",6,0.85,"ILR-Euclidean (0.1)",1,100
+"Joint",6,0.85,"ILR-Euclidean (0.5)",1,100
+"Joint",6,0.85,"ILR-Euclidean (1)",1,100
+"Joint",6,0.85,"Aitchison (0.5)",1,100
+"Joint",6,0.85,"Aitchison (0.01)",1,100
+"Joint",6,0.85,"Aitchison (0.1)",1,100
+"Joint",6,0.85,"Aitchison (1)",1,100
+"Joint",6,0.85,"Bray-Curtis",1,100
+"Joint",6,0.85,"Euclidean",0.79,100
+"Joint",6,0.85,"Jaccard",1,100
+"Joint",6,0.9,"HRIC distance",1,100
+"Joint",6,0.9,"ILR-Euclidean (0.01)",1,100
+"Joint",6,0.9,"ILR-Euclidean (0.1)",1,100
+"Joint",6,0.9,"ILR-Euclidean (0.5)",1,100
+"Joint",6,0.9,"ILR-Euclidean (1)",1,100
+"Joint",6,0.9,"Aitchison (0.5)",1,100
+"Joint",6,0.9,"Aitchison (0.01)",1,100
+"Joint",6,0.9,"Aitchison (0.1)",1,100
+"Joint",6,0.9,"Aitchison (1)",1,100
+"Joint",6,0.9,"Bray-Curtis",1,100
+"Joint",6,0.9,"Euclidean",0.83,100
+"Joint",6,0.9,"Jaccard",1,100
+"Joint",6,0.95,"HRIC distance",1,100
+"Joint",6,0.95,"ILR-Euclidean (0.01)",1,100
+"Joint",6,0.95,"ILR-Euclidean (0.1)",1,100
+"Joint",6,0.95,"ILR-Euclidean (0.5)",1,100
+"Joint",6,0.95,"ILR-Euclidean (1)",1,100
+"Joint",6,0.95,"Aitchison (0.5)",1,100
+"Joint",6,0.95,"Aitchison (0.01)",1,100
+"Joint",6,0.95,"Aitchison (0.1)",1,100
+"Joint",6,0.95,"Aitchison (1)",1,100
+"Joint",6,0.95,"Bray-Curtis",1,100
+"Joint",6,0.95,"Euclidean",0.93,100
+"Joint",6,0.95,"Jaccard",1,100
+"Joint",6,1,"HRIC distance",1,100
+"Joint",6,1,"ILR-Euclidean (0.01)",1,100
+"Joint",6,1,"ILR-Euclidean (0.1)",1,100
+"Joint",6,1,"ILR-Euclidean (0.5)",1,100
+"Joint",6,1,"ILR-Euclidean (1)",1,100
+"Joint",6,1,"Aitchison (0.5)",1,100
+"Joint",6,1,"Aitchison (0.01)",1,100
+"Joint",6,1,"Aitchison (0.1)",1,100
+"Joint",6,1,"Aitchison (1)",1,100
+"Joint",6,1,"Bray-Curtis",1,100
+"Joint",6,1,"Euclidean",0.94,100
+"Joint",6,1,"Jaccard",1,100
+"Prevalence",6,0.05,"HRIC distance",0.04,100
+"Prevalence",6,0.05,"ILR-Euclidean (0.01)",0.08,100
+"Prevalence",6,0.05,"ILR-Euclidean (0.1)",0.09,100
+"Prevalence",6,0.05,"ILR-Euclidean (0.5)",0.09,100
+"Prevalence",6,0.05,"ILR-Euclidean (1)",0.1,100
+"Prevalence",6,0.05,"Aitchison (0.5)",0.08,100
+"Prevalence",6,0.05,"Aitchison (0.01)",0.1,100
+"Prevalence",6,0.05,"Aitchison (0.1)",0.09,100
+"Prevalence",6,0.05,"Aitchison (1)",0.1,100
+"Prevalence",6,0.05,"Bray-Curtis",0.04,100
+"Prevalence",6,0.05,"Euclidean",0.05,100
+"Prevalence",6,0.05,"Jaccard",0.09,100
+"Prevalence",6,0.1,"HRIC distance",0.06,100
+"Prevalence",6,0.1,"ILR-Euclidean (0.01)",0.09,100
+"Prevalence",6,0.1,"ILR-Euclidean (0.1)",0.09,100
+"Prevalence",6,0.1,"ILR-Euclidean (0.5)",0.08,100
+"Prevalence",6,0.1,"ILR-Euclidean (1)",0.07,100
+"Prevalence",6,0.1,"Aitchison (0.5)",0.09,100
+"Prevalence",6,0.1,"Aitchison (0.01)",0.1,100
+"Prevalence",6,0.1,"Aitchison (0.1)",0.08,100
+"Prevalence",6,0.1,"Aitchison (1)",0.09,100
+"Prevalence",6,0.1,"Bray-Curtis",0.05,100
+"Prevalence",6,0.1,"Euclidean",0.04,100
+"Prevalence",6,0.1,"Jaccard",0.09,100
+"Prevalence",6,0.15,"HRIC distance",0.03,100
+"Prevalence",6,0.15,"ILR-Euclidean (0.01)",0.08,100
+"Prevalence",6,0.15,"ILR-Euclidean (0.1)",0.08,100
+"Prevalence",6,0.15,"ILR-Euclidean (0.5)",0.08,100
+"Prevalence",6,0.15,"ILR-Euclidean (1)",0.07,100
+"Prevalence",6,0.15,"Aitchison (0.5)",0.08,100
+"Prevalence",6,0.15,"Aitchison (0.01)",0.07,100
+"Prevalence",6,0.15,"Aitchison (0.1)",0.08,100
+"Prevalence",6,0.15,"Aitchison (1)",0.07,100
+"Prevalence",6,0.15,"Bray-Curtis",0.03,100
+"Prevalence",6,0.15,"Euclidean",0.06,100
+"Prevalence",6,0.15,"Jaccard",0.07,100
+"Prevalence",6,0.2,"HRIC distance",0.05,100
+"Prevalence",6,0.2,"ILR-Euclidean (0.01)",0.06,100
+"Prevalence",6,0.2,"ILR-Euclidean (0.1)",0.05,100
+"Prevalence",6,0.2,"ILR-Euclidean (0.5)",0.06,100
+"Prevalence",6,0.2,"ILR-Euclidean (1)",0.06,100
+"Prevalence",6,0.2,"Aitchison (0.5)",0.05,100
+"Prevalence",6,0.2,"Aitchison (0.01)",0.05,100
+"Prevalence",6,0.2,"Aitchison (0.1)",0.05,100
+"Prevalence",6,0.2,"Aitchison (1)",0.05,100
+"Prevalence",6,0.2,"Bray-Curtis",0.05,100
+"Prevalence",6,0.2,"Euclidean",0.01,100
+"Prevalence",6,0.2,"Jaccard",0.05,100
+"Prevalence",6,0.25,"HRIC distance",0.08,100
+"Prevalence",6,0.25,"ILR-Euclidean (0.01)",0.08,100
+"Prevalence",6,0.25,"ILR-Euclidean (0.1)",0.1,100
+"Prevalence",6,0.25,"ILR-Euclidean (0.5)",0.09,100
+"Prevalence",6,0.25,"ILR-Euclidean (1)",0.09,100
+"Prevalence",6,0.25,"Aitchison (0.5)",0.09,100
+"Prevalence",6,0.25,"Aitchison (0.01)",0.1,100
+"Prevalence",6,0.25,"Aitchison (0.1)",0.09,100
+"Prevalence",6,0.25,"Aitchison (1)",0.08,100
+"Prevalence",6,0.25,"Bray-Curtis",0.09,100
+"Prevalence",6,0.25,"Euclidean",0.1,100
+"Prevalence",6,0.25,"Jaccard",0.07,100
+"Prevalence",6,0.3,"HRIC distance",0.04,100
+"Prevalence",6,0.3,"ILR-Euclidean (0.01)",0.14,100
+"Prevalence",6,0.3,"ILR-Euclidean (0.1)",0.13,100
+"Prevalence",6,0.3,"ILR-Euclidean (0.5)",0.14,100
+"Prevalence",6,0.3,"ILR-Euclidean (1)",0.16,100
+"Prevalence",6,0.3,"Aitchison (0.5)",0.14,100
+"Prevalence",6,0.3,"Aitchison (0.01)",0.14,100
+"Prevalence",6,0.3,"Aitchison (0.1)",0.13,100
+"Prevalence",6,0.3,"Aitchison (1)",0.15,100
+"Prevalence",6,0.3,"Bray-Curtis",0.05,100
+"Prevalence",6,0.3,"Euclidean",0,100
+"Prevalence",6,0.3,"Jaccard",0.18,100
+"Prevalence",6,0.35,"HRIC distance",0.11,100
+"Prevalence",6,0.35,"ILR-Euclidean (0.01)",0.18,100
+"Prevalence",6,0.35,"ILR-Euclidean (0.1)",0.16,100
+"Prevalence",6,0.35,"ILR-Euclidean (0.5)",0.18,100
+"Prevalence",6,0.35,"ILR-Euclidean (1)",0.19,100
+"Prevalence",6,0.35,"Aitchison (0.5)",0.17,100
+"Prevalence",6,0.35,"Aitchison (0.01)",0.19,100
+"Prevalence",6,0.35,"Aitchison (0.1)",0.18,100
+"Prevalence",6,0.35,"Aitchison (1)",0.18,100
+"Prevalence",6,0.35,"Bray-Curtis",0.05,100
+"Prevalence",6,0.35,"Euclidean",0.07,100
+"Prevalence",6,0.35,"Jaccard",0.17,100
+"Prevalence",6,0.4,"HRIC distance",0.08,100
+"Prevalence",6,0.4,"ILR-Euclidean (0.01)",0.22,100
+"Prevalence",6,0.4,"ILR-Euclidean (0.1)",0.2,100
+"Prevalence",6,0.4,"ILR-Euclidean (0.5)",0.21,100
+"Prevalence",6,0.4,"ILR-Euclidean (1)",0.19,100
+"Prevalence",6,0.4,"Aitchison (0.5)",0.21,100
+"Prevalence",6,0.4,"Aitchison (0.01)",0.18,100
+"Prevalence",6,0.4,"Aitchison (0.1)",0.19,100
+"Prevalence",6,0.4,"Aitchison (1)",0.19,100
+"Prevalence",6,0.4,"Bray-Curtis",0.06,100
+"Prevalence",6,0.4,"Euclidean",0.07,100
+"Prevalence",6,0.4,"Jaccard",0.23,100
+"Prevalence",6,0.45,"HRIC distance",0.08,100
+"Prevalence",6,0.45,"ILR-Euclidean (0.01)",0.34,100
+"Prevalence",6,0.45,"ILR-Euclidean (0.1)",0.3,100
+"Prevalence",6,0.45,"ILR-Euclidean (0.5)",0.29,100
+"Prevalence",6,0.45,"ILR-Euclidean (1)",0.27,100
+"Prevalence",6,0.45,"Aitchison (0.5)",0.29,100
+"Prevalence",6,0.45,"Aitchison (0.01)",0.3,100
+"Prevalence",6,0.45,"Aitchison (0.1)",0.31,100
+"Prevalence",6,0.45,"Aitchison (1)",0.26,100
+"Prevalence",6,0.45,"Bray-Curtis",0.04,100
+"Prevalence",6,0.45,"Euclidean",0.06,100
+"Prevalence",6,0.45,"Jaccard",0.37,100
+"Prevalence",6,0.5,"HRIC distance",0.11,100
+"Prevalence",6,0.5,"ILR-Euclidean (0.01)",0.46,100
+"Prevalence",6,0.5,"ILR-Euclidean (0.1)",0.45,100
+"Prevalence",6,0.5,"ILR-Euclidean (0.5)",0.41,100
+"Prevalence",6,0.5,"ILR-Euclidean (1)",0.39,100
+"Prevalence",6,0.5,"Aitchison (0.5)",0.39,100
+"Prevalence",6,0.5,"Aitchison (0.01)",0.48,100
+"Prevalence",6,0.5,"Aitchison (0.1)",0.41,100
+"Prevalence",6,0.5,"Aitchison (1)",0.38,100
+"Prevalence",6,0.5,"Bray-Curtis",0.06,100
+"Prevalence",6,0.5,"Euclidean",0.04,100
+"Prevalence",6,0.5,"Jaccard",0.51,100
+"Prevalence",6,0.55,"HRIC distance",0.11,100
+"Prevalence",6,0.55,"ILR-Euclidean (0.01)",0.52,100
+"Prevalence",6,0.55,"ILR-Euclidean (0.1)",0.51,100
+"Prevalence",6,0.55,"ILR-Euclidean (0.5)",0.45,100
+"Prevalence",6,0.55,"ILR-Euclidean (1)",0.43,100
+"Prevalence",6,0.55,"Aitchison (0.5)",0.45,100
+"Prevalence",6,0.55,"Aitchison (0.01)",0.5,100
+"Prevalence",6,0.55,"Aitchison (0.1)",0.48,100
+"Prevalence",6,0.55,"Aitchison (1)",0.42,100
+"Prevalence",6,0.55,"Bray-Curtis",0.08,100
+"Prevalence",6,0.55,"Euclidean",0.02,100
+"Prevalence",6,0.55,"Jaccard",0.54,100
+"Prevalence",6,0.6,"HRIC distance",0.09,100
+"Prevalence",6,0.6,"ILR-Euclidean (0.01)",0.7,100
+"Prevalence",6,0.6,"ILR-Euclidean (0.1)",0.58,100
+"Prevalence",6,0.6,"ILR-Euclidean (0.5)",0.57,100
+"Prevalence",6,0.6,"ILR-Euclidean (1)",0.56,100
+"Prevalence",6,0.6,"Aitchison (0.5)",0.56,100
+"Prevalence",6,0.6,"Aitchison (0.01)",0.65,100
+"Prevalence",6,0.6,"Aitchison (0.1)",0.61,100
+"Prevalence",6,0.6,"Aitchison (1)",0.51,100
+"Prevalence",6,0.6,"Bray-Curtis",0.1,100
+"Prevalence",6,0.6,"Euclidean",0.07,100
+"Prevalence",6,0.6,"Jaccard",0.71,100
+"Prevalence",6,0.65,"HRIC distance",0.11,100
+"Prevalence",6,0.65,"ILR-Euclidean (0.01)",0.76,100
+"Prevalence",6,0.65,"ILR-Euclidean (0.1)",0.76,100
+"Prevalence",6,0.65,"ILR-Euclidean (0.5)",0.67,100
+"Prevalence",6,0.65,"ILR-Euclidean (1)",0.67,100
+"Prevalence",6,0.65,"Aitchison (0.5)",0.68,100
+"Prevalence",6,0.65,"Aitchison (0.01)",0.78,100
+"Prevalence",6,0.65,"Aitchison (0.1)",0.73,100
+"Prevalence",6,0.65,"Aitchison (1)",0.67,100
+"Prevalence",6,0.65,"Bray-Curtis",0.1,100
+"Prevalence",6,0.65,"Euclidean",0.04,100
+"Prevalence",6,0.65,"Jaccard",0.85,100
+"Prevalence",6,0.7,"HRIC distance",0.16,100
+"Prevalence",6,0.7,"ILR-Euclidean (0.01)",0.95,100
+"Prevalence",6,0.7,"ILR-Euclidean (0.1)",0.93,100
+"Prevalence",6,0.7,"ILR-Euclidean (0.5)",0.89,100
+"Prevalence",6,0.7,"ILR-Euclidean (1)",0.88,100
+"Prevalence",6,0.7,"Aitchison (0.5)",0.91,100
+"Prevalence",6,0.7,"Aitchison (0.01)",0.94,100
+"Prevalence",6,0.7,"Aitchison (0.1)",0.95,100
+"Prevalence",6,0.7,"Aitchison (1)",0.9,100
+"Prevalence",6,0.7,"Bray-Curtis",0.12,100
+"Prevalence",6,0.7,"Euclidean",0.06,100
+"Prevalence",6,0.7,"Jaccard",0.96,100
+"Prevalence",6,0.75,"HRIC distance",0.27,100
+"Prevalence",6,0.75,"ILR-Euclidean (0.01)",0.94,100
+"Prevalence",6,0.75,"ILR-Euclidean (0.1)",0.93,100
+"Prevalence",6,0.75,"ILR-Euclidean (0.5)",0.91,100
+"Prevalence",6,0.75,"ILR-Euclidean (1)",0.91,100
+"Prevalence",6,0.75,"Aitchison (0.5)",0.91,100
+"Prevalence",6,0.75,"Aitchison (0.01)",0.94,100
+"Prevalence",6,0.75,"Aitchison (0.1)",0.93,100
+"Prevalence",6,0.75,"Aitchison (1)",0.9,100
+"Prevalence",6,0.75,"Bray-Curtis",0.17,100
+"Prevalence",6,0.75,"Euclidean",0.09,100
+"Prevalence",6,0.75,"Jaccard",0.98,100
+"Prevalence",6,0.8,"HRIC distance",0.2,100
+"Prevalence",6,0.8,"ILR-Euclidean (0.01)",0.95,100
+"Prevalence",6,0.8,"ILR-Euclidean (0.1)",0.93,100
+"Prevalence",6,0.8,"ILR-Euclidean (0.5)",0.91,100
+"Prevalence",6,0.8,"ILR-Euclidean (1)",0.9,100
+"Prevalence",6,0.8,"Aitchison (0.5)",0.91,100
+"Prevalence",6,0.8,"Aitchison (0.01)",0.96,100
+"Prevalence",6,0.8,"Aitchison (0.1)",0.95,100
+"Prevalence",6,0.8,"Aitchison (1)",0.91,100
+"Prevalence",6,0.8,"Bray-Curtis",0.12,100
+"Prevalence",6,0.8,"Euclidean",0.03,100
+"Prevalence",6,0.8,"Jaccard",0.99,100
+"Prevalence",6,0.85,"HRIC distance",0.27,100
+"Prevalence",6,0.85,"ILR-Euclidean (0.01)",0.99,100
+"Prevalence",6,0.85,"ILR-Euclidean (0.1)",0.99,100
+"Prevalence",6,0.85,"ILR-Euclidean (0.5)",0.99,100
+"Prevalence",6,0.85,"ILR-Euclidean (1)",0.98,100
+"Prevalence",6,0.85,"Aitchison (0.5)",0.99,100
+"Prevalence",6,0.85,"Aitchison (0.01)",0.99,100
+"Prevalence",6,0.85,"Aitchison (0.1)",0.99,100
+"Prevalence",6,0.85,"Aitchison (1)",0.98,100
+"Prevalence",6,0.85,"Bray-Curtis",0.16,100
+"Prevalence",6,0.85,"Euclidean",0.08,100
+"Prevalence",6,0.85,"Jaccard",1,100
+"Prevalence",6,0.9,"HRIC distance",0.31,100
+"Prevalence",6,0.9,"ILR-Euclidean (0.01)",1,100
+"Prevalence",6,0.9,"ILR-Euclidean (0.1)",0.99,100
+"Prevalence",6,0.9,"ILR-Euclidean (0.5)",0.97,100
+"Prevalence",6,0.9,"ILR-Euclidean (1)",0.96,100
+"Prevalence",6,0.9,"Aitchison (0.5)",0.97,100
+"Prevalence",6,0.9,"Aitchison (0.01)",0.99,100
+"Prevalence",6,0.9,"Aitchison (0.1)",0.98,100
+"Prevalence",6,0.9,"Aitchison (1)",0.97,100
+"Prevalence",6,0.9,"Bray-Curtis",0.21,100
+"Prevalence",6,0.9,"Euclidean",0.05,100
+"Prevalence",6,0.9,"Jaccard",1,100
+"Prevalence",6,0.95,"HRIC distance",0.26,100
+"Prevalence",6,0.95,"ILR-Euclidean (0.01)",1,100
+"Prevalence",6,0.95,"ILR-Euclidean (0.1)",1,100
+"Prevalence",6,0.95,"ILR-Euclidean (0.5)",1,100
+"Prevalence",6,0.95,"ILR-Euclidean (1)",1,100
+"Prevalence",6,0.95,"Aitchison (0.5)",1,100
+"Prevalence",6,0.95,"Aitchison (0.01)",1,100
+"Prevalence",6,0.95,"Aitchison (0.1)",1,100
+"Prevalence",6,0.95,"Aitchison (1)",1,100
+"Prevalence",6,0.95,"Bray-Curtis",0.16,100
+"Prevalence",6,0.95,"Euclidean",0.05,100
+"Prevalence",6,0.95,"Jaccard",1,100
+"Prevalence",6,1,"HRIC distance",0.42,100
+"Prevalence",6,1,"ILR-Euclidean (0.01)",1,100
+"Prevalence",6,1,"ILR-Euclidean (0.1)",1,100
+"Prevalence",6,1,"ILR-Euclidean (0.5)",1,100
+"Prevalence",6,1,"ILR-Euclidean (1)",1,100
+"Prevalence",6,1,"Aitchison (0.5)",1,100
+"Prevalence",6,1,"Aitchison (0.01)",1,100
+"Prevalence",6,1,"Aitchison (0.1)",1,100
+"Prevalence",6,1,"Aitchison (1)",1,100
+"Prevalence",6,1,"Bray-Curtis",0.26,100
+"Prevalence",6,1,"Euclidean",0.1,100
+"Prevalence",6,1,"Jaccard",1,100
+"Abundance",8,0.05,"HRIC distance",0.08,100
+"Abundance",8,0.05,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",8,0.05,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",8,0.05,"ILR-Euclidean (0.5)",0.03,100
+"Abundance",8,0.05,"ILR-Euclidean (1)",0.05,100
+"Abundance",8,0.05,"Aitchison (0.5)",0.04,100
+"Abundance",8,0.05,"Aitchison (0.01)",0.05,100
+"Abundance",8,0.05,"Aitchison (0.1)",0.06,100
+"Abundance",8,0.05,"Aitchison (1)",0.05,100
+"Abundance",8,0.05,"Bray-Curtis",0.08,100
+"Abundance",8,0.05,"Euclidean",0.05,100
+"Abundance",8,0.05,"Jaccard",0.08,100
+"Abundance",8,0.1,"HRIC distance",0.07,100
+"Abundance",8,0.1,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",8,0.1,"ILR-Euclidean (0.1)",0.04,100
+"Abundance",8,0.1,"ILR-Euclidean (0.5)",0.04,100
+"Abundance",8,0.1,"ILR-Euclidean (1)",0.04,100
+"Abundance",8,0.1,"Aitchison (0.5)",0.04,100
+"Abundance",8,0.1,"Aitchison (0.01)",0.04,100
+"Abundance",8,0.1,"Aitchison (0.1)",0.04,100
+"Abundance",8,0.1,"Aitchison (1)",0.04,100
+"Abundance",8,0.1,"Bray-Curtis",0.11,100
+"Abundance",8,0.1,"Euclidean",0.1,100
+"Abundance",8,0.1,"Jaccard",0.06,100
+"Abundance",8,0.15,"HRIC distance",0.05,100
+"Abundance",8,0.15,"ILR-Euclidean (0.01)",0.03,100
+"Abundance",8,0.15,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",8,0.15,"ILR-Euclidean (0.5)",0.02,100
+"Abundance",8,0.15,"ILR-Euclidean (1)",0.03,100
+"Abundance",8,0.15,"Aitchison (0.5)",0.02,100
+"Abundance",8,0.15,"Aitchison (0.01)",0.04,100
+"Abundance",8,0.15,"Aitchison (0.1)",0.04,100
+"Abundance",8,0.15,"Aitchison (1)",0.03,100
+"Abundance",8,0.15,"Bray-Curtis",0.07,100
+"Abundance",8,0.15,"Euclidean",0.05,100
+"Abundance",8,0.15,"Jaccard",0.03,100
+"Abundance",8,0.2,"HRIC distance",0.05,100
+"Abundance",8,0.2,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",8,0.2,"ILR-Euclidean (0.1)",0.07,100
+"Abundance",8,0.2,"ILR-Euclidean (0.5)",0.08,100
+"Abundance",8,0.2,"ILR-Euclidean (1)",0.07,100
+"Abundance",8,0.2,"Aitchison (0.5)",0.07,100
+"Abundance",8,0.2,"Aitchison (0.01)",0.07,100
+"Abundance",8,0.2,"Aitchison (0.1)",0.07,100
+"Abundance",8,0.2,"Aitchison (1)",0.06,100
+"Abundance",8,0.2,"Bray-Curtis",0.05,100
+"Abundance",8,0.2,"Euclidean",0.07,100
+"Abundance",8,0.2,"Jaccard",0.07,100
+"Abundance",8,0.25,"HRIC distance",0.14,100
+"Abundance",8,0.25,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",8,0.25,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",8,0.25,"ILR-Euclidean (0.5)",0.07,100
+"Abundance",8,0.25,"ILR-Euclidean (1)",0.07,100
+"Abundance",8,0.25,"Aitchison (0.5)",0.08,100
+"Abundance",8,0.25,"Aitchison (0.01)",0.08,100
+"Abundance",8,0.25,"Aitchison (0.1)",0.08,100
+"Abundance",8,0.25,"Aitchison (1)",0.07,100
+"Abundance",8,0.25,"Bray-Curtis",0.19,100
+"Abundance",8,0.25,"Euclidean",0.11,100
+"Abundance",8,0.25,"Jaccard",0.06,100
+"Abundance",8,0.3,"HRIC distance",0.09,100
+"Abundance",8,0.3,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",8,0.3,"ILR-Euclidean (0.1)",0.04,100
+"Abundance",8,0.3,"ILR-Euclidean (0.5)",0.04,100
+"Abundance",8,0.3,"ILR-Euclidean (1)",0.05,100
+"Abundance",8,0.3,"Aitchison (0.5)",0.05,100
+"Abundance",8,0.3,"Aitchison (0.01)",0.03,100
+"Abundance",8,0.3,"Aitchison (0.1)",0.04,100
+"Abundance",8,0.3,"Aitchison (1)",0.05,100
+"Abundance",8,0.3,"Bray-Curtis",0.15,100
+"Abundance",8,0.3,"Euclidean",0.14,100
+"Abundance",8,0.3,"Jaccard",0.07,100
+"Abundance",8,0.35,"HRIC distance",0.16,100
+"Abundance",8,0.35,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",8,0.35,"ILR-Euclidean (0.1)",0.04,100
+"Abundance",8,0.35,"ILR-Euclidean (0.5)",0.04,100
+"Abundance",8,0.35,"ILR-Euclidean (1)",0.05,100
+"Abundance",8,0.35,"Aitchison (0.5)",0.05,100
+"Abundance",8,0.35,"Aitchison (0.01)",0.04,100
+"Abundance",8,0.35,"Aitchison (0.1)",0.04,100
+"Abundance",8,0.35,"Aitchison (1)",0.05,100
+"Abundance",8,0.35,"Bray-Curtis",0.18,100
+"Abundance",8,0.35,"Euclidean",0.11,100
+"Abundance",8,0.35,"Jaccard",0.04,100
+"Abundance",8,0.4,"HRIC distance",0.22,100
+"Abundance",8,0.4,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",8,0.4,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",8,0.4,"ILR-Euclidean (0.5)",0.09,100
+"Abundance",8,0.4,"ILR-Euclidean (1)",0.09,100
+"Abundance",8,0.4,"Aitchison (0.5)",0.09,100
+"Abundance",8,0.4,"Aitchison (0.01)",0.08,100
+"Abundance",8,0.4,"Aitchison (0.1)",0.07,100
+"Abundance",8,0.4,"Aitchison (1)",0.1,100
+"Abundance",8,0.4,"Bray-Curtis",0.28,100
+"Abundance",8,0.4,"Euclidean",0.15,100
+"Abundance",8,0.4,"Jaccard",0.06,100
+"Abundance",8,0.45,"HRIC distance",0.31,100
+"Abundance",8,0.45,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",8,0.45,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",8,0.45,"ILR-Euclidean (0.5)",0.04,100
+"Abundance",8,0.45,"ILR-Euclidean (1)",0.08,100
+"Abundance",8,0.45,"Aitchison (0.5)",0.05,100
+"Abundance",8,0.45,"Aitchison (0.01)",0.05,100
+"Abundance",8,0.45,"Aitchison (0.1)",0.04,100
+"Abundance",8,0.45,"Aitchison (1)",0.05,100
+"Abundance",8,0.45,"Bray-Curtis",0.36,100
+"Abundance",8,0.45,"Euclidean",0.21,100
+"Abundance",8,0.45,"Jaccard",0.03,100
+"Abundance",8,0.5,"HRIC distance",0.37,100
+"Abundance",8,0.5,"ILR-Euclidean (0.01)",0.03,100
+"Abundance",8,0.5,"ILR-Euclidean (0.1)",0.03,100
+"Abundance",8,0.5,"ILR-Euclidean (0.5)",0.05,100
+"Abundance",8,0.5,"ILR-Euclidean (1)",0.06,100
+"Abundance",8,0.5,"Aitchison (0.5)",0.05,100
+"Abundance",8,0.5,"Aitchison (0.01)",0.03,100
+"Abundance",8,0.5,"Aitchison (0.1)",0.03,100
+"Abundance",8,0.5,"Aitchison (1)",0.06,100
+"Abundance",8,0.5,"Bray-Curtis",0.44,100
+"Abundance",8,0.5,"Euclidean",0.32,100
+"Abundance",8,0.5,"Jaccard",0.05,100
+"Abundance",8,0.55,"HRIC distance",0.49,100
+"Abundance",8,0.55,"ILR-Euclidean (0.01)",0.07,100
+"Abundance",8,0.55,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",8,0.55,"ILR-Euclidean (0.5)",0.11,100
+"Abundance",8,0.55,"ILR-Euclidean (1)",0.14,100
+"Abundance",8,0.55,"Aitchison (0.5)",0.1,100
+"Abundance",8,0.55,"Aitchison (0.01)",0.07,100
+"Abundance",8,0.55,"Aitchison (0.1)",0.09,100
+"Abundance",8,0.55,"Aitchison (1)",0.12,100
+"Abundance",8,0.55,"Bray-Curtis",0.59,100
+"Abundance",8,0.55,"Euclidean",0.49,100
+"Abundance",8,0.55,"Jaccard",0.02,100
+"Abundance",8,0.6,"HRIC distance",0.47,100
+"Abundance",8,0.6,"ILR-Euclidean (0.01)",0.09,100
+"Abundance",8,0.6,"ILR-Euclidean (0.1)",0.11,100
+"Abundance",8,0.6,"ILR-Euclidean (0.5)",0.11,100
+"Abundance",8,0.6,"ILR-Euclidean (1)",0.14,100
+"Abundance",8,0.6,"Aitchison (0.5)",0.1,100
+"Abundance",8,0.6,"Aitchison (0.01)",0.08,100
+"Abundance",8,0.6,"Aitchison (0.1)",0.09,100
+"Abundance",8,0.6,"Aitchison (1)",0.11,100
+"Abundance",8,0.6,"Bray-Curtis",0.58,100
+"Abundance",8,0.6,"Euclidean",0.4,100
+"Abundance",8,0.6,"Jaccard",0.09,100
+"Abundance",8,0.65,"HRIC distance",0.63,100
+"Abundance",8,0.65,"ILR-Euclidean (0.01)",0.12,100
+"Abundance",8,0.65,"ILR-Euclidean (0.1)",0.14,100
+"Abundance",8,0.65,"ILR-Euclidean (0.5)",0.15,100
+"Abundance",8,0.65,"ILR-Euclidean (1)",0.15,100
+"Abundance",8,0.65,"Aitchison (0.5)",0.15,100
+"Abundance",8,0.65,"Aitchison (0.01)",0.12,100
+"Abundance",8,0.65,"Aitchison (0.1)",0.14,100
+"Abundance",8,0.65,"Aitchison (1)",0.15,100
+"Abundance",8,0.65,"Bray-Curtis",0.76,100
+"Abundance",8,0.65,"Euclidean",0.58,100
+"Abundance",8,0.65,"Jaccard",0.08,100
+"Abundance",8,0.7,"HRIC distance",0.73,100
+"Abundance",8,0.7,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",8,0.7,"ILR-Euclidean (0.1)",0.09,100
+"Abundance",8,0.7,"ILR-Euclidean (0.5)",0.13,100
+"Abundance",8,0.7,"ILR-Euclidean (1)",0.15,100
+"Abundance",8,0.7,"Aitchison (0.5)",0.13,100
+"Abundance",8,0.7,"Aitchison (0.01)",0.06,100
+"Abundance",8,0.7,"Aitchison (0.1)",0.08,100
+"Abundance",8,0.7,"Aitchison (1)",0.15,100
+"Abundance",8,0.7,"Bray-Curtis",0.85,100
+"Abundance",8,0.7,"Euclidean",0.57,100
+"Abundance",8,0.7,"Jaccard",0.04,100
+"Abundance",8,0.75,"HRIC distance",0.77,100
+"Abundance",8,0.75,"ILR-Euclidean (0.01)",0.04,100
+"Abundance",8,0.75,"ILR-Euclidean (0.1)",0.06,100
+"Abundance",8,0.75,"ILR-Euclidean (0.5)",0.09,100
+"Abundance",8,0.75,"ILR-Euclidean (1)",0.12,100
+"Abundance",8,0.75,"Aitchison (0.5)",0.09,100
+"Abundance",8,0.75,"Aitchison (0.01)",0.05,100
+"Abundance",8,0.75,"Aitchison (0.1)",0.05,100
+"Abundance",8,0.75,"Aitchison (1)",0.1,100
+"Abundance",8,0.75,"Bray-Curtis",0.83,100
+"Abundance",8,0.75,"Euclidean",0.59,100
+"Abundance",8,0.75,"Jaccard",0.03,100
+"Abundance",8,0.8,"HRIC distance",0.82,100
+"Abundance",8,0.8,"ILR-Euclidean (0.01)",0.05,100
+"Abundance",8,0.8,"ILR-Euclidean (0.1)",0.08,100
+"Abundance",8,0.8,"ILR-Euclidean (0.5)",0.14,100
+"Abundance",8,0.8,"ILR-Euclidean (1)",0.16,100
+"Abundance",8,0.8,"Aitchison (0.5)",0.14,100
+"Abundance",8,0.8,"Aitchison (0.01)",0.05,100
+"Abundance",8,0.8,"Aitchison (0.1)",0.08,100
+"Abundance",8,0.8,"Aitchison (1)",0.16,100
+"Abundance",8,0.8,"Bray-Curtis",0.88,100
+"Abundance",8,0.8,"Euclidean",0.68,100
+"Abundance",8,0.8,"Jaccard",0.03,100
+"Abundance",8,0.85,"HRIC distance",0.92,100
+"Abundance",8,0.85,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",8,0.85,"ILR-Euclidean (0.1)",0.1,100
+"Abundance",8,0.85,"ILR-Euclidean (0.5)",0.18,100
+"Abundance",8,0.85,"ILR-Euclidean (1)",0.25,100
+"Abundance",8,0.85,"Aitchison (0.5)",0.18,100
+"Abundance",8,0.85,"Aitchison (0.01)",0.07,100
+"Abundance",8,0.85,"Aitchison (0.1)",0.13,100
+"Abundance",8,0.85,"Aitchison (1)",0.23,100
+"Abundance",8,0.85,"Bray-Curtis",0.94,100
+"Abundance",8,0.85,"Euclidean",0.76,100
+"Abundance",8,0.85,"Jaccard",0.03,100
+"Abundance",8,0.9,"HRIC distance",0.96,100
+"Abundance",8,0.9,"ILR-Euclidean (0.01)",0.08,100
+"Abundance",8,0.9,"ILR-Euclidean (0.1)",0.1,100
+"Abundance",8,0.9,"ILR-Euclidean (0.5)",0.16,100
+"Abundance",8,0.9,"ILR-Euclidean (1)",0.19,100
+"Abundance",8,0.9,"Aitchison (0.5)",0.15,100
+"Abundance",8,0.9,"Aitchison (0.01)",0.08,100
+"Abundance",8,0.9,"Aitchison (0.1)",0.11,100
+"Abundance",8,0.9,"Aitchison (1)",0.18,100
+"Abundance",8,0.9,"Bray-Curtis",0.99,100
+"Abundance",8,0.9,"Euclidean",0.86,100
+"Abundance",8,0.9,"Jaccard",0.05,100
+"Abundance",8,0.95,"HRIC distance",0.98,100
+"Abundance",8,0.95,"ILR-Euclidean (0.01)",0.09,100
+"Abundance",8,0.95,"ILR-Euclidean (0.1)",0.12,100
+"Abundance",8,0.95,"ILR-Euclidean (0.5)",0.16,100
+"Abundance",8,0.95,"ILR-Euclidean (1)",0.21,100
+"Abundance",8,0.95,"Aitchison (0.5)",0.14,100
+"Abundance",8,0.95,"Aitchison (0.01)",0.09,100
+"Abundance",8,0.95,"Aitchison (0.1)",0.11,100
+"Abundance",8,0.95,"Aitchison (1)",0.2,100
+"Abundance",8,0.95,"Bray-Curtis",0.98,100
+"Abundance",8,0.95,"Euclidean",0.84,100
+"Abundance",8,0.95,"Jaccard",0.06,100
+"Abundance",8,1,"HRIC distance",0.99,100
+"Abundance",8,1,"ILR-Euclidean (0.01)",0.12,100
+"Abundance",8,1,"ILR-Euclidean (0.1)",0.16,100
+"Abundance",8,1,"ILR-Euclidean (0.5)",0.24,100
+"Abundance",8,1,"ILR-Euclidean (1)",0.3,100
+"Abundance",8,1,"Aitchison (0.5)",0.23,100
+"Abundance",8,1,"Aitchison (0.01)",0.12,100
+"Abundance",8,1,"Aitchison (0.1)",0.17,100
+"Abundance",8,1,"Aitchison (1)",0.31,100
+"Abundance",8,1,"Bray-Curtis",0.99,100
+"Abundance",8,1,"Euclidean",0.9,100
+"Abundance",8,1,"Jaccard",0.07,100
+"Joint",8,0.05,"HRIC distance",0.07,100
+"Joint",8,0.05,"ILR-Euclidean (0.01)",0.01,100
+"Joint",8,0.05,"ILR-Euclidean (0.1)",0.01,100
+"Joint",8,0.05,"ILR-Euclidean (0.5)",0.02,100
+"Joint",8,0.05,"ILR-Euclidean (1)",0.02,100
+"Joint",8,0.05,"Aitchison (0.5)",0.02,100
+"Joint",8,0.05,"Aitchison (0.01)",0.01,100
+"Joint",8,0.05,"Aitchison (0.1)",0.02,100
+"Joint",8,0.05,"Aitchison (1)",0.02,100
+"Joint",8,0.05,"Bray-Curtis",0.05,100
+"Joint",8,0.05,"Euclidean",0.05,100
+"Joint",8,0.05,"Jaccard",0,100
+"Joint",8,0.1,"HRIC distance",0.07,100
+"Joint",8,0.1,"ILR-Euclidean (0.01)",0.1,100
+"Joint",8,0.1,"ILR-Euclidean (0.1)",0.09,100
+"Joint",8,0.1,"ILR-Euclidean (0.5)",0.08,100
+"Joint",8,0.1,"ILR-Euclidean (1)",0.09,100
+"Joint",8,0.1,"Aitchison (0.5)",0.07,100
+"Joint",8,0.1,"Aitchison (0.01)",0.09,100
+"Joint",8,0.1,"Aitchison (0.1)",0.09,100
+"Joint",8,0.1,"Aitchison (1)",0.09,100
+"Joint",8,0.1,"Bray-Curtis",0.08,100
+"Joint",8,0.1,"Euclidean",0.1,100
+"Joint",8,0.1,"Jaccard",0.07,100
+"Joint",8,0.15,"HRIC distance",0.07,100
+"Joint",8,0.15,"ILR-Euclidean (0.01)",0.05,100
+"Joint",8,0.15,"ILR-Euclidean (0.1)",0.08,100
+"Joint",8,0.15,"ILR-Euclidean (0.5)",0.08,100
+"Joint",8,0.15,"ILR-Euclidean (1)",0.09,100
+"Joint",8,0.15,"Aitchison (0.5)",0.08,100
+"Joint",8,0.15,"Aitchison (0.01)",0.07,100
+"Joint",8,0.15,"Aitchison (0.1)",0.07,100
+"Joint",8,0.15,"Aitchison (1)",0.07,100
+"Joint",8,0.15,"Bray-Curtis",0.04,100
+"Joint",8,0.15,"Euclidean",0.05,100
+"Joint",8,0.15,"Jaccard",0.02,100
+"Joint",8,0.2,"HRIC distance",0.15,100
+"Joint",8,0.2,"ILR-Euclidean (0.01)",0.11,100
+"Joint",8,0.2,"ILR-Euclidean (0.1)",0.13,100
+"Joint",8,0.2,"ILR-Euclidean (0.5)",0.15,100
+"Joint",8,0.2,"ILR-Euclidean (1)",0.16,100
+"Joint",8,0.2,"Aitchison (0.5)",0.17,100
+"Joint",8,0.2,"Aitchison (0.01)",0.1,100
+"Joint",8,0.2,"Aitchison (0.1)",0.13,100
+"Joint",8,0.2,"Aitchison (1)",0.15,100
+"Joint",8,0.2,"Bray-Curtis",0.08,100
+"Joint",8,0.2,"Euclidean",0.05,100
+"Joint",8,0.2,"Jaccard",0.06,100
+"Joint",8,0.25,"HRIC distance",0.09,100
+"Joint",8,0.25,"ILR-Euclidean (0.01)",0.14,100
+"Joint",8,0.25,"ILR-Euclidean (0.1)",0.14,100
+"Joint",8,0.25,"ILR-Euclidean (0.5)",0.14,100
+"Joint",8,0.25,"ILR-Euclidean (1)",0.14,100
+"Joint",8,0.25,"Aitchison (0.5)",0.14,100
+"Joint",8,0.25,"Aitchison (0.01)",0.16,100
+"Joint",8,0.25,"Aitchison (0.1)",0.15,100
+"Joint",8,0.25,"Aitchison (1)",0.15,100
+"Joint",8,0.25,"Bray-Curtis",0.12,100
+"Joint",8,0.25,"Euclidean",0.09,100
+"Joint",8,0.25,"Jaccard",0.09,100
+"Joint",8,0.3,"HRIC distance",0.22,100
+"Joint",8,0.3,"ILR-Euclidean (0.01)",0.16,100
+"Joint",8,0.3,"ILR-Euclidean (0.1)",0.16,100
+"Joint",8,0.3,"ILR-Euclidean (0.5)",0.2,100
+"Joint",8,0.3,"ILR-Euclidean (1)",0.23,100
+"Joint",8,0.3,"Aitchison (0.5)",0.2,100
+"Joint",8,0.3,"Aitchison (0.01)",0.17,100
+"Joint",8,0.3,"Aitchison (0.1)",0.18,100
+"Joint",8,0.3,"Aitchison (1)",0.2,100
+"Joint",8,0.3,"Bray-Curtis",0.16,100
+"Joint",8,0.3,"Euclidean",0.12,100
+"Joint",8,0.3,"Jaccard",0.09,100
+"Joint",8,0.35,"HRIC distance",0.26,100
+"Joint",8,0.35,"ILR-Euclidean (0.01)",0.23,100
+"Joint",8,0.35,"ILR-Euclidean (0.1)",0.25,100
+"Joint",8,0.35,"ILR-Euclidean (0.5)",0.28,100
+"Joint",8,0.35,"ILR-Euclidean (1)",0.28,100
+"Joint",8,0.35,"Aitchison (0.5)",0.27,100
+"Joint",8,0.35,"Aitchison (0.01)",0.25,100
+"Joint",8,0.35,"Aitchison (0.1)",0.25,100
+"Joint",8,0.35,"Aitchison (1)",0.29,100
+"Joint",8,0.35,"Bray-Curtis",0.27,100
+"Joint",8,0.35,"Euclidean",0.13,100
+"Joint",8,0.35,"Jaccard",0.19,100
+"Joint",8,0.4,"HRIC distance",0.4,100
+"Joint",8,0.4,"ILR-Euclidean (0.01)",0.31,100
+"Joint",8,0.4,"ILR-Euclidean (0.1)",0.38,100
+"Joint",8,0.4,"ILR-Euclidean (0.5)",0.42,100
+"Joint",8,0.4,"ILR-Euclidean (1)",0.44,100
+"Joint",8,0.4,"Aitchison (0.5)",0.43,100
+"Joint",8,0.4,"Aitchison (0.01)",0.33,100
+"Joint",8,0.4,"Aitchison (0.1)",0.37,100
+"Joint",8,0.4,"Aitchison (1)",0.43,100
+"Joint",8,0.4,"Bray-Curtis",0.35,100
+"Joint",8,0.4,"Euclidean",0.22,100
+"Joint",8,0.4,"Jaccard",0.17,100
+"Joint",8,0.45,"HRIC distance",0.65,100
+"Joint",8,0.45,"ILR-Euclidean (0.01)",0.49,100
+"Joint",8,0.45,"ILR-Euclidean (0.1)",0.5,100
+"Joint",8,0.45,"ILR-Euclidean (0.5)",0.56,100
+"Joint",8,0.45,"ILR-Euclidean (1)",0.61,100
+"Joint",8,0.45,"Aitchison (0.5)",0.59,100
+"Joint",8,0.45,"Aitchison (0.01)",0.47,100
+"Joint",8,0.45,"Aitchison (0.1)",0.51,100
+"Joint",8,0.45,"Aitchison (1)",0.59,100
+"Joint",8,0.45,"Bray-Curtis",0.57,100
+"Joint",8,0.45,"Euclidean",0.3,100
+"Joint",8,0.45,"Jaccard",0.32,100
+"Joint",8,0.5,"HRIC distance",0.65,100
+"Joint",8,0.5,"ILR-Euclidean (0.01)",0.63,100
+"Joint",8,0.5,"ILR-Euclidean (0.1)",0.66,100
+"Joint",8,0.5,"ILR-Euclidean (0.5)",0.73,100
+"Joint",8,0.5,"ILR-Euclidean (1)",0.76,100
+"Joint",8,0.5,"Aitchison (0.5)",0.71,100
+"Joint",8,0.5,"Aitchison (0.01)",0.63,100
+"Joint",8,0.5,"Aitchison (0.1)",0.69,100
+"Joint",8,0.5,"Aitchison (1)",0.73,100
+"Joint",8,0.5,"Bray-Curtis",0.65,100
+"Joint",8,0.5,"Euclidean",0.29,100
+"Joint",8,0.5,"Jaccard",0.44,100
+"Joint",8,0.55,"HRIC distance",0.83,100
+"Joint",8,0.55,"ILR-Euclidean (0.01)",0.8,100
+"Joint",8,0.55,"ILR-Euclidean (0.1)",0.84,100
+"Joint",8,0.55,"ILR-Euclidean (0.5)",0.88,100
+"Joint",8,0.55,"ILR-Euclidean (1)",0.91,100
+"Joint",8,0.55,"Aitchison (0.5)",0.88,100
+"Joint",8,0.55,"Aitchison (0.01)",0.79,100
+"Joint",8,0.55,"Aitchison (0.1)",0.81,100
+"Joint",8,0.55,"Aitchison (1)",0.91,100
+"Joint",8,0.55,"Bray-Curtis",0.81,100
+"Joint",8,0.55,"Euclidean",0.35,100
+"Joint",8,0.55,"Jaccard",0.59,100
+"Joint",8,0.6,"HRIC distance",0.93,100
+"Joint",8,0.6,"ILR-Euclidean (0.01)",0.88,100
+"Joint",8,0.6,"ILR-Euclidean (0.1)",0.92,100
+"Joint",8,0.6,"ILR-Euclidean (0.5)",0.95,100
+"Joint",8,0.6,"ILR-Euclidean (1)",0.98,100
+"Joint",8,0.6,"Aitchison (0.5)",0.96,100
+"Joint",8,0.6,"Aitchison (0.01)",0.88,100
+"Joint",8,0.6,"Aitchison (0.1)",0.92,100
+"Joint",8,0.6,"Aitchison (1)",0.97,100
+"Joint",8,0.6,"Bray-Curtis",0.92,100
+"Joint",8,0.6,"Euclidean",0.51,100
+"Joint",8,0.6,"Jaccard",0.61,100
+"Joint",8,0.65,"HRIC distance",0.93,100
+"Joint",8,0.65,"ILR-Euclidean (0.01)",0.96,100
+"Joint",8,0.65,"ILR-Euclidean (0.1)",0.97,100
+"Joint",8,0.65,"ILR-Euclidean (0.5)",0.97,100
+"Joint",8,0.65,"ILR-Euclidean (1)",0.97,100
+"Joint",8,0.65,"Aitchison (0.5)",0.97,100
+"Joint",8,0.65,"Aitchison (0.01)",0.95,100
+"Joint",8,0.65,"Aitchison (0.1)",0.97,100
+"Joint",8,0.65,"Aitchison (1)",0.97,100
+"Joint",8,0.65,"Bray-Curtis",0.92,100
+"Joint",8,0.65,"Euclidean",0.59,100
+"Joint",8,0.65,"Jaccard",0.82,100
+"Joint",8,0.7,"HRIC distance",0.97,100
+"Joint",8,0.7,"ILR-Euclidean (0.01)",0.99,100
+"Joint",8,0.7,"ILR-Euclidean (0.1)",0.99,100
+"Joint",8,0.7,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.7,"ILR-Euclidean (1)",1,100
+"Joint",8,0.7,"Aitchison (0.5)",1,100
+"Joint",8,0.7,"Aitchison (0.01)",0.99,100
+"Joint",8,0.7,"Aitchison (0.1)",0.99,100
+"Joint",8,0.7,"Aitchison (1)",1,100
+"Joint",8,0.7,"Bray-Curtis",0.95,100
+"Joint",8,0.7,"Euclidean",0.64,100
+"Joint",8,0.7,"Jaccard",0.84,100
+"Joint",8,0.75,"HRIC distance",1,100
+"Joint",8,0.75,"ILR-Euclidean (0.01)",1,100
+"Joint",8,0.75,"ILR-Euclidean (0.1)",1,100
+"Joint",8,0.75,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.75,"ILR-Euclidean (1)",1,100
+"Joint",8,0.75,"Aitchison (0.5)",1,100
+"Joint",8,0.75,"Aitchison (0.01)",1,100
+"Joint",8,0.75,"Aitchison (0.1)",1,100
+"Joint",8,0.75,"Aitchison (1)",1,100
+"Joint",8,0.75,"Bray-Curtis",0.99,100
+"Joint",8,0.75,"Euclidean",0.75,100
+"Joint",8,0.75,"Jaccard",0.96,100
+"Joint",8,0.8,"HRIC distance",1,100
+"Joint",8,0.8,"ILR-Euclidean (0.01)",1,100
+"Joint",8,0.8,"ILR-Euclidean (0.1)",1,100
+"Joint",8,0.8,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.8,"ILR-Euclidean (1)",1,100
+"Joint",8,0.8,"Aitchison (0.5)",1,100
+"Joint",8,0.8,"Aitchison (0.01)",1,100
+"Joint",8,0.8,"Aitchison (0.1)",1,100
+"Joint",8,0.8,"Aitchison (1)",1,100
+"Joint",8,0.8,"Bray-Curtis",1,100
+"Joint",8,0.8,"Euclidean",0.78,100
+"Joint",8,0.8,"Jaccard",1,100
+"Joint",8,0.85,"HRIC distance",1,100
+"Joint",8,0.85,"ILR-Euclidean (0.01)",1,100
+"Joint",8,0.85,"ILR-Euclidean (0.1)",1,100
+"Joint",8,0.85,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.85,"ILR-Euclidean (1)",1,100
+"Joint",8,0.85,"Aitchison (0.5)",1,100
+"Joint",8,0.85,"Aitchison (0.01)",1,100
+"Joint",8,0.85,"Aitchison (0.1)",1,100
+"Joint",8,0.85,"Aitchison (1)",1,100
+"Joint",8,0.85,"Bray-Curtis",1,100
+"Joint",8,0.85,"Euclidean",0.86,100
+"Joint",8,0.85,"Jaccard",0.99,100
+"Joint",8,0.9,"HRIC distance",1,100
+"Joint",8,0.9,"ILR-Euclidean (0.01)",1,100
+"Joint",8,0.9,"ILR-Euclidean (0.1)",1,100
+"Joint",8,0.9,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.9,"ILR-Euclidean (1)",1,100
+"Joint",8,0.9,"Aitchison (0.5)",1,100
+"Joint",8,0.9,"Aitchison (0.01)",1,100
+"Joint",8,0.9,"Aitchison (0.1)",1,100
+"Joint",8,0.9,"Aitchison (1)",1,100
+"Joint",8,0.9,"Bray-Curtis",1,100
+"Joint",8,0.9,"Euclidean",0.86,100
+"Joint",8,0.9,"Jaccard",1,100
+"Joint",8,0.95,"HRIC distance",1,100
+"Joint",8,0.95,"ILR-Euclidean (0.01)",1,100
+"Joint",8,0.95,"ILR-Euclidean (0.1)",1,100
+"Joint",8,0.95,"ILR-Euclidean (0.5)",1,100
+"Joint",8,0.95,"ILR-Euclidean (1)",1,100
+"Joint",8,0.95,"Aitchison (0.5)",1,100
+"Joint",8,0.95,"Aitchison (0.01)",1,100
+"Joint",8,0.95,"Aitchison (0.1)",1,100
+"Joint",8,0.95,"Aitchison (1)",1,100
+"Joint",8,0.95,"Bray-Curtis",1,100
+"Joint",8,0.95,"Euclidean",0.93,100
+"Joint",8,0.95,"Jaccard",1,100
+"Joint",8,1,"HRIC distance",1,100
+"Joint",8,1,"ILR-Euclidean (0.01)",1,100
+"Joint",8,1,"ILR-Euclidean (0.1)",1,100
+"Joint",8,1,"ILR-Euclidean (0.5)",1,100
+"Joint",8,1,"ILR-Euclidean (1)",1,100
+"Joint",8,1,"Aitchison (0.5)",1,100
+"Joint",8,1,"Aitchison (0.01)",1,100
+"Joint",8,1,"Aitchison (0.1)",1,100
+"Joint",8,1,"Aitchison (1)",1,100
+"Joint",8,1,"Bray-Curtis",1,100
+"Joint",8,1,"Euclidean",0.99,100
+"Joint",8,1,"Jaccard",1,100
+"Prevalence",8,0.05,"HRIC distance",0.07,100
+"Prevalence",8,0.05,"ILR-Euclidean (0.01)",0.08,100
+"Prevalence",8,0.05,"ILR-Euclidean (0.1)",0.09,100
+"Prevalence",8,0.05,"ILR-Euclidean (0.5)",0.09,100
+"Prevalence",8,0.05,"ILR-Euclidean (1)",0.09,100
+"Prevalence",8,0.05,"Aitchison (0.5)",0.09,100
+"Prevalence",8,0.05,"Aitchison (0.01)",0.08,100
+"Prevalence",8,0.05,"Aitchison (0.1)",0.09,100
+"Prevalence",8,0.05,"Aitchison (1)",0.09,100
+"Prevalence",8,0.05,"Bray-Curtis",0.05,100
+"Prevalence",8,0.05,"Euclidean",0.06,100
+"Prevalence",8,0.05,"Jaccard",0.07,100
+"Prevalence",8,0.1,"HRIC distance",0.06,100
+"Prevalence",8,0.1,"ILR-Euclidean (0.01)",0.02,100
+"Prevalence",8,0.1,"ILR-Euclidean (0.1)",0.03,100
+"Prevalence",8,0.1,"ILR-Euclidean (0.5)",0.02,100
+"Prevalence",8,0.1,"ILR-Euclidean (1)",0.04,100
+"Prevalence",8,0.1,"Aitchison (0.5)",0.03,100
+"Prevalence",8,0.1,"Aitchison (0.01)",0.02,100
+"Prevalence",8,0.1,"Aitchison (0.1)",0.02,100
+"Prevalence",8,0.1,"Aitchison (1)",0.03,100
+"Prevalence",8,0.1,"Bray-Curtis",0.05,100
+"Prevalence",8,0.1,"Euclidean",0.04,100
+"Prevalence",8,0.1,"Jaccard",0.02,100
+"Prevalence",8,0.15,"HRIC distance",0.04,100
+"Prevalence",8,0.15,"ILR-Euclidean (0.01)",0.03,100
+"Prevalence",8,0.15,"ILR-Euclidean (0.1)",0.04,100
+"Prevalence",8,0.15,"ILR-Euclidean (0.5)",0.03,100
+"Prevalence",8,0.15,"ILR-Euclidean (1)",0.03,100
+"Prevalence",8,0.15,"Aitchison (0.5)",0.03,100
+"Prevalence",8,0.15,"Aitchison (0.01)",0.03,100
+"Prevalence",8,0.15,"Aitchison (0.1)",0.02,100
+"Prevalence",8,0.15,"Aitchison (1)",0.03,100
+"Prevalence",8,0.15,"Bray-Curtis",0.02,100
+"Prevalence",8,0.15,"Euclidean",0.07,100
+"Prevalence",8,0.15,"Jaccard",0.04,100
+"Prevalence",8,0.2,"HRIC distance",0.02,100
+"Prevalence",8,0.2,"ILR-Euclidean (0.01)",0.03,100
+"Prevalence",8,0.2,"ILR-Euclidean (0.1)",0.05,100
+"Prevalence",8,0.2,"ILR-Euclidean (0.5)",0.06,100
+"Prevalence",8,0.2,"ILR-Euclidean (1)",0.05,100
+"Prevalence",8,0.2,"Aitchison (0.5)",0.06,100
+"Prevalence",8,0.2,"Aitchison (0.01)",0.03,100
+"Prevalence",8,0.2,"Aitchison (0.1)",0.07,100
+"Prevalence",8,0.2,"Aitchison (1)",0.05,100
+"Prevalence",8,0.2,"Bray-Curtis",0.03,100
+"Prevalence",8,0.2,"Euclidean",0.04,100
+"Prevalence",8,0.2,"Jaccard",0.04,100
+"Prevalence",8,0.25,"HRIC distance",0.05,100
+"Prevalence",8,0.25,"ILR-Euclidean (0.01)",0.07,100
+"Prevalence",8,0.25,"ILR-Euclidean (0.1)",0.06,100
+"Prevalence",8,0.25,"ILR-Euclidean (0.5)",0.06,100
+"Prevalence",8,0.25,"ILR-Euclidean (1)",0.06,100
+"Prevalence",8,0.25,"Aitchison (0.5)",0.06,100
+"Prevalence",8,0.25,"Aitchison (0.01)",0.06,100
+"Prevalence",8,0.25,"Aitchison (0.1)",0.05,100
+"Prevalence",8,0.25,"Aitchison (1)",0.05,100
+"Prevalence",8,0.25,"Bray-Curtis",0.07,100
+"Prevalence",8,0.25,"Euclidean",0.07,100
+"Prevalence",8,0.25,"Jaccard",0.07,100
+"Prevalence",8,0.3,"HRIC distance",0.06,100
+"Prevalence",8,0.3,"ILR-Euclidean (0.01)",0.11,100
+"Prevalence",8,0.3,"ILR-Euclidean (0.1)",0.1,100
+"Prevalence",8,0.3,"ILR-Euclidean (0.5)",0.11,100
+"Prevalence",8,0.3,"ILR-Euclidean (1)",0.1,100
+"Prevalence",8,0.3,"Aitchison (0.5)",0.11,100
+"Prevalence",8,0.3,"Aitchison (0.01)",0.11,100
+"Prevalence",8,0.3,"Aitchison (0.1)",0.1,100
+"Prevalence",8,0.3,"Aitchison (1)",0.1,100
+"Prevalence",8,0.3,"Bray-Curtis",0.07,100
+"Prevalence",8,0.3,"Euclidean",0.08,100
+"Prevalence",8,0.3,"Jaccard",0.14,100
+"Prevalence",8,0.35,"HRIC distance",0.04,100
+"Prevalence",8,0.35,"ILR-Euclidean (0.01)",0.14,100
+"Prevalence",8,0.35,"ILR-Euclidean (0.1)",0.12,100
+"Prevalence",8,0.35,"ILR-Euclidean (0.5)",0.12,100
+"Prevalence",8,0.35,"ILR-Euclidean (1)",0.09,100
+"Prevalence",8,0.35,"Aitchison (0.5)",0.11,100
+"Prevalence",8,0.35,"Aitchison (0.01)",0.14,100
+"Prevalence",8,0.35,"Aitchison (0.1)",0.12,100
+"Prevalence",8,0.35,"Aitchison (1)",0.1,100
+"Prevalence",8,0.35,"Bray-Curtis",0.05,100
+"Prevalence",8,0.35,"Euclidean",0.08,100
+"Prevalence",8,0.35,"Jaccard",0.17,100
+"Prevalence",8,0.4,"HRIC distance",0.05,100
+"Prevalence",8,0.4,"ILR-Euclidean (0.01)",0.23,100
+"Prevalence",8,0.4,"ILR-Euclidean (0.1)",0.22,100
+"Prevalence",8,0.4,"ILR-Euclidean (0.5)",0.2,100
+"Prevalence",8,0.4,"ILR-Euclidean (1)",0.19,100
+"Prevalence",8,0.4,"Aitchison (0.5)",0.2,100
+"Prevalence",8,0.4,"Aitchison (0.01)",0.23,100
+"Prevalence",8,0.4,"Aitchison (0.1)",0.19,100
+"Prevalence",8,0.4,"Aitchison (1)",0.2,100
+"Prevalence",8,0.4,"Bray-Curtis",0.09,100
+"Prevalence",8,0.4,"Euclidean",0.06,100
+"Prevalence",8,0.4,"Jaccard",0.24,100
+"Prevalence",8,0.45,"HRIC distance",0.05,100
+"Prevalence",8,0.45,"ILR-Euclidean (0.01)",0.27,100
+"Prevalence",8,0.45,"ILR-Euclidean (0.1)",0.25,100
+"Prevalence",8,0.45,"ILR-Euclidean (0.5)",0.25,100
+"Prevalence",8,0.45,"ILR-Euclidean (1)",0.25,100
+"Prevalence",8,0.45,"Aitchison (0.5)",0.23,100
+"Prevalence",8,0.45,"Aitchison (0.01)",0.26,100
+"Prevalence",8,0.45,"Aitchison (0.1)",0.25,100
+"Prevalence",8,0.45,"Aitchison (1)",0.21,100
+"Prevalence",8,0.45,"Bray-Curtis",0.06,100
+"Prevalence",8,0.45,"Euclidean",0.02,100
+"Prevalence",8,0.45,"Jaccard",0.29,100
+"Prevalence",8,0.5,"HRIC distance",0.07,100
+"Prevalence",8,0.5,"ILR-Euclidean (0.01)",0.43,100
+"Prevalence",8,0.5,"ILR-Euclidean (0.1)",0.41,100
+"Prevalence",8,0.5,"ILR-Euclidean (0.5)",0.41,100
+"Prevalence",8,0.5,"ILR-Euclidean (1)",0.39,100
+"Prevalence",8,0.5,"Aitchison (0.5)",0.4,100
+"Prevalence",8,0.5,"Aitchison (0.01)",0.45,100
+"Prevalence",8,0.5,"Aitchison (0.1)",0.42,100
+"Prevalence",8,0.5,"Aitchison (1)",0.4,100
+"Prevalence",8,0.5,"Bray-Curtis",0.04,100
+"Prevalence",8,0.5,"Euclidean",0.01,100
+"Prevalence",8,0.5,"Jaccard",0.48,100
+"Prevalence",8,0.55,"HRIC distance",0.09,100
+"Prevalence",8,0.55,"ILR-Euclidean (0.01)",0.49,100
+"Prevalence",8,0.55,"ILR-Euclidean (0.1)",0.46,100
+"Prevalence",8,0.55,"ILR-Euclidean (0.5)",0.41,100
+"Prevalence",8,0.55,"ILR-Euclidean (1)",0.4,100
+"Prevalence",8,0.55,"Aitchison (0.5)",0.42,100
+"Prevalence",8,0.55,"Aitchison (0.01)",0.49,100
+"Prevalence",8,0.55,"Aitchison (0.1)",0.47,100
+"Prevalence",8,0.55,"Aitchison (1)",0.42,100
+"Prevalence",8,0.55,"Bray-Curtis",0.05,100
+"Prevalence",8,0.55,"Euclidean",0.04,100
+"Prevalence",8,0.55,"Jaccard",0.54,100
+"Prevalence",8,0.6,"HRIC distance",0.13,100
+"Prevalence",8,0.6,"ILR-Euclidean (0.01)",0.59,100
+"Prevalence",8,0.6,"ILR-Euclidean (0.1)",0.56,100
+"Prevalence",8,0.6,"ILR-Euclidean (0.5)",0.52,100
+"Prevalence",8,0.6,"ILR-Euclidean (1)",0.5,100
+"Prevalence",8,0.6,"Aitchison (0.5)",0.53,100
+"Prevalence",8,0.6,"Aitchison (0.01)",0.59,100
+"Prevalence",8,0.6,"Aitchison (0.1)",0.57,100
+"Prevalence",8,0.6,"Aitchison (1)",0.5,100
+"Prevalence",8,0.6,"Bray-Curtis",0.11,100
+"Prevalence",8,0.6,"Euclidean",0.12,100
+"Prevalence",8,0.6,"Jaccard",0.68,100
+"Prevalence",8,0.65,"HRIC distance",0.13,100
+"Prevalence",8,0.65,"ILR-Euclidean (0.01)",0.72,100
+"Prevalence",8,0.65,"ILR-Euclidean (0.1)",0.72,100
+"Prevalence",8,0.65,"ILR-Euclidean (0.5)",0.68,100
+"Prevalence",8,0.65,"ILR-Euclidean (1)",0.66,100
+"Prevalence",8,0.65,"Aitchison (0.5)",0.7,100
+"Prevalence",8,0.65,"Aitchison (0.01)",0.73,100
+"Prevalence",8,0.65,"Aitchison (0.1)",0.7,100
+"Prevalence",8,0.65,"Aitchison (1)",0.65,100
+"Prevalence",8,0.65,"Bray-Curtis",0.09,100
+"Prevalence",8,0.65,"Euclidean",0.06,100
+"Prevalence",8,0.65,"Jaccard",0.75,100
+"Prevalence",8,0.7,"HRIC distance",0.13,100
+"Prevalence",8,0.7,"ILR-Euclidean (0.01)",0.88,100
+"Prevalence",8,0.7,"ILR-Euclidean (0.1)",0.83,100
+"Prevalence",8,0.7,"ILR-Euclidean (0.5)",0.79,100
+"Prevalence",8,0.7,"ILR-Euclidean (1)",0.77,100
+"Prevalence",8,0.7,"Aitchison (0.5)",0.79,100
+"Prevalence",8,0.7,"Aitchison (0.01)",0.87,100
+"Prevalence",8,0.7,"Aitchison (0.1)",0.85,100
+"Prevalence",8,0.7,"Aitchison (1)",0.76,100
+"Prevalence",8,0.7,"Bray-Curtis",0.11,100
+"Prevalence",8,0.7,"Euclidean",0.07,100
+"Prevalence",8,0.7,"Jaccard",0.91,100
+"Prevalence",8,0.75,"HRIC distance",0.12,100
+"Prevalence",8,0.75,"ILR-Euclidean (0.01)",0.89,100
+"Prevalence",8,0.75,"ILR-Euclidean (0.1)",0.88,100
+"Prevalence",8,0.75,"ILR-Euclidean (0.5)",0.84,100
+"Prevalence",8,0.75,"ILR-Euclidean (1)",0.83,100
+"Prevalence",8,0.75,"Aitchison (0.5)",0.84,100
+"Prevalence",8,0.75,"Aitchison (0.01)",0.89,100
+"Prevalence",8,0.75,"Aitchison (0.1)",0.87,100
+"Prevalence",8,0.75,"Aitchison (1)",0.82,100
+"Prevalence",8,0.75,"Bray-Curtis",0.1,100
+"Prevalence",8,0.75,"Euclidean",0.03,100
+"Prevalence",8,0.75,"Jaccard",0.97,100
+"Prevalence",8,0.8,"HRIC distance",0.18,100
+"Prevalence",8,0.8,"ILR-Euclidean (0.01)",0.93,100
+"Prevalence",8,0.8,"ILR-Euclidean (0.1)",0.93,100
+"Prevalence",8,0.8,"ILR-Euclidean (0.5)",0.89,100
+"Prevalence",8,0.8,"ILR-Euclidean (1)",0.86,100
+"Prevalence",8,0.8,"Aitchison (0.5)",0.89,100
+"Prevalence",8,0.8,"Aitchison (0.01)",0.94,100
+"Prevalence",8,0.8,"Aitchison (0.1)",0.92,100
+"Prevalence",8,0.8,"Aitchison (1)",0.87,100
+"Prevalence",8,0.8,"Bray-Curtis",0.14,100
+"Prevalence",8,0.8,"Euclidean",0.04,100
+"Prevalence",8,0.8,"Jaccard",0.95,100
+"Prevalence",8,0.85,"HRIC distance",0.18,100
+"Prevalence",8,0.85,"ILR-Euclidean (0.01)",0.99,100
+"Prevalence",8,0.85,"ILR-Euclidean (0.1)",0.97,100
+"Prevalence",8,0.85,"ILR-Euclidean (0.5)",0.97,100
+"Prevalence",8,0.85,"ILR-Euclidean (1)",0.94,100
+"Prevalence",8,0.85,"Aitchison (0.5)",0.97,100
+"Prevalence",8,0.85,"Aitchison (0.01)",1,100
+"Prevalence",8,0.85,"Aitchison (0.1)",0.97,100
+"Prevalence",8,0.85,"Aitchison (1)",0.94,100
+"Prevalence",8,0.85,"Bray-Curtis",0.11,100
+"Prevalence",8,0.85,"Euclidean",0.04,100
+"Prevalence",8,0.85,"Jaccard",1,100
+"Prevalence",8,0.9,"HRIC distance",0.15,100
+"Prevalence",8,0.9,"ILR-Euclidean (0.01)",0.99,100
+"Prevalence",8,0.9,"ILR-Euclidean (0.1)",0.99,100
+"Prevalence",8,0.9,"ILR-Euclidean (0.5)",0.99,100
+"Prevalence",8,0.9,"ILR-Euclidean (1)",0.99,100
+"Prevalence",8,0.9,"Aitchison (0.5)",0.99,100
+"Prevalence",8,0.9,"Aitchison (0.01)",0.99,100
+"Prevalence",8,0.9,"Aitchison (0.1)",0.99,100
+"Prevalence",8,0.9,"Aitchison (1)",0.99,100
+"Prevalence",8,0.9,"Bray-Curtis",0.12,100
+"Prevalence",8,0.9,"Euclidean",0.04,100
+"Prevalence",8,0.9,"Jaccard",1,100
+"Prevalence",8,0.95,"HRIC distance",0.14,100
+"Prevalence",8,0.95,"ILR-Euclidean (0.01)",1,100
+"Prevalence",8,0.95,"ILR-Euclidean (0.1)",1,100
+"Prevalence",8,0.95,"ILR-Euclidean (0.5)",0.98,100
+"Prevalence",8,0.95,"ILR-Euclidean (1)",0.98,100
+"Prevalence",8,0.95,"Aitchison (0.5)",0.98,100
+"Prevalence",8,0.95,"Aitchison (0.01)",1,100
+"Prevalence",8,0.95,"Aitchison (0.1)",1,100
+"Prevalence",8,0.95,"Aitchison (1)",0.98,100
+"Prevalence",8,0.95,"Bray-Curtis",0.12,100
+"Prevalence",8,0.95,"Euclidean",0.05,100
+"Prevalence",8,0.95,"Jaccard",1,100
+"Prevalence",8,1,"HRIC distance",0.3,100
+"Prevalence",8,1,"ILR-Euclidean (0.01)",0.99,100
+"Prevalence",8,1,"ILR-Euclidean (0.1)",0.99,100
+"Prevalence",8,1,"ILR-Euclidean (0.5)",0.99,100
+"Prevalence",8,1,"ILR-Euclidean (1)",0.99,100
+"Prevalence",8,1,"Aitchison (0.5)",0.99,100
+"Prevalence",8,1,"Aitchison (0.01)",0.99,100
+"Prevalence",8,1,"Aitchison (0.1)",0.99,100
+"Prevalence",8,1,"Aitchison (1)",0.98,100
+"Prevalence",8,1,"Bray-Curtis",0.2,100
+"Prevalence",8,1,"Euclidean",0.04,100
+"Prevalence",8,1,"Jaccard",1,100

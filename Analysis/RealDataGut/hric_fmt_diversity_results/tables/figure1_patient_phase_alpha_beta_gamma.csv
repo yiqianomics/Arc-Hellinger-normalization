@@ -1,0 +1,7 @@
+"Patient","Phase","n","MeanAlpha","Gamma","Beta","PatientLabel","ClinicalLabel"
+"C1","Pre-HSCT",2,0.104952352610457,0.109485298574255,0.00453294596379789,"Patient 0009 (control)","Randomization (no FMT)"
+"C1","Post-HSCT / pre-index",19,0.0575024831073386,0.107327104003879,0.0498246208965403,"Patient 0009 (control)","Randomization (no FMT)"
+"C1","Post-index",3,0.0517578867054447,0.0650667514954913,0.0133088647900466,"Patient 0009 (control)","Randomization (no FMT)"
+"T4","Pre-HSCT",2,0.05613536095197,0.0659631632644702,0.00982780231250019,"Patient 0028 (auto-FMT)","Auto-FMT / randomization"
+"T4","Post-HSCT / pre-index",7,0.0236695601372335,0.027358005190641,0.00368844505340755,"Patient 0028 (auto-FMT)","Auto-FMT / randomization"
+"T4","Post-index",6,0.0654646308723955,0.0833638404634273,0.0178992095910318,"Patient 0028 (auto-FMT)","Auto-FMT / randomization"

@@ -1,0 +1,5 @@
+"Arm","AtRisk","FirstCrossingBy30","SustainedCrossingBy30","Endpoint","FisherP"
+"Control",8,3,1,"FirstCrossingBy30",0.386996904024768
+"Control",8,3,1,"SustainedCrossingBy30",0.173581011351909
+"Auto-FMT",13,8,6,"FirstCrossingBy30",0.386996904024768
+"Auto-FMT",13,8,6,"SustainedCrossingBy30",0.173581011351909

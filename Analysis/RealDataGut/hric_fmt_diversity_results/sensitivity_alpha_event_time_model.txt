@@ -1,0 +1,45 @@
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Alpha ~ BaselineAlphaC + IndexDayC + Arm * (PreTime + Post +      EarlyTime + LateTime) + (1 | Patient)
+   Data: event_recovery
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  -1421.5   -1369.0     724.8   -1449.5       300 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.2535 -0.6292 -0.1458  0.3928  5.8826 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ Patient  (Intercept) 2.909e-05 0.005394
+ Residual             5.570e-04 0.023601
+Number of obs: 314, groups:  Patient, 25
+
+Fixed effects:
+                        Estimate Std. Error t value
+(Intercept)            0.0407027  0.0065669   6.198
+BaselineAlphaC        -0.1044950  0.0886067  -1.179
+IndexDayC             -0.0006274  0.0002194  -2.860
+ArmAuto-FMT           -0.0340596  0.0095738  -3.558
+PreTime               -0.0003772  0.0003571  -1.056
+Post                   0.0047557  0.0107716   0.442
+EarlyTime              0.0005350  0.0009984   0.536
+LateTime               0.0001103  0.0003056   0.361
+ArmAuto-FMT:PreTime   -0.0009569  0.0005045  -1.897
+ArmAuto-FMT:Post       0.0740128  0.0143139   5.171
+ArmAuto-FMT:EarlyTime -0.0012385  0.0014050  -0.881
+ArmAuto-FMT:LateTime  -0.0008089  0.0004597  -1.760
+
+Correlation of Fixed Effects:
+            (Intr) BslnAC IndxDC ArA-FMT PreTim Post   ErlyTm LateTm AA-FMT:PT ArA-FMT:P AA-FMT:E
+BaselnAlphC -0.023                                                                               
+IndexDayC    0.075  0.002                                                                        
+ArmAuto-FMT -0.682  0.111  0.028                                                                 
+PreTime      0.888  0.036  0.053 -0.602                                                          
+Post        -0.556 -0.042 -0.062  0.372  -0.532                                                  
+EarlyTime    0.000  0.137 -0.048  0.009   0.018 -0.694                                           
+LateTime    -0.016 -0.154  0.092  0.004  -0.037  0.210 -0.607                                    
+ArmA-FMT:PT -0.624  0.046  0.045  0.905  -0.701  0.368 -0.007  0.023                             
+ArmAt-FMT:P  0.414 -0.011 -0.023 -0.618   0.395 -0.746  0.520 -0.158 -0.595                      
+ArmA-FMT:ET -0.001 -0.082  0.030 -0.007  -0.012  0.493 -0.708  0.429  0.005    -0.600            
+ArmA-FMT:LT  0.015  0.063 -0.023  0.001   0.025 -0.140  0.397 -0.655 -0.013     0.180    -0.684  

@@ -1,0 +1,16 @@
+"check","status"
+"HRIC package functions available",TRUE
+"Two arm-specific gamma diversities",TRUE
+"Additive diversity partition",TRUE
+"Turnover definition",TRUE
+"Figure 2 turnover ordering",TRUE
+"Figure 4 longitudinal participant window",TRUE
+"Figure 4 19 named taxa plus Others",TRUE
+"Figure 4 bars sum to 100 percent",TRUE
+"DAA uses lm on HRIC coordinates",TRUE
+"DAA adjusts for age and day",TRUE
+"Repeated subjects use cluster-robust inference",TRUE
+"PCoA uses HRIC package coordinates",TRUE
+"PCoA Euclidean comparison uses relative abundance",TRUE
+"Integrated figure layout and exports",TRUE
+"Figure exports",TRUE

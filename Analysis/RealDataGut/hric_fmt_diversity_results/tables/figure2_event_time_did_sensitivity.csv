@@ -1,0 +1,5 @@
+"Outcome","WindowEnd","Window","Estimand","Estimate","SE","Lower","Upper","P"
+"HRIC alpha diversity",30,"Day 1-30","Time-averaged adjusted arm difference minus the adjusted arm difference at day -1",0.0579508731355654,0.0117211737845454,0.0349773725178565,0.0809243737532743,7.64891359891764e-07
+"HRIC distance to personal baseline",30,"Day 1-30","Time-averaged adjusted arm difference minus the adjusted arm difference at day -1",-0.60303169379485,0.129928445661134,-0.857691447290672,-0.348371940299027,3.4629111938813e-06
+"HRIC alpha diversity",60,"Day 1-60","Time-averaged adjusted arm difference minus the adjusted arm difference at day -1",0.0451803904599275,0.0108063183185232,0.0240000065556221,0.066360774364233,2.90327506679286e-05
+"HRIC distance to personal baseline",60,"Day 1-60","Time-averaged adjusted arm difference minus the adjusted arm difference at day -1",-0.463789538302505,0.130039389732746,-0.718666742178687,-0.208912334426323,0.000361737785333386

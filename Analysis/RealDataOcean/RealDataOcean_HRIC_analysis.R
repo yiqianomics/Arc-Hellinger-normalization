@@ -27,9 +27,13 @@ analysis_dir <- normalizePath(analysis_dir, mustWork = TRUE)
 out_dir <- file.path(analysis_dir, "real_data_ocean_results")
 fig_dir <- file.path(out_dir, "figures")
 tab_dir <- file.path(out_dir, "tables")
-if (dir.exists(out_dir)) {
-  unlink(list.files(out_dir, full.names = TRUE), recursive = TRUE, force = TRUE)
-}
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+unlink(fig_dir, recursive = TRUE, force = TRUE)
+unlink(tab_dir, recursive = TRUE, force = TRUE)
+unlink(
+  file.path(out_dir, c("figure_captions.md", "run_summary.txt", "session_info.txt")),
+  force = TRUE
+)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(tab_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -58,13 +62,13 @@ suppressPackageStartupMessages({
   library(patchwork)
 })
 
-theme_nature <- function(base_size = 7.4) {
+theme_nature <- function(base_size = 9.0) {
   theme_classic(base_size = base_size, base_family = "Helvetica") +
     theme(
-      axis.line = element_line(linewidth = 0.20, color = "grey10"),
-      axis.ticks = element_line(linewidth = 0.18, color = "grey10"),
-      axis.title = element_text(color = "grey8", size = rel(0.92)),
-      axis.text = element_text(color = "grey10", size = rel(0.86)),
+      axis.line = element_line(linewidth = 0.34, color = "grey10"),
+      axis.ticks = element_line(linewidth = 0.30, color = "grey10"),
+      axis.title = element_text(color = "grey8", size = rel(1.00), face = "bold"),
+      axis.text = element_text(color = "grey10", size = rel(0.90)),
       legend.key = element_blank(),
       legend.background = element_blank(),
       legend.box.background = element_blank(),
@@ -218,18 +222,18 @@ covariate_labels <- c(
   Latitude = "Latitude (deg)",
   Longitude = "Longitude (deg)",
   Depth.nominal = "Depth (m)",
-  Temperature = "Temperature (deg C)",
+  Temperature = "Temperature (°C)",
   Gradient.Surface.temp.SST. = "Surface temp. gradient",
   Salinity = "Salinity (PSU)",
   Density = "Density",
-  Oxygen = "Oxygen (umol kg-1)",
+  Oxygen = "Oxygen (µmol kg-1)",
   ChlorophyllA = "Chlorophyll a (mg m-3)",
   Fluorescence = "Fluorescence",
   PAR.PC = "PAR",
-  NO3 = "Nitrate (umol l-1)",
+  NO3 = "Nitrate (µmol l-1)",
   NO2 = "Nitrite",
   NO2NO3 = "Nitrite + nitrate",
-  PO4 = "Phosphate (umol l-1)",
+  PO4 = "Phosphate (µmol l-1)",
   Si = "Silicate",
   Ammonium.5m = "Ammonium at 5 m",
   Iron.5m = "Iron at 5 m",
@@ -310,7 +314,7 @@ figure_sizes <- list(
   figure2 = c(width = 7.09, height = 3.65),
   figure3 = c(width = 7.09, height = 5.65),
   figure4 = c(width = 7.09, height = 4.75),
-  integrated = c(width = 10.00, height = 20.00)
+  integrated = c(width = 210 / 25.4, height = 280 / 25.4)
 )
 
 write.csv(
@@ -479,35 +483,47 @@ make_hatch_segments <- function(region_label) {
 north_atlantic_currents <- tibble::tribble(
   ~Current, ~CurrentType, ~Longitude, ~Latitude, ~PointOrder,
   "Gulf Stream", "Warm current", -81, 25, 1,
-  "Gulf Stream", "Warm current", -78, 31, 2,
-  "Gulf Stream", "Warm current", -73, 35, 3,
-  "Gulf Stream", "Warm current", -66, 39, 4,
-  "Gulf Stream", "Warm current", -59, 42, 5,
-  "North Atlantic Current", "Warm current", -59, 42, 1,
-  "North Atlantic Current", "Warm current", -47, 46, 2,
-  "North Atlantic Current", "Warm current", -34, 51, 3,
-  "North Atlantic Current", "Warm current", -20, 55, 4,
-  "North Atlantic Current", "Warm current", -12, 58, 5,
-  "North Equatorial Current", "Warm current", -18, 16, 1,
-  "North Equatorial Current", "Warm current", -40, 16.5, 2,
-  "North Equatorial Current", "Warm current", -62, 17.5, 3,
+  "Gulf Stream", "Warm current", -80, 29, 2,
+  "Gulf Stream", "Warm current", -76, 33, 3,
+  "Gulf Stream", "Warm current", -70, 37, 4,
+  "Gulf Stream", "Warm current", -63, 40, 5,
+  "Gulf Stream", "Warm current", -57, 42, 6,
+  "North Atlantic Current", "Warm current", -57, 42, 1,
+  "North Atlantic Current", "Warm current", -49, 45, 2,
+  "North Atlantic Current", "Warm current", -41, 48, 3,
+  "North Atlantic Current", "Warm current", -33, 51, 4,
+  "North Atlantic Current", "Warm current", -25, 54, 5,
+  "North Atlantic Current", "Warm current", -17, 57, 6,
+  "North Atlantic Current", "Warm current", -10, 59, 7,
+  "North Equatorial Current", "Warm current", -15, 17, 1,
+  "North Equatorial Current", "Warm current", -24, 16.5, 2,
+  "North Equatorial Current", "Warm current", -34, 16.2, 3,
+  "North Equatorial Current", "Warm current", -44, 16.5, 4,
+  "North Equatorial Current", "Warm current", -54, 17, 5,
+  "North Equatorial Current", "Warm current", -64, 18, 6,
   "Labrador Current", "Cold current", -56, 62, 1,
-  "Labrador Current", "Cold current", -54, 56, 2,
-  "Labrador Current", "Cold current", -52, 50, 3,
-  "Labrador Current", "Cold current", -49, 44, 4,
+  "Labrador Current", "Cold current", -57, 59, 2,
+  "Labrador Current", "Cold current", -56, 56, 3,
+  "Labrador Current", "Cold current", -55, 53, 4,
+  "Labrador Current", "Cold current", -54, 50, 5,
+  "Labrador Current", "Cold current", -52, 47, 6,
+  "Labrador Current", "Cold current", -49, 44, 7,
   "Canary Current", "Cold current", -12, 40, 1,
-  "Canary Current", "Cold current", -15, 32, 2,
-  "Canary Current", "Cold current", -17, 24, 3,
-  "Canary Current", "Cold current", -16, 15, 4
+  "Canary Current", "Cold current", -13, 36, 2,
+  "Canary Current", "Cold current", -14.5, 32, 3,
+  "Canary Current", "Cold current", -16, 28, 4,
+  "Canary Current", "Cold current", -17, 24, 5,
+  "Canary Current", "Cold current", -16.5, 20, 6,
+  "Canary Current", "Cold current", -15, 16, 7
 )
 
 north_atlantic_current_labels <- tibble::tribble(
-  ~Current, ~LabelLongitude, ~LabelLatitude, ~LineLongitude, ~LineLatitude,
-  "Gulf Stream", -76.5, 35.2, -73, 35,
-  "North Atlantic Current", -38.5, 54.4, -34, 51,
-  "North Equatorial Current", -45.5, 12.8, -40, 16.5,
-  "Labrador Current", -63.2, 57.2, -54, 56,
-  "Canary Current", -23.5, 31.4, -15, 32
+  ~Current, ~CurrentType, ~LabelLongitude, ~LabelLatitude,
+  "Gulf Stream", "Warm current", -82.0, 36.5,
+  "North Atlantic Current", "Warm current", -35.5, 55.5,
+  "North Equatorial Current", "Warm current", -43.0, 13.4,
+  "Labrador Current", "Cold current", -65.0, 53.5,
+  "Canary Current", "Cold current", -24.0, 29.5
 )
 write.csv(north_atlantic_currents, file.path(tab_dir, "figure1b_north_atlantic_circulation_overlay.csv"), row.names = FALSE)
 write.csv(north_atlantic_current_labels, file.path(tab_dir, "figure1b_north_atlantic_circulation_labels.csv"), row.names = FALSE)
@@ -518,7 +534,11 @@ make_region_map <- function(region_label, region_value, file_id, panel_letter, x
   shade_fill <- unname(selected_region_ocean_fill[region_label])
   hatch_color <- unname(selected_region_mark[region_label])
   shade_rect <- make_shade_rect(region_label)
-  hatch_segments <- make_hatch_segments(region_label)
+  hatch_segments <- if (region_label == "Arctic Ocean") {
+    make_hatch_segments(region_label)
+  } else {
+    tibble::tibble(x = numeric(), y = numeric(), xend = numeric(), yend = numeric())
+  }
   region_label_df <- tibble::tibble(
     Longitude = xlim[1] + 0.08 * diff(xlim),
     Latitude = ylim[2] - 0.12 * diff(ylim),
@@ -547,20 +567,13 @@ make_region_map <- function(region_label, region_value, file_id, panel_letter, x
       geom_path(
         data = north_atlantic_currents,
         aes(x = Longitude, y = Latitude, group = Current, color = CurrentType),
-        linewidth = 0.95, lineend = "round",
-        arrow = grid::arrow(type = "closed", length = grid::unit(0.105, "in"))
+        linewidth = 0.72, lineend = "round", linejoin = "round", alpha = 0.94,
+        arrow = grid::arrow(type = "closed", length = grid::unit(0.075, "in"))
       ) +
-      geom_segment(
+      geom_text(
         data = north_atlantic_current_labels,
-        aes(x = LabelLongitude, y = LabelLatitude, xend = LineLongitude, yend = LineLatitude),
-        inherit.aes = FALSE, linewidth = 0.16, color = "grey38", alpha = 0.85
-      ) +
-      geom_label(
-        data = north_atlantic_current_labels,
-        aes(x = LabelLongitude, y = LabelLatitude, label = Current),
-        inherit.aes = FALSE, size = 1.82, linewidth = 0.12,
-        label.padding = grid::unit(0.08, "lines"),
-        fill = scales::alpha("white", 0.9), color = "grey10"
+        aes(x = LabelLongitude, y = LabelLatitude, label = Current, color = CurrentType),
+        inherit.aes = FALSE, size = 2.15, fontface = "bold"
       ) +
       scale_color_manual(
         values = c("Warm current" = "#B6423A", "Cold current" = "#1F5A99"),
@@ -572,22 +585,22 @@ make_region_map <- function(region_label, region_value, file_id, panel_letter, x
     geom_point(
       data = region_points,
       aes(x = Longitude, y = Latitude),
-      shape = 4, color = "#111111", stroke = 1.02, size = 2.45, alpha = 0.98
+      shape = 4, color = "#111111", stroke = 0.88, size = 2.20, alpha = 0.98
     ) +
     geom_label(
       data = region_label_df,
       aes(x = Longitude, y = Latitude, label = label),
-      size = 2.4, linewidth = 0.16, label.padding = grid::unit(0.12, "lines"),
+      size = 2.85, linewidth = 0.18, label.padding = grid::unit(0.12, "lines"),
       fill = scales::alpha("white", 0.88), color = "grey8", hjust = 0
     ) +
     coord_quickmap(xlim = xlim, ylim = ylim, expand = FALSE) +
     labs(x = "Longitude", y = "Latitude") +
-    theme_nature(base_size = 7.4) +
+    theme_nature(base_size = 9.0) +
     theme(
       axis.line = element_blank(),
       legend.position = if (show_circulation) "bottom" else "none",
       legend.direction = "horizontal",
-      legend.text = element_text(size = 6.7),
+      legend.text = element_text(size = 8.0),
       panel.background = element_rect(fill = "#F4F8F8", color = NA),
       plot.background = element_rect(fill = "white", color = NA)
     )
@@ -739,23 +752,25 @@ make_figure2 <- function(div_df, panel_letter, panel_label) {
   gamma <- unique(div_df$Gamma)
   x_breaks <- sample_breaks(n_samples)
   x_labels <- paste0("S", x_breaks)
-  axis_size <- ifelse(n_samples > 120, 5.8, ifelse(n_samples > 55, 6.4, 6.9))
-  point_size <- ifelse(n_samples > 120, 1.35, 1.75)
-  y_upper <- min(1, max(0.78, gamma + 0.25, max(div_df$Alpha, na.rm = TRUE) + 0.34))
-  y_breaks <- pretty(c(0, y_upper), n = 5)
-  y_breaks <- y_breaks[y_breaks >= 0 & y_breaks <= y_upper]
+  axis_size <- ifelse(n_samples > 120, 7.2, ifelse(n_samples > 55, 7.7, 8.2))
+  point_size <- ifelse(n_samples > 120, 1.55, 2.05)
+  y_data <- c(div_df$Alpha, gamma)
+  y_span <- diff(range(y_data, na.rm = TRUE))
+  if (!is.finite(y_span) || y_span == 0) y_span <- 0.05
+  y_lower <- max(0, min(y_data, na.rm = TRUE) - max(0.015, y_span * 0.08))
+  y_upper <- min(1, max(y_data, na.rm = TRUE) + max(0.025, y_span * 0.16))
+  y_breaks <- pretty(c(y_lower, y_upper), n = 5)
+  y_breaks <- y_breaks[y_breaks >= y_lower & y_breaks <= y_upper]
   gamma_label_x <- n_samples - 0.25
-  gamma_label_y <- min(y_upper - 0.055, gamma + 0.035)
+  gamma_label_y <- min(y_upper - 0.012, gamma + max(0.012, y_span * 0.10))
   mark_color <- unname(selected_region_mark[panel_label])
-  region_value <- unique(div_df$Ocean.region)[1]
-  figure2_bg <- make_figure2_background_data(panel_label, region_value, n_samples, y_upper)
 
-  add_figure2_background_layers(ggplot(div_df, aes(x = SampleIndex)), figure2_bg) +
+  ggplot(div_df, aes(x = SampleIndex)) +
     geom_segment(
       aes(xend = SampleIndex, y = Alpha, yend = Gamma),
-      linewidth = 0.18, color = "#B7B7B7", alpha = 0.78
+      linewidth = 0.26, color = "#B7B7B7", alpha = 0.72
     ) +
-    geom_hline(yintercept = gamma, linetype = "22", linewidth = 0.42, color = "#9D1F2E") +
+    geom_hline(yintercept = gamma, linetype = "22", linewidth = 0.62, color = "#9D1F2E") +
     geom_point(
       aes(y = Alpha),
       color = mark_color, size = point_size, alpha = 0.95
@@ -763,7 +778,7 @@ make_figure2 <- function(div_df, panel_letter, panel_label) {
     annotate(
       "label", x = gamma_label_x, y = gamma_label_y,
       label = paste0("gamma == ", sprintf("%.3f", gamma)),
-      parse = TRUE, size = 2.25, fill = scales::alpha("white", 0.92), color = "#9D1F2E",
+      parse = TRUE, size = 2.85, fill = scales::alpha("white", 0.96), color = "#9D1F2E",
       hjust = 1
     ) +
     scale_y_continuous(
@@ -772,12 +787,12 @@ make_figure2 <- function(div_df, panel_letter, panel_label) {
       expand = expansion(mult = c(0, 0.02))
     ) +
     scale_x_continuous(breaks = x_breaks, labels = x_labels, expand = expansion(mult = c(0.003, 0.01))) +
-    coord_cartesian(xlim = c(0.5, n_samples + 0.5), ylim = c(0, y_upper), clip = "on") +
+    coord_cartesian(xlim = c(0.5, n_samples + 0.5), ylim = c(y_lower, y_upper), clip = "on") +
     labs(
       x = "Sample",
       y = "Alpha diversity (HRIC evenness)"
     ) +
-    theme_nature(base_size = 7.4) +
+    theme_nature(base_size = 9.0) +
     theme(
       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = axis_size),
       legend.position = "none",
@@ -830,9 +845,7 @@ write.csv(figure3_stats, file.path(tab_dir, "figure3_spearman_turnover_covariate
 
 make_figure3 <- function(div_df, stats_df, panel_letter, panel_label) {
   facet_columns <- ifelse(length(covariate_cols) <= 6, 3, 5)
-  point_size <- ifelse(length(covariate_cols) > 20, 1.15, 1.55)
-  label_size <- ifelse(length(covariate_cols) > 20, 1.68, 2.25)
-  mark_color <- unname(selected_region_mark[panel_label])
+  label_size <- ifelse(length(covariate_cols) > 20, 2.05, 2.70)
   turnover_limits <- range(div_df$Turnover, na.rm = TRUE)
   turnover_pad <- diff(turnover_limits) * 0.18
   if (!is.finite(turnover_pad) || turnover_pad == 0) turnover_pad <- 0.05
@@ -868,11 +881,10 @@ make_figure3 <- function(div_df, stats_df, panel_letter, panel_label) {
     )
 
   ggplot(long_df, aes(x = CovariateValue, y = Turnover)) +
-    geom_point(shape = 21, size = point_size, stroke = 0.12, color = "grey12", fill = mark_color, alpha = 0.78, na.rm = TRUE) +
     geom_smooth(
       data = smooth_df,
-      method = "lm", formula = y ~ x, se = TRUE, linewidth = 0.34,
-      color = "#9D1F2E", fill = "#9D1F2E", alpha = 0.10, na.rm = TRUE
+      method = "lm", formula = y ~ x, se = TRUE, linewidth = 0.82,
+      color = "#9D1F2E", fill = "#9D1F2E", alpha = 0.12, na.rm = TRUE
     ) +
     geom_label(
       data = stats_df,
@@ -885,8 +897,8 @@ make_figure3 <- function(div_df, stats_df, panel_letter, panel_label) {
     facet_wrap(~ CovariateLabel, scales = "free_x", ncol = facet_columns) +
     scale_y_continuous(breaks = scales::breaks_pretty(n = 3)) +
     coord_cartesian(ylim = c(turnover_limits[1] - turnover_pad, turnover_limits[2] + turnover_pad)) +
-    labs(x = NULL, y = expression(turnover~(gamma - alpha))) +
-    theme_nature(base_size = 7.4) +
+    labs(x = NULL, y = expression(atop("local-regional diversity gap", gamma - alpha))) +
+    theme_nature(base_size = 9.0) +
     theme(
       legend.position = "none",
       panel.grid = element_blank()
@@ -1047,7 +1059,7 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label, daa_covariate) {
   pal <- pal[levels(stack_df$Taxon)]
   n_samples <- length(sample_ids)
   x_breaks <- paste0("S", sample_breaks(n_samples))
-  axis_size <- ifelse(n_samples > 120, 5.8, ifelse(n_samples > 55, 6.4, 6.9))
+  axis_size <- ifelse(n_samples > 120, 7.0, ifelse(n_samples > 55, 7.4, 7.8))
 
   plot <- ggplot(stack_df, aes(x = SamplePlotID, y = RelativeAbundance, fill = Taxon)) +
     geom_col(width = 0.98, linewidth = 0.055, color = "white") +
@@ -1064,12 +1076,12 @@ make_figure4 <- function(panel_meta, panel_letter, panel_label, daa_covariate) {
       ncol = 5, byrow = TRUE, title.position = "top", title.hjust = 0,
       override.aes = list(linewidth = 0)
     )) +
-    theme_nature(base_size = 7.4) +
+    theme_nature(base_size = 9.0) +
     theme(
       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = axis_size),
       legend.position = "bottom",
-      legend.title = element_text(face = "bold", size = 6.5),
-      legend.text = element_text(size = 6.15),
+      legend.title = element_text(face = "bold", size = 7.4),
+      legend.text = element_text(size = 7.0),
       legend.key.size = grid::unit(3.7, "mm"),
       legend.spacing.x = grid::unit(1.3, "mm"),
       panel.grid = element_blank()
@@ -1196,39 +1208,125 @@ figure4_order_check <- bind_rows(figure4_stack_data) %>%
 
 make_integrated_region <- function(panel) {
   panel_label <- panel_defs$panel_label[match(panel, panel_defs$panel)]
-  panel_n <- all_diversity %>%
-    filter(Panel == panel) %>%
-    summarise(n = n(), .groups = "drop") %>%
-    pull(n)
-  title_plot <- ggplot() +
+  panel_n <- sum(all_diversity$Panel == panel)
+  panel_tags <- if (panel == "a") letters[1:4] else letters[5:8]
+  compact_theme <- theme(
+    axis.title = element_text(size = 7.0, face = "bold"),
+    axis.text = element_text(size = 5.8),
+    legend.title = element_text(size = 6.0, face = "bold"),
+    legend.text = element_text(size = 5.2),
+    strip.text = element_text(size = 5.8, face = "bold"),
+    plot.title = element_text(size = 7.0, face = "bold"),
+    plot.subtitle = element_text(size = 6.2, face = "bold"),
+    plot.tag = element_text(size = 9.0, face = "bold", color = "grey5"),
+    plot.tag.position = "topleft"
+  )
+  map_plot <- figure1_plots[[panel]] +
+    labs(tag = panel_tags[1]) +
+    compact_theme +
+    theme(
+      legend.position = "none",
+      axis.text = element_text(size = 5.2),
+      plot.margin = margin(1, 0, 1, 2)
+    )
+  map_plot$layers <- Filter(
+    function(layer) !inherits(layer$geom, "GeomLabel"),
+    map_plot$layers
+  )
+  for (i in seq_along(map_plot$layers)) {
+    layer <- map_plot$layers[[i]]
+    if (inherits(layer$geom, "GeomText")) {
+      map_plot$layers[[i]]$aes_params$size <- 1.42
+    } else if (inherits(layer$geom, "GeomPath")) {
+      map_plot$layers[[i]]$aes_params$linewidth <- 0.55
+    } else if (inherits(layer$geom, "GeomPoint")) {
+      map_plot$layers[[i]]$aes_params$size <- 1.55
+      map_plot$layers[[i]]$aes_params$stroke <- 0.70
+    }
+  }
+  alpha_plot <- figure2_plots[[panel]] +
+    labs(y = "Alpha diversity", tag = panel_tags[2]) +
+    compact_theme +
+    theme(
+      axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 5.2),
+      axis.text.y = element_text(size = 5.4),
+      plot.margin = margin(1, 2, 1, 0)
+    )
+  gamma_value <- unique(all_diversity$Gamma[all_diversity$Panel == panel])
+  for (i in seq_along(alpha_plot$layers)) {
+    if (inherits(alpha_plot$layers[[i]]$geom, "GeomLabel")) {
+      alpha_plot$layers[[i]]$data$y <- gamma_value + 0.004
+    }
+  }
+  taxa_plot <- figure4_plots[[panel]] +
+    labs(tag = panel_tags[3]) +
+    compact_theme +
+    guides(fill = guide_legend(
+      ncol = 5, byrow = TRUE, title.position = "top", title.hjust = 0,
+      override.aes = list(linewidth = 0)
+    )) +
+    theme(
+      axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 5.0),
+      axis.text.y = element_text(size = 5.2),
+      legend.key.size = grid::unit(2.4, "mm"),
+      legend.spacing.x = grid::unit(0.5, "mm"),
+      legend.spacing.y = grid::unit(0, "mm"),
+      legend.box.spacing = grid::unit(0.5, "mm"),
+      legend.margin = margin(0, 0, 0, 0),
+      plot.margin = margin(2, 2, 2, 2)
+    )
+  covariate_plot <- figure3_plots[[panel]] +
+    labs(tag = panel_tags[4]) +
+    facet_wrap(~ CovariateLabel, scales = "free_x", nrow = 1) +
+    compact_theme +
+    theme(
+      axis.text = element_text(size = 5.0),
+      axis.title.y = element_text(size = 6.5, face = "bold"),
+      strip.text = element_text(size = 5.2, face = "bold"),
+      plot.margin = margin(2, 2, 2, 2)
+    )
+  for (i in seq_along(covariate_plot$layers)) {
+    if (inherits(covariate_plot$layers[[i]]$geom, "GeomLabel")) {
+      covariate_plot$layers[[i]]$aes_params$size <- 1.35
+      covariate_plot$layers[[i]]$data$LabelX <- covariate_plot$layers[[i]]$data$x_mid
+      covariate_plot$layers[[i]]$data$LabelHjust <- 0.5
+    }
+  }
+
+  first_row <- wrap_plots(
+    map_plot,
+    alpha_plot,
+    nrow = 1,
+    widths = c(0.50, 0.50)
+  )
+
+  region_header <- ggplot() +
     annotate(
-      "label", x = 0, y = 0.50,
-      label = paste0(panel_label, " (n = ", panel_n, ")"),
-      hjust = 0, vjust = 0.5, size = 3.8, fontface = "bold", color = "grey8",
-      fill = scales::alpha("#F7F7F7", 0.96), linewidth = 0.20,
+      "label", x = 0, y = 0.5,
+      label = paste0(panel_label, "   n = ", panel_n),
+      hjust = 0, vjust = 0.5, size = 3.8, fontface = "bold",
+      color = "grey8", fill = "white", linewidth = 0.45,
       label.padding = grid::unit(0.16, "lines")
     ) +
     coord_cartesian(xlim = c(0, 1), ylim = c(0, 1), clip = "off") +
     theme_void() +
-    theme(plot.margin = margin(0, 5, 0, 6))
-  alpha_plot <- figure2_plots[[panel]] +
-    labs(y = "Alpha diversity") +
-    theme(plot.margin = margin(5, 5, 5, 6))
-  taxa_plot <- figure4_plots[[panel]] + theme(plot.margin = margin(5, 6, 5, 5))
-  covariate_plot <- figure3_plots[[panel]] + theme(plot.margin = margin(5, 5, 7, 6))
+    theme(plot.margin = margin(1, 2, 1, 7))
 
-  list(
-    title = title_plot,
-    alpha = alpha_plot,
-    taxa = taxa_plot,
-    covariates = covariate_plot
+  wrap_plots(
+    region_header,
+    first_row,
+    taxa_plot,
+    covariate_plot,
+    ncol = 1,
+    heights = c(0.22, 1.45, 1.35, 1.30)
   )
 }
 
 integrated_figure <- wrap_plots(
-  c(make_integrated_region("a"), make_integrated_region("b")),
+  make_integrated_region("a"),
+  make_integrated_region("b"),
   ncol = 1,
-  heights = rep(c(0.30, 1.00, 1.50, 2.00), 2)
+  heights = c(1, 1)
 ) &
   theme(plot.background = element_rect(fill = "white", color = NA))
 
@@ -1237,7 +1335,7 @@ save_plot(
   "figure_integrated_ocean_regions",
   width = figure_sizes$integrated["width"],
   height = figure_sizes$integrated["height"],
-  dpi = 400
+  dpi = 900
 )
 
 combined_figure_files <- file.path(
@@ -1271,21 +1369,18 @@ sample_panel_key <- all_diversity %>%
   )
 write.csv(sample_panel_key, file.path(tab_dir, "sample_panel_key.csv"), row.names = FALSE)
 
-figure2_background_coverage_check <- all(purrr::pmap_lgl(
-  panel_defs,
-  function(panel, panel_label, region_value, file_id) {
-    n_samples <- sum(all_diversity$Panel == panel)
-    bg <- make_figure2_background_data(panel_label, region_value, n_samples, y_upper = 1)
-    isTRUE(all.equal(bg$ocean$xmin, 0.5, tolerance = 1e-12)) &&
-      isTRUE(all.equal(bg$ocean$xmax, n_samples + 0.5, tolerance = 1e-12)) &&
-      isTRUE(all.equal(bg$ocean$ymin, 0, tolerance = 1e-12)) &&
-      isTRUE(all.equal(bg$ocean$ymax, 1, tolerance = 1e-12))
-  }
+figure2_coordinate_separation_check <- all(vapply(
+  figure2_plots,
+  function(plot) {
+    geom_classes <- vapply(plot$layers, function(layer) class(layer$geom)[1], character(1))
+    !any(geom_classes %in% c("GeomPolygon", "GeomPath", "GeomRect"))
+  },
+  logical(1)
 ))
 integrated_size_mm <- unname(figure_sizes$integrated * 25.4)
 integrated_readability_size_check <-
-  figure_sizes$integrated["width"] >= 10 &&
-  figure_sizes$integrated["height"] >= 20
+  abs(integrated_size_mm[1] - 210) < 0.1 &&
+  abs(integrated_size_mm[2] - 280) < 0.1
 figure4_color_consistency_check <-
   all(figure4_color_key %>% count(Panel, Color) %>% pull(n) == 1) &&
   all(
@@ -1302,7 +1397,7 @@ qc_checks <- tibble::tibble(
     "Additive diversity partition",
     "turnover definition",
     "Figure 1 regional map organization",
-    "Figure 2 map background coverage",
+    "Figure 1 and Figure 2 coordinate separation",
     "Figure 2 and Figure 4 sample order",
     "No legacy all-panel exports",
     "Figure 3 panel count",
@@ -1319,7 +1414,7 @@ qc_checks <- tibble::tibble(
     max(abs(all_diversity$Turnover - (all_diversity$Gamma - all_diversity$Alpha))) < 1e-12,
     all(file.exists(figure1_regional_files)) && !any(file.exists(old_figure1_files)) &&
       nrow(north_atlantic_currents) > 0 && nrow(north_atlantic_current_labels) == 5,
-    figure2_background_coverage_check,
+    figure2_coordinate_separation_check,
     all(sample_order_check$sorted_by_turnover) && isTRUE(figure4_order_check),
     nrow(panel_defs) == length(selected_region_labels) && !any(file.exists(combined_figure_files)),
     nrow(figure3_stats) == nrow(panel_defs) * length(covariate_cols),
@@ -1338,8 +1433,8 @@ qc_checks <- tibble::tibble(
     "Required exports available: HRIC, SHalpha, SHgamma, SHbeta",
     paste0("max abs(gamma - mean_alpha - beta) = ", formatC(max(abs(diversity_summary$gamma - diversity_summary$mean_alpha - diversity_summary$beta)), format = "e", digits = 2)),
     paste0("max abs(turnover - (gamma - alpha)) = ", formatC(max(abs(all_diversity$Turnover - (all_diversity$Gamma - all_diversity$Alpha))), format = "e", digits = 2)),
-    "Figure 1 is generated as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map includes a manually anchored schematic circulation overlay.",
-    "Both Figure 2 regional maps span the complete plotting rectangle from the y-axis to the right panel boundary.",
+    "Figure 1 is generated as separate Arctic Ocean and North Atlantic Ocean maps with cross-shaped sample marks; the North Atlantic map uses clean, directly labeled warm- and cold-current paths.",
+    "Geographic map layers and sample-location crosses are confined to Figure 1; Figure 2 contains only the sample/diversity coordinate system.",
     "Figure 2 samples are sorted from smallest to largest turnover, relabeled S1...SN, and Figure 4 uses the same order.",
     "Legacy all-panel Figure 2, Figure 3, and old Figure 4 files are not written; six covariate-specific Figure 4 ocean-region plates are written separately.",
     paste0(nrow(figure3_stats), " Spearman tests for ", nrow(panel_defs), " panels x ", length(covariate_cols), " covariates"),
@@ -1347,7 +1442,7 @@ qc_checks <- tibble::tibble(
     paste0(length(figure4_shared_taxa), " taxa shared between the two regional top-19 sets retain identical colors, and colors are unique within each panel."),
     "Figure 4 differential marking uses univariable lm(HRIC taxon coordinate ~ covariate), one covariate at a time, with BH-adjusted q values; no low/high median split is used.",
     paste0("Saved ", length(covariate_cols), " covariate-specific Figure 4 ocean-region plates plus separate regional Figure 4 files. Integrated figure uses ", main_figure4_covariate_label, "."),
-    paste0("Integrated figure size is ", sprintf("%.0f", integrated_size_mm[1]), " x ", sprintf("%.0f", integrated_size_mm[2]), " mm, with expanded vertical space for every analytical panel."),
+    paste0("Integrated figure size is ", sprintf("%.0f", integrated_size_mm[1]), " x ", sprintf("%.0f", integrated_size_mm[2]), " mm; panels a-d identify the four Arctic analyses and panels e-h identify the corresponding North Atlantic analyses, with a separate boxed regional heading above each block."),
     "A single integrated ocean-region figure is exported in PDF, PNG, and TIFF formats."
   )
 )
@@ -1374,30 +1469,30 @@ run_summary <- c(
   paste0("Selected regional panels: ", paste(selected_region_labels, collapse = "; ")),
   paste0("QC checks passed: ", sum(qc_checks$status), "/", nrow(qc_checks)),
   paste0("Integrated figure dimensions: ", sprintf("%.0f", integrated_size_mm[1]), " x ", sprintf("%.0f", integrated_size_mm[2]), " mm."),
-  "Figure 1 is saved as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map includes manually anchored schematic labels for the Gulf Stream, North Atlantic Current, Labrador Current, Canary Current, and North Equatorial Current.",
+  "Figure 1 is saved as separate Arctic Ocean and North Atlantic Ocean maps with basin-colored ocean backgrounds and cross-shaped sample marks; the North Atlantic map uses polished, directly labeled paths for the Gulf Stream, North Atlantic Current, Labrador Current, Canary Current, and North Equatorial Current.",
   "Figures 2 and 3 are saved as separate regional files. Figure 4 is saved as separate regional files for each covariate and as six covariate-specific ocean-region plates.",
-  "Figure 2 turnover is gamma - alpha, with alpha/gamma/beta from HRIC::SHalpha, HRIC::SHgamma, and HRIC::SHbeta; each Figure 2 panel uses a directly transformed pale regional map that starts at the y-axis and sits behind the data.",
+  "Figure 2 turnover is gamma - alpha, with alpha/gamma/beta from HRIC::SHalpha, HRIC::SHgamma, and HRIC::SHbeta. Geographic maps and sample-location crosses are kept in Figure 1 and are not overlaid on Figure 2.",
   "Figures do not separate or encode samples by layer.",
   "Figure 2 samples are ordered from smallest to largest turnover and relabeled S1...SN; Figure 4 uses the same sample order for each corresponding panel.",
   paste0("Figure 3 uses Spearman cor.test between turnover and these covariates: ", covariate_list_text, "."),
   "Figure 4 uses a high-contrast categorical palette with fine white separators between stacked taxa; taxa shared across the two regional top-19 sets retain the same colors. For each covariate-specific Figure 4, asterisks in the legend mark top taxa with BH-adjusted q < 0.05 from univariable lm(HRIC::HRIC taxon coordinate ~ covariate).",
   paste0("The integrated figure uses the Figure 4 version for ", main_figure4_covariate_label, ", selected by the largest number of significant LM results across the two regional panels."),
-  "A single integrated ocean-region figure is also saved with Arctic Ocean on top and North Atlantic Ocean on bottom. In each area, Figure 2 uses a lightly overlapping shaded map background and is paired with the corresponding Figure 3 and selected Figure 4 panel."
+  "A single integrated ocean-region figure is also saved with Arctic Ocean on top and North Atlantic Ocean on bottom. Panels a-d show the Arctic map, alpha/gamma diversity, stacked taxa, and environmental associations; panels e-h show the corresponding North Atlantic analyses. Each region name and sample size are shown in a boxed heading above the regional block rather than inside the map."
 )
 writeLines(run_summary, file.path(out_dir, "run_summary.txt"))
 
 caption_text <- c(
   "# RealDataOcean figure captions",
   "",
-  "**Figure 1. Ocean sample locations and North Atlantic circulation context.** Figure 1a shows Arctic Ocean sample locations and Figure 1b shows North Atlantic Ocean sample locations, both using basin-colored ocean backgrounds and cross-shaped sample marks. Each map labels the ocean basin and sample size. Figure 1b also includes manually anchored schematic circulation labels in English: Gulf Stream, North Atlantic Current, North Equatorial Current, Labrador Current, and Canary Current. Warm currents are red and cold currents are blue; arrows are schematic circulation guides rather than measured trajectories.",
+  "**Figure 1. Ocean sample locations and North Atlantic circulation context.** Figure 1a shows Arctic Ocean sample locations and Figure 1b shows North Atlantic Ocean sample locations, both using basin-colored ocean backgrounds and cross-shaped sample marks. Each map labels the ocean basin and sample size. Figure 1b directly labels the Gulf Stream, North Atlantic Current, North Equatorial Current, Labrador Current, and Canary Current. Warm currents are red and cold currents are blue; the clean arrow paths are schematic circulation guides rather than measured trajectories.",
   "",
-  "**Figure 2. HRIC alpha diversity and gamma diversity.** Figure 2a shows Arctic Ocean and Figure 2b shows North Atlantic Ocean. Each panel orders samples from the smallest to the largest turnover, relabeled as S1, S2, and so on. Points are HRIC alpha diversity values from `HRIC::SHalpha`; dashed red lines are panel-specific gamma diversity from `HRIC::SHgamma`. The pale map in the background is directly transformed into Figure 2 coordinates so the visible background starts at the y-axis, gives regional context, and remains behind the diversity marks.",
+  "**Figure 2. HRIC alpha diversity and gamma diversity.** Figure 2a shows Arctic Ocean and Figure 2b shows North Atlantic Ocean. Each panel orders samples from the smallest to the largest turnover, relabeled as S1, S2, and so on. Points are HRIC alpha diversity values from `HRIC::SHalpha`; dashed red lines are panel-specific gamma diversity from `HRIC::SHgamma`. Geographic context is shown separately in Figure 1 so Figure 2 uses only the sample/diversity coordinate system.",
   "",
-  "**Figure 3. Correlations between turnover and environmental covariates.** Figure 3a shows Arctic Ocean and Figure 3b shows North Atlantic Ocean. Facets show Spearman correlations between turnover and Depth, Temperature, Oxygen, Chlorophyll a, Phosphate, and Nitrate. Text in each facet reports Spearman rho, p value from `cor.test(method = \"spearman\")`, and complete-case sample size. Red lines and ribbons are ordinary least-squares fits with 95% confidence intervals, included as visual guides rather than the basis of the reported Spearman tests. Covariate availability is listed in `tables/figure3_covariate_availability.csv`.",
+  "**Figure 3. Correlations between turnover and environmental covariates.** Figure 3a shows Arctic Ocean and Figure 3b shows North Atlantic Ocean. Facets show Spearman correlations between turnover and Depth, Temperature, Oxygen, Chlorophyll a, Phosphate, and Nitrate. Text in each facet reports Spearman rho, p value from `cor.test(method = \"spearman\")`, and complete-case sample size. Thick red lines and ribbons are ordinary least-squares fits with 95% confidence intervals, included as visual guides rather than the basis of the reported Spearman tests; individual scatter points are omitted for visual clarity. Covariate availability is listed in `tables/figure3_covariate_availability.csv`.",
   "",
   paste0("**Figure 4. Relative abundance of the top taxa.** Six covariate-specific Figure 4 versions are saved, one each for ", covariate_list_text, ". Within each version, Figure 4a shows Arctic Ocean and Figure 4b shows North Atlantic Ocean. Stacked bars show the top 19 aggregated taxa by mean relative abundance within each panel plus all remaining taxa as Others, using the same S1...SN sample order as the corresponding Figure 2 panel. The stacked bars use a high-contrast categorical palette with fine white separators to improve taxon discrimination; taxa shared across the two regional top-19 sets retain the same colors. Taxa marked with an asterisk in the legend have BH-adjusted q < 0.05 from univariable `lm(HRIC::HRIC taxon coordinate ~ covariate)` for that Figure 4 covariate. The integrated figure uses the ", main_figure4_covariate_label, " version."),
   "",
-  paste0("**Integrated ocean-region figure.** The integrated figure combines both regional figure sets into a single plate with Arctic Ocean on top and North Atlantic Ocean on bottom. Within each area, Figure 2 has a lightly overlapping shaded regional-map background and is paired with the corresponding Figure 3 covariate panel and the selected Figure 4 stacked-taxa panel based on ", main_figure4_covariate_label, ".")
+  paste0("**Integrated ocean-region figure.** The integrated figure combines both regional figure sets into a 210 mm by 280 mm plate, with the Arctic Ocean on top and North Atlantic Ocean on bottom. Panels a-d show the Arctic map, alpha/gamma diversity, stacked taxa based on ", main_figure4_covariate_label, ", and environmental associations; panels e-h show the corresponding North Atlantic analyses. Each regional block begins with a boxed heading containing the ocean name and sample size.")
 )
 writeLines(caption_text, file.path(out_dir, "figure_captions.md"))
 

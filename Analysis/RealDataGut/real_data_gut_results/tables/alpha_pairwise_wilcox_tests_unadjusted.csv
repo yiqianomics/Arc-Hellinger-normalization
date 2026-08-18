@@ -1,7 +1,0 @@
-"method","MethodLabel","group1","group2","contrast","statistic","p_value","q_value"
-"AHC_D_norm","AHC (dominance)","control","treatment","control_vs_treatment",26915,0.114129445102452,0.114129445102452
-"AHC_E","AHC (evenness)","control","treatment","control_vs_treatment",31809,0.114129445102452,0.114129445102452
-"Shannon_drop0_evenness","Shannon (drop 0s)","control","treatment","control_vs_treatment",30797,0.354252800112228,0.354252800112228
-"Shannon_pc0.01_evenness","Shannon (ps = 0.01)","control","treatment","control_vs_treatment",30959,0.302546357580565,0.302546357580565
-"Shannon_pc0.5_evenness","Shannon (ps = 0.5)","control","treatment","control_vs_treatment",29468,0.945682294305732,0.945682294305732
-"Shannon_pc1_evenness","Shannon (ps = 1)","control","treatment","control_vs_treatment",28891,0.761250084911189,0.761250084911189
