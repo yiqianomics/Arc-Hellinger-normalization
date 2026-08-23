@@ -13,7 +13,7 @@ replacement is required.
 
 ```r
 # install.packages("remotes")
-remotes::install_github("yiqianomics/HRIC")
+remotes::install_local("/path/to/HRIC")
 ```
 
 ## Functions
@@ -95,8 +95,3 @@ means turnover remains after accounting for within-group variation.
 - Values must be non-negative and each row must have a positive total. Exact
   zeros are allowed; missing values are not and should be handled beforehand.
 - The package depends only on base R.
-
-## Citation
-
-A manuscript describing the method is in preparation. Please check back for
-citation details.

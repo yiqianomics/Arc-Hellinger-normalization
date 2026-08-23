@@ -1,13 +1,12 @@
 Package: HRIC
 Type: Package
 Title: Hellinger-Riemann Intrinsic Coordinates and Diversity
-Version: 0.1.0
-Authors@R: 
+Version: 0.4.0
+Authors@R:
     person(
-        given = "Yiqian",
-        family = "Zhang",
+        given = "Anonymous",
         role = c("aut", "cre"),
-        email = "zhang.16383@osu.edu"
+        email = "anonymous@example.com"
     )
 Description: Provides Hellinger-Riemann intrinsic coordinates and
     reference-based coordinates for compositional data on the closed
@@ -20,5 +19,4 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.1.0)
-Config/roxygen2/version: 8.0.0
-RoxygenNote: 8.0.0
+Config/roxygen2/version: 8.1.0
